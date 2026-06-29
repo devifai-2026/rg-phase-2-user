@@ -8,6 +8,7 @@ import '../../theme/rg_colors.dart';
 import '../astrologers/astrologer_list_screen.dart';
 import '../consult/chat_room_screen.dart';
 import '../consult/call_screen.dart';
+import '../consult/requesting_screen.dart';
 import '../consult/consultation_history_screen.dart';
 import '../live/live_tab.dart';
 import 'app_drawer.dart';
@@ -66,9 +67,13 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
   void _openAstrologers(String title) =>
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => AstrologerListScreen(title: title)));
 
-  /// Reopen the live (minimized) session room.
+  /// Reopen the minimized consultation. A still-ringing request reopens the
+  /// REQUESTING screen (waiting for the astrologer); a live one reopens the
+  /// chat/call room.
   void _resumeSession(SessionProvider s) {
-    final screen = s.type == 'chat' ? const ChatRoomScreen() : const CallScreen();
+    final Widget screen = s.phase == SessionPhase.ringing
+        ? const RequestingScreen()
+        : (s.type == 'chat' ? const ChatRoomScreen() : const CallScreen());
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
   }
 

@@ -116,12 +116,17 @@ class SessionProvider extends ChangeNotifier {
       rtcToken = res.token;
       _rejectionReason = null;
       _endSummary = null;
-      // 'accepted' = room open, timer not started; 'ongoing' = startedAt set.
       _startedAt = s.startedAt;
-      _phase = SessionPhase.ongoing;
-      // Rejoin the socket room so live events (messages/timer/end) resume.
+      // Restore the right phase from the server status:
+      //   'ringing'  → still waiting for the astrologer → re-show requesting UI.
+      //   'accepted' → room open, timer not started yet.
+      //   'ongoing'  → both joined, startedAt set, timer running.
+      _phase = s.status == 'ringing' ? SessionPhase.ringing : SessionPhase.ongoing;
+      // Rejoin the socket room so live events (accept/messages/timer/end) resume.
       socket.joinSession(s.sessionId);
-      if (_startedAt != null) _startTicker(); else syncStartedAt();
+      if (_phase == SessionPhase.ongoing) {
+        if (_startedAt != null) _startTicker(); else syncStartedAt();
+      }
       notifyListeners();
       return true;
     } catch (_) {

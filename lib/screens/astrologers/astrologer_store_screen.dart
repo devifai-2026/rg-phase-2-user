@@ -122,13 +122,40 @@ class _AstrologerStoreScreenState extends State<AstrologerStoreScreen> with Widg
     final s = _store;
     final th = _resolveTheme(s);
 
+    // The AI-generated artwork (when present) is the FULL-PAGE background — it
+    // sits behind the hero AND the product/pooja cards, with a gradient scrim so
+    // text/cards stay legible. Falls back to the theme gradient colour.
+    final bgImage = th.heroImage;
+
     return Scaffold(
       backgroundColor: th.bg.last,
       body: s == null
           ? (_error != null
               ? _ErrorView(message: _error!, color: c)
               : const Center(child: CircularProgressIndicator()))
-          : RefreshIndicator(
+          : Stack(
+            children: [
+              if (bgImage != null) ...[
+                Positioned.fill(child: CachedImage(url: bgImage, fit: BoxFit.cover)),
+                // Scrim: darken the lower portion so cards/text read over the art.
+                Positioned.fill(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          th.bg.last.withValues(alpha: 0.15),
+                          th.bg.last.withValues(alpha: 0.72),
+                          th.bg.last.withValues(alpha: 0.92),
+                        ],
+                        stops: const [0.0, 0.45, 1.0],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+              RefreshIndicator(
               onRefresh: () => _load(silent: true),
               child: CustomScrollView(
               // Always scrollable so pull-to-refresh works even when the store is short.
@@ -154,6 +181,8 @@ class _AstrologerStoreScreenState extends State<AstrologerStoreScreen> with Widg
                 const SliverToBoxAdapter(child: SizedBox(height: 28)),
               ],
             ),
+          ),
+            ],
           ),
     );
   }

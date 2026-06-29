@@ -3,6 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../api/astrologer_api.dart';
+import '../api/socket_service.dart';
+import '../providers/session_provider.dart';
+import '../screens/consult/chat_room_screen.dart';
+import '../screens/consult/call_screen.dart';
+import '../screens/consult/requesting_screen.dart';
 import '../widgets/slide_route.dart';
 import '../screens/astrologers/astrologer_list_screen.dart';
 import '../screens/astrologers/astrologer_profile_screen.dart';
@@ -38,6 +43,14 @@ class DeepLink {
     final explicit = data['deeplink']?.toString();
     if (explicit != null && explicit.isNotEmpty) {
       fromUri(explicit);
+      return;
+    }
+    // Astrologer accepted / session started → RESUME the live session and open
+    // the chat/call screen directly (the socket event may have been lost while
+    // backgrounded). Previously this just opened the astrologer list, so a user
+    // who backgrounded the requesting screen never landed in the session.
+    if (type == 'request_accepted' || type == 'session_started') {
+      _resumeIntoSession();
       return;
     }
     // Order notifications carry the orderId → open that order's detail directly.
@@ -222,6 +235,29 @@ class DeepLink {
       return;
     }
     fromUri(l); // any other internal slug → existing screen router
+  }
+
+  /// Resume the user's live consultation (after a backgrounded/lost socket
+  /// event) and navigate into its chat/call screen. Reads the providers via the
+  /// navigator context; safe no-op if the nav/providers aren't ready or there's
+  /// no live session.
+  static Future<void> _resumeIntoSession() async {
+    final ctx = navigatorKey.currentContext;
+    final nav = navigatorKey.currentState;
+    if (ctx == null || nav == null) return;
+    final session = ctx.read<SessionProvider>();
+    final socket = ctx.read<SocketService>();
+    // If we don't already hold the session in memory, pull it from the backend.
+    if (!session.isActive) {
+      final ok = await session.resumeFromActive(socket);
+      if (!ok) { _route(const _Target.astrologers()); return; } // nothing live → safe anchor
+    }
+    if (session.phase == SessionPhase.ongoing) {
+      final screen = session.type == 'chat' ? const ChatRoomScreen() : const CallScreen();
+      nav.push(slideRoute(screen));
+    } else if (session.phase == SessionPhase.ringing) {
+      nav.push(slideRoute(const RequestingScreen()));
+    }
   }
 
   // ── type → target (built-in system notifications) ──
