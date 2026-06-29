@@ -1,0 +1,174 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter gen-l10n
+
+## exception
+
+ProcessException: ProcessException: `dart format` failed with exit code 65
+
+stdout:
+Formatted no files in 0.01 seconds.
+
+
+stderr:
+Could not format because the source could not be parsed:
+
+line 480, column 14 of lib/l10n/app_localizations_as.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+480 │   String get switch => 'চুইচ';
+    │              ^^^^^^
+    ╵
+line 587, column 14 of lib/l10n/app_localizations_as.dart: 'with' can't be used as an identifier because it's a keyword.
+    ╷
+587 │   String get with => ' ❤️ ৰ সৈতে';
+    │              ^^^^
+    ╵
+Could not format because the source could not be parsed:
+
+line 480, column 14 of lib/l10n/app_localizations_bn.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+480 │   String get switch => 'সুইচ';
+    │              ^^^^^^
+    ╵
+line 587, column 14 of lib/l10n/app_localizations_bn.dart: 'with' can't be used as an identifier because it's a keyword.
+    ╷
+587 │   String get with => 'ভালোবাসা সহ';
+    │              ^^^^
+    ╵
+Could not format because the source could not be parsed:
+
+line 480, column 14 of lib/l10n/app_localizations_en.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+480 │   String get switch => 'Switch';
+    │              ^^^^^^
+    ╵
+line 587, column 14 of lib/l10n/app_localizations_en.dart: 'with' can't be used as an identifier because it's a keyword.
+    ╷
+587 │   String get with => ' with ❤️';
+    │              ^^^^
+    ╵
+Could not format because the source could not be parsed:
+
+line 480, column 14 of lib/l10n/app_localizations_hi.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+480 │   String get switch => 'बदलना';
+    │              ^^^^^^
+    ╵
+line 587, column 14 of lib/l10n/app_localizations_hi.dart: 'with' can't be used as an identifier because it's a keyword.
+    ╷
+587 │   String get with => '❤️ के साथ';
+    │              ^^^^
+    ╵
+Could not format because the source could not be parsed:
+
+line 480, column 14 of lib/l10n/app_localizations_mr.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+480 │   String get switch => 'स्विच';
+    │              ^^^^^^
+    ╵
+line 587, column 14 of lib/l10n/app_localizations_mr.dart: 'with' can't be used as an identifier because it's a keyword.
+    ╷
+587 │   String get with => '❤️ सह';
+    │              ^^^^
+    ╵
+Could not format because the source could not be parsed:
+
+line 480, column 14 of lib/l10n/app_localizations_pa.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+480 │   String get switch => 'ਸਵਿੱਚ ਕਰੋ';
+    │              ^^^^^^
+    ╵
+line 587, column 14 of lib/l10n/app_localizations_pa.dart: 'with' can't be used as an identifier because it's a keyword.
+    ╷
+587 │   String get with => '❤️ ਨਾਲ';
+    │              ^^^^
+    ╵
+Could not format because the source could not be parsed:
+
+line 986, column 14 of lib/l10n/app_localizations.dart: 'switch' can't be used as an identifier because it's a keyword.
+    ╷
+986 │   String get switch;
+    │              ^^^^^^
+    ╵
+line 1184, column 14 of lib/l10n/app_localizations.dart: 'with' can't be used as an identifier because it's a keyword.
+     ╷
+1184 │   String get with;
+     │              ^^^^
+     ╵
+
+  Command: /opt/homebrew/share/flutter/bin/cache/dart-sdk/bin/dart /opt/homebrew/share/flutter/bin/cache/dart-sdk/bin/dart format /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations_as.dart /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations_bn.dart /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations_en.dart /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations_hi.dart /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations_mr.dart /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations_pa.dart /Users/subhojitdutta/Desktop/d/rg-phase-2/flutter/user/lib/l10n/app_localizations.dart
+
+```
+#0      generateLocalizations (package:flutter_tools/src/localizations/gen_l10n.dart:96:7)
+<asynchronous suspension>
+#1      GenerateLocalizationsCommand.runCommand (package:flutter_tools/src/commands/generate_localizations.dart:263:5)
+<asynchronous suspension>
+#2      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1630:27)
+<asynchronous suspension>
+#3      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#4      CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#5      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#6      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#7      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#8      FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#9      run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#11     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.44.4, on macOS 26.5.1 25F80 darwin-arm64, locale en-IN) [412ms]
+    • Flutter version 3.44.4 on channel stable at /opt/homebrew/share/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision ad70ec4617 (4 days ago), 2026-06-24 11:07:06 -0700
+    • Engine revision a10d8ac38d
+    • Dart version 3.12.2
+    • DevTools version 2.57.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [1,188ms]
+    • Android SDK at /Users/subhojitdutta/Library/Android/sdk
+    • Emulator version 36.4.9.0 (build_id 14788078) (CL:N/A)
+    ✗ cmdline-tools component is missing.
+      Try installing or updating Android Studio.
+      Alternatively, download the tools from https://developer.android.com/studio#command-line-tools-only and make sure to set the ANDROID_HOME environment variable.
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/to/macos-android-setup for more details.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 26.6) [1,788ms]
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 17F113
+    • CocoaPods version 1.16.2
+
+[✓] Chrome - develop for the web [4ms]
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Connected device (4 available) [6.2s]
+    • 23027RAD4I (mobile) • 5a36272e             • android-arm64  • Android 14 (API 34)
+    • SM N950F (mobile)   • ce081718f243c805057e • android-arm64  • Android 9 (API 28)
+    • macOS (desktop)     • macos                • darwin-arm64   • macOS 26.5.1 25F80 darwin-arm64
+    • Chrome (web)        • chrome               • web-javascript • Google Chrome 149.0.7827.197
+    ! Error: Browsing on the local area network for iPhone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+
+[✓] Network resources [1,825ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```

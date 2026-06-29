@@ -1,0 +1,91 @@
+name: rg_user
+description: Rudraganga — Astrology & Wellness (user app)
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Firebase Cloud Messaging (push notifications)
+  firebase_core: ^3.6.0
+  firebase_messaging: ^15.1.3
+  # Google Analytics for Firebase — usage events + screen views (GA4 dashboard).
+  firebase_analytics: ^11.3.3
+
+  # Networking
+  dio: ^5.4.0
+  socket_io_client: ^2.0.3+1
+  url_launcher: ^6.2.5 # open YouTube videos/lessons + banner links
+
+  # Agora RTC — audio/video consultation calls. Cloud recording is handled
+  # server-side (recordingService); the client only joins the channel.
+  agora_rtc_engine: ^6.5.4
+
+  # State
+  provider: ^6.1.2
+
+  # Storage
+  flutter_secure_storage: ^9.0.0
+  shared_preferences: ^2.2.2
+
+  # Profile photo (camera/gallery; iOS + Android)
+  image_picker: ^1.0.7
+
+  # Runtime permissions (notifications, mic + camera for calls, photos, location)
+  permission_handler: ^11.3.0
+
+  # Reads the OS / Android API level — used to pick the correct photos
+  # permission (READ_MEDIA_IMAGES on API 33+, READ_EXTERNAL_STORAGE on ≤32).
+  device_info_plus: ^10.1.0
+
+  # Device location (nearby astrologers). Reverse-geocoding to a city is done
+  # server-side via the backend geo proxy, so no geocoding plugin is needed.
+  geolocator: ^11.0.0
+
+  # Google Phone Number Hint — native Play-Services picker that lists the SIM /
+  # Google-account numbers on the login screen. NO runtime permission prompt;
+  # Android-only (no-op on iOS → manual entry). User always confirms / can type.
+  smart_auth: ^3.0.1
+
+  # Disk + memory image cache — category/product/astrologer images rarely change,
+  # so cache aggressively to avoid re-downloading & flicker on every screen.
+  cached_network_image: ^3.4.1
+
+  # Native share sheet — share a product's deep link to any app.
+  share_plus: ^10.1.1
+
+  # Local (on-device) notifications — confirmation pings after save/submit.
+  flutter_local_notifications: ^17.2.3
+
+  # i18n message lookup
+  intl: any
+  app_links: ^7.2.0
+  webview_flutter: ^4.14.0
+
+  # Renders the AI-generated astrology motif (an inline SVG string) in the
+  # AI-designed storefront via SvgPicture.string. Vector parser only (no code
+  # execution), so an LLM-authored SVG is safe to draw.
+  flutter_svg: ^2.0.10+1
+
+  # Screenshot / screen-recording protection (Android FLAG_SECURE + iOS).
+  # Wired per-screen via SecureScreenMixin (lib/widgets/secure_screen.dart).
+  no_screenshot: ^0.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true # enables gen-l10n from l10n.yaml + lib/l10n/*.arb
+
+  assets:
+    - assets/images/

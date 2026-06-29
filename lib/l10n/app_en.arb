@@ -1,0 +1,1544 @@
+{
+  "@@locale": "en",
+  "appName": "Rudraganga",
+  "tagline": "Astrology & Wellness",
+  "splashBlessing": "Your journey to clarity begins here",
+  "authWelcomeTitle": "Welcome",
+  "authWelcomeSubtitle": "Sign in or create your account with your phone number",
+  "phoneLabel": "Phone number",
+  "phoneHint": "10-digit mobile number",
+  "phoneCountryCode": "+91",
+  "continueButton": "Continue",
+  "sendOtpButton": "Send OTP",
+  "otpTitle": "Verify your number",
+  "otpSubtitle": "Enter the 6-digit code sent to {phone}",
+  "@otpSubtitle": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "otpLabel": "OTP",
+  "verifyButton": "Verify & continue",
+  "resendOtp": "Resend code",
+  "resendOtpIn": "Resend in {seconds}s",
+  "@resendOtpIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "changeNumber": "Change number",
+  "termsNotice": "By continuing you agree to our Terms & Privacy Policy",
+  "acceptPrefix": "I agree to the",
+  "acceptAnd": "and",
+  "termsOfService": "Terms of Service",
+  "privacyPolicy": "Privacy Policy",
+  "errInvalidPhone": "Enter a valid 10-digit phone number",
+  "errInvalidOtp": "Enter the 6-digit code",
+  "errGeneric": "Something went wrong. Please try again.",
+  "errNetwork": "No connection. Check your internet and try again.",
+  "otpSent": "OTP sent",
+  "loginSuccess": "Signed in",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "homeWelcome": "Namaste, {name}",
+  "@homeWelcome": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "logout": "Log out",
+  "onbTitle": "Tell us about you",
+  "onbSubtitle": "This helps us personalise your readings. None of it is required — you can skip and finish later.",
+  "onbName": "Your name",
+  "onbAddPhoto": "Add photo",
+  "onbChangePhoto": "Change photo",
+  "onbGender": "Gender",
+  "genderMale": "Male",
+  "genderFemale": "Female",
+  "genderOther": "Other",
+  "onbDob": "Date of birth",
+  "onbTob": "Time of birth",
+  "onbDontKnowTime": "I don't know my time of birth",
+  "onbPob": "Place of birth",
+  "onbPobHint": "Search your birth city",
+  "onbLanguage": "Preferred language",
+  "onbSelectDate": "Select date",
+  "onbSelectTime": "Select time",
+  "onbSkip": "Skip for now",
+  "onbFinish": "Finish",
+  "onbSaved": "Profile saved",
+  "completeProfile": "Complete your profile",
+  "completeProfileCta": "Finish setup",
+  "permTitle": "A few permissions",
+  "permSubtitle": "We need these so calls, alerts and photos work smoothly. You can change them anytime in Settings.",
+  "permNotifications": "Notifications",
+  "permNotificationsDesc": "Consultation alerts, order updates and reminders",
+  "permMic": "Microphone",
+  "permMicDesc": "For voice calls with astrologers",
+  "permCamera": "Camera",
+  "permCameraDesc": "For video calls and uploading photos",
+  "permPhotos": "Photos",
+  "permPhotosDesc": "To set your profile picture",
+  "permAllow": "Allow access",
+  "permContinue": "Continue",
+  "permLocation": "Location",
+  "permLocationDesc": "Find astrologers near you",
+  "secFeatured": "Featured Astrologers",
+  "secNearby": "Nearby Astrologers",
+  "secCallChat": "Call & Chat",
+  "secAiAstro": "AI Astrologers",
+  "secProducts": "Products",
+  "secVideos": "Videos",
+  "secLessons": "Astrology lessons",
+  "secOthers": "Others",
+  "secHistory": "Your Consultations",
+  "seeAll": "See all",
+  "basedOnLocation": "Based on your location",
+  "shareApp": "Share App with Friends",
+  "startReadingHint": "No consultations yet. Start your first reading.",
+  "startBtn": "Start",
+  "namaste": "Namaste",
+  "kFreeKundli": "Free Kundli",
+  "kMatching": "Matching",
+  "kBrihat": "Brihat Kundli",
+  "kKundliAi": "Kundli AI+",
+  "tCareer": "Career",
+  "tMarriage": "Marriage",
+  "tFinance": "Finance",
+  "tHealth": "Health",
+  "tEducation": "Education",
+  "tTravel": "Travel",
+  "statusOnline": "Online",
+  "statusBusy": "Busy",
+  "statusOffline": "Offline",
+  "retry": "Retry",
+  "chatNow": "Chat Now",
+  "notifyMe": "Notify me",
+  "weLlLetYouKnowWhen": "We'll let you know when {name} is {reason}.",
+  "@weLlLetYouKnowWhen": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "reason": {
+        "type": "Object"
+      }
+    }
+  },
+  "thisAstrologerIsNotAvailableTo": "This astrologer is not available to consult yet.",
+  "youNeedAtLeastRateperminFor": "You need at least ₹{ratePerMin} for one minute. Please recharge.",
+  "@youNeedAtLeastRateperminFor": {
+    "placeholders": {
+      "ratePerMin": {
+        "type": "Object"
+      }
+    }
+  },
+  "completeYourProfile": "Complete your profile",
+  "addYourDateTimePlaceOf": "Add your date, time & place of birth so the astrologer can give you a clearer reading.",
+  "completeProfile2": "Complete profile",
+  "skipForNow": "Skip for now",
+  "unfollowWidgetName": "Unfollow {name}?",
+  "@unfollowWidgetName": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "tellUsWhyOptionalItHelps": "Tell us why (optional) — it helps us improve.",
+  "reasonOptional": "Reason (optional)",
+  "cancel": "Cancel",
+  "unfollow": "Unfollow",
+  "s21kReviews": "  (2.1k reviews)",
+  "followersFollowers": "{followers} followers",
+  "@followersFollowers": {
+    "placeholders": {
+      "followers": {
+        "type": "Object"
+      }
+    }
+  },
+  "gift": "Gift",
+  "store": "Store",
+  "joinLiveSession": "Join live session",
+  "youLlBeNotified": "You'll be notified",
+  "thisStoreHasNoItemsYet": "This store has no items yet.",
+  "filters": "Filters",
+  "reset": "Reset",
+  "onlineNowOnly": "Online now only",
+  "applyFilters": "Apply filters",
+  "giftingUnavailableForThisAstrologer": "Gifting unavailable for this astrologer.",
+  "needTotalcostYourBalanceIsWallet": "Need ₹{totalCost} — your balance is ₹{balance}. Please recharge.",
+  "@needTotalcostYourBalanceIsWallet": {
+    "placeholders": {
+      "totalCost": {
+        "type": "Object"
+      },
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "sentQtyGiftNameToWidget": "Sent {_qty} {name} to {astrologerName} 🎁",
+  "@sentQtyGiftNameToWidget": {
+    "placeholders": {
+      "_qty": {
+        "type": "Object"
+      },
+      "name": {
+        "type": "Object"
+      },
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "sendAGiftToWidgetAstrologername": "Send a gift to {astrologerName}",
+  "@sendAGiftToWidgetAstrologername": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "balanceContextWatchWalletproviderBalance": "Balance: ₹{balance}",
+  "@balanceContextWatchWalletproviderBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "recharge": "Recharge",
+  "gTokencostTk": "{tokenCost} tk",
+  "@gTokencostTk": {
+    "placeholders": {
+      "tokenCost": {
+        "type": "Object"
+      }
+    }
+  },
+  "quantity": "Quantity",
+  "min1Max100": "Min 1 · Max 100",
+  "comingSoon": "Coming soon",
+  "summaryFromAstrologername": "Summary from {astrologerName}",
+  "@summaryFromAstrologername": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "remindersSetForYou": "Reminders set for you",
+  "suggestedForYou": "Suggested for you",
+  "couldNotSendImage": "Could not send image",
+  "endConsultation": "End consultation?",
+  "thisWillEndTheChatAnd": "This will end the chat and stop billing.",
+  "keepChatting": "Keep chatting",
+  "end": "End",
+  "switchToType0TouppercaseType": "Switch to {toUpperCase}{substring}?",
+  "@switchToType0TouppercaseType": {
+    "placeholders": {
+      "toUpperCase": {
+        "type": "Object"
+      },
+      "substring": {
+        "type": "Object"
+      }
+    }
+  },
+  "yourChatWillEndAndA": "Your chat will end and a new {type} consultation will start at the {type2} rate.",
+  "@yourChatWillEndAndA": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      },
+      "type2": {
+        "type": "Object"
+      }
+    }
+  },
+  "switchLabel": "Switch",
+  "couldNotSwitchETostring": "Could not switch: {toString}",
+  "@couldNotSwitchETostring": {
+    "placeholders": {
+      "toString": {
+        "type": "Object"
+      }
+    }
+  },
+  "switchToAudioCall": "Switch to audio call",
+  "switchToVideoCall": "Switch to video call",
+  "endConsultation2": "End consultation",
+  "sendAGift": "Send a gift",
+  "sayHello": "Say hello 🙏",
+  "typeAMessage": "Type a message…",
+  "recommendedProduct": "Recommended product",
+  "view": "View",
+  "connecting": "Connecting…",
+  "myConsultations": "My consultations",
+  "noConsultationsYet": "No consultations yet",
+  "typelabelSTypeConsultation": "{type} consultation",
+  "@typelabelSTypeConsultation": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "viewChat": "View chat",
+  "historyExpired": "History expired",
+  "connectingYourSTypeConsultation": "Connecting your {type} consultation…",
+  "@connectingYourSTypeConsultation": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "ringingTheAstrologer": "Ringing the astrologer",
+  "cancelRequest": "Cancel request",
+  "notNow": "Not now",
+  "thanksForYourFeedback": "Thanks for your feedback!",
+  "couldNotSubmitPleaseTryAgain": "Could not submit. Please try again.",
+  "consultationEnded": "Consultation ended",
+  "hopeYouGotTheClarityYou": "Hope you got the clarity you sought.",
+  "shareYourExperienceOptional": "Share your experience (optional)",
+  "howWasTheCallQuality": "How was the call quality?",
+  "skip": "Skip",
+  "submit": "Submit",
+  "close": "Close",
+  "viewProfile": "View profile",
+  "vAppversion": "v{_appVersion}",
+  "@vAppversion": {
+    "placeholders": {
+      "_appVersion": {
+        "type": "Object"
+      }
+    }
+  },
+  "madeBy": "Made by ",
+  "devifai": "DevifAI",
+  "withLabel": " with ❤️",
+  "leavingSoSoon": "Leaving so soon?",
+  "stayLoggedIn": "Stay logged in",
+  "logOutAnyway": "Log out anyway",
+  "noNearbyAstrologersYet": "No nearby astrologers yet",
+  "bookAPooja": "Book a Pooja",
+  "panditLedPoojasAtYourChosen": "Pandit-led poojas at your chosen date",
+  "back": "Back",
+  "connectingToLive": "Connecting to live…",
+  "live": "LIVE",
+  "thisLiveHasEnded": "This live has ended",
+  "backToLive": "Back to Live",
+  "sayHelloBeTheFirstTo": "Say hello 👋  Be the first to comment",
+  "aiPollLive": "AI Poll · live",
+  "totalVotes": "{total} votes",
+  "@totalVotes": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "addAComment": "Add a comment…",
+  "send": "Send",
+  "liveNow": "Live now",
+  "searchByAstrologerName": "Search by astrologer name",
+  "noLiveAstrologerNamedSearchText": "No live astrologer named “{trim}”",
+  "@noLiveAstrologerNamedSearchText": {
+    "placeholders": {
+      "trim": {
+        "type": "Object"
+      }
+    }
+  },
+  "refresh": "Refresh",
+  "join": "Join",
+  "clearAllNotifications": "Clear all notifications?",
+  "thisPermanentlyDeletesAllYourNotifications": "This permanently deletes all your notifications.",
+  "clearAll": "Clear all",
+  "notifications": "Notifications",
+  "markAllRead": "Mark all read",
+  "noNotifications": "No notifications",
+  "youReAllCaughtUp": "You're all caught up.",
+  "nameIsRequired": "Name is required",
+  "enterAValidPhone": "Enter a valid phone",
+  "bookingConfirmed": "Booking confirmed 🎉",
+  "bookingFailedPleaseTryAgain": "Booking failed, please try again",
+  "addMoneyToContinue": "Add money to continue",
+  "addMoney": "Add money",
+  "bookWidgetPoojaName": "Book {name}",
+  "@bookWidgetPoojaName": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "name": "Name",
+  "phone": "Phone",
+  "addThePeopleThisPoojaIs": "Add the people this pooja is performed for (up to {_maxPersons}). Fill one before adding the next.",
+  "@addThePeopleThisPoojaIs": {
+    "placeholders": {
+      "_maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "memberEKey1Name": "Member {key} name",
+  "@memberEKey1Name": {
+    "placeholders": {
+      "key": {
+        "type": "Object"
+      }
+    }
+  },
+  "specialInstructionsOptional": "Special instructions (optional)",
+  "poojaDetails": "Pooja details",
+  "price": "Price",
+  "bookNow": "Book now",
+  "aboutThisPooja": "About this pooja",
+  "ourPanditWillCallYou": "Our pandit will call you",
+  "beforeThePoojaToConfirmThe": "Before the pooja, to confirm the timing and your sankalp details.",
+  "howItWorks": "How it works",
+  "filterPoojas": "Filter poojas",
+  "maxBudgetMaxpriceRound": "Max budget · ₹{round}",
+  "@maxBudgetMaxpriceRound": {
+    "placeholders": {
+      "round": {
+        "type": "Object"
+      }
+    }
+  },
+  "minPersonsSupported": "Min persons supported",
+  "apply": "Apply",
+  "searchPoojas": "Search poojas…",
+  "myProfile": "My Profile",
+  "referEarn": "Refer & Earn",
+  "couldNotLoadTryAgain": "Could not load. Try again.",
+  "shareEarnIReward": "Share & earn ₹{reward}",
+  "@shareEarnIReward": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "youGetIRewardOnYour": "You get ₹{reward} on your friend’s first recharge — and they get ₹{reward2} too.",
+  "@youGetIRewardOnYour": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      },
+      "reward2": {
+        "type": "Object"
+      }
+    }
+  },
+  "yourReferralCode": "Your referral code",
+  "codeCopied": "Code copied",
+  "shareEarn": "Share & earn",
+  "haveAFriendSCode": "Have a friend’s code?",
+  "enterReferralCode": "Enter referral code",
+  "aReferralCodeIsAppliedTo": "A referral code is applied to your account.",
+  "feedbackSubmitted": "Feedback submitted",
+  "feedback": "Feedback",
+  "applicationSubmitted": "Application submitted",
+  "astrologerRegistration": "Astrologer Registration",
+  "joinRudragangaAsAnAstrologer": "Join Rudraganga as an astrologer",
+  "tellUsAboutYourselfOurTeam": "Tell us about yourself — our team will review and reach out.",
+  "aboutUs": "About Us",
+  "rudraganga": "Rudraganga",
+  "astrologyWellness": "Astrology & Wellness",
+  "v100MadeWithDevotion": "v1.0.0  ·  Made with devotion",
+  "thanksForYourRating": "Thanks for your rating!",
+  "rateRudraganga": "Rate Rudraganga",
+  "howIsYourExperience": "How is your experience?",
+  "writeAReviewOptional": "Write a review (optional)",
+  "saved": "Saved",
+  "notificationSetting": "Notification Setting",
+  "howOften": "How often?",
+  "topicsYouCareAbout": "Topics you care about",
+  "ok": "OK",
+  "allSet": "All set ✨",
+  "setPreferences": "Set Preferences",
+  "save": "Save",
+  "bundlesCombos": "Bundles & Combos",
+  "noCombosRightNow": "No combos right now",
+  "addComboBIBundleprice": "Add combo · ₹{bundlePrice}",
+  "@addComboBIBundleprice": {
+    "placeholders": {
+      "bundlePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "cart": "Cart",
+  "clear": "Clear",
+  "yourCartIsEmpty": "Your cart is empty",
+  "browseProductsAndAddThemHere": "Browse products and add them here",
+  "walletBalanceAddTotalBalanceTo": "Wallet ₹{balance} · add ₹{balance2} to checkout",
+  "@walletBalanceAddTotalBalanceTo": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      },
+      "balance2": {
+        "type": "Object"
+      }
+    }
+  },
+  "walletBalance": "Wallet: ₹{balance}",
+  "@walletBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "couponTrimmedAppliedResDiscountOff": "Coupon {trimmed} applied · ₹{discount} off",
+  "@couponTrimmedAppliedResDiscountOff": {
+    "placeholders": {
+      "trimmed": {
+        "type": "Object"
+      },
+      "discount": {
+        "type": "Object"
+      }
+    }
+  },
+  "pleaseAddADeliveryAddress": "Please add a delivery address",
+  "checkout": "Checkout",
+  "addNewAddress": "Add new address",
+  "appliedCodeAppliedAppliedDiscountOff": "{code} applied · ₹{discount} off",
+  "@appliedCodeAppliedAppliedDiscountOff": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      },
+      "discount": {
+        "type": "Object"
+      }
+    }
+  },
+  "remove": "Remove",
+  "enterCouponCode": "Enter coupon code",
+  "viewAllCouponsLength": "View all ({length})",
+  "@viewAllCouponsLength": {
+    "placeholders": {
+      "length": {
+        "type": "Object"
+      }
+    }
+  },
+  "availableOffers": "Available offers",
+  "minOrderCpMinordervalue": "Min order ₹{minOrderValue}",
+  "@minOrderCpMinordervalue": {
+    "placeholders": {
+      "minOrderValue": {
+        "type": "Object"
+      }
+    }
+  },
+  "applied": "Applied",
+  "nothingToCheckout": "Nothing to checkout",
+  "orderPlaced": "Order placed!",
+  "totalPaidFromYourWalletYour": "₹{total} paid from your wallet. Your order is confirmed and will be on its way soon.",
+  "@totalPaidFromYourWalletYour": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "orderOrderidLength6OrderidSubstring": "Order #{orderId}",
+  "@orderOrderidLength6OrderidSubstring": {
+    "placeholders": {
+      "orderId": {
+        "type": "Object"
+      }
+    }
+  },
+  "continueShopping": "Continue shopping",
+  "yourOrders": "Your Orders",
+  "noOrdersYet": "No orders yet",
+  "yourOrdersWillAppearHereOnce": "Your orders will appear here once you buy something from the store.",
+  "invoiceIsStillBeingGeneratedTry": "Invoice is still being generated. Try again shortly.",
+  "couldNotOpenTheInvoice": "Could not open the invoice",
+  "thanksOurTeamWillReachOut": "Thanks! Our team will reach out about this order.",
+  "orderDetails": "Order details",
+  "needHelp": "Need Help",
+  "needHelpWithThisOrder": "Need help with this order?",
+  "placedOnDate": "Placed on {date}",
+  "@placedOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "invoice": "Invoice",
+  "download": "Download",
+  "needHelp2": "Need help",
+  "orderWidgetOrderno": "Order #{orderNo}",
+  "@orderWidgetOrderno": {
+    "placeholders": {
+      "orderNo": {
+        "type": "Object"
+      }
+    }
+  },
+  "whatWentWrong": "What went wrong?",
+  "describeTheIssue": "Describe the issue",
+  "tellUsWhatHappenedSoWe": "Tell us what happened so we can help…",
+  "submitRequest": "Submit request",
+  "addedToCart": "Added to cart",
+  "productUnavailable": "Product unavailable",
+  "pDiscountpercentOff": "{discountPercent}% OFF",
+  "@pDiscountpercentOff": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "pReviewcountReviews": "{reviewCount} reviews",
+  "@pReviewcountReviews": {
+    "placeholders": {
+      "reviewCount": {
+        "type": "Object"
+      }
+    }
+  },
+  "pDiscountpercentOff2": "{discountPercent}% off",
+  "@pDiscountpercentOff2": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "fewItemsLeft": "Few items left",
+  "description": "Description",
+  "frequentlyBoughtTogether": "Frequently bought together",
+  "viewAll": "View all",
+  "addToCart": "Add to Cart",
+  "buyNow": "Buy Now",
+  "searchProducts": "Search products…",
+  "noProductsFound": "No products found",
+  "priceRange": "Price range (₹)",
+  "min": "Min",
+  "max": "Max",
+  "inStockOnly": "In stock only",
+  "sortBy": "Sort by",
+  "addDeliveryAddress": "Add delivery address",
+  "setAsDefaultAddress": "Set as default address",
+  "saveAddress": "Save address",
+  "codeCouponCode": "Code {code}",
+  "@codeCouponCode": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      }
+    }
+  },
+  "saveBundleYousave": "SAVE ₹{youSave}",
+  "@saveBundleYousave": {
+    "placeholders": {
+      "youSave": {
+        "type": "Object"
+      }
+    }
+  },
+  "bundleProductsLengthItemsCombo": "{length} items combo",
+  "@bundleProductsLengthItemsCombo": {
+    "placeholders": {
+      "length": {
+        "type": "Object"
+      }
+    }
+  },
+  "bundleDiscountpercentOff": "{discountPercent}% off",
+  "@bundleDiscountpercentOff": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "fewLeft": "Few left",
+  "savePSaveamount": "Save ₹{saveAmount}",
+  "@savePSaveamount": {
+    "placeholders": {
+      "saveAmount": {
+        "type": "Object"
+      }
+    }
+  },
+  "freeDelivery": "Free delivery",
+  "searchWidgetTitleTolowercase": "Search {toLowerCase}…",
+  "@searchWidgetTitleTolowercase": {
+    "placeholders": {
+      "toLowerCase": {
+        "type": "Object"
+      }
+    }
+  },
+  "nothingHereYet": "Nothing here yet",
+  "loadingSecurePayment": "Loading secure payment…",
+  "couldNotStartRecharge": "Could not start recharge",
+  "paymentSuccessful": "Payment successful 🎉",
+  "paymentWasNotCompleted": "Payment was not completed",
+  "couldNotStartRechargeTryAgain": "Could not start recharge, try again",
+  "wallet": "Wallet",
+  "availableBalance": "Available balance",
+  "useItForPoojasConsultations": "use it for poojas & consultations",
+  "instantTopUp": "instant top-up",
+  "noRechargePacksAvailableRightNow": "No recharge packs available right now.",
+  "transactions": "Transactions",
+  "endOfTransactions": "— end of transactions —",
+  "youGet": "You get",
+  "packBonusBonus": "+₹{bonus} bonus",
+  "@packBonusBonus": {
+    "placeholders": {
+      "bonus": {
+        "type": "Object"
+      }
+    }
+  },
+  "payPackAmount": "Pay ₹{amount}",
+  "@payPackAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "rudra": "Rudra",
+  "ganga": "ganga",
+  "about": "About",
+  "astrologer": "Astrologer",
+  "seeker": "Seeker",
+  "free": "Free",
+  "jan": "Jan",
+  "feb": "Feb",
+  "mar": "Mar",
+  "apr": "Apr",
+  "may": "May",
+  "jun": "Jun",
+  "jul": "Jul",
+  "aug": "Aug",
+  "sep": "Sep",
+  "oct": "Oct",
+  "nov": "Nov",
+  "dec": "Dec",
+  "english": "English",
+  "all": "All",
+  "vedic": "Vedic",
+  "tarot": "Tarot",
+  "numerology": "Numerology",
+  "vastu": "Vastu",
+  "palmistry": "Palmistry",
+  "kp": "KP",
+  "love": "Love",
+  "taraAi": "Tara AI",
+  "instantVedicAnswers247": "Instant Vedic answers • 24×7",
+  "allLanguages": "All languages",
+  "jyotiAi": "Jyoti AI",
+  "loveCareerGuidance": "Love & career guidance",
+  "hindiEnglish": "Hindi, English",
+  "veduAi": "Vedu AI",
+  "remediesPredictions": "Remedies & predictions",
+  "couldNotLoadAstrologers": "Could not load astrologers",
+  "aiAstrologers": "AI Astrologers",
+  "featuredAstrologers": "Featured Astrologers",
+  "astrologers": "Astrologers",
+  "searchAiAstrologers": "Search AI astrologers…",
+  "searchAstrologersByName": "Search astrologers by name…",
+  "aiChat": "AI Chat",
+  "noAstrologersMatch": "No astrologers match",
+  "noAstrologersYet": "No astrologers yet",
+  "couldnTSetTheReminderPlease": "Couldn't set the reminder. Please try again.",
+  "ai": "AI",
+  "live2": "Live",
+  "online": "Online",
+  "busy": "Busy",
+  "offline": "Offline",
+  "chat": "Chat",
+  "call": "Call",
+  "video": "Video",
+  "notEnoughBalanceToStartPlease": "Not enough balance to start. Please recharge.",
+  "couldNotStartTheConsultationPlease": "Could not start the consultation. Please try again.",
+  "share": "Share",
+  "follow": "Follow",
+  "chats": "Chats",
+  "calls": "Calls",
+  "videos": "Videos",
+  "gifts": "Gifts",
+  "languages": "Languages",
+  "theyHaveGuidedThousandsOfSeekers": "they have guided thousands of seekers through career, marriage, finance and life-path questions. ",
+  "theirReadingsBlendClassicalVedicPrinciples": "Their readings blend classical Vedic principles with practical, compassionate guidance — helping you ",
+  "findClarityAndActionableRemediesFor": "find clarity and actionable remedies for the road ahead.",
+  "giftsReceived": "Gifts received",
+  "reviews": "Reviews",
+  "weLlNotifyYouTheMoment": "We'll notify you the moment they're free.",
+  "weLlNotifyYouTheMoment2": "We'll notify you the moment they're online.",
+  "getAHeadsUpTheMoment": "Get a heads-up the moment they’re available.",
+  "couldNotLoadThisStore": "Could not load this store",
+  "products": "Products",
+  "poojas": "Poojas",
+  "book": "Book",
+  "buy": "Buy",
+  "lalKitab": "Lal Kitab",
+  "hindi": "Hindi",
+  "bengali": "Bengali",
+  "tamil": "Tamil",
+  "marathi": "Marathi",
+  "punjabi": "Punjabi",
+  "telugu": "Telugu",
+  "expertise": "Expertise",
+  "couldNotLoadGifts": "Could not load gifts",
+  "notEnoughBalanceAddMoneyTo": "Not enough balance. Add money to send gifts.",
+  "couldNotSendTheGiftPlease": "Could not send the gift. Please try again.",
+  "connecting2": "CONNECTING…",
+  "couldNotLoadThisChatHistory": "Could not load this chat history",
+  "thisChatHistoryIsNoLonger": "This chat history is no longer available\n(chats are kept for 7 days).",
+  "dailyFor14Days": "Daily · for 14 days",
+  "dailyMantra": "Daily mantra",
+  "reminder": "Reminder",
+  "audio": "Audio",
+  "couldNotLoadYourConsultations": "Could not load your consultations",
+  "missed": "Missed",
+  "declined": "Declined",
+  "cancelled": "Cancelled",
+  "lowBalance": "Low balance",
+  "rechargeNowToKeepYourConsultation": "Recharge now to keep your consultation going. Your chat stays open while you pay.",
+  "duration": "Duration",
+  "coinsUsed": "Coins used",
+  "guest": "Guest",
+  "changeLanguage": "Change Language",
+  "chooseYourKundli": "Choose Your Kundli",
+  "yourWalletReadingsAndSavedDetails": "Your wallet, readings and saved details stay safe — but logging out means missing your daily horoscope, offers and reminders. Stay connected with the stars? ✨",
+  "offers": "Offers",
+  "dailyPanchang": "Daily Panchang",
+  "talkToAstrologer": "Talk to Astrologer",
+  "brihatKundli": "Brihat Kundli",
+  "dailyNotes": "Daily Notes",
+  "askAQuestion": "Ask A Question",
+  "free50Pages": "Free 50+ Pages",
+  "freeReport": "Free Report",
+  "freeMatrimony": "Free Matrimony",
+  "matrimony": "Matrimony",
+  "loveMatch": "Love Match",
+  "horoscope": "Horoscope",
+  "dailyHoroscope": "Daily Horoscope",
+  "vedicAstrology": "Vedic astrology",
+  "acharyaVeda": "Acharya Veda",
+  "panditRohan": "Pandit Rohan",
+  "guruMaya": "Guru Maya",
+  "jayaShastri": "Jaya Shastri",
+  "devSharma": "Dev Sharma",
+  "sureshG": "Suresh G.",
+  "lataP": "Lata P.",
+  "kiranB": "Kiran B.",
+  "mohanT": "Mohan T.",
+  "anilJoshi": "Anil Joshi",
+  "meeraDevi": "Meera Devi",
+  "raviKumar": "Ravi Kumar",
+  "sunitaRao": "Sunita Rao",
+  "bengaluruKarnataka": "Bengaluru, Karnataka",
+  "locating": "Locating…",
+  "festivalOffer": "Festival offer",
+  "upTo30OffOnGemstones": "Up to 30% off on gemstones",
+  "talkToTopAstrologers": "Talk to top astrologers",
+  "firstConsultationSpecial": "First consultation special",
+  "rudrakshaCollection": "Rudraksha collection",
+  "authenticEnergised": "Authentic & energised",
+  "resumeSession": "Resume session",
+  "home": "Home",
+  "aiAstro": "AI Astro",
+  "ask": "Ask",
+  "history": "History",
+  "seeAll2": "See all",
+  "s1AcceptanceOfTheseTerms": "1. Acceptance of these terms",
+  "termsOfService2": "Terms of Service",
+  "lastUpdated26June2026": "Last updated: 26 June 2026",
+  "rudragangaProvidesAstrologySpiritualAndWellness": "Rudraganga provides astrology, spiritual, and wellness consultations for guidance and personal ",
+  "reflectionOnlyOurServicesAreNot": "reflection only. Our services are not a substitute for professional medical, legal, financial, ",
+  "orPsychologicalAdviceYouMustBe": "or psychological advice. You must be 18 or older to use the app.",
+  "byCreatingAnAccountOrUsing": "By creating an account or using the Rudraganga mobile application and related services (the ",
+  "servicesYouAgreeToBeBound": "“Services”), you agree to be bound by these Terms of Service and our Privacy Policy and Refund ",
+  "policyIfYouDoNotAgree": "Policy. If you do not agree, please do not use the Services.",
+  "s2EligibilityYourAccount": "2. Eligibility & your account",
+  "youMustBeAtLeast18": "You must be at least 18 years old and legally able to enter a contract.",
+  "youRegisterWithAPhoneNumber": "You register with a phone number verified by a one-time password (OTP). You are responsible for keeping access to that number and device secure.",
+  "youAgreeToProvideAccurateInformation": "You agree to provide accurate information, including birth details where you choose to share them for a reading. You are responsible for all activity under your account.",
+  "s3TheServicesWeOffer": "3. The services we offer",
+  "rudragangaConnectsYouWithVerifiedAstrologers": "Rudraganga connects you with verified astrologers for consultations by audio call, video call, ",
+  "andChatAndOffersRelatedFeatures": "and chat, and offers related features such as kundli generation and matching, an AI astrologer, ",
+  "dailyHoroscopesPoojaBookingsAStore": "daily horoscopes, pooja bookings, a store for spiritual products, gifting, and matrimony matching. ",
+  "availabilityOfAnyFeatureOrAstrologer": "Availability of any feature or astrologer may change at any time.",
+  "s4WalletPricingBilling": "4. Wallet, pricing & billing",
+  "consultationsArePrepaidYouAddFunds": "Consultations are prepaid. You add funds to an in-app wallet and pay per minute at the rate shown for the astrologer and service before you connect.",
+  "billingBeginsWhenTheAstrologerAccepts": "Billing begins when the astrologer accepts and the session connects. The first minute is charged on connect, and each further minute is charged at its start. A live meter is shown during the session, and the session ends automatically if your balance runs low.",
+  "paymentsAreProcessedByOurPayment": "Payments are processed by our payment partner (PayU). We do not store full card details.",
+  "walletBalancesAreForUseWithin": "Wallet balances are for use within the Services. Refunds, where applicable, are governed by our Refund Policy.",
+  "pricesAreInIndianRupeesInr": "Prices are in Indian Rupees (INR) and may include applicable taxes.",
+  "s5AcceptableUse": "5. Acceptable use",
+  "youAgreeNotTo": "You agree not to:",
+  "harassAbuseThreatenOrShareSexually": "Harass, abuse, threaten, or share sexually explicit or unlawful content with astrologers or staff.",
+  "impersonateAnyPersonOrProvideFalse": "Impersonate any person, or provide false information to obtain a service or refund.",
+  "attemptToTakeAConsultationOff": "Attempt to take a consultation off-platform to avoid fees, or solicit personal contact details.",
+  "interfereWithScrapeOrAttemptTo": "Interfere with, scrape, or attempt to disrupt the Services or their security.",
+  "s6AstrologersOnThePlatform": "6. Astrologers on the platform",
+  "astrologersAreIndependentPractitionersWhoAre": "Astrologers are independent practitioners who are identity-verified and approved by Rudraganga ",
+  "beforeTheyCanOfferConsultationsThey": "before they can offer consultations. They set their own per-minute fares within limits we define. ",
+  "opinionsAndGuidanceSharedDuringA": "Opinions and guidance shared during a consultation are those of the individual astrologer and not ",
+  "ofRudragangaWeAreNotResponsible": "of Rudraganga. We are not responsible for any decision you make based on a consultation.",
+  "s7RecordingsContent": "7. Recordings & content",
+  "forQualitySafetyAndDisputeResolution": "For quality, safety, and dispute resolution, audio and video consultations may be recorded. You ",
+  "consentToSuchRecordingByStarting": "consent to such recording by starting a session. Chat conversations are stored so you can revisit ",
+  "themSeeOurPrivacyPolicyFor": "them. See our Privacy Policy for how this data is handled.",
+  "s8DisclaimerLimitationOfLiability": "8. Disclaimer & limitation of liability",
+  "theServicesAreProvidedAsIs": "The Services are provided “as is” for guidance and entertainment-adjacent personal reflection. ",
+  "rudragangaMakesNoGuaranteeAboutThe": "Rudraganga makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent ",
+  "permittedByLawRudragangaSTotal": "permitted by law, Rudraganga’s total liability arising from your use of the Services is limited to ",
+  "theAmountYouPaidIntoYour": "the amount you paid into your wallet in the 30 days before the event giving rise to the claim. We ",
+  "areNotLiableForIndirectOr": "are not liable for indirect or consequential losses.",
+  "s9SuspensionTermination": "9. Suspension & termination",
+  "weMaySuspendOrTerminateYour": "We may suspend or terminate your account if you breach these terms, attempt fraud, or misuse the ",
+  "servicesYouMayStopUsingThe": "Services. You may stop using the Services at any time. Some provisions (payment obligations, ",
+  "disclaimersAndLimitationsOfLiabilitySurvive": "disclaimers, and limitations of liability) survive termination.",
+  "s10ChangesToTheseTerms": "10. Changes to these terms",
+  "weMayUpdateTheseTermsFrom": "We may update these terms from time to time. Material changes will be notified in the app or by ",
+  "updatingTheLastUpdatedDateAbove": "updating the “Last updated” date above. Continued use after changes means you accept them.",
+  "s11ContactUs": "11. Contact us",
+  "questionsAboutTheseTermsReachUs": "Questions about these terms? Reach us through the contact form on our website or in the app’s ",
+  "helpSupportSection": "Help & Support section.",
+  "privacyPolicy2": "Privacy Policy",
+  "yourBirthDetailsConsultationsAndChats": "Your birth details, consultations, and chats are personal to you. This policy explains what we ",
+  "collectWhyAndTheControlYou": "collect, why, and the control you have over it.",
+  "s1InformationWeCollect": "1. Information we collect",
+  "accountInformationYourNamePhoneNumber": "Account information: your name, phone number (verified by OTP), and email if provided.",
+  "birthDetailsDateTimeAndPlace": "Birth details: date, time, and place of birth that you choose to share for kundli and readings.",
+  "consultationDataChatMessagesAndAudio": "Consultation data: chat messages, and audio/video call recordings where applicable.",
+  "paymentDataWalletTransactionsAndPayment": "Payment data: wallet transactions and payment references. Card details are handled by our payment partner (PayU); we do not store full card numbers.",
+  "deviceUsageDataDeviceTypeOperating": "Device & usage data: device type, operating system, approximate location derived from your IP address, pages visited, and interactions, used to operate and improve the Services.",
+  "s2HowWeUseIt": "2. How we use it",
+  "toCreateAndSecureYourAccount": "To create and secure your account and verify your identity.",
+  "toConnectYouWithAstrologersAnd": "To connect you with astrologers and deliver consultations, kundli, horoscopes, and other features.",
+  "toProcessWalletRechargesPerMinute": "To process wallet recharges, per-minute billing, payouts, and order fulfilment.",
+  "toProvideSupportPreventFraudAnd": "To provide support, prevent fraud and abuse, and meet legal obligations.",
+  "toUnderstandAndImproveHowThe": "To understand and improve how the app and website are used.",
+  "s3WhenWeShareInformation": "3. When we share information",
+  "weDoNotSellYourPersonal": "We do not sell your personal information. We share it only:",
+  "withTheAstrologerYouConsultLimited": "With the astrologer you consult, limited to what is needed for the reading (e.g. your birth details and chat).",
+  "withServiceProvidersWhoHelpUs": "With service providers who help us operate — payment processing (PayU), cloud hosting and storage, communications (WhatsApp/SMS for OTP), and notifications — under confidentiality obligations.",
+  "whenRequiredByLawOrTo": "When required by law, or to protect the rights, safety, and property of users and Rudraganga.",
+  "s4ConsultationRecordingsChats": "4. Consultation recordings & chats",
+  "audioAndVideoConsultationsMayBe": "Audio and video consultations may be recorded, and chats are stored, for quality, safety, and ",
+  "disputeResolutionYouCanReviewYour": "dispute resolution. You can review your chat history in the app. Recordings are retained as ",
+  "describedBelowAndAccessedOnlyWhen": "described below and accessed only when needed for support, safety, or legal reasons.",
+  "s5AnalyticsCookies": "5. Analytics & cookies",
+  "ourWebsiteUsesAFirstParty": "Our website uses a first-party cookie/identifier to recognise return visits, measure how the ",
+  "landingPagePerformsSuchAsWhich": "landing page performs (such as which sections are clicked), and attribute sign-ups to marketing ",
+  "campaignsThisIsUsedInAggregate": "campaigns. This is used in aggregate to improve the experience. We derive approximate city/region ",
+  "fromYourIpAddressWeDo": "from your IP address; we do not use precise GPS location for analytics.",
+  "s6DataRetention": "6. Data retention",
+  "weKeepYourInformationForAs": "We keep your information for as long as your account is active and as needed to provide the ",
+  "servicesComplyWithLegalObligationsResolve": "Services, comply with legal obligations, resolve disputes, and enforce our agreements. You may ",
+  "requestDeletionOfYourAccountAnd": "request deletion of your account and associated personal data, subject to legal retention ",
+  "requirementsForExampleTransactionRecordsWe": "requirements (for example, transaction records we must keep for accounting and tax).",
+  "s7Security": "7. Security",
+  "weUseIndustryStandardMeasuresEncryption": "We use industry-standard measures — encryption in transit, access controls, and secure ",
+  "infrastructureToProtectYourInformationNo": "infrastructure — to protect your information. No method of transmission or storage is completely ",
+  "secureSoWeCannotGuaranteeAbsolute": "secure, so we cannot guarantee absolute security.",
+  "s8YourRightsChoices": "8. Your rights & choices",
+  "accessCorrectOrUpdateYourProfile": "Access, correct, or update your profile and birth details in the app.",
+  "requestACopyOrDeletionOf": "Request a copy or deletion of your personal data by contacting us.",
+  "optOutOfPromotionalNotificationsIn": "Opt out of promotional notifications in your device or app settings.",
+  "s9Children": "9. Children",
+  "theServicesAreIntendedForUsers": "The Services are intended for users aged 18 and above. We do not knowingly collect data from ",
+  "anyoneUnder18IfYouBelieve": "anyone under 18. If you believe a minor has used the Services, please contact us so we can remove it.",
+  "s10ChangesToThisPolicy": "10. Changes to this policy",
+  "weMayUpdateThisPolicyMaterial": "We may update this policy. Material changes will be notified in the app or by updating the ",
+  "lastUpdatedDateAbove": "“Last updated” date above.",
+  "forPrivacyQuestionsOrDataRequests": "For privacy questions or data requests, reach us via the contact form on our website or the ",
+  "appSHelpSupportSection": "app’s Help & Support section.",
+  "s2026Rudraganga18ForGuidanceAnd": "Â© 2026 Rudraganga Â· 18+ Â· For guidance and wellbeing â\nnot a substitute for professional advice.",
+  "widthDeviceWidthInitialScale1": "width=device-width, initial-scale=1, maximum-scale=1",
+  "segoeUi": "Segoe UI",
+  "vote": "Vote",
+  "couldnTLoadLiveSessions": "Couldn’t load live sessions",
+  "noOneIsLiveRightNow": "No one is live right now",
+  "whenAnAstrologerGoesLiveThey": "When an astrologer goes live, they’ll appear here. Pull down to refresh — or watch for a notification.",
+  "justNow": "Just now",
+  "couldNotLoad": "Could not load",
+  "continueLabel": "Continue",
+  "openSettings": "Open Settings",
+  "somePermissionsAreBlockedTapA": "Some permissions are blocked. Tap a blocked item (or “Open Settings”) and enable it, then return here.",
+  "thesePermissionsAreRequiredToUse": "These permissions are required to use Rudraganga. Tap any pending item to grant it.",
+  "settings2": "Settings",
+  "allow": "Allow",
+  "blockedEnableItInSettings": "Blocked — enable it in Settings",
+  "allowsUpTo": "allows up to",
+  "bookingFailed": "Booking failed",
+  "yourDetails": "Your details",
+  "fromYourProfile": "From your profile",
+  "familyMembers": "Family members",
+  "addMember": "Add member",
+  "addAnother": "Add another",
+  "preferredDateOptional": "Preferred date (optional)",
+  "anyDate": "Any date",
+  "bookNowFree": "Book now (Free)",
+  "couldNotLoadThisPooja": "Could not load this pooja",
+  "forLabel": "For",
+  "s1Person": "1 person",
+  "bookShareDetails": "Book & share details",
+  "confirmYourBookingWithTheNames": "Confirm your booking with the names the pooja is performed for.",
+  "panditCoordinates": "Pandit coordinates",
+  "aVerifiedPanditCallsToFix": "A verified pandit calls to fix the time and arrange the samagri.",
+  "poojaPerformed": "Pooja performed",
+  "sankalpIsTakenInYourFamily": "Sankalp is taken in your family’s names, and prasad is shared afterwards where applicable.",
+  "couldNotLoadPoojas": "Could not load poojas",
+  "any": "Any",
+  "noPoojasHere": "No poojas here",
+  "nothingMatchesTheCurrentFilters": "Nothing matches the current filters",
+  "noPoojasAvailableYet": "No poojas available yet",
+  "showAllPoojas": "Show all poojas",
+  "tapToViewDetailsBook": "Tap to view details & book",
+  "appliedYouBothEarnOnYour": "Applied! You both earn on your first recharge.",
+  "shareYourCode": "Share your code",
+  "sendYourCodeToFriendsVia": "Send your code to friends via WhatsApp, SMS, anywhere.",
+  "friendSignsUp": "Friend signs up",
+  "theyEnterYourCodeInRefer": "They enter your code in Refer & Earn after signing up.",
+  "feedbackReceived": "Feedback received ✓",
+  "thanksOurTeamWillLookInto": "Thanks — our team will look into it.",
+  "fullName": "Full name",
+  "email": "Email",
+  "phoneNumber": "Phone number",
+  "message": "Message",
+  "requiredLabel": "Required",
+  "applicationReceived": "Application received ✓",
+  "ourTeamWillReachOutAbout": "Our team will reach out about your astrologer profile.",
+  "enter10Digits": "Enter 10 digits",
+  "aboutYouBioExpertiseExperience": "About you (bio, expertise, experience)",
+  "rudragangaConnectsYouWithTrustedVedic": "Rudraganga connects you with trusted Vedic astrologers for guidance on career, ",
+  "marriageFinanceHealthAndLifeS": "marriage, finance, health and life’s big questions — over chat, call and video. ",
+  "getYourFreeKundliDailyHoroscope": "Get your free kundli, daily horoscope, matchmaking, pujas and remedies, all in one place.\n\n",
+  "ourMissionIsToMakeAuthentic": "Our mission is to make authentic, compassionate spiritual guidance accessible to everyone, ",
+  "inYourOwnLanguage": "in your own language.",
+  "verifiedExperiencedAstrologers": "Verified, experienced astrologers",
+  "privateSecureConsultations": "Private & secure consultations",
+  "availableIn6IndianLanguages": "Available in 6 Indian languages",
+  "thanksForRatingUs": "Thanks for rating us ✓",
+  "yourFeedbackHelpsRudragangaGrow": "Your feedback helps Rudraganga grow.",
+  "onceInADay": "Once in a day",
+  "twiceInADay": "Twice in a day",
+  "asManyTimesAsItComes": "As many times as it comes",
+  "never": "Never",
+  "cricket": "Cricket",
+  "shareMarket": "Share Market",
+  "bollywood": "Bollywood",
+  "newMagazine": "New Magazine",
+  "festivals": "Festivals",
+  "notificationsUpdated": "Notifications updated ✓",
+  "youLlHearFromUsBased": "You'll hear from us based on your choices.",
+  "yourChartsWillNowFollowYour": "Your charts will now follow your chosen style.",
+  "chartStyle": "Chart style",
+  "northIndian": "North Indian",
+  "southIndian": "South Indian",
+  "monthSystem": "Month system",
+  "amanta": "Amanta",
+  "purnimanta": "Purnimanta",
+  "darkMode": "Dark mode",
+  "off": "Off",
+  "onLabel": "On",
+  "useDeviceSettings": "Use device settings",
+  "ayanamsa": "Ayanamsa",
+  "nCLahiri": "N.C. Lahiri",
+  "kpNew": "KP New",
+  "kpOld": "KP Old",
+  "raman": "Raman",
+  "kpKhullar": "KP Khullar",
+  "subtotal": "Subtotal",
+  "youSave": "You save",
+  "total": "Total",
+  "deliveryAddress": "Delivery address",
+  "orderSummary": "Order summary",
+  "couponsOffers": "Coupons & offers",
+  "billDetails": "Bill details",
+  "address": "Address",
+  "productDiscount": "Product discount",
+  "itemsSubtotal": "Items subtotal",
+  "delivery": "Delivery",
+  "free2": "FREE",
+  "toPay": "To pay",
+  "dMmmYyyyHMmA": "d MMM yyyy, h:mm a",
+  "couldNotDownloadInvoice": "Could not download invoice",
+  "orderNotFound": "Order not found",
+  "activityTimeline": "Activity timeline",
+  "eeeDMmmYyyyHMm": "EEE, d MMM yyyy · h:mm a",
+  "totalPaid": "Total paid",
+  "orderPlaced2": "Order placed",
+  "dMmmHMmA": "d MMM, h:mm a",
+  "generating": "Generating…",
+  "pleaseDescribeTheIssue": "Please describe the issue",
+  "couldNotLoadProducts": "Could not load products",
+  "newest": "Newest",
+  "priceLowHigh": "Price: Low→High",
+  "priceHighLow": "Price: High→Low",
+  "topRated": "Top rated",
+  "s6DigitPin": "6-digit PIN",
+  "addressLine1": "Address line 1 *",
+  "addressLine2": "Address line 2",
+  "city": "City *",
+  "state": "State *",
+  "pinCode": "PIN code *",
+  "payment": "Payment",
+  "pooja": "Pooja",
+  "shop": "Shop",
+  "securePayment": "Secure payment",
+  "noTransactionsMatchTheseFilters": "No transactions match these filters",
+  "noTransactionsYet": "No transactions yet",
+  "moneyAdded": "Money added",
+  "poojaBooking": "Pooja booking",
+  "videoCall": "Video call",
+  "shopOrder": "Shop order",
+  "refund": "Refund",
+  "bonus": "Bonus",
+  "credited": "Credited",
+  "debited": "Debited",
+  "rg": "RG",
+  "aExperienceyearsYrsExp": "{experienceYears} yrs exp",
+  "@aExperienceyearsYrsExp": {
+    "placeholders": {
+      "experienceYears": {
+        "type": "Object"
+      }
+    }
+  },
+  "weLlLetYouKnowWhen2": "We'll let you know when {name} is {reason}.",
+  "@weLlLetYouKnowWhen2": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "reason": {
+        "type": "Object"
+      }
+    }
+  },
+  "priceMin": "₹{price}/min",
+  "@priceMin": {
+    "placeholders": {
+      "price": {
+        "type": "Object"
+      }
+    }
+  },
+  "n1000000Tostringasfixed1M": "{toStringAsFixed}M",
+  "@n1000000Tostringasfixed1M": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "n1000Tostringasfixed1K": "{toStringAsFixed}k",
+  "@n1000Tostringasfixed1K": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "nameIsATrustedAstrologerWith": "{name} is a trusted astrologer with deep expertise in {desc}. Over years of practice on the platform, ",
+  "@nameIsATrustedAstrologerWith": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "desc": {
+        "type": "Object"
+      }
+    }
+  },
+  "chatMin": "₹{chat}/min",
+  "@chatMin": {
+    "placeholders": {
+      "chat": {
+        "type": "Object"
+      }
+    }
+  },
+  "callMin": "₹{call}/min",
+  "@callMin": {
+    "placeholders": {
+      "call": {
+        "type": "Object"
+      }
+    }
+  },
+  "videoMin": "₹{video}/min",
+  "@videoMin": {
+    "placeholders": {
+      "video": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsLive": "{name} is live",
+  "@widgetNameIsLive": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsInASession": "{name} is in a session right now",
+  "@widgetNameIsInASession": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsOfflineRightNow": "{name} is offline right now",
+  "@widgetNameIsOfflineRightNow": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "storeFollowers1000Tostringasfixed1K": "{toStringAsFixed}k",
+  "@storeFollowers1000Tostringasfixed1K": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "maxPriceMaxpriceRoundMin": "Max price · ₹{round}/min",
+  "@maxPriceMaxpriceRoundMin": {
+    "placeholders": {
+      "round": {
+        "type": "Object"
+      }
+    }
+  },
+  "sendTotalTokens": "Send · {total} tokens",
+  "@sendTotalTokens": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "sTypeTouppercaseLive": "{toUpperCase} · LIVE",
+  "@sTypeTouppercaseLive": {
+    "placeholders": {
+      "toUpperCase": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetAstrologernameChatHistory": "{astrologerName} · chat history",
+  "@widgetAstrologernameChatHistory": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyAtRTimeofdayFor14": "Daily at {timeOfDay} · for 14 days",
+  "@dailyAtRTimeofdayFor14": {
+    "placeholders": {
+      "timeOfDay": {
+        "type": "Object"
+      }
+    }
+  },
+  "onRDate": "On {date}",
+  "@onRDate": {
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "durSDurationsecSTotalamountCoins": "{durationSec} · {totalAmount} coins",
+  "@durSDurationsecSTotalamountCoins": {
+    "placeholders": {
+      "durationSec": {
+        "type": "Object"
+      },
+      "totalAmount": {
+        "type": "Object"
+      }
+    }
+  },
+  "aboutMinutesleftMinLeft": "About {minutesLeft} min left",
+  "@aboutMinutesleftMinLeft": {
+    "placeholders": {
+      "minutesLeft": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyPermissionPerm": "[nearby] permission = {perm}",
+  "@nearbyPermissionPerm": {
+    "placeholders": {
+      "perm": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyGetcurrentpositionFailedETryingLast": "[nearby] getCurrentPosition failed: {e} — trying last known",
+  "@nearbyGetcurrentpositionFailedETryingLast": {
+    "placeholders": {
+      "e": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyPositionPosLatitudePosLongitude": "[nearby] position = {latitude}, {longitude}",
+  "@nearbyPositionPosLatitudePosLongitude": {
+    "placeholders": {
+      "latitude": {
+        "type": "Object"
+      },
+      "longitude": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyReversegeocodeCityCity": "[nearby] reverseGeocode city = \"{city}\"",
+  "@nearbyReversegeocodeCityCity": {
+    "placeholders": {
+      "city": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyResolveErrorE": "[nearby] resolve error: {e}",
+  "@nearbyResolveErrorE": {
+    "placeholders": {
+      "e": {
+        "type": "Object"
+      }
+    }
+  },
+  "resumeSessionClock": "Resume · {clock}",
+  "@resumeSessionClock": {
+    "placeholders": {
+      "clock": {
+        "type": "Object"
+      }
+    }
+  },
+  "rateperminMin": "₹{ratePerMin}/min",
+  "@rateperminMin": {
+    "placeholders": {
+      "ratePerMin": {
+        "type": "Object"
+      }
+    }
+  },
+  "checkYourConnectionAndTryAgain": "Check your connection and try again.\n({error})",
+  "@checkYourConnectionAndTryAgain": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffInminutesMAgo": "{inMinutes}m ago",
+  "@diffInminutesMAgo": {
+    "placeholders": {
+      "inMinutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffInhoursHAgo": "{inHours}h ago",
+  "@diffInhoursHAgo": {
+    "placeholders": {
+      "inHours": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffIndaysDAgo": "{inDays}d ago",
+  "@diffIndaysDAgo": {
+    "placeholders": {
+      "inDays": {
+        "type": "Object"
+      }
+    }
+  },
+  "thisPoojaCostsWidgetPoojaBaseprice": "This pooja costs ₹{basePrice}. Your wallet doesn’t have enough balance — add money and try again.",
+  "@thisPoojaCostsWidgetPoojaBaseprice": {
+    "placeholders": {
+      "basePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "payWidgetPoojaBasepriceBook": "Pay ₹{basePrice} & Book",
+  "@payWidgetPoojaBasepriceBook": {
+    "placeholders": {
+      "basePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "upToPMaxpersons": "Up to {maxPersons}",
+  "@upToPMaxpersons": {
+    "placeholders": {
+      "maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "aSacredPNamePerformedBy": "A sacred {name} performed by experienced pandits. Book a slot and our team will reach out to coordinate the details and timing.",
+  "@aSacredPNamePerformedBy": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "upToPoojaMaxpersons": "up to {maxPersons}",
+  "@upToPoojaMaxpersons": {
+    "placeholders": {
+      "maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "earnIRewardOnRudraganga": "Earn ₹{reward} on Rudraganga",
+  "@earnIRewardOnRudraganga": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "bothEarnIReward": "Both earn ₹{reward}",
+  "@bothEarnIReward": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "onTheirFirstWalletRechargeYou": "On their first wallet recharge, you both get ₹{reward} instantly.",
+  "@onTheirFirstWalletRechargeYou": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "rechargeTotalBalance": "Recharge ₹{balance}",
+  "@rechargeTotalBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "itemTotalMrpQtycount": "Item total (MRP) · {qtyCount}",
+  "@itemTotalMrpQtycount": {
+    "placeholders": {
+      "qtyCount": {
+        "type": "Object"
+      }
+    }
+  },
+  "couponAppliedCode": "Coupon ({code})",
+  "@couponAppliedCode": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      }
+    }
+  },
+  "placeOrderTotal": "Place Order · ₹{total}",
+  "@placeOrderTotal": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "pPriceWasPMrp": "₹{price} (was ₹{mrp})",
+  "@pPriceWasPMrp": {
+    "placeholders": {
+      "price": {
+        "type": "Object"
+      },
+      "mrp": {
+        "type": "Object"
+      }
+    }
+  },
+  "pNamePricelineUrl": "{name} â {priceLine}\n{url}",
+  "@pNamePricelineUrl": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "priceLine": {
+        "type": "Object"
+      },
+      "url": {
+        "type": "Object"
+      }
+    }
+  },
+  "ytWebviewErrorEErrorcodeE": "YT webview error: {errorCode} {description}",
+  "@ytWebviewErrorEErrorcodeE": {
+    "placeholders": {
+      "errorCode": {
+        "type": "Object"
+      },
+      "description": {
+        "type": "Object"
+      }
+    }
+  },
+  "rgpayHttpErrorEResponseStatuscode": "RGPAY http error: {statusCode}",
+  "@rgpayHttpErrorEResponseStatuscode": {
+    "placeholders": {
+      "statusCode": {
+        "type": "Object"
+      }
+    }
+  },
+  "rgpayResourceErrorEErrorcodeE": "RGPAY resource error: {errorCode} {description}",
+  "@rgpayResourceErrorEErrorcodeE": {
+    "placeholders": {
+      "errorCode": {
+        "type": "Object"
+      },
+      "description": {
+        "type": "Object"
+      }
+    }
+  }
+}
