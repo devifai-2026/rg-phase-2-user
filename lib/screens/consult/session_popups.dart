@@ -99,11 +99,12 @@ class _SessionEndDialogState extends State<_SessionEndDialog> {
 
   bool get _showAstrologer => _state?.canReviewAstrologer ?? false;
   bool get _showCallQuality => _state?.canRateCallQuality ?? false;
-  // Submit enabled once the user has supplied input for every block shown.
+  // Submit enabled as soon as the user gives ANY rating in a shown block. Call
+  // quality is optional when an astrologer rating block is shown (and vice
+  // versa) — previously Submit required EVERY block to be filled, so a user who
+  // rated only one block saw a permanently-greyed Submit ("only Skip works").
   bool get _canSubmit =>
-      (!_showAstrologer || _rating > 0) &&
-      (!_showCallQuality || _callQuality > 0) &&
-      (_showAstrologer || _showCallQuality);
+      (_showAstrologer && _rating > 0) || (_showCallQuality && _callQuality > 0);
 
   @override
   void initState() {

@@ -99,6 +99,36 @@ class SessionProvider extends ChangeNotifier {
     return info;
   }
 
+  /// Rehydrate an in-progress session after the app was killed/relaunched. Asks
+  /// the backend for the user's live session (status accepted|ongoing) and, if
+  /// one exists, restores enough state for the MainShell resume bar + the
+  /// chat/call screen to re-enter the room. No-op when there's nothing live.
+  /// Safe to call on every launch; never throws.
+  Future<bool> resumeFromActive(SocketService socket) async {
+    if (isActive) return true; // already tracking a session in-memory
+    try {
+      final res = await _api.active();
+      if (res == null) return false;
+      final s = res.session;
+      _sessionId = s.sessionId;
+      _type = s.type;
+      ratePerMin = s.ratePerMin;
+      rtcToken = res.token;
+      _rejectionReason = null;
+      _endSummary = null;
+      // 'accepted' = room open, timer not started; 'ongoing' = startedAt set.
+      _startedAt = s.startedAt;
+      _phase = SessionPhase.ongoing;
+      // Rejoin the socket room so live events (messages/timer/end) resume.
+      socket.joinSession(s.sessionId);
+      if (_startedAt != null) _startTicker(); else syncStartedAt();
+      notifyListeners();
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   Future<void> cancel(SocketService socket) async {
     final id = _sessionId;
     if (id == null) return;

@@ -132,6 +132,10 @@ Future<void> main() async {
     notifications.load(); // prime the inbox + unread badge
     wallet.refresh(); // prime the wallet balance for the Home top bar
     cart.refresh(); // prime the store cart + badge count
+    // RESUME: if a consultation is still live server-side (app was killed mid-
+    // session), rehydrate it so the Home resume bar reappears and the user can
+    // rejoin the chat/call they're still being billed for.
+    session.resumeFromActive(socket);
     // GA: tag the signed-in user + role so events segment in the dashboard.
     Analytics.instance.setUser(auth.user?.id);
     Analytics.instance.setProp('role', 'user');

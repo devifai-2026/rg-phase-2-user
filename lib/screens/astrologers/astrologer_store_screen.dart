@@ -70,23 +70,41 @@ class AstrologerStoreScreen extends StatefulWidget {
   State<AstrologerStoreScreen> createState() => _AstrologerStoreScreenState();
 }
 
-class _AstrologerStoreScreenState extends State<AstrologerStoreScreen> {
+class _AstrologerStoreScreenState extends State<AstrologerStoreScreen> with WidgetsBindingObserver {
   Storefront? _store;
   String? _error;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _load();
   }
 
-  Future<void> _load() async {
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Refetch when the user returns to the app — the astrologer may have just
+    // generated/activated a new storefront design (and the AI hero image lands
+    // asynchronously a few seconds after generation), so a one-time initState
+    // load would otherwise show a stale store.
+    if (state == AppLifecycleState.resumed) _load(silent: true);
+  }
+
+  Future<void> _load({bool silent = false}) async {
     final t = L10n.of(context);
     try {
       final s = await context.read<AstrologerApi>().storefront(widget.profileId);
-      if (mounted) setState(() => _store = s);
+      if (mounted) setState(() { _store = s; _error = null; });
     } catch (_) {
-      if (mounted) setState(() => _error = t.couldNotLoadThisStore);
+      // On a silent (resume/refresh) reload, keep showing what we have rather
+      // than replacing the store with an error.
+      if (mounted && !silent) setState(() => _error = t.couldNotLoadThisStore);
     }
   }
 
@@ -110,7 +128,11 @@ class _AstrologerStoreScreenState extends State<AstrologerStoreScreen> {
           ? (_error != null
               ? _ErrorView(message: _error!, color: c)
               : const Center(child: CircularProgressIndicator()))
-          : CustomScrollView(
+          : RefreshIndicator(
+              onRefresh: () => _load(silent: true),
+              child: CustomScrollView(
+              // Always scrollable so pull-to-refresh works even when the store is short.
+              physics: const AlwaysScrollableScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(child: _Hero(store: s, th: th, onBack: () => Navigator.of(context).maybePop())),
                 if (s.products.isNotEmpty) ...[
@@ -132,6 +154,7 @@ class _AstrologerStoreScreenState extends State<AstrologerStoreScreen> {
                 const SliverToBoxAdapter(child: SizedBox(height: 28)),
               ],
             ),
+          ),
     );
   }
 

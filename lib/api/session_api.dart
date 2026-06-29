@@ -165,6 +165,17 @@ class SessionApi {
     return SessionInfo.fromJson(Map<String, dynamic>.from(s as Map));
   }
 
+  /// The user's currently-LIVE session (status accepted|ongoing) to RESUME after
+  /// an app kill, or null if none. Carries the session + a fresh media token.
+  /// Returns the raw maps so the provider can rehydrate from server truth.
+  Future<({SessionInfo session, RtcToken? token})?> active() async {
+    final data = await _api.get('/sessions/me/active');
+    if (data == null || data is! Map || data['session'] == null) return null;
+    final session = SessionInfo.fromJson(Map<String, dynamic>.from(data['session'] as Map));
+    final token = data['token'] is Map ? RtcToken.fromJson(Map<String, dynamic>.from(data['token'] as Map)) : null;
+    return (session: session, token: token);
+  }
+
   /// Cancel a still-ringing request the user owns.
   Future<void> cancel(String sessionId) => _api.post('/sessions/$sessionId/cancel');
 
