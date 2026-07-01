@@ -1501,6 +1501,135 @@ class L10nEn extends L10n {
       'Recharge now to keep your consultation going. Your chat stays open while you pay.';
 
   @override
+  String get sessionEndedLowBalance =>
+      'Your balance ran out, so the consultation ended. Recharge to continue anytime.';
+
+  @override
+  String get couldNotLoadHoroscope =>
+      'Couldn\'t load the horoscope. Please try again.';
+
+  @override
+  String get chooseSign => 'Change sign';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get tomorrow => 'Tomorrow';
+
+  @override
+  String get totalScore => 'Overall score';
+
+  @override
+  String get luckyColor => 'Lucky colour';
+
+  @override
+  String get luckyNumber => 'Lucky number';
+
+  @override
+  String get lifeAreas => 'Life areas';
+
+  @override
+  String get todaysReading => 'Today\'s reading';
+
+  @override
+  String get career => 'Career';
+
+  @override
+  String get finances => 'Finances';
+
+  @override
+  String get health => 'Health';
+
+  @override
+  String get relationship => 'Relationship';
+
+  @override
+  String get family => 'Family';
+
+  @override
+  String get friends => 'Friends';
+
+  @override
+  String get travel => 'Travel';
+
+  @override
+  String get physique => 'Physique';
+
+  @override
+  String get statusLabel => 'Status';
+
+  @override
+  String get signAries => 'Aries';
+
+  @override
+  String get signTaurus => 'Taurus';
+
+  @override
+  String get signGemini => 'Gemini';
+
+  @override
+  String get signCancer => 'Cancer';
+
+  @override
+  String get signLeo => 'Leo';
+
+  @override
+  String get signVirgo => 'Virgo';
+
+  @override
+  String get signLibra => 'Libra';
+
+  @override
+  String get signScorpio => 'Scorpio';
+
+  @override
+  String get signSagittarius => 'Sagittarius';
+
+  @override
+  String get signCapricorn => 'Capricorn';
+
+  @override
+  String get signAquarius => 'Aquarius';
+
+  @override
+  String get signPisces => 'Pisces';
+
+  @override
+  String get couldNotLoadPanchang =>
+      'Couldn\'t load the panchang. Please try again.';
+
+  @override
+  String get tithi => 'Tithi';
+
+  @override
+  String get nakshatra => 'Nakshatra';
+
+  @override
+  String get yoga => 'Yoga';
+
+  @override
+  String get karana => 'Karana';
+
+  @override
+  String get weekday => 'Weekday';
+
+  @override
+  String get inauspiciousTimes => 'Inauspicious times';
+
+  @override
+  String get rahuKaal => 'Rahu Kaal';
+
+  @override
+  String get gulikaKaal => 'Gulika Kaal';
+
+  @override
+  String get yamaganda => 'Yamaganda';
+
+  @override
   String get duration => 'Duration';
 
   @override

@@ -99,6 +99,10 @@ class _SessionEndDialogState extends State<_SessionEndDialog> {
 
   bool get _showAstrologer => _state?.canReviewAstrologer ?? false;
   bool get _showCallQuality => _state?.canRateCallQuality ?? false;
+  // Nothing left to rate (already reviewed this astrologer, and not a call so no
+  // call-quality block): the dialog is a plain summary. Hide Submit — there is
+  // nothing to submit — and turn the action row into a single "Done".
+  bool get _nothingToRate => !_loadingState && !_showAstrologer && !_showCallQuality;
   // Submit enabled as soon as the user gives ANY rating in a shown block. Call
   // quality is optional when an astrologer rating block is shown (and vice
   // versa) — previously Submit required EVERY block to be filled, so a user who
@@ -211,6 +215,32 @@ class _SessionEndDialogState extends State<_SessionEndDialog> {
                       ],
                     ),
                   ),
+
+                  // If the session ended because the user's balance ran out,
+                  // say so plainly (the room already closed and they're being
+                  // returned home) and offer a one-tap recharge.
+                  if (s.endReason == 'low_balance') ...[
+                    const SizedBox(height: 14),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: c.red.withValues(alpha: 0.10),
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: c.red.withValues(alpha: 0.35)),
+                      ),
+                      child: Row(children: [
+                        Icon(Icons.account_balance_wallet_outlined, color: c.red, size: 20),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            L10n.of(context).sessionEndedLowBalance,
+                            style: TextStyle(color: c.ink, fontSize: 12.5, height: 1.35),
+                          ),
+                        ),
+                      ]),
+                    ),
+                  ],
                   const SizedBox(height: 20),
 
                   // While resolving what to ask, show a small spinner in place of
@@ -255,29 +285,45 @@ class _SessionEndDialogState extends State<_SessionEndDialog> {
                   ],
 
                   const SizedBox(height: 18),
-                  Row(children: [
-                    Expanded(
-                      child: TextButton(
-                        onPressed: _submitting ? null : () => Navigator.of(context).pop(),
-                        style: TextButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 13)),
-                        child: Text(L10n.of(context).skip, style: TextStyle(color: c.muted, fontWeight: FontWeight.w700)),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      flex: 2,
+                  // When there is nothing to rate, the dialog is a pure summary:
+                  // a single full-width "Done" closes it (no dangling, greyed-out
+                  // Submit). Otherwise show Skip + Submit as before.
+                  if (_nothingToRate)
+                    SizedBox(
+                      width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 13),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
                         ),
-                        onPressed: (!_canSubmit || _submitting) ? null : _submit,
-                        child: _submitting
-                            ? const SizedBox(height: 16, width: 16, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
-                            : Text(L10n.of(context).submit, style: const TextStyle(fontWeight: FontWeight.w800)),
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: Text(L10n.of(context).close, style: const TextStyle(fontWeight: FontWeight.w800)),
                       ),
-                    ),
-                  ]),
+                    )
+                  else
+                    Row(children: [
+                      Expanded(
+                        child: TextButton(
+                          onPressed: _submitting ? null : () => Navigator.of(context).pop(),
+                          style: TextButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 13)),
+                          child: Text(L10n.of(context).skip, style: TextStyle(color: c.muted, fontWeight: FontWeight.w700)),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        flex: 2,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 13),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+                          ),
+                          onPressed: (!_canSubmit || _submitting) ? null : _submit,
+                          child: _submitting
+                              ? const SizedBox(height: 16, width: 16, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                              : Text(L10n.of(context).submit, style: const TextStyle(fontWeight: FontWeight.w800)),
+                        ),
+                      ),
+                    ]),
                 ],
               ),
             ),

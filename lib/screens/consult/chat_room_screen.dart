@@ -97,9 +97,12 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> with WidgetsBindingObse
     final summary = s.endSummary;
     final name = s.astrologerName;
     if (!mounted) return;
-    // Leave the room if it's the current route (it may already be minimized).
-    final nav = Navigator.of(context);
-    if (nav.canPop()) nav.pop();
+    // Return the user to the home shell — pop every screen pushed on top of it
+    // (chat room, and whatever they opened it from: astrologer profile, list,
+    // deep link). A single pop() could strand them on an intermediate screen;
+    // popUntil(isFirst) guarantees home no matter the entry path. This also
+    // covers the balance-ran-out case, where the backend auto-ends the session.
+    Navigator.of(context).popUntil((r) => r.isFirst);
     if (summary != null) {
       await showSessionEndDialog(context, summary, astrologerName: name);
     }

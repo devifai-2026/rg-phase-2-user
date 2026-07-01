@@ -126,7 +126,10 @@ class _CallScreenState extends State<CallScreen>
     if (mounted) setState(() => _leaving = true);
     await _agora.leave();
     if (!mounted) return;
-    Navigator.of(context).pop();
+    // Return to the home shell regardless of how the call was entered — pop every
+    // route above the first. A single pop() could strand the user on an
+    // intermediate screen. Also covers the balance-ran-out auto-end.
+    Navigator.of(context).popUntil((r) => r.isFirst);
     if (summary != null) await showSessionEndDialog(context, summary, astrologerName: name);
     s.clear();
   }

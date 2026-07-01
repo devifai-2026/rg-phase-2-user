@@ -15,6 +15,8 @@ import '../../providers/wallet_provider.dart';
 import '../../services/deep_link.dart';
 import '../../theme/rg_colors.dart';
 import '../common/coming_soon_screen.dart';
+import '../horoscope/horoscope_screen.dart';
+import '../panchang/panchang_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../../widgets/slide_route.dart';
 import '../astrologers/astrologer_profile_screen.dart';
@@ -178,7 +180,7 @@ class HomeTab extends StatelessWidget {
                 crossAxisSpacing: 8,
                 childAspectRatio: 0.82,
                 children: [
-                  OthersIcon(icon: Icons.calendar_month_outlined, label: t.dailyPanchang, onTap: () => _soon(context, t.dailyPanchang, Icons.calendar_month_outlined)),
+                  OthersIcon(icon: Icons.calendar_month_outlined, label: t.dailyPanchang, onTap: () => Navigator.of(context).push(slideRoute(const PanchangScreen()))),
                   OthersIcon(icon: Icons.support_agent_outlined, label: t.talkToAstrologer, onTap: () => _soon(context, t.astrologers)),
                   OthersIcon(icon: Icons.menu_book_outlined, label: t.brihatKundli, onTap: () => _soon(context, t.brihatKundli, Icons.menu_book_outlined)),
                   OthersIcon(icon: Icons.edit_note_outlined, label: t.dailyNotes, onTap: () => _soon(context, t.dailyNotes, Icons.edit_note_outlined)),
@@ -189,7 +191,7 @@ class HomeTab extends StatelessWidget {
                   OthersIcon(icon: Icons.diversity_3_outlined, label: t.freeMatrimony, onTap: () => _soon(context, t.matrimony, Icons.diversity_3_outlined)),
                   OthersIcon(icon: Icons.book_outlined, label: t.lalKitab, onTap: () => _soon(context, t.lalKitab, Icons.book_outlined)),
                   OthersIcon(icon: Icons.favorite_border, label: t.loveMatch, onTap: () => _soon(context, t.loveMatch, Icons.favorite_border)),
-                  OthersIcon(icon: Icons.nightlight_outlined, label: t.horoscope, onTap: () => _soon(context, t.dailyHoroscope, Icons.nightlight_outlined)),
+                  OthersIcon(icon: Icons.nightlight_outlined, label: t.horoscope, onTap: () => Navigator.of(context).push(slideRoute(const HoroscopeScreen()))),
                 ],
               ),
             ),
@@ -657,6 +659,12 @@ class _NearbySectionState extends State<_NearbySection> {
 
   @override
   Widget build(BuildContext context) {
+    // While location is still resolving (undefined / "Locating…"), hide the whole
+    // section — header, "See all" CTA and rail — until a city is found. No point
+    // showing a nearby CTA before we know where "nearby" is.
+    if (_locating) {
+      return const SizedBox.shrink();
+    }
     // Hide the entire section (header + rail) once we've resolved a city and the
     // API confirms there are no astrologers there — no point showing an empty CTA.
     if (_loaded && _city != null && (_items?.isEmpty ?? false)) {

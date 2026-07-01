@@ -22,22 +22,6 @@ Future<void> showGiftSheet(BuildContext context, String astrologerName, {String?
   );
 }
 
-/// Map a gift name to a distinct emoji (the admin catalog items have no image).
-String _giftEmoji(String name) {
-  final n = name.toLowerCase();
-  if (n.contains('rose') || n.contains('flower')) return '🌹';
-  if (n.contains('diya') || n.contains('lamp') || n.contains('candle')) return '🪔';
-  if (n.contains('garland') || n.contains('mala')) return '💐';
-  if (n.contains('lotus')) return '🪷';
-  if (n.contains('coconut')) return '🥥';
-  if (n.contains('sweet') || n.contains('laddu') || n.contains('mithai')) return '🍬';
-  if (n.contains('heart') || n.contains('love')) return '❤️';
-  if (n.contains('star')) return '⭐';
-  if (n.contains('crown')) return '👑';
-  if (n.contains('gold') || n.contains('coin')) return '🪙';
-  return '🎁';
-}
-
 class _GiftSheet extends StatefulWidget {
   final String astrologerName;
   final String? astrologerUserId;
@@ -211,8 +195,8 @@ class _GiftSheetState extends State<_GiftSheet> {
                           height: 30, width: 30,
                           child: (g.image != null && g.image!.isNotEmpty)
                               ? CachedImage(url: g.image, fit: BoxFit.contain, fallbackIcon: Icons.card_giftcard)
-                              // No image on the catalog item → a distinct emoji per gift name.
-                              : Center(child: Text(_giftEmoji(g.name), style: const TextStyle(fontSize: 22))),
+                              // No image on the catalog item → the gift's emoji.
+                              : Center(child: Text(g.emoji, style: const TextStyle(fontSize: 22))),
                         ),
                         const SizedBox(height: 4),
                         Text(g.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: c.ink, fontSize: 10.5, fontWeight: FontWeight.w600)),

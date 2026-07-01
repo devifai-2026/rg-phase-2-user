@@ -2818,6 +2818,258 @@ abstract class L10n {
   /// **'Recharge now to keep your consultation going. Your chat stays open while you pay.'**
   String get rechargeNowToKeepYourConsultation;
 
+  /// No description provided for @sessionEndedLowBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Your balance ran out, so the consultation ended. Recharge to continue anytime.'**
+  String get sessionEndedLowBalance;
+
+  /// No description provided for @couldNotLoadHoroscope.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the horoscope. Please try again.'**
+  String get couldNotLoadHoroscope;
+
+  /// No description provided for @chooseSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Change sign'**
+  String get chooseSign;
+
+  /// No description provided for @yesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// No description provided for @today.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// No description provided for @tomorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow'**
+  String get tomorrow;
+
+  /// No description provided for @totalScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Overall score'**
+  String get totalScore;
+
+  /// No description provided for @luckyColor.
+  ///
+  /// In en, this message translates to:
+  /// **'Lucky colour'**
+  String get luckyColor;
+
+  /// No description provided for @luckyNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Lucky number'**
+  String get luckyNumber;
+
+  /// No description provided for @lifeAreas.
+  ///
+  /// In en, this message translates to:
+  /// **'Life areas'**
+  String get lifeAreas;
+
+  /// No description provided for @todaysReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s reading'**
+  String get todaysReading;
+
+  /// No description provided for @career.
+  ///
+  /// In en, this message translates to:
+  /// **'Career'**
+  String get career;
+
+  /// No description provided for @finances.
+  ///
+  /// In en, this message translates to:
+  /// **'Finances'**
+  String get finances;
+
+  /// No description provided for @health.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get health;
+
+  /// No description provided for @relationship.
+  ///
+  /// In en, this message translates to:
+  /// **'Relationship'**
+  String get relationship;
+
+  /// No description provided for @family.
+  ///
+  /// In en, this message translates to:
+  /// **'Family'**
+  String get family;
+
+  /// No description provided for @friends.
+  ///
+  /// In en, this message translates to:
+  /// **'Friends'**
+  String get friends;
+
+  /// No description provided for @travel.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel'**
+  String get travel;
+
+  /// No description provided for @physique.
+  ///
+  /// In en, this message translates to:
+  /// **'Physique'**
+  String get physique;
+
+  /// No description provided for @statusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get statusLabel;
+
+  /// No description provided for @signAries.
+  ///
+  /// In en, this message translates to:
+  /// **'Aries'**
+  String get signAries;
+
+  /// No description provided for @signTaurus.
+  ///
+  /// In en, this message translates to:
+  /// **'Taurus'**
+  String get signTaurus;
+
+  /// No description provided for @signGemini.
+  ///
+  /// In en, this message translates to:
+  /// **'Gemini'**
+  String get signGemini;
+
+  /// No description provided for @signCancer.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancer'**
+  String get signCancer;
+
+  /// No description provided for @signLeo.
+  ///
+  /// In en, this message translates to:
+  /// **'Leo'**
+  String get signLeo;
+
+  /// No description provided for @signVirgo.
+  ///
+  /// In en, this message translates to:
+  /// **'Virgo'**
+  String get signVirgo;
+
+  /// No description provided for @signLibra.
+  ///
+  /// In en, this message translates to:
+  /// **'Libra'**
+  String get signLibra;
+
+  /// No description provided for @signScorpio.
+  ///
+  /// In en, this message translates to:
+  /// **'Scorpio'**
+  String get signScorpio;
+
+  /// No description provided for @signSagittarius.
+  ///
+  /// In en, this message translates to:
+  /// **'Sagittarius'**
+  String get signSagittarius;
+
+  /// No description provided for @signCapricorn.
+  ///
+  /// In en, this message translates to:
+  /// **'Capricorn'**
+  String get signCapricorn;
+
+  /// No description provided for @signAquarius.
+  ///
+  /// In en, this message translates to:
+  /// **'Aquarius'**
+  String get signAquarius;
+
+  /// No description provided for @signPisces.
+  ///
+  /// In en, this message translates to:
+  /// **'Pisces'**
+  String get signPisces;
+
+  /// No description provided for @couldNotLoadPanchang.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the panchang. Please try again.'**
+  String get couldNotLoadPanchang;
+
+  /// No description provided for @tithi.
+  ///
+  /// In en, this message translates to:
+  /// **'Tithi'**
+  String get tithi;
+
+  /// No description provided for @nakshatra.
+  ///
+  /// In en, this message translates to:
+  /// **'Nakshatra'**
+  String get nakshatra;
+
+  /// No description provided for @yoga.
+  ///
+  /// In en, this message translates to:
+  /// **'Yoga'**
+  String get yoga;
+
+  /// No description provided for @karana.
+  ///
+  /// In en, this message translates to:
+  /// **'Karana'**
+  String get karana;
+
+  /// No description provided for @weekday.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekday'**
+  String get weekday;
+
+  /// No description provided for @inauspiciousTimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Inauspicious times'**
+  String get inauspiciousTimes;
+
+  /// No description provided for @rahuKaal.
+  ///
+  /// In en, this message translates to:
+  /// **'Rahu Kaal'**
+  String get rahuKaal;
+
+  /// No description provided for @gulikaKaal.
+  ///
+  /// In en, this message translates to:
+  /// **'Gulika Kaal'**
+  String get gulikaKaal;
+
+  /// No description provided for @yamaganda.
+  ///
+  /// In en, this message translates to:
+  /// **'Yamaganda'**
+  String get yamaganda;
+
   /// No description provided for @duration.
   ///
   /// In en, this message translates to:

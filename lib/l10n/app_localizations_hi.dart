@@ -1507,6 +1507,135 @@ class L10nHi extends L10n {
       'अपनी परामर्श प्रक्रिया जारी रखने के लिए अभी रिचार्ज करें। भुगतान करते समय आपकी चैट खुली रहेगी।';
 
   @override
+  String get sessionEndedLowBalance =>
+      'आपका बैलेंस समाप्त हो गया, इसलिए परामर्श समाप्त हो गया। कभी भी रिचार्ज करके फिर से शुरू करें।';
+
+  @override
+  String get couldNotLoadHoroscope =>
+      'राशिफल लोड नहीं हो सका। कृपया पुनः प्रयास करें।';
+
+  @override
+  String get chooseSign => 'राशि बदलें';
+
+  @override
+  String get yesterday => 'कल';
+
+  @override
+  String get today => 'आज';
+
+  @override
+  String get tomorrow => 'आने वाला कल';
+
+  @override
+  String get totalScore => 'कुल स्कोर';
+
+  @override
+  String get luckyColor => 'शुभ रंग';
+
+  @override
+  String get luckyNumber => 'शुभ अंक';
+
+  @override
+  String get lifeAreas => 'जीवन के क्षेत्र';
+
+  @override
+  String get todaysReading => 'आज का राशिफल';
+
+  @override
+  String get career => 'करियर';
+
+  @override
+  String get finances => 'वित्त';
+
+  @override
+  String get health => 'स्वास्थ्य';
+
+  @override
+  String get relationship => 'रिश्ते';
+
+  @override
+  String get family => 'परिवार';
+
+  @override
+  String get friends => 'मित्र';
+
+  @override
+  String get travel => 'यात्रा';
+
+  @override
+  String get physique => 'शरीर';
+
+  @override
+  String get statusLabel => 'स्थिति';
+
+  @override
+  String get signAries => 'मेष';
+
+  @override
+  String get signTaurus => 'वृषभ';
+
+  @override
+  String get signGemini => 'मिथुन';
+
+  @override
+  String get signCancer => 'कर्क';
+
+  @override
+  String get signLeo => 'सिंह';
+
+  @override
+  String get signVirgo => 'कन्या';
+
+  @override
+  String get signLibra => 'तुला';
+
+  @override
+  String get signScorpio => 'वृश्चिक';
+
+  @override
+  String get signSagittarius => 'धनु';
+
+  @override
+  String get signCapricorn => 'मकर';
+
+  @override
+  String get signAquarius => 'कुंभ';
+
+  @override
+  String get signPisces => 'मीन';
+
+  @override
+  String get couldNotLoadPanchang =>
+      'पंचांग लोड नहीं हो सका। कृपया पुनः प्रयास करें।';
+
+  @override
+  String get tithi => 'तिथि';
+
+  @override
+  String get nakshatra => 'नक्षत्र';
+
+  @override
+  String get yoga => 'योग';
+
+  @override
+  String get karana => 'करण';
+
+  @override
+  String get weekday => 'वार';
+
+  @override
+  String get inauspiciousTimes => 'अशुभ समय';
+
+  @override
+  String get rahuKaal => 'राहु काल';
+
+  @override
+  String get gulikaKaal => 'गुलिक काल';
+
+  @override
+  String get yamaganda => 'यमगंड';
+
+  @override
   String get duration => 'अवधि';
 
   @override

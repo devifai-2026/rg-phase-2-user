@@ -67,11 +67,16 @@ class _RequestingScreenState extends State<RequestingScreen> with SingleTickerPr
     }
   }
 
+  bool _cancelling = false;
+
   Future<void> _cancel() async {
-    // Just fire the cancel — the provider reset triggers _onSession, which pops
-    // this screen exactly once (guarded by _navigatedAway). Popping here too
-    // caused the double-pop Navigator assertion.
-    if (_navigatedAway) return;
+    // Latch on the FIRST tap so a second tap can't fire cancel again (the
+    // backend would 409 on the now-non-ringing session, but we also don't want
+    // the button to look tappable). The provider reset triggers _onSession,
+    // which pops this screen exactly once (guarded by _navigatedAway) — popping
+    // here too caused the double-pop Navigator assertion.
+    if (_navigatedAway || _cancelling) return;
+    setState(() => _cancelling = true);
     await context.read<SessionProvider>().cancel(context.read<SocketService>());
   }
 
@@ -113,8 +118,11 @@ class _RequestingScreenState extends State<RequestingScreen> with SingleTickerPr
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: _cancel,
-                  icon: const Icon(Icons.close),
+                  // Disabled once tapped so a second tap can't re-fire cancel.
+                  onPressed: _cancelling ? null : _cancel,
+                  icon: _cancelling
+                      ? SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: c.red))
+                      : const Icon(Icons.close),
                   label: Text(L10n.of(context).cancelRequest),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: c.red,

@@ -1507,6 +1507,135 @@ class L10nPa extends L10n {
       'ਆਪਣੀ ਸਲਾਹ-ਮਸ਼ਵਰਾ ਜਾਰੀ ਰੱਖਣ ਲਈ ਹੁਣੇ ਰੀਚਾਰਜ ਕਰੋ। ਭੁਗਤਾਨ ਕਰਨ ਦੌਰਾਨ ਤੁਹਾਡੀ ਚੈਟ ਖੁੱਲ੍ਹੀ ਰਹਿੰਦੀ ਹੈ।';
 
   @override
+  String get sessionEndedLowBalance =>
+      'ਤੁਹਾਡਾ ਬਕਾਇਆ ਖ਼ਤਮ ਹੋ ਗਿਆ, ਇਸ ਲਈ ਸਲਾਹ-ਮਸ਼ਵਰਾ ਖ਼ਤਮ ਹੋ ਗਿਆ। ਕਿਸੇ ਵੀ ਸਮੇਂ ਰੀਚਾਰਜ ਕਰਕੇ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ।';
+
+  @override
+  String get couldNotLoadHoroscope =>
+      'ਰਾਸ਼ੀਫਲ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get chooseSign => 'ਰਾਸ਼ੀ ਬਦਲੋ';
+
+  @override
+  String get yesterday => 'ਕੱਲ੍ਹ';
+
+  @override
+  String get today => 'ਅੱਜ';
+
+  @override
+  String get tomorrow => 'ਭਲਕੇ';
+
+  @override
+  String get totalScore => 'ਕੁੱਲ ਸਕੋਰ';
+
+  @override
+  String get luckyColor => 'ਸ਼ੁਭ ਰੰਗ';
+
+  @override
+  String get luckyNumber => 'ਸ਼ੁਭ ਅੰਕ';
+
+  @override
+  String get lifeAreas => 'ਜੀਵਨ ਦੇ ਖੇਤਰ';
+
+  @override
+  String get todaysReading => 'ਅੱਜ ਦਾ ਰਾਸ਼ੀਫਲ';
+
+  @override
+  String get career => 'ਕਰੀਅਰ';
+
+  @override
+  String get finances => 'ਵਿੱਤ';
+
+  @override
+  String get health => 'ਸਿਹਤ';
+
+  @override
+  String get relationship => 'ਰਿਸ਼ਤਾ';
+
+  @override
+  String get family => 'ਪਰਿਵਾਰ';
+
+  @override
+  String get friends => 'ਦੋਸਤ';
+
+  @override
+  String get travel => 'ਯਾਤਰਾ';
+
+  @override
+  String get physique => 'ਸਰੀਰ';
+
+  @override
+  String get statusLabel => 'ਸਥਿਤੀ';
+
+  @override
+  String get signAries => 'ਮੇਖ';
+
+  @override
+  String get signTaurus => 'ਬ੍ਰਿਖ';
+
+  @override
+  String get signGemini => 'ਮਿਥੁਨ';
+
+  @override
+  String get signCancer => 'ਕਰਕ';
+
+  @override
+  String get signLeo => 'ਸਿੰਘ';
+
+  @override
+  String get signVirgo => 'ਕੰਨਿਆ';
+
+  @override
+  String get signLibra => 'ਤੁਲਾ';
+
+  @override
+  String get signScorpio => 'ਬ੍ਰਿਸ਼ਚਕ';
+
+  @override
+  String get signSagittarius => 'ਧਨੁ';
+
+  @override
+  String get signCapricorn => 'ਮਕਰ';
+
+  @override
+  String get signAquarius => 'ਕੁੰਭ';
+
+  @override
+  String get signPisces => 'ਮੀਨ';
+
+  @override
+  String get couldNotLoadPanchang =>
+      'ਪੰਚਾਂਗ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get tithi => 'ਤਿਥੀ';
+
+  @override
+  String get nakshatra => 'ਨਕਸ਼ਤਰ';
+
+  @override
+  String get yoga => 'ਯੋਗ';
+
+  @override
+  String get karana => 'ਕਰਣ';
+
+  @override
+  String get weekday => 'ਵਾਰ';
+
+  @override
+  String get inauspiciousTimes => 'ਅਸ਼ੁਭ ਸਮਾਂ';
+
+  @override
+  String get rahuKaal => 'ਰਾਹੂ ਕਾਲ';
+
+  @override
+  String get gulikaKaal => 'ਗੁਲਿਕ ਕਾਲ';
+
+  @override
+  String get yamaganda => 'ਯਮਗੰਡ';
+
+  @override
   String get duration => 'ਮਿਆਦ';
 
   @override

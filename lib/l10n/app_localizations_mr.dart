@@ -1506,6 +1506,135 @@ class L10nMr extends L10n {
       'तुमची चर्चा सुरू ठेवण्यासाठी आता रिचार्ज करा. तुम्ही पैसे भरत असताना तुमची चॅट सुरूच राहील.';
 
   @override
+  String get sessionEndedLowBalance =>
+      'तुमची शिल्लक संपल्यामुळे सल्लामसलत संपली. कधीही रिचार्ज करून पुन्हा सुरू करा.';
+
+  @override
+  String get couldNotLoadHoroscope =>
+      'राशीभविष्य लोड होऊ शकले नाही. कृपया पुन्हा प्रयत्न करा.';
+
+  @override
+  String get chooseSign => 'रास बदला';
+
+  @override
+  String get yesterday => 'काल';
+
+  @override
+  String get today => 'आज';
+
+  @override
+  String get tomorrow => 'उद्या';
+
+  @override
+  String get totalScore => 'एकूण स्कोअर';
+
+  @override
+  String get luckyColor => 'शुभ रंग';
+
+  @override
+  String get luckyNumber => 'शुभ अंक';
+
+  @override
+  String get lifeAreas => 'जीवनातील क्षेत्रे';
+
+  @override
+  String get todaysReading => 'आजचे राशीभविष्य';
+
+  @override
+  String get career => 'करिअर';
+
+  @override
+  String get finances => 'आर्थिक';
+
+  @override
+  String get health => 'आरोग्य';
+
+  @override
+  String get relationship => 'नाते';
+
+  @override
+  String get family => 'कुटुंब';
+
+  @override
+  String get friends => 'मित्र';
+
+  @override
+  String get travel => 'प्रवास';
+
+  @override
+  String get physique => 'शरीर';
+
+  @override
+  String get statusLabel => 'स्थिती';
+
+  @override
+  String get signAries => 'मेष';
+
+  @override
+  String get signTaurus => 'वृषभ';
+
+  @override
+  String get signGemini => 'मिथुन';
+
+  @override
+  String get signCancer => 'कर्क';
+
+  @override
+  String get signLeo => 'सिंह';
+
+  @override
+  String get signVirgo => 'कन्या';
+
+  @override
+  String get signLibra => 'तूळ';
+
+  @override
+  String get signScorpio => 'वृश्चिक';
+
+  @override
+  String get signSagittarius => 'धनु';
+
+  @override
+  String get signCapricorn => 'मकर';
+
+  @override
+  String get signAquarius => 'कुंभ';
+
+  @override
+  String get signPisces => 'मीन';
+
+  @override
+  String get couldNotLoadPanchang =>
+      'पंचांग लोड होऊ शकले नाही. कृपया पुन्हा प्रयत्न करा.';
+
+  @override
+  String get tithi => 'तिथी';
+
+  @override
+  String get nakshatra => 'नक्षत्र';
+
+  @override
+  String get yoga => 'योग';
+
+  @override
+  String get karana => 'करण';
+
+  @override
+  String get weekday => 'वार';
+
+  @override
+  String get inauspiciousTimes => 'अशुभ वेळ';
+
+  @override
+  String get rahuKaal => 'राहू काळ';
+
+  @override
+  String get gulikaKaal => 'गुलिक काळ';
+
+  @override
+  String get yamaganda => 'यमगंड';
+
+  @override
   String get duration => 'कालावधी';
 
   @override

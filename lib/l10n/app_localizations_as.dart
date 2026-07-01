@@ -1509,6 +1509,135 @@ class L10nAs extends L10n {
       'আপোনাৰ পৰামৰ্শ চলি থাকিবলৈ এতিয়াই ৰিচাৰ্জ কৰক। আপুনি ধন পৰিশোধ কৰাৰ সময়ত আপোনাৰ আড্ডা খোলা থাকে।';
 
   @override
+  String get sessionEndedLowBalance =>
+      'আপোনাৰ বেলেন্স শেষ হোৱাত পৰামৰ্শ সমাপ্ত হ\'ল। যিকোনো সময়ত ৰিচাৰ্জ কৰি আকৌ আৰম্ভ কৰিব পাৰে।';
+
+  @override
+  String get couldNotLoadHoroscope =>
+      'ৰাশিফল ল\'ড কৰিব পৰা নগ\'ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।';
+
+  @override
+  String get chooseSign => 'ৰাশি সলনি কৰক';
+
+  @override
+  String get yesterday => 'কালি';
+
+  @override
+  String get today => 'আজি';
+
+  @override
+  String get tomorrow => 'অহা কালি';
+
+  @override
+  String get totalScore => 'মুঠ স্ক\'ৰ';
+
+  @override
+  String get luckyColor => 'শুভ ৰং';
+
+  @override
+  String get luckyNumber => 'শুভ সংখ্যা';
+
+  @override
+  String get lifeAreas => 'জীৱনৰ ক্ষেত্ৰ';
+
+  @override
+  String get todaysReading => 'আজিৰ ৰাশিফল';
+
+  @override
+  String get career => 'কেৰিয়াৰ';
+
+  @override
+  String get finances => 'বিত্ত';
+
+  @override
+  String get health => 'স্বাস্থ্য';
+
+  @override
+  String get relationship => 'সম্পৰ্ক';
+
+  @override
+  String get family => 'পৰিয়াল';
+
+  @override
+  String get friends => 'বন্ধু';
+
+  @override
+  String get travel => 'ভ্ৰমণ';
+
+  @override
+  String get physique => 'শৰীৰ';
+
+  @override
+  String get statusLabel => 'অৱস্থা';
+
+  @override
+  String get signAries => 'মেষ';
+
+  @override
+  String get signTaurus => 'বৃষ';
+
+  @override
+  String get signGemini => 'মিথুন';
+
+  @override
+  String get signCancer => 'কৰ্কট';
+
+  @override
+  String get signLeo => 'সিংহ';
+
+  @override
+  String get signVirgo => 'কন্যা';
+
+  @override
+  String get signLibra => 'তুলা';
+
+  @override
+  String get signScorpio => 'বৃশ্চিক';
+
+  @override
+  String get signSagittarius => 'ধনু';
+
+  @override
+  String get signCapricorn => 'মকৰ';
+
+  @override
+  String get signAquarius => 'কুম্ভ';
+
+  @override
+  String get signPisces => 'মীন';
+
+  @override
+  String get couldNotLoadPanchang =>
+      'পঞ্চাংগ ল\'ড কৰিব পৰা নগ\'ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।';
+
+  @override
+  String get tithi => 'তিথি';
+
+  @override
+  String get nakshatra => 'নক্ষত্ৰ';
+
+  @override
+  String get yoga => 'যোগ';
+
+  @override
+  String get karana => 'কৰণ';
+
+  @override
+  String get weekday => 'বাৰ';
+
+  @override
+  String get inauspiciousTimes => 'অশুভ সময়';
+
+  @override
+  String get rahuKaal => 'ৰাহু কাল';
+
+  @override
+  String get gulikaKaal => 'গুলিক কাল';
+
+  @override
+  String get yamaganda => 'যমগণ্ড';
+
+  @override
   String get duration => 'সময়কাল';
 
   @override

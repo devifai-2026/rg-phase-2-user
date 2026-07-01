@@ -1,17 +1,44 @@
 import 'api_client.dart';
 
+/// Map a gift name to its emoji. The admin catalog items carry no image, so we
+/// render the exact emoji for the gift instead of a generic gift icon. Shared by
+/// every gift surface (send sheet, astrologer profile "gifts received", chat)
+/// so the SAME gift always shows the SAME emoji. Falls back to 🎁 for unknown
+/// names. When a gift DOES have an image URL, callers should prefer that.
+String giftEmoji(String name) {
+  final n = name.toLowerCase();
+  if (n.contains('rose') || n.contains('flower')) return '🌹';
+  if (n.contains('diya') || n.contains('lamp') || n.contains('candle')) return '🪔';
+  if (n.contains('garland') || n.contains('mala')) return '💐';
+  if (n.contains('lotus')) return '🪷';
+  if (n.contains('coconut')) return '🥥';
+  if (n.contains('sweet') || n.contains('laddu') || n.contains('mithai')) return '🍬';
+  if (n.contains('heart') || n.contains('love')) return '❤️';
+  if (n.contains('star')) return '⭐';
+  if (n.contains('crown')) return '👑';
+  if (n.contains('gold') || n.contains('coin')) return '🪙';
+  return '🎁';
+}
+
 /// A purchasable gift from the admin catalog (GET /gifts).
 class Gift {
   final String id;
   final String name;
   final String? image;
+  final String? _emoji; // admin-set emoji (may be null → derive from name)
   final int tokenCost;
   final int rupeeCost; // resolved ₹ cost (tokenCost × giftTokenRupees)
-  const Gift({required this.id, required this.name, this.image, required this.tokenCost, this.rupeeCost = 0});
+  const Gift({required this.id, required this.name, this.image, String? emoji, required this.tokenCost, this.rupeeCost = 0}) : _emoji = emoji;
+
+  /// The emoji to render for this gift: the admin-set one when present, else
+  /// derived from the name. Always non-empty (🎁 fallback).
+  String get emoji { final e = _emoji; return (e != null && e.isNotEmpty) ? e : giftEmoji(name); }
+
   factory Gift.fromJson(Map<String, dynamic> j) => Gift(
         id: (j['_id'] ?? j['id']).toString(),
         name: (j['name'] ?? 'Gift').toString(),
         image: j['image']?.toString(),
+        emoji: j['emoji']?.toString(),
         tokenCost: (j['tokenCost'] as num?)?.toInt() ?? 0,
         rupeeCost: (j['rupeeCost'] as num?)?.toInt() ?? (j['tokenCost'] as num?)?.toInt() ?? 0,
       );
@@ -21,11 +48,17 @@ class Gift {
 class ReceivedGift {
   final String name;
   final String? image;
+  final String? _emoji;
   final int count;
-  const ReceivedGift({required this.name, this.image, required this.count});
+  const ReceivedGift({required this.name, this.image, String? emoji, required this.count}) : _emoji = emoji;
+
+  /// Emoji to render: admin-set when present, else derived from the name.
+  String get emoji { final e = _emoji; return (e != null && e.isNotEmpty) ? e : giftEmoji(name); }
+
   factory ReceivedGift.fromJson(Map<String, dynamic> j) => ReceivedGift(
         name: (j['name'] ?? '').toString(),
         image: j['image']?.toString(),
+        emoji: j['emoji']?.toString(),
         count: (j['count'] as num?)?.toInt() ?? 0,
       );
 }

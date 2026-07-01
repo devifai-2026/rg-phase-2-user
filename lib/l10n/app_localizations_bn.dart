@@ -1509,6 +1509,135 @@ class L10nBn extends L10n {
       'আপনার পরামর্শ চালু রাখতে এখনই রিচার্জ করুন। পেমেন্ট করার সময়েও আপনার চ্যাট খোলা থাকবে।';
 
   @override
+  String get sessionEndedLowBalance =>
+      'আপনার ব্যালেন্স শেষ হয়ে যাওয়ায় পরামর্শ শেষ হয়েছে। যেকোনো সময় রিচার্জ করে আবার শুরু করুন।';
+
+  @override
+  String get couldNotLoadHoroscope =>
+      'রাশিফল লোড করা যায়নি। আবার চেষ্টা করুন।';
+
+  @override
+  String get chooseSign => 'রাশি বদলান';
+
+  @override
+  String get yesterday => 'গতকাল';
+
+  @override
+  String get today => 'আজ';
+
+  @override
+  String get tomorrow => 'আগামীকাল';
+
+  @override
+  String get totalScore => 'সামগ্রিক স্কোর';
+
+  @override
+  String get luckyColor => 'শুভ রং';
+
+  @override
+  String get luckyNumber => 'শুভ সংখ্যা';
+
+  @override
+  String get lifeAreas => 'জীবনের ক্ষেত্র';
+
+  @override
+  String get todaysReading => 'আজকের রাশিফল';
+
+  @override
+  String get career => 'ক্যারিয়ার';
+
+  @override
+  String get finances => 'অর্থ';
+
+  @override
+  String get health => 'স্বাস্থ্য';
+
+  @override
+  String get relationship => 'সম্পর্ক';
+
+  @override
+  String get family => 'পরিবার';
+
+  @override
+  String get friends => 'বন্ধু';
+
+  @override
+  String get travel => 'ভ্রমণ';
+
+  @override
+  String get physique => 'শরীর';
+
+  @override
+  String get statusLabel => 'অবস্থা';
+
+  @override
+  String get signAries => 'মেষ';
+
+  @override
+  String get signTaurus => 'বৃষ';
+
+  @override
+  String get signGemini => 'মিথুন';
+
+  @override
+  String get signCancer => 'কর্কট';
+
+  @override
+  String get signLeo => 'সিংহ';
+
+  @override
+  String get signVirgo => 'কন্যা';
+
+  @override
+  String get signLibra => 'তুলা';
+
+  @override
+  String get signScorpio => 'বৃশ্চিক';
+
+  @override
+  String get signSagittarius => 'ধনু';
+
+  @override
+  String get signCapricorn => 'মকর';
+
+  @override
+  String get signAquarius => 'কুম্ভ';
+
+  @override
+  String get signPisces => 'মীন';
+
+  @override
+  String get couldNotLoadPanchang =>
+      'পঞ্চাঙ্গ লোড করা যায়নি। আবার চেষ্টা করুন।';
+
+  @override
+  String get tithi => 'তিথি';
+
+  @override
+  String get nakshatra => 'নক্ষত্র';
+
+  @override
+  String get yoga => 'যোগ';
+
+  @override
+  String get karana => 'করণ';
+
+  @override
+  String get weekday => 'বার';
+
+  @override
+  String get inauspiciousTimes => 'অশুভ সময়';
+
+  @override
+  String get rahuKaal => 'রাহু কাল';
+
+  @override
+  String get gulikaKaal => 'গুলিক কাল';
+
+  @override
+  String get yamaganda => 'যমগণ্ড';
+
+  @override
   String get duration => 'সময়কাল';
 
   @override

@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../api/api_client.dart';
+import '../../api/gift_api.dart';
 import '../../api/live_api.dart';
 import '../../api/socket_service.dart';
 import '../../services/agora_audience.dart';
@@ -382,6 +383,14 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
     );
   }
 
+  /// "🌹 Rose" — the gift's emoji (from the payload, else derived) + its name.
+  String _giftLabel(Map<String, dynamic> m) {
+    final name = (m['gift'] ?? 'a gift').toString();
+    final e = (m['emoji'] ?? '').toString();
+    final emoji = e.isNotEmpty ? e : giftEmoji(name);
+    return '$emoji $name';
+  }
+
   Widget _giftLine(RgColors c, Map<String, dynamic> m) => Container(
         margin: const EdgeInsets.only(bottom: 8),
         padding: const EdgeInsets.all(11),
@@ -393,7 +402,7 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
           const Icon(Icons.bolt, color: Color(0xFF1A1408), size: 16),
           const SizedBox(width: 6),
           Expanded(
-            child: Text('${m['fromName'] ?? 'Someone'} sent ${m['gift'] ?? 'a gift'} · ₹${m['amountRupees'] ?? ''}',
+            child: Text('${m['fromName'] ?? 'Someone'} sent ${_giftLabel(m)} · ₹${m['amountRupees'] ?? ''}',
                 style: const TextStyle(color: Color(0xFF1A1408), fontWeight: FontWeight.w800, fontSize: 13)),
           ),
         ]),

@@ -24,6 +24,14 @@ StoreTheme _theme(String key) {
       return (bg: const [Color(0xFF1C1030), Color(0xFF0A0617)], accent: const Color(0xFFB98CFF), accent2: const Color(0xFFF2C879), motif: Icons.auto_awesome, motifSvg: null, heroImage: null);
     case 'royal':
       return (bg: const [Color(0xFF2B0B12), Color(0xFF140509)], accent: const Color(0xFFD4AF37), accent2: const Color(0xFFE0556B), motif: Icons.workspace_premium, motifSvg: null, heroImage: null);
+    case 'aurora':
+      return (bg: const [Color(0xFF06231F), Color(0xFF03110E)], accent: const Color(0xFF3FD8B4), accent2: const Color(0xFFBFE9D8), motif: Icons.auto_awesome, motifSvg: null, heroImage: null);
+    case 'twilight':
+      return (bg: const [Color(0xFF241436), Color(0xFF0E0718)], accent: const Color(0xFFC77DFF), accent2: const Color(0xFFFF9EC4), motif: Icons.nightlight_round, motifSvg: null, heroImage: null);
+    case 'sapphire':
+      return (bg: const [Color(0xFF0A1B3D), Color(0xFF040B1C)], accent: const Color(0xFF5AA9FF), accent2: const Color(0xFF8FE0FF), motif: Icons.blur_on, motifSvg: null, heroImage: null);
+    case 'lotus':
+      return (bg: const [Color(0xFF2E1220), Color(0xFF150710)], accent: const Color(0xFFF2B8C6), accent2: const Color(0xFFE8C07D), motif: Icons.local_florist, motifSvg: null, heroImage: null);
     case 'rudraksh':
     default:
       return (bg: const [Color(0xFF2A1A0E), Color(0xFF120B06)], accent: const Color(0xFFE8A33D), accent2: const Color(0xFFB5651D), motif: Icons.spa, motifSvg: null, heroImage: null);

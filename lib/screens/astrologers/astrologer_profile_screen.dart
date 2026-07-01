@@ -83,6 +83,7 @@ class _AstrologerProfileScreenState extends State<AstrologerProfileScreen> {
   // Real reviews + gifts-received (null = loading; empty list = none).
   List<AstroReview>? _reviews;
   List<ReceivedGift>? _giftsReceived;
+  int? _giftsTotal; // real received-gift count (null until loaded)
 
   // Re-fetch the live status whenever a consultation ends, since the user may
   // have stayed on this screen (it sits under the call/chat screen) and missed
@@ -194,8 +195,8 @@ class _AstrologerProfileScreenState extends State<AstrologerProfileScreen> {
         if (mounted) setState(() => _reviews = r);
       }).catchError((_) { if (mounted) setState(() => _reviews = const []); });
       context.read<GiftApi>().received(id).then((g) {
-        if (mounted) setState(() => _giftsReceived = g.items);
-      }).catchError((_) { if (mounted) setState(() => _giftsReceived = const []); });
+        if (mounted) setState(() { _giftsReceived = g.items; _giftsTotal = g.total; });
+      }).catchError((_) { if (mounted) setState(() { _giftsReceived = const []; _giftsTotal = 0; }); });
     }
   }
 
@@ -397,7 +398,9 @@ class _AstrologerProfileScreenState extends State<AstrologerProfileScreen> {
     final c = context.rg;
     final green = c.green;
     final name = widget.name, desc = widget.desc, status = _status;
-    final gifts = widget.gifts;
+    // Prefer the REAL received-gift total (matches the "Gifts received" section
+    // below) once loaded; fall back to the passed-in seed value while loading.
+    final gifts = _giftsTotal ?? widget.gifts;
     // Live follower count once loaded; otherwise the label passed in.
     final followers = _followers != null ? _fmtCount(_followers!) : widget.followers;
     final call = widget.call, chat = widget.chat, video = widget.video;
@@ -742,7 +745,8 @@ class _AstrologerProfileScreenState extends State<AstrologerProfileScreen> {
             height: 28, width: 28,
             child: (g.image != null && g.image!.isNotEmpty)
                 ? CachedImage(url: g.image, fit: BoxFit.contain, fallbackIcon: Icons.card_giftcard)
-                : Icon(Icons.card_giftcard, color: c.gold, size: 22),
+                // No image → render the gift's exact emoji, not a generic icon.
+                : Center(child: Text(g.emoji, style: const TextStyle(fontSize: 22))),
           ),
           const SizedBox(height: 4),
           Text('×${g.count}', style: TextStyle(color: c.gold, fontSize: 11, fontWeight: FontWeight.w700)),
