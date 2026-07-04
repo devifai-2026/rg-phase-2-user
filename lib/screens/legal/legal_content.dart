@@ -24,13 +24,13 @@ const termsDoc = LegalDoc(
   title: 'Terms of Service',
   lastUpdated: 'Last updated: 26 June 2026',
   intro:
-      'Rudraganga provides astrology, spiritual, and wellness consultations for guidance and personal '
+      'Astro App provides astrology, spiritual, and wellness consultations for guidance and personal '
       'reflection only. Our services are not a substitute for professional medical, legal, financial, '
       'or psychological advice. You must be 18 or older to use the app.',
   blocks: [
     LegalBlock.heading('1. Acceptance of these terms'),
     LegalBlock.paragraph(
-        'By creating an account or using the Rudraganga mobile application and related services (the '
+        'By creating an account or using the Astro App mobile application and related services (the '
         '“Services”), you agree to be bound by these Terms of Service and our Privacy Policy and Refund '
         'Policy. If you do not agree, please do not use the Services.'),
     LegalBlock.heading('2. Eligibility & your account'),
@@ -41,7 +41,7 @@ const termsDoc = LegalDoc(
     ]),
     LegalBlock.heading('3. The services we offer'),
     LegalBlock.paragraph(
-        'Rudraganga connects you with verified astrologers for consultations by audio call, video call, '
+        'Astro App connects you with verified astrologers for consultations by audio call, video call, '
         'and chat, and offers related features such as kundli generation and matching, an AI astrologer, '
         'daily horoscopes, pooja bookings, a store for spiritual products, gifting, and matrimony matching. '
         'Availability of any feature or astrologer may change at any time.'),
@@ -63,10 +63,10 @@ const termsDoc = LegalDoc(
     ]),
     LegalBlock.heading('6. Astrologers on the platform'),
     LegalBlock.paragraph(
-        'Astrologers are independent practitioners who are identity-verified and approved by Rudraganga '
+        'Astrologers are independent practitioners who are identity-verified and approved by Astro App '
         'before they can offer consultations. They set their own per-minute fares within limits we define. '
         'Opinions and guidance shared during a consultation are those of the individual astrologer and not '
-        'of Rudraganga. We are not responsible for any decision you make based on a consultation.'),
+        'of Astro App. We are not responsible for any decision you make based on a consultation.'),
     LegalBlock.heading('7. Recordings & content'),
     LegalBlock.paragraph(
         'For quality, safety, and dispute resolution, audio and video consultations may be recorded. You '
@@ -75,8 +75,8 @@ const termsDoc = LegalDoc(
     LegalBlock.heading('8. Disclaimer & limitation of liability'),
     LegalBlock.paragraph(
         'The Services are provided “as is” for guidance and entertainment-adjacent personal reflection. '
-        'Rudraganga makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent '
-        'permitted by law, Rudraganga’s total liability arising from your use of the Services is limited to '
+        'Astro App makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent '
+        'permitted by law, Astro App’s total liability arising from your use of the Services is limited to '
         'the amount you paid into your wallet in the 30 days before the event giving rise to the claim. We '
         'are not liable for indirect or consequential losses.'),
     LegalBlock.heading('9. Suspension & termination'),
@@ -123,7 +123,7 @@ const privacyDoc = LegalDoc(
     LegalBlock.bullets([
       'With the astrologer you consult, limited to what is needed for the reading (e.g. your birth details and chat).',
       'With service providers who help us operate — payment processing (PayU), cloud hosting and storage, communications (WhatsApp/SMS for OTP), and notifications — under confidentiality obligations.',
-      'When required by law, or to protect the rights, safety, and property of users and Rudraganga.',
+      'When required by law, or to protect the rights, safety, and property of users and Astro App.',
     ]),
     LegalBlock.heading('4. Consultation recordings & chats'),
     LegalBlock.paragraph(

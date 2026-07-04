@@ -28,7 +28,7 @@ import '../screens/live/live_audience_screen.dart';
 /// a screen. Sources:
 ///  1. In-app notification tap   → from `notification.type` + `notification.data`
 ///  2. Push tap (fg/bg/cold)     → from FCM `message.data`
-///  3. External URI              → `rudraganga://<host>/<id>` or https App Link
+///  3. External URI              → `<scheme>://<host>/<id>` or https App Link
 ///
 /// A single [navigatorKey] lets the headless push/URI handlers navigate without
 /// a BuildContext.
@@ -102,33 +102,33 @@ class DeepLink {
   }
 
   /// Resolve + navigate for an external URI:
-  ///   rudraganga://wallet            https://rudraganga.app/wallet
-  ///   rudraganga://astrologers       https://rudraganga.app/astrologers
-  ///   rudraganga://pooja             rudraganga://notifications
-  ///   rudraganga://profile           rudraganga://settings/notifications
+  ///   <scheme>://wallet            https://astroapp.example/wallet
+  ///   <scheme>://astrologers       https://astroapp.example/astrologers
+  ///   <scheme>://pooja             <scheme>://notifications
+  ///   <scheme>://profile           <scheme>://settings/notifications
   static void fromUri(String raw) {
     final uri = Uri.tryParse(raw.trim());
     if (uri == null) return;
-    // For a custom scheme the path lives in `host` (rudraganga://wallet → host=wallet);
+    // For a custom scheme the path lives in `host` (<scheme>://wallet → host=wallet);
     // for https it lives in the path segments.
     final seg = <String>[
       if (uri.scheme != 'http' && uri.scheme != 'https' && uri.host.isNotEmpty) uri.host,
       ...uri.pathSegments,
     ].where((s) => s.isNotEmpty).toList();
     if (seg.isEmpty) return;
-    // rudraganga://notification/<type> → route by the built-in type map.
+    // <scheme>://notification/<type> → route by the built-in type map.
     if (seg.first == 'notification' && seg.length >= 2) {
       _route(_targetForType(seg[1], const {}));
       return;
     }
-    // rudraganga://product/<id> → that product's detail page (needs the id, so
+    // <scheme>://product/<id> → that product's detail page (needs the id, so
     // handled here rather than via the param-less _Target factories).
     if ((seg.first == 'product' || seg.first == 'products') && seg.length >= 2 && _isObjectId(seg[1])) {
       final nav = _nav;
       if (nav != null) nav.push(slideRoute(ProductDetailScreen(productId: seg[1])));
       return;
     }
-    // rudraganga://live/<liveSessionId> → open that live broadcast room.
+    // <scheme>://live/<liveSessionId> → open that live broadcast room.
     if (seg.first == 'live' && seg.length >= 2 && seg[1].isNotEmpty) {
       final nav = _nav;
       if (nav != null) {
@@ -136,7 +136,7 @@ class DeepLink {
       }
       return;
     }
-    // rudraganga://astrologer/<id> → that astrologer's detail page; bare → list.
+    // <scheme>://astrologer/<id> → that astrologer's detail page; bare → list.
     if (seg.first == 'astrologer' || seg.first == 'astrologers') {
       if (seg.length >= 2 && _isObjectId(seg[1])) {
         _openAstrologer(seg[1]);
@@ -145,7 +145,7 @@ class DeepLink {
       _route(const _Target.astrologers());
       return;
     }
-    // rudraganga://chat-history/<sessionId> → that chat's history (with its AI
+    // <scheme>://chat-history/<sessionId> → that chat's history (with its AI
     // recap, if published). sessionId is a UUID, not a Mongo ObjectId.
     if (seg.first == 'chat-history' && seg.length >= 2 && seg[1].isNotEmpty) {
       final nav = _nav;
@@ -154,7 +154,7 @@ class DeepLink {
       }
       return;
     }
-    // rudraganga://order/<id> → that order's detail page; bare → orders list.
+    // <scheme>://order/<id> → that order's detail page; bare → orders list.
     if (seg.first == 'order' || seg.first == 'orders') {
       final nav = _nav;
       if (nav != null) {
@@ -171,7 +171,7 @@ class DeepLink {
 
   /// Fetch one astrologer by profile id and open their detail page. Used by the
   /// "astrologer is online" notification ("tap to connect") and the
-  /// rudraganga://astrologer/<id> deep link. Falls back to the astrologers list
+  /// <scheme>://astrologer/<id> deep link. Falls back to the astrologers list
   /// if the navigator isn't ready or the fetch fails.
   static Future<void> _openAstrologer(String profileId) async {
     final nav = _nav;
@@ -201,7 +201,7 @@ class DeepLink {
 
   /// The canonical shareable https link for a product (also opens the app via
   /// App Links). Keep in sync with the deep-link router above.
-  static String productShareUrl(String productId) => 'https://rudraganga.app/product/$productId';
+  static String productShareUrl(String productId) => 'https://astroapp.example/product/$productId';
 
   /// Open an admin-managed banner's tap target. The `link` is a value chosen in
   /// the admin "Tap target" dropdown:

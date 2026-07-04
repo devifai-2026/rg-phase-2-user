@@ -19,6 +19,14 @@ class AppConfigService extends ChangeNotifier {
   Map<String, dynamic> _cfg = {};
   Map<String, dynamic> get raw => _cfg;
 
+  /// The tenant's brand name (from admin/branding). Shown as the app title and
+  /// wherever the brand name appears in UI. Falls back to a neutral default so a
+  /// build with no config never shows another tenant's name.
+  String get appName {
+    final n = _cfg['appName'];
+    return (n is String && n.trim().isNotEmpty) ? n.trim() : 'Astro App';
+  }
+
   // ── Section toggles (default everything visible) ──
   bool _section(String k) => (_cfg['sections']?[k] ?? true) == true;
   bool get showBanners => _section('banners');

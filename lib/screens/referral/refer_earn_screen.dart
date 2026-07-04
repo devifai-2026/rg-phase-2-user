@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../api/app_config_service.dart';
 import '../../api/referral_api.dart';
 import '../../l10n/app_localizations.dart';
 import '../../theme/rg_colors.dart';
@@ -43,7 +44,7 @@ class _ReferEarnScreenState extends State<ReferEarnScreen> {
 
   String get _shareText {
     final i = _info!;
-    return 'Join me on Rudraganga ✨ Use my code ${i.code} on your first recharge and we BOTH get ₹${i.reward}! Talk to expert astrologers, book poojas & more.\nhttps://rudraganga.app';
+    return 'Join me on Astro App ✨ Use my code ${i.code} on your first recharge and we BOTH get ₹${i.reward}! Talk to expert astrologers, book poojas & more.\nhttps://astroapp.example';
   }
 
   Future<void> _applyCode() async {
@@ -125,7 +126,7 @@ class _ReferEarnScreenState extends State<ReferEarnScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton.icon(
-                        onPressed: () => Share.share(_shareText, subject: L10n.of(context).earnIRewardOnRudraganga(i.reward)),
+                        onPressed: () => Share.share(_shareText, subject: L10n.of(context).earnIRewardOnRudraganga(i.reward, context.read<AppConfigService>().appName)),
                         icon: const Icon(Icons.share, size: 18),
                         label: Text(L10n.of(context).shareEarn),
                         style: ElevatedButton.styleFrom(backgroundColor: c.red, foregroundColor: Colors.white, minimumSize: const Size.fromHeight(52)),

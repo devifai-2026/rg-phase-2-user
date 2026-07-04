@@ -19,10 +19,19 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.rudraganga.rg_user"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        // App-factory: EVERY tenant (including Rudraganga) injects its own
+        // applicationId + label at build time via Gradle properties, set by the
+        // build worker. The compiled default is brand-NEUTRAL on purpose — no
+        // tenant's brand (e.g. Rudraganga) may leak into another tenant's build.
+        applicationId = (project.findProperty("tenant.applicationId") as String?) ?: "app.saasastro.user"
+        resValue("string", "app_name", (project.findProperty("tenant.appLabel") as String?) ?: "Astro App")
+        // Per-tenant deep-link scheme for the AndroidManifest intent-filter. Must
+        // match ApiConfig.deepLinkScheme (--dart-define=DEEPLINK_SCHEME). Neutral
+        // default so no tenant's brand leaks into another tenant's build.
+        manifestPlaceholders["deepLinkScheme"] = (project.findProperty("tenant.deepLinkScheme") as String?) ?: "astroapp"
+        // Per-tenant App-Links host (https deep links). Neutral default; each
+        // tenant build passes its own domain so no tenant's domain leaks.
+        manifestPlaceholders["appLinkHost"] = (project.findProperty("tenant.appLinkHost") as String?) ?: "app.example.com"
         // 24 = required by geolocator/geocoding AndroidX deps. (Note8 is API 28, fine.)
         minSdk = 24
         targetSdk = flutter.targetSdkVersion
@@ -30,11 +39,27 @@ android {
         versionName = flutter.versionName
     }
 
+    // Per-tenant release signing: the build worker passes -Ptenant.keystore +
+    // -Ptenant.keystoreProps (a props file with storePassword/keyAlias/keyPassword).
+    // Absent → fall back to debug signing so dev builds still work (NOT Play-ready).
+    val tenantKeystore = project.findProperty("tenant.keystore") as String?
+    val tenantKeystoreProps = project.findProperty("tenant.keystoreProps") as String?
+    if (tenantKeystore != null && tenantKeystoreProps != null && file(tenantKeystoreProps).exists()) {
+        val props = java.util.Properties().apply { load(java.io.FileInputStream(tenantKeystoreProps)) }
+        signingConfigs.create("tenant") {
+            storeFile = file(tenantKeystore)
+            storePassword = props.getProperty("storePassword")
+            keyAlias = props.getProperty("keyAlias")
+            keyPassword = props.getProperty("keyPassword")
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = if (signingConfigs.findByName("tenant") != null)
+                signingConfigs.getByName("tenant")
+            else
+                signingConfigs.getByName("debug")
         }
     }
 }

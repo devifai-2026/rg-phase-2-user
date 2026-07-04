@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import '../../api/api_client.dart';
+import '../../api/app_config_service.dart';
 import '../../api/profile_api.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/auth_provider.dart';
@@ -139,7 +140,7 @@ class _AstrologerRegisterScreenState extends State<AstrologerRegisterScreen> {
         child: ListView(
           padding: const EdgeInsets.all(20),
           children: [
-            Text(L10n.of(context).joinRudragangaAsAnAstrologer, style: TextStyle(color: c.ink, fontSize: 16, fontWeight: FontWeight.w800)),
+            Text(L10n.of(context).joinRudragangaAsAnAstrologer(context.read<AppConfigService>().appName), style: TextStyle(color: c.ink, fontSize: 16, fontWeight: FontWeight.w800)),
             const SizedBox(height: 4),
             Text(L10n.of(context).tellUsAboutYourselfOurTeam, style: TextStyle(color: c.muted, fontSize: 13)),
             const SizedBox(height: 18),
@@ -205,12 +206,12 @@ class AboutUsScreen extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.all(20),
             sliver: SliverList(delegate: SliverChildListDelegate([
-              Text(L10n.of(context).rudraganga, style: TextStyle(color: c.ink, fontSize: 22, fontWeight: FontWeight.w800)),
+              Text(context.read<AppConfigService>().appName, style: TextStyle(color: c.ink, fontSize: 22, fontWeight: FontWeight.w800)),
               const SizedBox(height: 4),
               Text(L10n.of(context).astrologyWellness, style: TextStyle(color: c.gold, fontWeight: FontWeight.w600)),
               const SizedBox(height: 16),
               Text(
-                L10n.of(context).rudragangaConnectsYouWithTrustedVedic +
+                L10n.of(context).rudragangaConnectsYouWithTrustedVedic(context.read<AppConfigService>().appName) +
                     L10n.of(context).marriageFinanceHealthAndLifeS +
                     L10n.of(context).getYourFreeKundliDailyHoroscope +
                     L10n.of(context).ourMissionIsToMakeAuthentic +
@@ -236,7 +237,7 @@ class AboutUsScreen extends StatelessWidget {
       );
 }
 
-// ─────────────────────── Rate Rudraganga dialog ───────────────────────
+// ─────────────────────── Rate app dialog ───────────────────────
 Future<void> showRateDialog(BuildContext context) {
   return showDialog(
     context: context,
@@ -266,7 +267,7 @@ class _RateDialogState extends State<_RateDialog> {
     final nav = Navigator.of(context);
     final thanksMsg = L10n.of(context).thanksForYourRating;
     final ratedTitle = L10n.of(context).thanksForRatingUs;
-    final ratedBody = L10n.of(context).yourFeedbackHelpsRudragangaGrow;
+    final ratedBody = L10n.of(context).yourFeedbackHelpsRudragangaGrow(context.read<AppConfigService>().appName);
     try {
       await api.rateApp(rating: _stars, review: _review.text.trim());
       LocalNotifs.pingAfterDelay(ratedTitle, ratedBody);
@@ -282,7 +283,7 @@ class _RateDialogState extends State<_RateDialog> {
     final c = context.rg;
     return AlertDialog(
       backgroundColor: c.ground2,
-      title: Text(L10n.of(context).rateRudraganga, style: TextStyle(color: c.ink)),
+      title: Text(L10n.of(context).rateRudraganga(context.read<AppConfigService>().appName), style: TextStyle(color: c.ink)),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

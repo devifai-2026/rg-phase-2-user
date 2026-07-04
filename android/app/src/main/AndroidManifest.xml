@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <application
-        android:label="Rudraganga"
+        android:label="@string/app_name"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
@@ -40,20 +40,22 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <!-- Deep links: custom scheme rudraganga://<target> -->
+            <!-- Deep links: custom scheme ${deepLinkScheme}://<target> (per-tenant,
+                 stamped via the build.gradle.kts manifestPlaceholder). -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="rudraganga"/>
+                <data android:scheme="${deepLinkScheme}"/>
             </intent-filter>
-            <!-- App Links: https://rudraganga.app/<target> (autoVerify needs the
-                 /.well-known/assetlinks.json file hosted on the domain). -->
+            <!-- App Links: https://${appLinkHost}/<target> (per-tenant host,
+                 stamped via the build.gradle.kts manifestPlaceholder; autoVerify
+                 needs /.well-known/assetlinks.json hosted on that domain). -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="https" android:host="rudraganga.app"/>
+                <data android:scheme="https" android:host="${appLinkHost}"/>
             </intent-filter>
         </activity>
         <!-- FCM: default channel for notifications that arrive while the app is

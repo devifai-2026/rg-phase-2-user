@@ -92,7 +92,7 @@ class AppDrawer extends StatelessWidget {
                     showLanguageSheet(context);
                   }),
                   _item(c, Icons.feedback_outlined, 'Feedback', () => push(const FeedbackScreen())),
-                  _item(c, Icons.star_outline, 'Rate Rudraganga', () {
+                  _item(c, Icons.star_outline, 'Rate Astro App', () {
                     Navigator.of(context).pop();
                     showRateDialog(context);
                   }),

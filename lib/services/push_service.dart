@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 
+import '../api/api_config.dart';
 import '../api/auth_api.dart';
 import 'deep_link.dart';
 import 'delivery_ack.dart';
@@ -20,7 +21,7 @@ Future<void> _onBackgroundMessage(RemoteMessage message) async {
   await DeliveryAck.send(data['broadcastId']?.toString());
 
   // Draw the notification ourselves since data-only messages have no OS banner.
-  final title = (message.notification?.title ?? data['title'] ?? 'Rudraganga').toString();
+  final title = (message.notification?.title ?? data['title'] ?? 'New notification').toString();
   final body = (message.notification?.body ?? data['body'] ?? '').toString();
   if (title.isNotEmpty || body.isNotEmpty) {
     await LocalNotifs.show(title, body, payload: PushService._payloadUri(data));
@@ -68,7 +69,7 @@ class PushService {
     FirebaseMessaging.onMessage.listen((msg) {
       _recordDelivered(msg.data['broadcastId']?.toString());
       final n = msg.notification;
-      final title = (n?.title ?? msg.data['title'] ?? 'Rudraganga').toString();
+      final title = (n?.title ?? msg.data['title'] ?? 'New notification').toString();
       final body = (n?.body ?? msg.data['body'] ?? '').toString();
       if (title.isEmpty && body.isEmpty) return;
       LocalNotifs.show(title, body, payload: _payloadUri(msg.data));
@@ -107,7 +108,7 @@ class PushService {
 
   /// Encode an FCM data map into a deep-link URI string used as the local-
   /// notification payload (so a foreground tap can route). Prefers an explicit
-  /// admin deeplink; else builds rudraganga://<type-target>. Carries bid (the
+  /// admin deeplink; else builds <scheme>://<type-target>. Carries bid (the
   /// broadcastId) as a query param for click attribution.
   static String _payloadUri(Map<String, dynamic> data) {
     final bid = data['broadcastId']?.toString();
@@ -121,9 +122,9 @@ class PushService {
     // open the live room directly (background taps use the full data map).
     if (type == 'live') {
       final lid = data['liveSessionId']?.toString();
-      if (lid != null && lid.isNotEmpty) return 'rudraganga://live/$lid$q';
+      if (lid != null && lid.isNotEmpty) return '${ApiConfig.deepLinkScheme}://live/$lid$q';
     }
-    return 'rudraganga://notification/$type$q';
+    return '${ApiConfig.deepLinkScheme}://notification/$type$q';
   }
 
   /// Best-effort tap attribution → backend increments the broadcast's tap count.

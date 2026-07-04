@@ -3,6 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 
+import '../../api/app_config_service.dart';
 import '../../api/profile_api.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/auth_provider.dart';
@@ -207,7 +208,7 @@ class _PermissionsScreenState extends State<PermissionsScreen> with WidgetsBindi
                 Text(
                   blocked
                       ? t.somePermissionsAreBlockedTapA
-                      : t.thesePermissionsAreRequiredToUse,
+                      : t.thesePermissionsAreRequiredToUse(context.read<AppConfigService>().appName),
                   style: TextStyle(fontSize: 14, color: c.muted, height: 1.45),
                 ),
                 const SizedBox(height: 24),

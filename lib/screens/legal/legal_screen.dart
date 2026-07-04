@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../api/app_config_service.dart';
 import '../../api/content_api.dart';
 import '../../l10n/app_localizations.dart';
 import '../../theme/rg_colors.dart';
@@ -77,7 +78,7 @@ class LegalScreen extends StatelessWidget {
             const SizedBox(height: 24),
             Center(
               child: Text(
-                L10n.of(context).s2026Rudraganga18ForGuidanceAnd,
+                L10n.of(context).s2026Rudraganga18ForGuidanceAnd(context.read<AppConfigService>().appName),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 11.5, color: c.muted, height: 1.5),
               ),

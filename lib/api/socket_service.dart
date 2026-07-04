@@ -81,7 +81,13 @@ class SocketService extends ChangeNotifier {
           // upgrade churn. (Server allows both; we pin the client to websocket.)
           .setTransports(['websocket'])
           .disableAutoConnect()
-          .setAuth({'token': token})
+          // token carries the tenant in its JWT claim; also pass the build's
+          // tenant slug explicitly so the backend can route the handshake even
+          // before the token is decoded.
+          .setAuth({
+            'token': token,
+            if (ApiConfig.tenant.isNotEmpty) 'tenant': ApiConfig.tenant,
+          })
           .enableReconnection()
           .build(),
     );

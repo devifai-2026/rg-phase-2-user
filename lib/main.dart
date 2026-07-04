@@ -153,7 +153,7 @@ Future<void> main() async {
     Analytics.instance.setUser(null); // GA: detach the user on logout
   };
 
-  // External deep links (rudraganga://... and https App Links). Handle the link
+  // External deep links (<scheme>://... and https App Links). Handle the link
   // that launched the app + any received while running. Routing is no-op until
   // the navigator is mounted, so this is safe to start now.
   final appLinks = AppLinks();
@@ -234,7 +234,7 @@ class RgUserApp extends StatelessWidget {
           final darkTokens = RgColors.dark.merge(cfg.themeTokens(true));
           final lightTokens = RgColors.light.merge(cfg.themeTokens(false));
           return MaterialApp(
-            title: 'Rudraganga',
+            title: cfg.appName,
             debugShowCheckedModeBanner: false,
             navigatorKey: DeepLink.navigatorKey, // lets push/URI handlers navigate
             navigatorObservers: [Analytics.instance.observer], // auto screen_view → GA

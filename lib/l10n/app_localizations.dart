@@ -108,7 +108,7 @@ abstract class L10n {
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:
-  /// **'Rudraganga'**
+  /// **'Astro App'**
   String get appName;
 
   /// No description provided for @tagline.
@@ -1591,8 +1591,8 @@ abstract class L10n {
   /// No description provided for @joinRudragangaAsAnAstrologer.
   ///
   /// In en, this message translates to:
-  /// **'Join Rudraganga as an astrologer'**
-  String get joinRudragangaAsAnAstrologer;
+  /// **'Join {appName} as an astrologer'**
+  String joinRudragangaAsAnAstrologer(String appName);
 
   /// No description provided for @tellUsAboutYourselfOurTeam.
   ///
@@ -1609,8 +1609,8 @@ abstract class L10n {
   /// No description provided for @rudraganga.
   ///
   /// In en, this message translates to:
-  /// **'Rudraganga'**
-  String get rudraganga;
+  /// **'{appName}'**
+  String rudraganga(String appName);
 
   /// No description provided for @astrologyWellness.
   ///
@@ -1633,8 +1633,8 @@ abstract class L10n {
   /// No description provided for @rateRudraganga.
   ///
   /// In en, this message translates to:
-  /// **'Rate Rudraganga'**
-  String get rateRudraganga;
+  /// **'Rate {appName}'**
+  String rateRudraganga(String appName);
 
   /// No description provided for @howIsYourExperience.
   ///
@@ -2227,13 +2227,13 @@ abstract class L10n {
   /// No description provided for @rudra.
   ///
   /// In en, this message translates to:
-  /// **'Rudra'**
+  /// **'Astro'**
   String get rudra;
 
   /// No description provided for @ganga.
   ///
   /// In en, this message translates to:
-  /// **'ganga'**
+  /// **'App'**
   String get ganga;
 
   /// No description provided for @about.
@@ -3373,8 +3373,8 @@ abstract class L10n {
   /// No description provided for @rudragangaProvidesAstrologySpiritualAndWellness.
   ///
   /// In en, this message translates to:
-  /// **'Rudraganga provides astrology, spiritual, and wellness consultations for guidance and personal '**
-  String get rudragangaProvidesAstrologySpiritualAndWellness;
+  /// **'{appName} provides astrology, spiritual, and wellness consultations for guidance and personal '**
+  String rudragangaProvidesAstrologySpiritualAndWellness(String appName);
 
   /// No description provided for @reflectionOnlyOurServicesAreNot.
   ///
@@ -3391,8 +3391,8 @@ abstract class L10n {
   /// No description provided for @byCreatingAnAccountOrUsing.
   ///
   /// In en, this message translates to:
-  /// **'By creating an account or using the Rudraganga mobile application and related services (the '**
-  String get byCreatingAnAccountOrUsing;
+  /// **'By creating an account or using the {appName} mobile application and related services (the '**
+  String byCreatingAnAccountOrUsing(String appName);
 
   /// No description provided for @servicesYouAgreeToBeBound.
   ///
@@ -3439,8 +3439,8 @@ abstract class L10n {
   /// No description provided for @rudragangaConnectsYouWithVerifiedAstrologers.
   ///
   /// In en, this message translates to:
-  /// **'Rudraganga connects you with verified astrologers for consultations by audio call, video call, '**
-  String get rudragangaConnectsYouWithVerifiedAstrologers;
+  /// **'{appName} connects you with verified astrologers for consultations by audio call, video call, '**
+  String rudragangaConnectsYouWithVerifiedAstrologers(String appName);
 
   /// No description provided for @andChatAndOffersRelatedFeatures.
   ///
@@ -3541,8 +3541,8 @@ abstract class L10n {
   /// No description provided for @astrologersAreIndependentPractitionersWhoAre.
   ///
   /// In en, this message translates to:
-  /// **'Astrologers are independent practitioners who are identity-verified and approved by Rudraganga '**
-  String get astrologersAreIndependentPractitionersWhoAre;
+  /// **'Astrologers are independent practitioners who are identity-verified and approved by {appName} '**
+  String astrologersAreIndependentPractitionersWhoAre(String appName);
 
   /// No description provided for @beforeTheyCanOfferConsultationsThey.
   ///
@@ -3559,8 +3559,8 @@ abstract class L10n {
   /// No description provided for @ofRudragangaWeAreNotResponsible.
   ///
   /// In en, this message translates to:
-  /// **'of Rudraganga. We are not responsible for any decision you make based on a consultation.'**
-  String get ofRudragangaWeAreNotResponsible;
+  /// **'of {appName}. We are not responsible for any decision you make based on a consultation.'**
+  String ofRudragangaWeAreNotResponsible(String appName);
 
   /// No description provided for @s7RecordingsContent.
   ///
@@ -3601,14 +3601,14 @@ abstract class L10n {
   /// No description provided for @rudragangaMakesNoGuaranteeAboutThe.
   ///
   /// In en, this message translates to:
-  /// **'Rudraganga makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent '**
-  String get rudragangaMakesNoGuaranteeAboutThe;
+  /// **'{appName} makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent '**
+  String rudragangaMakesNoGuaranteeAboutThe(String appName);
 
   /// No description provided for @permittedByLawRudragangaSTotal.
   ///
   /// In en, this message translates to:
-  /// **'permitted by law, Rudraganga’s total liability arising from your use of the Services is limited to '**
-  String get permittedByLawRudragangaSTotal;
+  /// **'permitted by law, {appName}’s total liability arising from your use of the Services is limited to '**
+  String permittedByLawRudragangaSTotal(String appName);
 
   /// No description provided for @theAmountYouPaidIntoYour.
   ///
@@ -3799,8 +3799,8 @@ abstract class L10n {
   /// No description provided for @whenRequiredByLawOrTo.
   ///
   /// In en, this message translates to:
-  /// **'When required by law, or to protect the rights, safety, and property of users and Rudraganga.'**
-  String get whenRequiredByLawOrTo;
+  /// **'When required by law, or to protect the rights, safety, and property of users and {appName}.'**
+  String whenRequiredByLawOrTo(String appName);
 
   /// No description provided for @s4ConsultationRecordingsChats.
   ///
@@ -3985,8 +3985,8 @@ abstract class L10n {
   /// No description provided for @s2026Rudraganga18ForGuidanceAnd.
   ///
   /// In en, this message translates to:
-  /// **'Â© 2026 Rudraganga Â· 18+ Â· For guidance and wellbeing â\nnot a substitute for professional advice.'**
-  String get s2026Rudraganga18ForGuidanceAnd;
+  /// **'Â© 2026 {appName} Â· 18+ Â· For guidance and wellbeing â\nnot a substitute for professional advice.'**
+  String s2026Rudraganga18ForGuidanceAnd(String appName);
 
   /// No description provided for @widthDeviceWidthInitialScale1.
   ///
@@ -4057,8 +4057,8 @@ abstract class L10n {
   /// No description provided for @thesePermissionsAreRequiredToUse.
   ///
   /// In en, this message translates to:
-  /// **'These permissions are required to use Rudraganga. Tap any pending item to grant it.'**
-  String get thesePermissionsAreRequiredToUse;
+  /// **'These permissions are required to use {appName}. Tap any pending item to grant it.'**
+  String thesePermissionsAreRequiredToUse(String appName);
 
   /// No description provided for @settings2.
   ///
@@ -4333,8 +4333,8 @@ abstract class L10n {
   /// No description provided for @rudragangaConnectsYouWithTrustedVedic.
   ///
   /// In en, this message translates to:
-  /// **'Rudraganga connects you with trusted Vedic astrologers for guidance on career, '**
-  String get rudragangaConnectsYouWithTrustedVedic;
+  /// **'{appName} connects you with trusted Vedic astrologers for guidance on career, '**
+  String rudragangaConnectsYouWithTrustedVedic(String appName);
 
   /// No description provided for @marriageFinanceHealthAndLifeS.
   ///
@@ -4387,8 +4387,8 @@ abstract class L10n {
   /// No description provided for @yourFeedbackHelpsRudragangaGrow.
   ///
   /// In en, this message translates to:
-  /// **'Your feedback helps Rudraganga grow.'**
-  String get yourFeedbackHelpsRudragangaGrow;
+  /// **'Your feedback helps {appName} grow.'**
+  String yourFeedbackHelpsRudragangaGrow(String appName);
 
   /// No description provided for @onceInADay.
   ///
@@ -4849,7 +4849,7 @@ abstract class L10n {
   /// No description provided for @rg.
   ///
   /// In en, this message translates to:
-  /// **'RG'**
+  /// **'A'**
   String get rg;
 
   /// No description provided for @aExperienceyearsYrsExp.
@@ -5079,8 +5079,8 @@ abstract class L10n {
   /// No description provided for @earnIRewardOnRudraganga.
   ///
   /// In en, this message translates to:
-  /// **'Earn ₹{reward} on Rudraganga'**
-  String earnIRewardOnRudraganga(Object reward);
+  /// **'Earn ₹{reward} on {appName}'**
+  String earnIRewardOnRudraganga(Object reward, String appName);
 
   /// No description provided for @bothEarnIReward.
   ///

@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appName": "Rudraganga",
+  "appName": "Astro App",
   "tagline": "Astrology & Wellness",
   "splashBlessing": "Your journey to clarity begins here",
   "authWelcomeTitle": "Welcome",
@@ -457,14 +457,35 @@
   "feedback": "Feedback",
   "applicationSubmitted": "Application submitted",
   "astrologerRegistration": "Astrologer Registration",
-  "joinRudragangaAsAnAstrologer": "Join Rudraganga as an astrologer",
+  "joinRudragangaAsAnAstrologer": "Join {appName} as an astrologer",
+  "@joinRudragangaAsAnAstrologer": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "tellUsAboutYourselfOurTeam": "Tell us about yourself — our team will review and reach out.",
   "aboutUs": "About Us",
-  "rudraganga": "Rudraganga",
+  "rudraganga": "{appName}",
+  "@rudraganga": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "astrologyWellness": "Astrology & Wellness",
   "v100MadeWithDevotion": "v1.0.0  ·  Made with devotion",
   "thanksForYourRating": "Thanks for your rating!",
-  "rateRudraganga": "Rate Rudraganga",
+  "rateRudraganga": "Rate {appName}",
+  "@rateRudraganga": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "howIsYourExperience": "How is your experience?",
   "writeAReviewOptional": "Write a review (optional)",
   "saved": "Saved",
@@ -726,8 +747,8 @@
       }
     }
   },
-  "rudra": "Rudra",
-  "ganga": "ganga",
+  "rudra": "Astro",
+  "ganga": "App",
   "about": "About",
   "astrologer": "Astrologer",
   "seeker": "Seeker",
@@ -917,10 +938,24 @@
   "s1AcceptanceOfTheseTerms": "1. Acceptance of these terms",
   "termsOfService2": "Terms of Service",
   "lastUpdated26June2026": "Last updated: 26 June 2026",
-  "rudragangaProvidesAstrologySpiritualAndWellness": "Rudraganga provides astrology, spiritual, and wellness consultations for guidance and personal ",
+  "rudragangaProvidesAstrologySpiritualAndWellness": "{appName} provides astrology, spiritual, and wellness consultations for guidance and personal ",
+  "@rudragangaProvidesAstrologySpiritualAndWellness": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "reflectionOnlyOurServicesAreNot": "reflection only. Our services are not a substitute for professional medical, legal, financial, ",
   "orPsychologicalAdviceYouMustBe": "or psychological advice. You must be 18 or older to use the app.",
-  "byCreatingAnAccountOrUsing": "By creating an account or using the Rudraganga mobile application and related services (the ",
+  "byCreatingAnAccountOrUsing": "By creating an account or using the {appName} mobile application and related services (the ",
+  "@byCreatingAnAccountOrUsing": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "servicesYouAgreeToBeBound": "“Services”), you agree to be bound by these Terms of Service and our Privacy Policy and Refund ",
   "policyIfYouDoNotAgree": "Policy. If you do not agree, please do not use the Services.",
   "s2EligibilityYourAccount": "2. Eligibility & your account",
@@ -928,7 +963,14 @@
   "youRegisterWithAPhoneNumber": "You register with a phone number verified by a one-time password (OTP). You are responsible for keeping access to that number and device secure.",
   "youAgreeToProvideAccurateInformation": "You agree to provide accurate information, including birth details where you choose to share them for a reading. You are responsible for all activity under your account.",
   "s3TheServicesWeOffer": "3. The services we offer",
-  "rudragangaConnectsYouWithVerifiedAstrologers": "Rudraganga connects you with verified astrologers for consultations by audio call, video call, ",
+  "rudragangaConnectsYouWithVerifiedAstrologers": "{appName} connects you with verified astrologers for consultations by audio call, video call, ",
+  "@rudragangaConnectsYouWithVerifiedAstrologers": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "andChatAndOffersRelatedFeatures": "and chat, and offers related features such as kundli generation and matching, an AI astrologer, ",
   "dailyHoroscopesPoojaBookingsAStore": "daily horoscopes, pooja bookings, a store for spiritual products, gifting, and matrimony matching. ",
   "availabilityOfAnyFeatureOrAstrologer": "Availability of any feature or astrologer may change at any time.",
@@ -945,18 +987,46 @@
   "attemptToTakeAConsultationOff": "Attempt to take a consultation off-platform to avoid fees, or solicit personal contact details.",
   "interfereWithScrapeOrAttemptTo": "Interfere with, scrape, or attempt to disrupt the Services or their security.",
   "s6AstrologersOnThePlatform": "6. Astrologers on the platform",
-  "astrologersAreIndependentPractitionersWhoAre": "Astrologers are independent practitioners who are identity-verified and approved by Rudraganga ",
+  "astrologersAreIndependentPractitionersWhoAre": "Astrologers are independent practitioners who are identity-verified and approved by {appName} ",
+  "@astrologersAreIndependentPractitionersWhoAre": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "beforeTheyCanOfferConsultationsThey": "before they can offer consultations. They set their own per-minute fares within limits we define. ",
   "opinionsAndGuidanceSharedDuringA": "Opinions and guidance shared during a consultation are those of the individual astrologer and not ",
-  "ofRudragangaWeAreNotResponsible": "of Rudraganga. We are not responsible for any decision you make based on a consultation.",
+  "ofRudragangaWeAreNotResponsible": "of {appName}. We are not responsible for any decision you make based on a consultation.",
+  "@ofRudragangaWeAreNotResponsible": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "s7RecordingsContent": "7. Recordings & content",
   "forQualitySafetyAndDisputeResolution": "For quality, safety, and dispute resolution, audio and video consultations may be recorded. You ",
   "consentToSuchRecordingByStarting": "consent to such recording by starting a session. Chat conversations are stored so you can revisit ",
   "themSeeOurPrivacyPolicyFor": "them. See our Privacy Policy for how this data is handled.",
   "s8DisclaimerLimitationOfLiability": "8. Disclaimer & limitation of liability",
   "theServicesAreProvidedAsIs": "The Services are provided “as is” for guidance and entertainment-adjacent personal reflection. ",
-  "rudragangaMakesNoGuaranteeAboutThe": "Rudraganga makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent ",
-  "permittedByLawRudragangaSTotal": "permitted by law, Rudraganga’s total liability arising from your use of the Services is limited to ",
+  "rudragangaMakesNoGuaranteeAboutThe": "{appName} makes no guarantee about the accuracy of any prediction or remedy. To the maximum extent ",
+  "@rudragangaMakesNoGuaranteeAboutThe": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "permittedByLawRudragangaSTotal": "permitted by law, {appName}’s total liability arising from your use of the Services is limited to ",
+  "@permittedByLawRudragangaSTotal": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "theAmountYouPaidIntoYour": "the amount you paid into your wallet in the 30 days before the event giving rise to the claim. We ",
   "areNotLiableForIndirectOr": "are not liable for indirect or consequential losses.",
   "s9SuspensionTermination": "9. Suspension & termination",
@@ -988,7 +1058,14 @@
   "weDoNotSellYourPersonal": "We do not sell your personal information. We share it only:",
   "withTheAstrologerYouConsultLimited": "With the astrologer you consult, limited to what is needed for the reading (e.g. your birth details and chat).",
   "withServiceProvidersWhoHelpUs": "With service providers who help us operate — payment processing (PayU), cloud hosting and storage, communications (WhatsApp/SMS for OTP), and notifications — under confidentiality obligations.",
-  "whenRequiredByLawOrTo": "When required by law, or to protect the rights, safety, and property of users and Rudraganga.",
+  "whenRequiredByLawOrTo": "When required by law, or to protect the rights, safety, and property of users and {appName}.",
+  "@whenRequiredByLawOrTo": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "s4ConsultationRecordingsChats": "4. Consultation recordings & chats",
   "audioAndVideoConsultationsMayBe": "Audio and video consultations may be recorded, and chats are stored, for quality, safety, and ",
   "disputeResolutionYouCanReviewYour": "dispute resolution. You can review your chat history in the app. Recordings are retained as ",
@@ -1019,7 +1096,14 @@
   "lastUpdatedDateAbove": "“Last updated” date above.",
   "forPrivacyQuestionsOrDataRequests": "For privacy questions or data requests, reach us via the contact form on our website or the ",
   "appSHelpSupportSection": "app’s Help & Support section.",
-  "s2026Rudraganga18ForGuidanceAnd": "Â© 2026 Rudraganga Â· 18+ Â· For guidance and wellbeing â\nnot a substitute for professional advice.",
+  "s2026Rudraganga18ForGuidanceAnd": "Â© 2026 {appName} Â· 18+ Â· For guidance and wellbeing â\nnot a substitute for professional advice.",
+  "@s2026Rudraganga18ForGuidanceAnd": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "widthDeviceWidthInitialScale1": "width=device-width, initial-scale=1, maximum-scale=1",
   "segoeUi": "Segoe UI",
   "vote": "Vote",
@@ -1031,7 +1115,14 @@
   "continueLabel": "Continue",
   "openSettings": "Open Settings",
   "somePermissionsAreBlockedTapA": "Some permissions are blocked. Tap a blocked item (or “Open Settings”) and enable it, then return here.",
-  "thesePermissionsAreRequiredToUse": "These permissions are required to use Rudraganga. Tap any pending item to grant it.",
+  "thesePermissionsAreRequiredToUse": "These permissions are required to use {appName}. Tap any pending item to grant it.",
+  "@thesePermissionsAreRequiredToUse": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "settings2": "Settings",
   "allow": "Allow",
   "blockedEnableItInSettings": "Blocked — enable it in Settings",
@@ -1077,7 +1168,14 @@
   "ourTeamWillReachOutAbout": "Our team will reach out about your astrologer profile.",
   "enter10Digits": "Enter 10 digits",
   "aboutYouBioExpertiseExperience": "About you (bio, expertise, experience)",
-  "rudragangaConnectsYouWithTrustedVedic": "Rudraganga connects you with trusted Vedic astrologers for guidance on career, ",
+  "rudragangaConnectsYouWithTrustedVedic": "{appName} connects you with trusted Vedic astrologers for guidance on career, ",
+  "@rudragangaConnectsYouWithTrustedVedic": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "marriageFinanceHealthAndLifeS": "marriage, finance, health and life’s big questions — over chat, call and video. ",
   "getYourFreeKundliDailyHoroscope": "Get your free kundli, daily horoscope, matchmaking, pujas and remedies, all in one place.\n\n",
   "ourMissionIsToMakeAuthentic": "Our mission is to make authentic, compassionate spiritual guidance accessible to everyone, ",
@@ -1086,7 +1184,14 @@
   "privateSecureConsultations": "Private & secure consultations",
   "availableIn6IndianLanguages": "Available in 6 Indian languages",
   "thanksForRatingUs": "Thanks for rating us ✓",
-  "yourFeedbackHelpsRudragangaGrow": "Your feedback helps Rudraganga grow.",
+  "yourFeedbackHelpsRudragangaGrow": "Your feedback helps {appName} grow.",
+  "@yourFeedbackHelpsRudragangaGrow": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
   "onceInADay": "Once in a day",
   "twiceInADay": "Twice in a day",
   "asManyTimesAsItComes": "As many times as it comes",
@@ -1163,7 +1268,7 @@
   "bonus": "Bonus",
   "credited": "Credited",
   "debited": "Debited",
-  "rg": "RG",
+  "rg": "A",
   "aExperienceyearsYrsExp": "{experienceYears} yrs exp",
   "@aExperienceyearsYrsExp": {
     "placeholders": {
@@ -1472,11 +1577,14 @@
       }
     }
   },
-  "earnIRewardOnRudraganga": "Earn ₹{reward} on Rudraganga",
+  "earnIRewardOnRudraganga": "Earn ₹{reward} on {appName}",
   "@earnIRewardOnRudraganga": {
     "placeholders": {
       "reward": {
         "type": "Object"
+      },
+      "appName": {
+        "type": "String"
       }
     }
   },

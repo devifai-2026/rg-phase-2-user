@@ -9,7 +9,7 @@ class LocalNotifs {
   static final _rand = Random();
 
   static const _channel = AndroidNotificationChannel(
-    'rg_general', 'Rudraganga', description: 'General app notifications', importance: Importance.high,
+    'rg_general', 'Astro App', description: 'General app notifications', importance: Importance.high,
   );
 
   /// Called when the user taps a local notification, with its `payload` string
@@ -45,7 +45,7 @@ class LocalNotifs {
       title,
       body,
       const NotificationDetails(
-        android: AndroidNotificationDetails('rg_general', 'Rudraganga',
+        android: AndroidNotificationDetails('rg_general', 'Astro App',
             channelDescription: 'General app notifications', importance: Importance.high, priority: Priority.high),
         iOS: DarwinNotificationDetails(),
       ),
@@ -63,7 +63,7 @@ class LocalNotifs {
         title,
         body,
         const NotificationDetails(
-          android: AndroidNotificationDetails('rg_general', 'Rudraganga',
+          android: AndroidNotificationDetails('rg_general', 'Astro App',
               channelDescription: 'General app notifications', importance: Importance.high, priority: Priority.high),
           iOS: DarwinNotificationDetails(),
         ),

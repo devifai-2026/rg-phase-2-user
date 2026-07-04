@@ -9,7 +9,7 @@ class L10nMr extends L10n {
   L10nMr([String locale = 'mr']) : super(locale);
 
   @override
-  String get appName => 'रुद्रगंगा';
+  String get appName => 'Astro App';
 
   @override
   String get tagline => 'ज्योतिष आणि कल्याण';
@@ -823,8 +823,9 @@ class L10nMr extends L10n {
   String get astrologerRegistration => 'ज्योतिषी नोंदणी';
 
   @override
-  String get joinRudragangaAsAnAstrologer =>
-      'ज्योतिषी म्हणून रुद्रगंगाकडे सामील व्हा.';
+  String joinRudragangaAsAnAstrologer(String appName) {
+    return 'ज्योतिषी म्हणून $appNameकडे सामील व्हा.';
+  }
 
   @override
   String get tellUsAboutYourselfOurTeam =>
@@ -834,7 +835,9 @@ class L10nMr extends L10n {
   String get aboutUs => 'आमच्याबद्दल';
 
   @override
-  String get rudraganga => 'रुद्रगनला';
+  String rudraganga(String appName) {
+    return '$appName';
+  }
 
   @override
   String get astrologyWellness => 'ज्योतिष आणि आरोग्य';
@@ -846,7 +849,9 @@ class L10nMr extends L10n {
   String get thanksForYourRating => 'तुमच्या रेटिंगबद्दल धन्यवाद!';
 
   @override
-  String get rateRudraganga => 'रुद्रगंगाचा दर';
+  String rateRudraganga(String appName) {
+    return '$appNameचा दर';
+  }
 
   @override
   String get howIsYourExperience => 'तुमचा अनुभव कसा आहे?';
@@ -1195,10 +1200,10 @@ class L10nMr extends L10n {
   }
 
   @override
-  String get rudra => 'रुद्र';
+  String get rudra => 'Astro';
 
   @override
-  String get ganga => 'चालणे';
+  String get ganga => 'App';
 
   @override
   String get about => 'बद्दल';
@@ -1786,8 +1791,9 @@ class L10nMr extends L10n {
   String get lastUpdated26June2026 => 'शेवटचे अद्यतन: २६ जून २०२६';
 
   @override
-  String get rudragangaProvidesAstrologySpiritualAndWellness =>
-      'रुद्रगंगा मार्गदर्शन आणि वैयक्तिक मदतीसाठी ज्योतिष, अध्यात्म आणि आरोग्यविषयक सल्ला देतात.';
+  String rudragangaProvidesAstrologySpiritualAndWellness(String appName) {
+    return '$appName मार्गदर्शन आणि वैयक्तिक मदतीसाठी ज्योतिष, अध्यात्म आणि आरोग्यविषयक सल्ला देतात.';
+  }
 
   @override
   String get reflectionOnlyOurServicesAreNot =>
@@ -1798,8 +1804,9 @@ class L10nMr extends L10n {
       'किंवा मानसिक सल्ला. ॲप वापरण्यासाठी तुमचे वय १८ वर्षे किंवा त्याहून अधिक असणे आवश्यक आहे.';
 
   @override
-  String get byCreatingAnAccountOrUsing =>
-      'खाते तयार करून किंवा रुद्रगंगा मोबाईल ॲप्लिकेशन आणि संबंधित सेवांचा वापर करून (';
+  String byCreatingAnAccountOrUsing(String appName) {
+    return 'खाते तयार करून किंवा $appName मोबाईल ॲप्लिकेशन आणि संबंधित सेवांचा वापर करून (';
+  }
 
   @override
   String get servicesYouAgreeToBeBound =>
@@ -1828,8 +1835,9 @@ class L10nMr extends L10n {
   String get s3TheServicesWeOffer => '३. आम्ही देत असलेल्या सेवा';
 
   @override
-  String get rudragangaConnectsYouWithVerifiedAstrologers =>
-      'रुद्रगंगा तुम्हाला ऑडिओ कॉल, व्हिडिओ कॉलद्वारे सल्ल्यासाठी सत्यापित ज्योतिषांशी जोडून देते.';
+  String rudragangaConnectsYouWithVerifiedAstrologers(String appName) {
+    return '$appName तुम्हाला ऑडिओ कॉल, व्हिडिओ कॉलद्वारे सल्ल्यासाठी सत्यापित ज्योतिषांशी जोडून देते.';
+  }
 
   @override
   String get andChatAndOffersRelatedFeatures =>
@@ -1892,8 +1900,9 @@ class L10nMr extends L10n {
   String get s6AstrologersOnThePlatform => '६. प्लॅटफॉर्मवरील ज्योतिषी';
 
   @override
-  String get astrologersAreIndependentPractitionersWhoAre =>
-      'ज्योतिषी हे स्वतंत्र व्यावसायिक आहेत, ज्यांची ओळख रुद्रगंगाद्वारे पडताळली जाते आणि त्यांना मान्यता दिली जाते.';
+  String astrologersAreIndependentPractitionersWhoAre(String appName) {
+    return 'ज्योतिषी हे स्वतंत्र व्यावसायिक आहेत, ज्यांची ओळख $appNameद्वारे पडताळली जाते आणि त्यांना मान्यता दिली जाते.';
+  }
 
   @override
   String get beforeTheyCanOfferConsultationsThey =>
@@ -1904,8 +1913,9 @@ class L10nMr extends L10n {
       'सल्लामसलतीदरम्यान दिलेली मते आणि मार्गदर्शन हे वैयक्तिक ज्योतिषाचे असते, ते इतरांचे नसते.';
 
   @override
-  String get ofRudragangaWeAreNotResponsible =>
-      'रुद्रगंगाचे. सल्लामसलतीच्या आधारावर तुम्ही घेतलेल्या कोणत्याही निर्णयासाठी आम्ही जबाबदार नाही.';
+  String ofRudragangaWeAreNotResponsible(String appName) {
+    return '$appNameचे. सल्लामसलतीच्या आधारावर तुम्ही घेतलेल्या कोणत्याही निर्णयासाठी आम्ही जबाबदार नाही.';
+  }
 
   @override
   String get s7RecordingsContent => '७. रेकॉर्डिंग आणि सामग्री';
@@ -1931,12 +1941,14 @@ class L10nMr extends L10n {
       'या सेवा मार्गदर्शन आणि मनोरंजनाशी संबंधित वैयक्तिक चिंतनासाठी जशा आहेत तशा पुरवल्या जातात.';
 
   @override
-  String get rudragangaMakesNoGuaranteeAboutThe =>
-      'रुद्रगंगा कोणत्याही भविष्यवाणीच्या किंवा उपायाच्या अचूकतेबद्दल कोणतीही हमी देत नाही. जास्तीत जास्त मर्यादेपर्यंत';
+  String rudragangaMakesNoGuaranteeAboutThe(String appName) {
+    return '$appName कोणत्याही भविष्यवाणीच्या किंवा उपायाच्या अचूकतेबद्दल कोणतीही हमी देत नाही. जास्तीत जास्त मर्यादेपर्यंत';
+  }
 
   @override
-  String get permittedByLawRudragangaSTotal =>
-      'कायद्याने परवानगी दिल्याप्रमाणे, तुमच्या सेवांच्या वापरामुळे उद्भवणारी रुद्रगंगाची एकूण जबाबदारी मर्यादित आहे.';
+  String permittedByLawRudragangaSTotal(String appName) {
+    return 'कायद्याने परवानगी दिल्याप्रमाणे, तुमच्या सेवांच्या वापरामुळे उद्भवणारी $appNameची एकूण जबाबदारी मर्यादित आहे.';
+  }
 
   @override
   String get theAmountYouPaidIntoYour =>
@@ -2056,8 +2068,9 @@ class L10nMr extends L10n {
       'आम्हाला कामकाज चालवण्यास मदत करणाऱ्या सेवा प्रदात्यांसोबत — पेमेंट प्रोसेसिंग (PayU), क्लाउड होस्टिंग आणि स्टोरेज, कम्युनिकेशन्स (OTP साठी WhatsApp/SMS), आणि नोटिफिकेशन्स — गोपनीयतेच्या बंधनांतर्गत.';
 
   @override
-  String get whenRequiredByLawOrTo =>
-      'जेव्हा कायद्यानुसार आवश्यक असेल, किंवा वापरकर्ते आणि रुद्रगंगा यांचे हक्क, सुरक्षितता आणि मालमत्ता यांचे संरक्षण करण्यासाठी.';
+  String whenRequiredByLawOrTo(String appName) {
+    return 'जेव्हा कायद्यानुसार आवश्यक असेल, किंवा वापरकर्ते आणि $appName यांचे हक्क, सुरक्षितता आणि मालमत्ता यांचे संरक्षण करण्यासाठी.';
+  }
 
   @override
   String get s4ConsultationRecordingsChats =>
@@ -2172,8 +2185,9 @@ class L10nMr extends L10n {
   String get appSHelpSupportSection => 'अॅपचा मदत आणि समर्थन विभाग.';
 
   @override
-  String get s2026Rudraganga18ForGuidanceAnd =>
-      '© २०२६ रुद्रगंगा · १८+ · मार्गदर्शन आणि आरोग्यासाठी · व्यावसायिक सल्ल्याचा पर्याय नाही.';
+  String s2026Rudraganga18ForGuidanceAnd(String appName) {
+    return '© २०२६ $appName · १८+ · मार्गदर्शन आणि आरोग्यासाठी · व्यावसायिक सल्ल्याचा पर्याय नाही.';
+  }
 
   @override
   String get widthDeviceWidthInitialScale1 =>
@@ -2212,8 +2226,9 @@ class L10nMr extends L10n {
       'काही परवानग्या अवरोधित केल्या आहेत. अवरोधित केलेल्या आयटमवर टॅप करा (किंवा “सेटिंग्ज उघडा”) आणि ते सक्षम करा, त्यानंतर येथे परत या.';
 
   @override
-  String get thesePermissionsAreRequiredToUse =>
-      'रुद्रगंगा वापरण्यासाठी या परवानग्या आवश्यक आहेत. परवानगी देण्यासाठी कोणत्याही प्रलंबित आयटमवर टॅप करा.';
+  String thesePermissionsAreRequiredToUse(String appName) {
+    return '$appName वापरण्यासाठी या परवानग्या आवश्यक आहेत. परवानगी देण्यासाठी कोणत्याही प्रलंबित आयटमवर टॅप करा.';
+  }
 
   @override
   String get settings2 => 'सेटिंग्ज';
@@ -2361,8 +2376,9 @@ class L10nMr extends L10n {
       'तुमच्याबद्दल माहिती (चरित्र, कौशल्य, अनुभव)';
 
   @override
-  String get rudragangaConnectsYouWithTrustedVedic =>
-      'रुद्रगंगा तुम्हाला करिअरच्या मार्गदर्शनासाठी विश्वसनीय वैदिक ज्योतिषांशी जोडून देते.';
+  String rudragangaConnectsYouWithTrustedVedic(String appName) {
+    return '$appName तुम्हाला करिअरच्या मार्गदर्शनासाठी विश्वसनीय वैदिक ज्योतिषांशी जोडून देते.';
+  }
 
   @override
   String get marriageFinanceHealthAndLifeS =>
@@ -2392,8 +2408,9 @@ class L10nMr extends L10n {
   String get thanksForRatingUs => 'आम्हाला रेटिंग दिल्याबद्दल धन्यवाद ✓';
 
   @override
-  String get yourFeedbackHelpsRudragangaGrow =>
-      'तुमच्या अभिप्रायामुळे रुद्रगंगाच्या वाढीस मदत होते.';
+  String yourFeedbackHelpsRudragangaGrow(String appName) {
+    return 'तुमच्या अभिप्रायामुळे $appNameच्या वाढीस मदत होते.';
+  }
 
   @override
   String get onceInADay => 'दिवसातून एकदा';
@@ -2627,7 +2644,7 @@ class L10nMr extends L10n {
   String get debited => 'डेबिट केले';
 
   @override
-  String get rg => 'आरजी';
+  String get rg => 'A';
 
   @override
   String aExperienceyearsYrsExp(Object experienceYears) {
@@ -2817,8 +2834,8 @@ class L10nMr extends L10n {
   }
 
   @override
-  String earnIRewardOnRudraganga(Object reward) {
-    return 'Earn ₹$reward on Rudraganga';
+  String earnIRewardOnRudraganga(Object reward, String appName) {
+    return 'Earn ₹$reward on $appName';
   }
 
   @override

@@ -39,7 +39,13 @@ class ApiClient {
           receiveTimeout: const Duration(seconds: 20),
           // We handle non-2xx ourselves so we can read the error envelope.
           validateStatus: (s) => s != null && s < 500,
-          headers: {'Content-Type': 'application/json'},
+          headers: {
+            'Content-Type': 'application/json',
+            // Multi-tenant routing: identifies this build's tenant to the
+            // backend. Only sent when the build was stamped with a TENANT slug
+            // (single-tenant/dev builds omit it → backend uses default tenant).
+            if (ApiConfig.tenant.isNotEmpty) 'X-Tenant': ApiConfig.tenant,
+          },
         )) {
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) {
