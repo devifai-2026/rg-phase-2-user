@@ -18,6 +18,11 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
   late final AnimationController _ctrl;
   late final Animation<double> _fade;
   late final Animation<double> _scale;
+  // True once the admin config has been resolved (either the cache already had a
+  // splash, or the network refresh finished/failed). We DON'T render the branded
+  // splash — or the fallback — until we know, so a tenant never flashes the
+  // generic logo when they actually have a splash image set.
+  bool _configReady = false;
 
   @override
   void initState() {
@@ -27,9 +32,25 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
     _scale = Tween(begin: 0.7, end: 1.0).animate(
       CurvedAnimation(parent: _ctrl, curve: Curves.easeOutBack),
     );
+    _prepare();
+  }
 
-    // Admin-configurable dwell time (falls back to 1900ms).
-    final ms = (context.read<AppConfigService>().splash['durationMs'] as num?)?.toInt() ?? 1900;
+  Future<void> _prepare() async {
+    final cfg = context.read<AppConfigService>();
+    final isDark = WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark;
+    // If the cached config already has a splash image, we're ready instantly.
+    // Otherwise wait for a fresh fetch (bounded) so a tenant with a configured
+    // splash always sees it — the fallback logo only appears on real failure.
+    if (cfg.splashImage(isDark) == null) {
+      try { await cfg.refresh().timeout(const Duration(seconds: 6)); } catch (_) {/* fall back */}
+    } else {
+      cfg.refresh(); // keep it fresh in the background
+    }
+    if (!mounted) return;
+    setState(() => _configReady = true);
+
+    // Start the dwell only after config is resolved.
+    final ms = (cfg.splash['durationMs'] as num?)?.toInt() ?? 1900;
     Future.delayed(Duration(milliseconds: ms.clamp(600, 6000)), () {
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
@@ -57,7 +78,17 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
     final bg = _parseHex(cfg.splash['backgroundColor']) ?? c.ground;
     final fit = (cfg.splash['fit'] == 'contain') ? BoxFit.contain : BoxFit.cover;
 
-    // Admin full-screen image splash (with the animated logo as fallback).
+    // Still resolving the admin config → neutral loader (no brand flash). We only
+    // decide between the configured splash and the fallback once config is ready.
+    if (!_configReady) {
+      return Scaffold(
+        backgroundColor: bg,
+        body: Center(child: CircularProgressIndicator(color: c.red, strokeWidth: 2.4)),
+      );
+    }
+
+    // Admin full-screen image splash (with the animated logo as fallback ONLY on
+    // a genuine image load error).
     if (splashImg != null) {
       return Scaffold(
         backgroundColor: bg,

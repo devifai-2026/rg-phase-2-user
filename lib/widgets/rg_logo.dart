@@ -16,6 +16,14 @@ class RgLogo extends StatelessWidget {
   final String? brandName;
   const RgLogo({super.key, this.size = 120, this.showWordmark = false, this.brandName});
 
+  // Monogram from the tenant brand (e.g. "Astro Talk" → "AT"), 1–2 letters.
+  // Falls back to a neutral star when no brand — NEVER the hardcoded "RG".
+  static String _initials(String? name) {
+    final parts = (name ?? '').trim().split(RegExp(r'\s+')).where((p) => p.isNotEmpty).toList();
+    if (parts.isEmpty) return '✦';
+    return (parts[0][0] + (parts.length > 1 ? parts[1][0] : '')).toUpperCase();
+  }
+
   @override
   Widget build(BuildContext context) {
     final c = context.rg;
@@ -25,7 +33,7 @@ class RgLogo extends StatelessWidget {
         SizedBox(
           width: size,
           height: size,
-          child: CustomPaint(painter: _RgMarkPainter(red: c.redDeep, gold: c.gold, ink: c.ink)),
+          child: CustomPaint(painter: _RgMarkPainter(red: c.redDeep, gold: c.gold, ink: c.ink, monogram: _initials(brandName))),
         ),
         if (showWordmark && (brandName ?? '').trim().isNotEmpty) ...[
           SizedBox(height: size * 0.16),
@@ -56,7 +64,8 @@ class _RgMarkPainter extends CustomPainter {
   final Color red;
   final Color gold;
   final Color ink;
-  _RgMarkPainter({required this.red, required this.gold, required this.ink});
+  final String monogram;
+  _RgMarkPainter({required this.red, required this.gold, required this.ink, this.monogram = '✦'});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -87,10 +96,10 @@ class _RgMarkPainter extends CustomPainter {
       ..color = gold.withValues(alpha: 0.9);
     canvas.drawCircle(center, r * 0.8, ring);
 
-    // "RG" monogram.
+    // Tenant monogram (initials of the brand) — never a hardcoded "RG".
     final tp = TextPainter(
       text: TextSpan(
-        text: 'RG',
+        text: monogram,
         style: TextStyle(
           color: const Color(0xFFFBF6EF),
           fontSize: r * 0.62,
@@ -105,5 +114,5 @@ class _RgMarkPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _RgMarkPainter old) =>
-      old.red != red || old.gold != gold || old.ink != ink;
+      old.red != red || old.gold != gold || old.ink != ink || old.monogram != monogram;
 }
