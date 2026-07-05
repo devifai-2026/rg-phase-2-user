@@ -165,7 +165,10 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
       // The WebView carries no X-Tenant header/bearer token, so pass the tenant
       // as a query param; the backend threads it through the whole PayU chain.
       final tenantQ = ApiConfig.tenant.isNotEmpty ? '?tenant=${Uri.encodeComponent(ApiConfig.tenant)}' : '';
-      final url = '${ApiConfig.host}/api/payments/payu/recharge-redirect/$txnid$tenantQ';
+      // Build against the host the API client is actually reaching (primary, or
+      // the sslip fallback if the primary's DNS is down) — else the WebView loads
+      // an unresolvable host and shows "web page not available".
+      final url = '${_api.activeHost}/api/payments/payu/recharge-redirect/$txnid$tenantQ';
       final result = await Navigator.of(context).push<bool>(
         slideRoute(PaymentWebViewScreen(url: url, title: L10n.of(context).securePayment)),
       );
@@ -235,7 +238,7 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
             else
               // Premium horizontal rail of recharge tiles.
               SizedBox(
-                height: 152,
+                height: 210,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.zero,
@@ -428,44 +431,72 @@ class _PackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.rg;
     final hasBadge = pack.badge != null && pack.badge!.isNotEmpty;
+    final benefits = pack.benefits.where((b) => b.trim().isNotEmpty).take(4).toList();
+    final bonusPct = pack.amount > 0 && pack.bonus > 0 ? ((pack.bonus / pack.amount) * 100).round() : 0;
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 150,
+        width: 184,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: hasBadge ? c.gold.withValues(alpha: 0.6) : c.line, width: hasBadge ? 1.4 : 1),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: hasBadge ? c.gold.withValues(alpha: 0.7) : c.line, width: hasBadge ? 1.5 : 1),
           gradient: LinearGradient(
             begin: Alignment.topLeft, end: Alignment.bottomRight,
             colors: [c.ground2, c.card],
           ),
+          // Premium: a soft gold glow on the highlighted (badged) pack.
+          boxShadow: hasBadge
+              ? [BoxShadow(color: c.gold.withValues(alpha: 0.22), blurRadius: 18, offset: const Offset(0, 6))]
+              : [BoxShadow(color: Colors.black.withValues(alpha: 0.06), blurRadius: 8, offset: const Offset(0, 3))],
         ),
+        clipBehavior: Clip.antiAlias,
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(14, 16, 14, 12),
+              padding: const EdgeInsets.fromLTRB(16, 18, 16, 14),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(L10n.of(context).youGet, style: TextStyle(color: c.muted, fontSize: 10.5, fontWeight: FontWeight.w600)),
-                  const SizedBox(height: 2),
-                  Text('₹${pack.tokens}', style: TextStyle(color: c.ink, fontSize: 26, fontWeight: FontWeight.w900, height: 1)),
-                  const SizedBox(height: 6),
+                  Text(L10n.of(context).youGet, style: TextStyle(color: c.muted, fontSize: 10.5, fontWeight: FontWeight.w600, letterSpacing: 0.3)),
+                  const SizedBox(height: 3),
+                  // Big token value + the (struck-through) paid amount to signal bonus.
+                  Row(crossAxisAlignment: CrossAxisAlignment.baseline, textBaseline: TextBaseline.alphabetic, children: [
+                    Text('₹${pack.tokens}', style: TextStyle(color: c.ink, fontSize: 28, fontWeight: FontWeight.w900, height: 1)),
+                    if (pack.bonus > 0) ...[
+                      const SizedBox(width: 6),
+                      Text('₹${pack.amount}', style: TextStyle(color: c.muted, fontSize: 13, fontWeight: FontWeight.w600, decoration: TextDecoration.lineThrough)),
+                    ],
+                  ]),
+                  const SizedBox(height: 7),
                   if (pack.bonus > 0)
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2.5),
-                      decoration: BoxDecoration(color: c.gold.withValues(alpha: 0.16), borderRadius: BorderRadius.circular(6)),
-                      child: Text(L10n.of(context).packBonusBonus(pack.bonus), style: TextStyle(color: c.gold, fontSize: 10, fontWeight: FontWeight.w800)),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(color: c.gold.withValues(alpha: 0.16), borderRadius: BorderRadius.circular(7)),
+                      child: Text(bonusPct > 0 ? '+$bonusPct% extra' : L10n.of(context).packBonusBonus(pack.bonus),
+                          style: TextStyle(color: c.gold, fontSize: 10.5, fontWeight: FontWeight.w800)),
                     )
                   else if ((pack.name ?? '').isNotEmpty)
                     Text(pack.name!, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: c.muted, fontSize: 11, fontWeight: FontWeight.w600)),
+                  // ── Benefits (admin-set, one per line) ──
+                  if (benefits.isNotEmpty) ...[
+                    const SizedBox(height: 10),
+                    ...benefits.map((b) => Padding(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                            Icon(Icons.check_circle_rounded, size: 13, color: c.gold),
+                            const SizedBox(width: 5),
+                            Expanded(child: Text(b, maxLines: 1, overflow: TextOverflow.ellipsis,
+                                style: TextStyle(color: c.ink, fontSize: 11, fontWeight: FontWeight.w500, height: 1.25))),
+                          ]),
+                        )),
+                  ],
                   const Spacer(),
                   // Pay footer.
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 9),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(gradient: LinearGradient(colors: [c.red, c.redDeep]), borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(gradient: LinearGradient(colors: [c.red, c.redDeep]), borderRadius: BorderRadius.circular(11)),
                     child: Text(L10n.of(context).payPackAmount(pack.amount), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 13)),
                   ),
                 ],
@@ -476,9 +507,9 @@ class _PackCard extends StatelessWidget {
               Positioned(
                 right: 0, top: 0,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                  decoration: BoxDecoration(color: c.gold, borderRadius: const BorderRadius.only(topRight: Radius.circular(15), bottomLeft: Radius.circular(10))),
-                  child: Text(pack.badge!.toUpperCase(), style: const TextStyle(color: Color(0xFF1A1408), fontSize: 8.5, fontWeight: FontWeight.w900, letterSpacing: 0.3)),
+                  padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3.5),
+                  decoration: BoxDecoration(gradient: LinearGradient(colors: [c.gold, c.gold.withValues(alpha: 0.82)]), borderRadius: const BorderRadius.only(topRight: Radius.circular(17), bottomLeft: Radius.circular(12))),
+                  child: Text(pack.badge!.toUpperCase(), style: const TextStyle(color: Color(0xFF1A1408), fontSize: 8.5, fontWeight: FontWeight.w900, letterSpacing: 0.4)),
                 ),
               ),
           ],

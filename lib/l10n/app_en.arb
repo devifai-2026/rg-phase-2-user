@@ -1690,5 +1690,17 @@
         "type": "Object"
       }
     }
+  },
+  "welcomeBonusTitle": "Welcome gift unlocked!",
+  "@welcomeBonusTitle": {
+    "description": "Signup bonus celebration title"
+  },
+  "welcomeBonusBody": "has been added to your wallet. Start your first consultation on us.",
+  "@welcomeBonusBody": {
+    "description": "Signup bonus celebration body"
+  },
+  "welcomeBonusCta": "Start exploring",
+  "@welcomeBonusCta": {
+    "description": "Signup bonus CTA"
   }
 }

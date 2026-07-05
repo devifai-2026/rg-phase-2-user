@@ -38,11 +38,16 @@ class AuthProvider extends ChangeNotifier {
   AppUser? _user;
   bool _busy = false;
   bool _wasNewUser = false;
+  int _signupBonus = 0; // bonus credited on the just-completed signup (0 = none)
 
   AuthStatus get status => _status;
   AppUser? get user => _user;
   bool get busy => _busy;
   bool get wasNewUser => _wasNewUser;
+  /// Signup bonus credited on this signup (0 if none) — the app shows the
+  /// welcome-bonus celebration only when this is > 0. Cleared after it's shown.
+  int get signupBonus => _signupBonus;
+  void clearSignupBonus() => _signupBonus = 0;
 
   void _applyUser(AppUser u) {
     _user = u;
@@ -83,6 +88,7 @@ class AuthProvider extends ChangeNotifier {
     try {
       final res = await _auth.verifyOtp(phone10, code);
       _wasNewUser = res.isNewUser;
+      _signupBonus = res.signupBonus;
       _applyUser(res.user);
       _status = AuthStatus.loggedIn;
       onLoggedIn?.call(); // auto-connect socket

@@ -3,8 +3,10 @@ import 'package:provider/provider.dart';
 
 import '../../api/socket_service.dart';
 import '../../l10n/app_localizations.dart';
+import '../../providers/auth_provider.dart';
 import '../../providers/session_provider.dart';
 import '../../theme/rg_colors.dart';
+import '../auth/signup_bonus_dialog.dart';
 import '../astrologers/astrologer_list_screen.dart';
 import '../consult/chat_room_screen.dart';
 import '../consult/call_screen.dart';
@@ -35,7 +37,16 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) context.read<SocketService>().trackPage(_tabRoutes[_index]);
+      if (!mounted) return;
+      context.read<SocketService>().trackPage(_tabRoutes[_index]);
+      // One-time welcome-bonus celebration for a brand-new user who was actually
+      // credited a signup bonus. Only fires when signupBonus > 0; cleared after.
+      final auth = context.read<AuthProvider>();
+      if (auth.signupBonus > 0) {
+        final amount = auth.signupBonus;
+        auth.clearSignupBonus();
+        SignupBonusDialog.show(context, amount);
+      }
     });
   }
 

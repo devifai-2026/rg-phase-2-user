@@ -65,6 +65,13 @@ class ApiClient {
   // don't pay the primary's timeout on every subsequent call.
   bool _useFallback = false;
 
+  /// The host base the client is CURRENTLY using (primary, or the sslip fallback
+  /// after a primary failure). Callers that build a URL a WebView will load
+  /// directly — e.g. the PayU payment page — must use THIS, not ApiConfig.host,
+  /// so the WebView doesn't hit an unresolvable primary host and show
+  /// "web page not available" while REST has already fallen back.
+  String get activeHost => _useFallback ? ApiConfig.fallbackHost : ApiConfig.host;
+
   // ── Public verbs (return the unwrapped `data`) ──
   // The runner receives a `url` (either the relative path against the primary
   // baseUrl, or an ABSOLUTE fallback URL). Dio treats an absolute URL as

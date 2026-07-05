@@ -53,6 +53,11 @@ class WalletApi {
   final ApiClient _api;
   WalletApi(this._api);
 
+  /// Host the API client is currently reaching (primary or sslip fallback) — used
+  /// to build the PayU WebView URL so it loads even when the primary host's DNS
+  /// is down and REST has already fallen back.
+  String get activeHost => _api.activeHost;
+
   /// Current wallet balance (whole rupees).
   Future<int> balance() async {
     final data = await _api.get('/wallet/balance');

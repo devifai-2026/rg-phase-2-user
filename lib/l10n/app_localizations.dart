@@ -5153,6 +5153,24 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'RGPAY resource error: {errorCode} {description}'**
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description);
+
+  /// Signup bonus celebration title
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome gift unlocked!'**
+  String get welcomeBonusTitle;
+
+  /// Signup bonus celebration body
+  ///
+  /// In en, this message translates to:
+  /// **'has been added to your wallet. Start your first consultation on us.'**
+  String get welcomeBonusBody;
+
+  /// Signup bonus CTA
+  ///
+  /// In en, this message translates to:
+  /// **'Start exploring'**
+  String get welcomeBonusCta;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

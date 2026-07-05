@@ -6,7 +6,10 @@ import 'token_store.dart';
 class AuthResult {
   final AppUser user;
   final bool isNewUser;
-  AuthResult(this.user, this.isNewUser);
+  /// Signup bonus actually credited on this verification (0 if none) — drives
+  /// the one-time welcome celebration modal. Only > 0 when a bonus was credited.
+  final int signupBonus;
+  AuthResult(this.user, this.isNewUser, {this.signupBonus = 0});
 }
 
 /// Wraps the /auth/* endpoints (see FLUTTER_API.md §2–4).
@@ -28,7 +31,11 @@ class AuthApi {
       access: map['accessToken'] as String,
       refresh: map['refreshToken'] as String,
     );
-    return AuthResult(AppUser.fromJson(map['user'] as Map<String, dynamic>), map['isNewUser'] == true);
+    return AuthResult(
+      AppUser.fromJson(map['user'] as Map<String, dynamic>),
+      map['isNewUser'] == true,
+      signupBonus: (map['signupBonus'] as num?)?.toInt() ?? 0,
+    );
   }
 
   /// Fetch the current user (used on cold start when a session exists).
