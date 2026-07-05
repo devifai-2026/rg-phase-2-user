@@ -106,6 +106,7 @@ class ApiClient {
         try {
           res = await run(_url(path, true));
           _useFallback = true; // fallback worked — keep using it this session
+          _reportFallback();
         } on DioException {
           throw ApiException('No connection', statusCode: null);
         }
@@ -151,6 +152,20 @@ class ApiClient {
         ? (data['errors'] as List).map((e) => e.toString()).toList()
         : <String>[];
     throw ApiException(ok ? 'Unexpected response' : msg, statusCode: res.statusCode, errors: errs);
+  }
+
+  // One-shot beacon: report that this client had to fall back to the sslip host
+  // (primary DNS/connection failed) so the PO console can graph impacted users
+  // by tenant + app. Best-effort, never throws, once per session.
+  bool _reported = false;
+  void _reportFallback() {
+    if (_reported) return;
+    _reported = true;
+    dio.post('${ApiConfig.fallbackApiBase}/telemetry/net-fallback', data: {
+      'app': 'user',
+      'tenant': ApiConfig.tenant,
+      'primaryHost': ApiConfig.host,
+    }).catchError((_) => Response(requestOptions: RequestOptions(path: '')));
   }
 
   // Single-flight refresh: concurrent 401s share one refresh call.
