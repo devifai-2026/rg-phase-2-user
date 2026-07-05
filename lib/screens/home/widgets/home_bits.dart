@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../theme/rg_colors.dart';
 import '../../../widgets/cached_image.dart';
 
@@ -102,7 +103,9 @@ class OthersIcon extends StatelessWidget {
   final IconData icon;
   final String label;
   final VoidCallback onTap;
-  const OthersIcon({super.key, required this.icon, required this.label, required this.onTap});
+  /// Optional SVG asset; when set it renders instead of [icon] (tinted gold).
+  final String? svgAsset;
+  const OthersIcon({super.key, required this.icon, required this.label, required this.onTap, this.svgAsset});
 
   @override
   Widget build(BuildContext context) {
@@ -114,8 +117,11 @@ class OthersIcon extends StatelessWidget {
         children: [
           Container(
             height: 58, width: 58,
+            alignment: Alignment.center,
             decoration: BoxDecoration(shape: BoxShape.circle, color: c.ground2, border: Border.all(color: c.line)),
-            child: Icon(icon, color: c.gold, size: 26),
+            child: svgAsset != null
+                ? SvgPicture.asset(svgAsset!, width: 28, height: 28, colorFilter: ColorFilter.mode(c.gold, BlendMode.srcIn))
+                : Icon(icon, color: c.gold, size: 26),
           ),
           const SizedBox(height: 6),
           Text(label, textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis,

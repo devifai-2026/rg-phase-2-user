@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Scroll / parchment body -->
+  <path d="M150 118 L92 300 Q80 336 118 342 Q150 348 138 372 L100 470"/>
+  <path d="M150 118 h250 q52 0 52 46 q0 24 -20 30 l-42 12 q-16 5 -10 20 l60 14 -78 218"/>
+  <!-- Top curl -->
+  <path d="M400 118 q52 0 52 46 q0 22 -18 30"/>
+  <!-- Bottom rolled edge -->
+  <path d="M100 470 h300 q52 0 52 -46"/>
+  <path d="M100 470 q-52 0 -52 -46 q0 -22 18 -30 l42 -12 q16 -5 10 -20 l-60 -14"/>
+  <!-- Hexagram (Star of David) in the centre -->
+  <path d="M256 176 L316 280 H196 Z"/>
+  <path d="M256 336 L196 232 H316 Z"/>
+  <!-- Little om/dot inside the star -->
+  <path d="M238 256 h36" stroke-width="20"/>
+  <circle cx="256" cy="270" r="9" fill="currentColor" stroke="none"/>
+  <!-- Decorative speckles -->
+  <circle cx="180" cy="150" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="210" cy="132" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="196" cy="176" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="366" cy="212" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="352" cy="256" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="110" cy="432" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="150" cy="446" r="6" fill="currentColor" stroke="none"/>
+  <circle cx="270" cy="440" r="6" fill="currentColor" stroke="none"/>
+</svg>

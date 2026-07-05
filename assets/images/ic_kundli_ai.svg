@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Planet -->
+  <circle cx="256" cy="256" r="118"/>
+  <!-- Ring around the planet (drawn as two arcs so the planet sits 'in front') -->
+  <path d="M158 190 C92 224 60 262 74 286 C86 306 140 314 210 304"/>
+  <path d="M354 322 C420 288 452 250 438 226 C426 206 372 198 302 208"/>
+  <!-- Craters / surface dots -->
+  <circle cx="286" cy="212" r="30" fill="currentColor" stroke="none"/>
+  <circle cx="212" cy="238" r="12" fill="currentColor" stroke="none"/>
+  <circle cx="300" cy="286" r="11" fill="currentColor" stroke="none"/>
+  <!-- Sparkle top-right -->
+  <path d="M430 74 l10 30 30 10 -30 10 -10 30 -10 -30 -30 -10 30 -10 z" fill="currentColor" stroke="none"/>
+  <!-- Sparkle top-left -->
+  <path d="M74 96 l8 24 24 8 -24 8 -8 24 -8 -24 -24 -8 24 -8 z" fill="currentColor" stroke="none"/>
+  <!-- Sparkle bottom-left -->
+  <path d="M70 430 l8 24 24 8 -24 8 -8 24 -8 -24 -24 -8 24 -8 z" fill="currentColor" stroke="none"/>
+</svg>

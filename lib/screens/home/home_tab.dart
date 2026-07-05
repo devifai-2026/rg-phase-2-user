@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
@@ -77,10 +78,10 @@ class HomeTab extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
               child: Row(
                 children: [
-                  _FeatureTile(icon: Icons.grid_view_rounded, label: t.kFreeKundli, onTap: () => _soon(context, t.kFreeKundli, Icons.grid_view_rounded)),
+                  _FeatureTile(icon: Icons.grid_view_rounded, svgAsset: 'assets/images/ic_free_kundli.svg', label: t.kFreeKundli, onTap: () => _soon(context, t.kFreeKundli, Icons.grid_view_rounded)),
                   _FeatureTile(icon: Icons.favorite, label: t.kMatching, onTap: () => _soon(context, t.kMatching, Icons.favorite)),
                   _FeatureTile(icon: Icons.menu_book_outlined, label: t.kBrihat, onTap: () => _soon(context, t.kBrihat, Icons.menu_book_outlined)),
-                  _FeatureTile(icon: Icons.auto_awesome, label: t.kKundliAi, onTap: () => _soon(context, t.kKundliAi, Icons.auto_awesome)),
+                  _FeatureTile(icon: Icons.auto_awesome, svgAsset: 'assets/images/ic_kundli_ai.svg', label: t.kKundliAi, onTap: () => _soon(context, t.kKundliAi, Icons.auto_awesome)),
                 ],
               ),
             ),
@@ -123,30 +124,20 @@ class HomeTab extends StatelessWidget {
                 child: _BookPoojaBanner(banners: cfg.poojaBanners, onTap: () => Navigator.of(context).push(slideRoute(const PoojaListScreen()))),
               ),
 
-            // ── Featured astrologers (API-bound; static fallback while loading) ──
-            if (cfg.showFeatured) ...[
-              SectionHeader(t.secFeatured, seeAllLabel: t.seeAll,
-                  onSeeAll: () => Navigator.of(context).push(slideRoute(
-                      AstrologerListScreen(featured: true, title: t.secFeatured)))),
-              const _FeaturedRail(fallback: _featured),
-            ],
+            // ── Featured astrologers (API-only; header + rail hide when empty) ──
+            if (cfg.showFeatured) _FeaturedRail(title: t.secFeatured, seeAllLabel: t.seeAll),
 
             // ── Nearby astrologers (location-aware; API-bound by city) ──
-            if (cfg.showNearby) _NearbySection(title: t.secNearby, seeAllLabel: t.seeAll, fallback: _nearby),
+            if (cfg.showNearby) _NearbySection(title: t.secNearby, seeAllLabel: t.seeAll),
 
-            // ── Available / Call & Chat (random ONLINE astrologers; See all =
-            //    the full directory incl. offline, with search/filters/chips) ──
-            SectionHeader(t.secCallChat, seeAllLabel: t.seeAll,
-                onSeeAll: () => Navigator.of(context).push(slideRoute(
-                    AstrologerListScreen(title: t.secCallChat)))),
-            const _CallChatRail(fallback: _available),
+            // ── Available / Call & Chat (random ONLINE astrologers; API-only,
+            //    header + rail hide when empty) ──
+            _CallChatRail(title: t.secCallChat, seeAllLabel: t.seeAll),
 
-            // ── AI astrologers (See all → the AI astrologer list, same UI
-            //    with search; chat-only placeholders until the AI backend) ──
-            SectionHeader(t.secAiAstro, seeAllLabel: t.seeAll,
-                onSeeAll: () => Navigator.of(context).push(slideRoute(
-                    AstrologerListScreen(aiMode: true, title: t.secAiAstro)))),
-            _rail(context, _ai),
+            // ── AI astrologers ── hidden until a real AI-astrologer backend
+            // exists. No dummy placeholders; the whole section (header + CTA)
+            // stays hidden while there's nothing real to show.
+            // (Re-enable with an API-bound rail once AI astrologers are live.)
 
             // ── Products (category chips, API-bound with images) ──
             SectionHeader(t.secProducts, seeAllLabel: t.seeAll,
@@ -185,7 +176,7 @@ class HomeTab extends StatelessWidget {
                   OthersIcon(icon: Icons.menu_book_outlined, label: t.brihatKundli, onTap: () => _soon(context, t.brihatKundli, Icons.menu_book_outlined)),
                   OthersIcon(icon: Icons.edit_note_outlined, label: t.dailyNotes, onTap: () => _soon(context, t.dailyNotes, Icons.edit_note_outlined)),
                   OthersIcon(icon: Icons.help_outline, label: t.askAQuestion, onTap: () => _soon(context, t.askAQuestion, Icons.help_outline)),
-                  OthersIcon(icon: Icons.auto_awesome, label: 'Kundli AI+', onTap: () => _soon(context, 'Kundli AI+', Icons.auto_awesome)),
+                  OthersIcon(icon: Icons.auto_awesome, svgAsset: 'assets/images/ic_kundli_ai.svg', label: 'Kundli AI+', onTap: () => _soon(context, 'Kundli AI+', Icons.auto_awesome)),
                   OthersIcon(icon: Icons.pin_outlined, label: t.numerology, onTap: () => _soon(context, t.numerology, Icons.pin_outlined)),
                   OthersIcon(icon: Icons.picture_as_pdf_outlined, label: t.free50Pages, onTap: () => _soon(context, t.freeReport, Icons.picture_as_pdf_outlined)),
                   OthersIcon(icon: Icons.diversity_3_outlined, label: t.freeMatrimony, onTap: () => _soon(context, t.matrimony, Icons.diversity_3_outlined)),
@@ -225,40 +216,6 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _rail(BuildContext context, List<Map<String, dynamic>> data) {
-    return SizedBox(
-      height: 116,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        itemCount: data.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 14),
-        itemBuilder: (_, i) {
-          final a = data[i];
-          return GestureDetector(
-            onTap: () {
-              if (a['ai'] == true) {
-                _soon(context, L10n.of(context).aiChat, Icons.auto_awesome);
-              } else {
-                final rate = a['rate'] as int;
-                Navigator.of(context).push(slideRoute(AstrologerProfileScreen(
-                  name: a['name'], desc: L10n.of(context).vedicAstrology, languages: L10n.of(context).hindiEnglish,
-                  gifts: 1240, followers: '12.4k',
-                  call: rate, chat: (rate - 4).clamp(1, 100), video: rate + 15,
-                  status: a['status'] ?? 'offline',
-                )));
-              }
-            },
-            child: AstrologerCard(
-              name: a['name'], ratePerMin: a['rate'],
-              status: a['status'] ?? 'offline', ai: a['ai'] ?? false,
-            ),
-          );
-        },
-      ),
-    );
-  }
-
   /// Videos/lessons rail: admin-managed YouTube items. Tapping a card plays the
   /// video INSIDE the app (WebView). Only rendered when the list is non-empty.
   Widget _videoRail(BuildContext context, List<Map<String, dynamic>> items) {
@@ -280,30 +237,6 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  static const _featured = [
-    {'name': 'Acharya Veda', 'rate': 35, 'status': 'online'},
-    {'name': 'Pandit Rohan', 'rate': 28, 'status': 'busy'},
-    {'name': 'Guru Maya', 'rate': 40, 'status': 'online'},
-    {'name': 'Jaya Shastri', 'rate': 22, 'status': 'offline'},
-    {'name': 'Dev Sharma', 'rate': 18, 'status': 'online'},
-  ];
-  static const _nearby = [
-    {'name': 'Suresh G.', 'rate': 20, 'status': 'online'},
-    {'name': 'Lata P.', 'rate': 26, 'status': 'busy'},
-    {'name': 'Kiran B.', 'rate': 15, 'status': 'online'},
-    {'name': 'Mohan T.', 'rate': 32, 'status': 'offline'},
-  ];
-  static const _available = [
-    {'name': 'Anil Joshi', 'rate': 18, 'status': 'online'},
-    {'name': 'Meera Devi', 'rate': 30, 'status': 'busy'},
-    {'name': 'Ravi Kumar', 'rate': 25, 'status': 'online'},
-    {'name': 'Sunita Rao', 'rate': 60, 'status': 'offline'},
-  ];
-  static const _ai = [
-    {'name': 'Tara AI', 'rate': 0, 'ai': true},
-    {'name': 'Jyoti AI', 'rate': 0, 'ai': true},
-    {'name': 'Vedu AI', 'rate': 0, 'ai': true},
-  ];
 }
 
 // ───────────────────────── private widgets ─────────────────────────
@@ -312,8 +245,9 @@ class HomeTab extends StatelessWidget {
 /// [fallback] cards while the first fetch is in flight (or if it fails), so the
 /// home never renders an empty/janky rail.
 class _FeaturedRail extends StatefulWidget {
-  final List<Map<String, dynamic>> fallback;
-  const _FeaturedRail({required this.fallback});
+  final String title;
+  final String seeAllLabel;
+  const _FeaturedRail({required this.title, required this.seeAllLabel});
 
   @override
   State<_FeaturedRail> createState() => _FeaturedRailState();
@@ -355,25 +289,28 @@ class _FeaturedRailState extends State<_FeaturedRail> {
 
   @override
   Widget build(BuildContext context) {
-    // Live data once loaded; otherwise the compiled fallback cards.
+    // API-only: no dummy fallback. While loading show nothing (no header flash);
+    // when loaded-empty hide the whole section (header + CTA). Only render the
+    // header once there are real astrologers.
     final live = _items;
-    return SizedBox(
-      height: 158,
-      child: (live == null || live.isEmpty)
-          ? ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: widget.fallback.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 14),
-              itemBuilder: (_, i) => _fallbackAstroRailCard(context, widget.fallback[i]),
-            )
-          : ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: live.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 14),
-              itemBuilder: (_, i) => _liveAstroRailCard(context, live[i]),
-            ),
+    if (live == null || live.isEmpty) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionHeader(widget.title, seeAllLabel: widget.seeAllLabel,
+            onSeeAll: () => Navigator.of(context).push(slideRoute(
+                AstrologerListScreen(featured: true, title: widget.title)))),
+        SizedBox(
+          height: 158,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            itemCount: live.length,
+            separatorBuilder: (_, __) => const SizedBox(width: 14),
+            itemBuilder: (_, i) => _liveAstroRailCard(context, live[i]),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -411,30 +348,14 @@ Widget _liveAstroRailCard(BuildContext context, Astrologer a) => GestureDetector
       ),
     );
 
-/// One static fallback card (used while the API loads / on error).
-Widget _fallbackAstroRailCard(BuildContext context, Map<String, dynamic> a) {
-  final rate = a['rate'] as int;
-  return GestureDetector(
-    onTap: () => Navigator.of(context).push(slideRoute(AstrologerProfileScreen(
-      name: a['name'], desc: L10n.of(context).vedicAstrology, languages: L10n.of(context).hindiEnglish,
-      gifts: 1240, followers: '12.4k',
-      call: rate, chat: (rate - 4).clamp(1, 100), video: rate + 15,
-      status: a['status'] ?? 'offline',
-    ))),
-    child: AstrologerCard(
-      name: a['name'], ratePerMin: rate, status: a['status'] ?? 'offline',
-      languages: const ['Hindi', 'English'],
-    ),
-  );
-}
-
 /// Home "Call & Chat" rail — a small set of RANDOM, currently-ONLINE
 /// astrologers (server-side $sample; never offline). "See all" opens the full
 /// directory (incl. offline) with search/filters/categories. Falls back to the
 /// static rail while the first fetch is in flight or if it fails.
 class _CallChatRail extends StatefulWidget {
-  final List<Map<String, dynamic>> fallback;
-  const _CallChatRail({required this.fallback});
+  final String title;
+  final String seeAllLabel;
+  const _CallChatRail({required this.title, required this.seeAllLabel});
 
   @override
   State<_CallChatRail> createState() => _CallChatRailState();
@@ -487,24 +408,27 @@ class _CallChatRailState extends State<_CallChatRail> {
 
   @override
   Widget build(BuildContext context) {
+    // API-only: no dummy fallback. Hide the whole section (header + CTA) until
+    // there are real online astrologers to show.
     final live = _items;
-    return SizedBox(
-      height: 158,
-      child: (live == null || live.isEmpty)
-          ? ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: widget.fallback.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 14),
-              itemBuilder: (_, i) => _fallbackAstroRailCard(context, widget.fallback[i]),
-            )
-          : ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: live.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 14),
-              itemBuilder: (_, i) => _liveAstroRailCard(context, live[i]),
-            ),
+    if (live == null || live.isEmpty) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionHeader(widget.title, seeAllLabel: widget.seeAllLabel,
+            onSeeAll: () => Navigator.of(context).push(slideRoute(
+                AstrologerListScreen(title: widget.title)))),
+        SizedBox(
+          height: 158,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            itemCount: live.length,
+            separatorBuilder: (_, __) => const SizedBox(width: 14),
+            itemBuilder: (_, i) => _liveAstroRailCard(context, live[i]),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -570,8 +494,7 @@ class _ProductsRailState extends State<_ProductsRail> {
 class _NearbySection extends StatefulWidget {
   final String title;
   final String seeAllLabel;
-  final List<Map<String, dynamic>> fallback;
-  const _NearbySection({required this.title, required this.seeAllLabel, required this.fallback});
+  const _NearbySection({required this.title, required this.seeAllLabel});
 
   @override
   State<_NearbySection> createState() => _NearbySectionState();
@@ -691,13 +614,7 @@ class _NearbySectionState extends State<_NearbySection> {
     return SizedBox(
       height: 158,
       child: (live == null)
-          ? ListView.separated( // static fallback while resolving
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: widget.fallback.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 14),
-              itemBuilder: (_, i) => _fallbackAstroRailCard(context, widget.fallback[i]),
-            )
+          ? const Center(child: CircularProgressIndicator()) // API-only: loader, no dummy
           : (live.isEmpty
               ? _emptyNearby() // only the no-city case reaches here (city-empty hides the section)
               : ListView.separated(
@@ -815,7 +732,9 @@ class _FeatureTile extends StatelessWidget {
   final IconData icon;
   final String label;
   final VoidCallback onTap;
-  const _FeatureTile({required this.icon, required this.label, required this.onTap});
+  /// Optional SVG asset; when set it renders instead of [icon] (tinted gold).
+  final String? svgAsset;
+  const _FeatureTile({required this.icon, required this.label, required this.onTap, this.svgAsset});
   @override
   Widget build(BuildContext context) {
     final c = context.rg;
@@ -829,8 +748,11 @@ class _FeatureTile extends StatelessWidget {
             children: [
               Container(
                 height: 52, width: 52,
+                alignment: Alignment.center,
                 decoration: BoxDecoration(color: c.ground2, borderRadius: BorderRadius.circular(15), border: Border.all(color: c.line)),
-                child: Icon(icon, color: c.gold, size: 26),
+                child: svgAsset != null
+                    ? SvgPicture.asset(svgAsset!, width: 28, height: 28, colorFilter: ColorFilter.mode(c.gold, BlendMode.srcIn))
+                    : Icon(icon, color: c.gold, size: 26),
               ),
               const SizedBox(height: 7),
               Text(label, style: TextStyle(color: c.ink, fontSize: 11.5, fontWeight: FontWeight.w600)),
