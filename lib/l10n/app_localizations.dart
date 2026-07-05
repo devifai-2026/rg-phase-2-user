@@ -5171,6 +5171,30 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Start exploring'**
   String get welcomeBonusCta;
+
+  /// Back-to-exit confirm title
+  ///
+  /// In en, this message translates to:
+  /// **'Leave the app?'**
+  String get exitAppTitle;
+
+  /// Back-to-exit confirm body
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to exit?'**
+  String get exitAppBody;
+
+  /// Back-to-exit confirm button
+  ///
+  /// In en, this message translates to:
+  /// **'Exit'**
+  String get exitAppConfirm;
+
+  /// Back-to-exit cancel (stay) button
+  ///
+  /// In en, this message translates to:
+  /// **'Stay'**
+  String get stay;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

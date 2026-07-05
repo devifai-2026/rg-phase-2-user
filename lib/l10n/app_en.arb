@@ -1702,5 +1702,21 @@
   "welcomeBonusCta": "Start exploring",
   "@welcomeBonusCta": {
     "description": "Signup bonus CTA"
+  },
+  "exitAppTitle": "Leave the app?",
+  "@exitAppTitle": {
+    "description": "Back-to-exit confirm title"
+  },
+  "exitAppBody": "Are you sure you want to exit?",
+  "@exitAppBody": {
+    "description": "Back-to-exit confirm body"
+  },
+  "exitAppConfirm": "Exit",
+  "@exitAppConfirm": {
+    "description": "Back-to-exit confirm button"
+  },
+  "stay": "Stay",
+  "@stay": {
+    "description": "Back-to-exit cancel (stay) button"
   }
 }

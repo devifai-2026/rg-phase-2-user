@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import '../../api/socket_service.dart';
@@ -90,8 +91,46 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    final c = context.rg;
+    final session = context.watch<SessionProvider>();
 
+    // Back at the home root exits the app — confirm first so a stray back gesture
+    // doesn't drop the user out. Cancel (Stay) is emphasized to keep them in.
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        final leave = await _confirmExit(context);
+        if (leave == true) SystemNavigator.pop();
+      },
+      child: _buildShell(context, session),
+    );
+  }
+
+  Future<bool?> _confirmExit(BuildContext context) {
+    final c = context.rg;
+    final t = L10n.of(context);
+    return showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: c.card,
+        title: Text(t.exitAppTitle, style: TextStyle(color: c.ink, fontWeight: FontWeight.w800)),
+        content: Text(t.exitAppBody, style: TextStyle(color: c.muted)),
+        actions: [
+          // Exit = de-emphasized text button.
+          TextButton(onPressed: () => Navigator.of(ctx).pop(true), child: Text(t.exitAppConfirm, style: TextStyle(color: c.muted))),
+          // Stay = emphasized filled button (nudge the user to remain).
+          FilledButton(
+            style: FilledButton.styleFrom(backgroundColor: c.red),
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text(t.stay, style: const TextStyle(fontWeight: FontWeight.w800)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildShell(BuildContext context, SessionProvider session) {
+    final c = context.rg;
     final tabs = [
       HomeTab(onMenu: () => _scaffoldKey.currentState?.openDrawer()),
       const AstrologerListScreen(aiMode: true), // AI Astro → AI list (chat-only)
@@ -99,9 +138,6 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
       const AstrologerListScreen(), // Ask → human astrologer list
       const ConsultationHistoryScreen(),
     ];
-
-    final session = context.watch<SessionProvider>();
-
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: c.ground,
