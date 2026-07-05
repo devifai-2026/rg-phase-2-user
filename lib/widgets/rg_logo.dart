@@ -14,7 +14,10 @@ class RgLogo extends StatelessWidget {
   /// appName so the fallback splash/login never shows a hardcoded brand. When
   /// null/empty the wordmark is omitted (mark only).
   final String? brandName;
-  const RgLogo({super.key, this.size = 120, this.showWordmark = false, this.brandName});
+  /// Tenant's uploaded logo URL. When present it's shown as the mark (a circular
+  /// image); when null we fall back to the initials monogram.
+  final String? logoUrl;
+  const RgLogo({super.key, this.size = 120, this.showWordmark = false, this.brandName, this.logoUrl});
 
   // Monogram from the tenant brand (e.g. "Astro Talk" → "AT"), 1–2 letters.
   // Falls back to a neutral star when no brand — NEVER the hardcoded "RG".
@@ -27,13 +30,23 @@ class RgLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.rg;
+    final hasLogo = (logoUrl ?? '').trim().isNotEmpty;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
           width: size,
           height: size,
-          child: CustomPaint(painter: _RgMarkPainter(red: c.redDeep, gold: c.gold, ink: c.ink, monogram: _initials(brandName))),
+          // Uploaded logo → circular image; else the painted initials mark.
+          child: hasLogo
+              ? ClipOval(
+                  child: Image.network(
+                    logoUrl!.trim(),
+                    width: size, height: size, fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => CustomPaint(painter: _RgMarkPainter(red: c.redDeep, gold: c.gold, ink: c.ink, monogram: _initials(brandName))),
+                  ),
+                )
+              : CustomPaint(painter: _RgMarkPainter(red: c.redDeep, gold: c.gold, ink: c.ink, monogram: _initials(brandName))),
         ),
         if (showWordmark && (brandName ?? '').trim().isNotEmpty) ...[
           SizedBox(height: size * 0.16),

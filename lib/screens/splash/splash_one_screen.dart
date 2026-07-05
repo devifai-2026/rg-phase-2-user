@@ -14,15 +14,18 @@ class SplashOneScreen extends StatefulWidget {
   State<SplashOneScreen> createState() => _SplashOneScreenState();
 }
 
+// Splash phases: exactly what the PO asked for —
+//   loading : show a loader while we fetch the admin config (+ preload its image)
+//   ready   : config resolved → show the tenant splash image (or branded logo)
+//   failed  : the fetch failed AND we had no usable cached config → fallback logo
+enum _Phase { loading, ready, failed }
+
 class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProviderStateMixin {
   late final AnimationController _ctrl;
   late final Animation<double> _fade;
   late final Animation<double> _scale;
-  // True once the admin config has been resolved (either the cache already had a
-  // splash, or the network refresh finished/failed). We DON'T render the branded
-  // splash — or the fallback — until we know, so a tenant never flashes the
-  // generic logo when they actually have a splash image set.
-  bool _configReady = false;
+  _Phase _phase = _Phase.loading;
+  String? _readyImage; // the fully-preloaded splash image URL, if any
 
   @override
   void initState() {
@@ -38,18 +41,43 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
   Future<void> _prepare() async {
     final cfg = context.read<AppConfigService>();
     final isDark = WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark;
-    // If the cached config already has a splash image, we're ready instantly.
-    // Otherwise wait for a fresh fetch (bounded) so a tenant with a configured
-    // splash always sees it — the fallback logo only appears on real failure.
-    if (cfg.splashImage(isDark) == null) {
-      try { await cfg.refresh().timeout(const Duration(seconds: 6)); } catch (_) {/* fall back */}
-    } else {
-      cfg.refresh(); // keep it fresh in the background
-    }
-    if (!mounted) return;
-    setState(() => _configReady = true);
 
-    // Start the dwell only after config is resolved.
+    // 1) Ensure we have config. Cached config = instant; otherwise wait for the
+    //    network (bounded). Only if BOTH the fetch fails AND we have no cached
+    //    config at all do we go to the fallback (failed) phase.
+    var hadConfig = cfg.hasConfig;
+    if (!hadConfig) {
+      try {
+        await cfg.refresh().timeout(const Duration(seconds: 8));
+        hadConfig = cfg.hasConfig;
+      } catch (_) {/* network failure */}
+      if (!hadConfig) { // API failed AND nothing cached → fallback
+        if (mounted) setState(() => _phase = _Phase.failed);
+        _scheduleNext(cfg);
+        return;
+      }
+    } else {
+      cfg.refresh(); // have cache → refresh in the background
+    }
+
+    // 2) If the tenant set a splash image, PRELOAD it so we never flash a
+    //    half-loaded image or the loader→image swap. On image failure → fallback.
+    final img = cfg.splashImage(isDark);
+    if (img != null) {
+      try {
+        await precacheImage(NetworkImage(img), context).timeout(const Duration(seconds: 8));
+        if (mounted) setState(() { _readyImage = img; _phase = _Phase.ready; });
+      } catch (_) {
+        if (mounted) setState(() => _phase = _Phase.failed); // image couldn't load
+      }
+    } else {
+      // No image configured → show the branded logo (ready, not a failure).
+      if (mounted) setState(() => _phase = _Phase.ready);
+    }
+    _scheduleNext(cfg);
+  }
+
+  void _scheduleNext(AppConfigService cfg) {
     final ms = (cfg.splash['durationMs'] as num?)?.toInt() ?? 1900;
     Future.delayed(Duration(milliseconds: ms.clamp(600, 6000)), () {
       if (!mounted) return;
@@ -73,50 +101,38 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
   Widget build(BuildContext context) {
     final c = context.rg;
     final cfg = context.watch<AppConfigService>();
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final splashImg = cfg.splashImage(isDark);
     final bg = _parseHex(cfg.splash['backgroundColor']) ?? c.ground;
     final fit = (cfg.splash['fit'] == 'contain') ? BoxFit.contain : BoxFit.cover;
 
-    // Still resolving the admin config → neutral loader (no brand flash). We only
-    // decide between the configured splash and the fallback once config is ready.
-    if (!_configReady) {
-      return Scaffold(
-        backgroundColor: bg,
-        body: Center(child: CircularProgressIndicator(color: c.red, strokeWidth: 2.4)),
-      );
-    }
-
-    // Admin full-screen image splash (with the animated logo as fallback ONLY on
-    // a genuine image load error).
-    if (splashImg != null) {
-      return Scaffold(
-        backgroundColor: bg,
-        body: FadeTransition(
-          opacity: _fade,
-          child: SizedBox.expand(
-            child: Image.network(
-              splashImg,
-              fit: fit,
-              errorBuilder: (_, __, ___) => Center(child: RgLogo(size: 150, showWordmark: true, brandName: cfg.appName)),
-            ),
+    Widget body;
+    switch (_phase) {
+      case _Phase.loading:
+        // LOADER while we fetch config + preload the splash image. No brand flash.
+        body = Center(child: CircularProgressIndicator(color: c.red, strokeWidth: 2.4));
+        break;
+      case _Phase.ready:
+        // Config resolved. If the tenant set a splash image (preloaded) show it;
+        // else show the branded (tenant-monogram) logo.
+        body = _readyImage != null
+            ? FadeTransition(opacity: _fade, child: SizedBox.expand(child: Image.network(_readyImage!, fit: fit)))
+            : Center(
+                child: FadeTransition(
+                  opacity: _fade,
+                  child: ScaleTransition(scale: _scale, child: RgLogo(size: 150, showWordmark: true, brandName: cfg.appName, logoUrl: cfg.logoUrl)),
+                ),
+              );
+        break;
+      case _Phase.failed:
+        // API/image failure with no cached config → branded fallback logo.
+        body = Center(
+          child: FadeTransition(
+            opacity: _fade,
+            child: ScaleTransition(scale: _scale, child: RgLogo(size: 150, showWordmark: true, brandName: cfg.appName, logoUrl: cfg.logoUrl)),
           ),
-        ),
-      );
+        );
+        break;
     }
-
-    return Scaffold(
-      backgroundColor: bg,
-      body: Center(
-        child: FadeTransition(
-          opacity: _fade,
-          child: ScaleTransition(
-            scale: _scale,
-            child: RgLogo(size: 150, showWordmark: true, brandName: cfg.appName),
-          ),
-        ),
-      ),
-    );
+    return Scaffold(backgroundColor: bg, body: body);
   }
 }
 

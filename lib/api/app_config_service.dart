@@ -27,6 +27,24 @@ class AppConfigService extends ChangeNotifier {
     return (n is String && n.trim().isNotEmpty) ? n.trim() : 'Astro App';
   }
 
+  /// Tenant brand logo URL (uploaded by the PO). Null when unset — callers then
+  /// fall back to the initials monogram.
+  String? get logoUrl {
+    final u = _cfg['logoUrl'];
+    return (u is String && u.trim().isNotEmpty) ? u.trim() : null;
+  }
+
+  /// Tenant tagline (server already localizes it to the requester's language).
+  /// Empty when unset — callers can fall back to the static localized tagline.
+  String get tagline {
+    final t = _cfg['tagline'];
+    return (t is String) ? t.trim() : '';
+  }
+
+  /// True once we have a real config (from cache or a successful fetch) — used by
+  /// the splash to decide loader vs. content vs. fallback.
+  bool get hasConfig => _cfg.isNotEmpty && _cfg['appName'] != null;
+
   // ── Section toggles (default everything visible) ──
   bool _section(String k) => (_cfg['sections']?[k] ?? true) == true;
   bool get showBanners => _section('banners');

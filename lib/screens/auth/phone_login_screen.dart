@@ -99,7 +99,8 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
     final c = context.rg;
     final t = L10n.of(context);
     final auth = context.watch<AuthProvider>();
-    final brand = context.watch<AppConfigService>().appName;
+    final appCfg = context.watch<AppConfigService>();
+    final brand = appCfg.appName;
 
     return Scaffold(
       backgroundColor: c.ground,
@@ -131,7 +132,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 12),
-                Center(child: RgLogo(size: 84, brandName: brand)),
+                Center(child: RgLogo(size: 84, brandName: brand, logoUrl: appCfg.logoUrl)),
                 const SizedBox(height: 36),
                 Text(t.authWelcomeTitle,
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: c.ink)),

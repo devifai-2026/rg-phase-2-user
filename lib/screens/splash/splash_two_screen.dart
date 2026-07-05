@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../api/app_config_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/auth_provider.dart';
 import '../../theme/rg_colors.dart';
@@ -46,6 +47,7 @@ class _SplashTwoScreenState extends State<SplashTwoScreen> {
   @override
   Widget build(BuildContext context) {
     final c = context.rg;
+    final appCfg = context.watch<AppConfigService>();
     final t = L10n.of(context);
     return Scaffold(
       backgroundColor: c.ground,
@@ -68,15 +70,15 @@ class _SplashTwoScreenState extends State<SplashTwoScreen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const RgLogo(size: 96),
+                RgLogo(size: 96, brandName: appCfg.appName, logoUrl: appCfg.logoUrl),
                 const SizedBox(height: 28),
                 Text(
-                  t.appName,
+                  appCfg.appName, // tenant's real brand name (from /app-config), not the static default
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: c.ink),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  t.tagline,
+                  appCfg.tagline.isNotEmpty ? appCfg.tagline : t.tagline, // tenant tagline (localized) else static default
                   style: TextStyle(fontSize: 15, color: c.gold, fontWeight: FontWeight.w600, letterSpacing: 0.4),
                 ),
                 const SizedBox(height: 40),
