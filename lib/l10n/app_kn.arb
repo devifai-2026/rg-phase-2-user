@@ -1,0 +1,1694 @@
+{
+  "@@locale": "kn",
+  "appName": "ಆಸ್ಟ್ರೋ ಅಪ್ಲಿಕೇಶನ್",
+  "tagline": "ಜ್ಯೋತಿಷ್ಯ ಮತ್ತು ಯೋಗಕ್ಷೇಮ",
+  "splashBlessing": "ಸ್ಪಷ್ಟತೆಯತ್ತ ನಿಮ್ಮ ಪ್ರಯಾಣ ಇಲ್ಲಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ.",
+  "authWelcomeTitle": "ಸ್ವಾಗತ",
+  "authWelcomeSubtitle": "ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ ಅಥವಾ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಚಿಸಿ",
+  "phoneLabel": "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
+  "phoneHint": "10-ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+  "phoneCountryCode": "+91",
+  "continueButton": "ಮುಂದುವರಿಸಿ",
+  "sendOtpButton": "ಒಟಿಪಿ ಕಳುಹಿಸಿ",
+  "otpTitle": "ನಿಮ್ಮ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+  "otpSubtitle": "{phone} ಗೆ ಕಳುಹಿಸಲಾದ 6-ಅಂಕಿಯ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ",
+  "@otpSubtitle": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "otpLabel": "ಒಟಿಪಿ",
+  "verifyButton": "ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಸಿ",
+  "resendOtp": "ಕೋಡ್ ಅನ್ನು ಮತ್ತೆ ಕಳುಹಿಸಿ",
+  "resendOtpIn": "{seconds} ಗಳಲ್ಲಿ ಪುನಃ ಕಳುಹಿಸಿ",
+  "@resendOtpIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "changeNumber": "ಸಂಖ್ಯೆಯನ್ನು ಬದಲಾಯಿಸಿ",
+  "termsNotice": "ಮುಂದುವರಿಯುವ ಮೂಲಕ ನೀವು ನಮ್ಮ ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತಾ ನೀತಿಗೆ ಸಮ್ಮತಿಸುತ್ತೀರಿ.",
+  "acceptPrefix": "ನಾನು ಒಪ್ಪುತ್ತೇನೆ",
+  "acceptAnd": "ಮತ್ತು",
+  "termsOfService": "ಸೇವಾ ನಿಯಮಗಳು",
+  "privacyPolicy": "ಗೌಪ್ಯತಾ ನೀತಿ",
+  "errInvalidPhone": "ಮಾನ್ಯವಾದ 10-ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+  "errInvalidOtp": "6-ಅಂಕಿಯ ಕೋಡ್ ನಮೂದಿಸಿ",
+  "errGeneric": "ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "errNetwork": "ಸಂಪರ್ಕವಿಲ್ಲ. ನಿಮ್ಮ ಇಂಟರ್ನೆಟ್ ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "otpSent": "OTP ಕಳುಹಿಸಲಾಗಿದೆ",
+  "loginSuccess": "ಸೈನ್ ಇನ್ ಮಾಡಲಾಗಿದೆ",
+  "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+  "language": "ಭಾಷೆ",
+  "theme": "ಥೀಮ್",
+  "themeSystem": "ವ್ಯವಸ್ಥೆ",
+  "themeLight": "ಬೆಳಕು",
+  "themeDark": "ಕತ್ತಲೆ",
+  "homeWelcome": "ನಮಸ್ತೆ, {name}",
+  "@homeWelcome": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "logout": "ಲಾಗ್ ಔಟ್ ಮಾಡಿ",
+  "onbTitle": "ನಿಮ್ಮ ಬಗ್ಗೆ ನಮಗೆ ತಿಳಿಸಿ",
+  "onbSubtitle": "ಇದು ನಿಮ್ಮ ಓದುವಿಕೆಯನ್ನು ವೈಯಕ್ತೀಕರಿಸಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಇದರಲ್ಲಿ ಯಾವುದೂ ಅಗತ್ಯವಿಲ್ಲ — ನೀವು ನಂತರ ಬಿಟ್ಟು ಮುಗಿಸಬಹುದು.",
+  "onbName": "ನಿಮ್ಮ ಹೆಸರು",
+  "onbAddPhoto": "ಫೋಟೋ ಸೇರಿಸಿ",
+  "onbChangePhoto": "ಫೋಟೋ ಬದಲಾಯಿಸಿ",
+  "onbGender": "ಲಿಂಗ",
+  "genderMale": "ಗಂಡು",
+  "genderFemale": "ಹೆಣ್ಣು",
+  "genderOther": "ಇತರೆ",
+  "onbDob": "ಹುಟ್ಟಿದ ದಿನಾಂಕ",
+  "onbTob": "ಹುಟ್ಟಿದ ಸಮಯ",
+  "onbDontKnowTime": "ನನ್ನ ಜನ್ಮ ಸಮಯ ನನಗೆ ತಿಳಿದಿಲ್ಲ.",
+  "onbPob": "ಹುಟ್ಟಿದ ಸ್ಥಳ",
+  "onbPobHint": "ನಿಮ್ಮ ಜನ್ಮಸ್ಥಳವನ್ನು ಹುಡುಕಿ",
+  "onbLanguage": "ಆದ್ಯತೆಯ ಭಾಷೆ",
+  "onbSelectDate": "ದಿನಾಂಕ ಆಯ್ಕೆಮಾಡಿ",
+  "onbSelectTime": "ಸಮಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "onbSkip": "ಇದೀಗ ಬಿಟ್ಟುಬಿಡಿ",
+  "onbFinish": "ಮುಗಿಸಿ",
+  "onbSaved": "ಪ್ರೊಫೈಲ್ ಉಳಿಸಲಾಗಿದೆ",
+  "completeProfile": "ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ",
+  "completeProfileCta": "ಸೆಟಪ್ ಮುಗಿಸಿ",
+  "permTitle": "ಕೆಲವು ಅನುಮತಿಗಳು",
+  "permSubtitle": "ಕರೆಗಳು, ಎಚ್ಚರಿಕೆಗಳು ಮತ್ತು ಫೋಟೋಗಳು ಸರಾಗವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ನಮಗೆ ಇವುಗಳು ಬೇಕಾಗುತ್ತವೆ. ನೀವು ಅವುಗಳನ್ನು ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಬದಲಾಯಿಸಬಹುದು.",
+  "permNotifications": "ಅಧಿಸೂಚನೆಗಳು",
+  "permNotificationsDesc": "ಸಮಾಲೋಚನೆ ಎಚ್ಚರಿಕೆಗಳು, ಆದೇಶ ನವೀಕರಣಗಳು ಮತ್ತು ಜ್ಞಾಪನೆಗಳು",
+  "permMic": "ಮೈಕ್ರೊಫೋನ್",
+  "permMicDesc": "ಜ್ಯೋತಿಷಿಗಳೊಂದಿಗೆ ಧ್ವನಿ ಕರೆಗಳಿಗಾಗಿ",
+  "permCamera": "ಕ್ಯಾಮೆರಾ",
+  "permCameraDesc": "ವೀಡಿಯೊ ಕರೆಗಳು ಮತ್ತು ಫೋಟೋಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲು",
+  "permPhotos": "ಫೋಟೋಗಳು",
+  "permPhotosDesc": "ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಚಿತ್ರವನ್ನು ಹೊಂದಿಸಲು",
+  "permAllow": "ಪ್ರವೇಶವನ್ನು ಅನುಮತಿಸಿ",
+  "permContinue": "ಮುಂದುವರಿಸಿ",
+  "permLocation": "ಸ್ಥಳ",
+  "permLocationDesc": "ನಿಮ್ಮ ಹತ್ತಿರದ ಜ್ಯೋತಿಷಿಗಳನ್ನು ಹುಡುಕಿ",
+  "secFeatured": "ವೈಶಿಷ್ಟ್ಯಪೂರ್ಣ ಜ್ಯೋತಿಷಿಗಳು",
+  "secNearby": "ಹತ್ತಿರದ ಜ್ಯೋತಿಷಿಗಳು",
+  "secCallChat": "ಕರೆ ಮಾಡಿ ಮತ್ತು ಚಾಟ್ ಮಾಡಿ",
+  "secAiAstro": "ಎ.ಐ. ಅಸ್ಟ್ರೋಲಾಜರ್ಸ್",
+  "secProducts": "ಉತ್ಪನ್ನಗಳು",
+  "secVideos": "ವೀಡಿಯೊಗಳು",
+  "secLessons": "ಜ್ಯೋತಿಷ್ಯ ಪಾಠಗಳು",
+  "secOthers": "ಇತರರು",
+  "secHistory": "ನಿಮ್ಮ ಸಮಾಲೋಚನೆಗಳು",
+  "seeAll": "ಎಲ್ಲವನ್ನೂ ನೋಡಿ",
+  "basedOnLocation": "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಆಧರಿಸಿ",
+  "shareApp": "ಸ್ನೇಹಿತರೊಂದಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಹಂಚಿಕೊಳ್ಳಿ",
+  "startReadingHint": "ಇನ್ನೂ ಯಾವುದೇ ಸಮಾಲೋಚನೆಗಳಿಲ್ಲ. ನಿಮ್ಮ ಮೊದಲ ಓದುವಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ.",
+  "startBtn": "ಪ್ರಾರಂಭಿಸಿ",
+  "namaste": "ನಮಸ್ತೆ",
+  "kFreeKundli": "ಉಚಿತ ಕುಂಡಲಿ",
+  "kMatching": "ಹೊಂದಾಣಿಕೆ",
+  "kBrihat": "ಬೃಹತ್ ಕುಂಡಲಿ",
+  "kKundliAi": "ಕುಂಡಲಿ AI+",
+  "tCareer": "ವೃತ್ತಿಜೀವನ",
+  "tMarriage": "ಮದುವೆ",
+  "tFinance": "ಹಣಕಾಸು",
+  "tHealth": "ಆರೋಗ್ಯ",
+  "tEducation": "ವಿದ್ಯಾಭ್ಯಾಸ",
+  "tTravel": "ಪ್ರಯಾಣ",
+  "statusOnline": "ಆನ್‌ಲೈನ್",
+  "statusBusy": "ಕಾರ್ಯನಿರತ",
+  "statusOffline": "ಆಫ್‌ಲೈನ್",
+  "retry": "ಮರುಪ್ರಯತ್ನಿಸಿ",
+  "chatNow": "ಈಗಲೇ ಮಾತನಾಡಿ",
+  "notifyMe": "ನನಗೆ ಸೂಚಿಸಿ",
+  "weLlLetYouKnowWhen": "{name} {reason} ಆದಾಗ ನಾವು ನಿಮಗೆ ತಿಳಿಸುತ್ತೇವೆ.",
+  "@weLlLetYouKnowWhen": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "reason": {
+        "type": "Object"
+      }
+    }
+  },
+  "thisAstrologerIsNotAvailableTo": "ಈ ಜ್ಯೋತಿಷಿ ಇನ್ನೂ ಸಮಾಲೋಚಿಸಲು ಲಭ್ಯವಿಲ್ಲ.",
+  "youNeedAtLeastRateperminFor": "ಒಂದು ನಿಮಿಷಕ್ಕೆ ನಿಮಗೆ ಕನಿಷ್ಠ ₹{ratePerMin} ಅಗತ್ಯವಿದೆ. ದಯವಿಟ್ಟು ರೀಚಾರ್ಜ್ ಮಾಡಿ.",
+  "@youNeedAtLeastRateperminFor": {
+    "placeholders": {
+      "ratePerMin": {
+        "type": "Object"
+      }
+    }
+  },
+  "completeYourProfile": "ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ",
+  "addYourDateTimePlaceOf": "ನಿಮ್ಮ ದಿನಾಂಕ, ಸಮಯ ಮತ್ತು ಜನ್ಮ ಸ್ಥಳವನ್ನು ಸೇರಿಸಿ ಇದರಿಂದ ಜ್ಯೋತಿಷಿಯು ನಿಮಗೆ ಸ್ಪಷ್ಟವಾದ ಓದುವಿಕೆಯನ್ನು ನೀಡಬಹುದು.",
+  "completeProfile2": "ಪ್ರೊಫೈಲ್ ಪೂರ್ಣಗೊಳಿಸಿ",
+  "skipForNow": "ಇದೀಗ ಬಿಟ್ಟುಬಿಡಿ",
+  "unfollowWidgetName": "{name} ಅನ್ನು ಅನುಸರಿಸಬೇಡಿ?",
+  "@unfollowWidgetName": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "tellUsWhyOptionalItHelps": "ಏಕೆ ಎಂದು ನಮಗೆ ತಿಳಿಸಿ (ಐಚ್ಛಿಕ) — ಇದು ನಮಗೆ ಸುಧಾರಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+  "reasonOptional": "ಕಾರಣ (ಐಚ್ಛಿಕ)",
+  "cancel": "ರದ್ದುಮಾಡಿ",
+  "unfollow": "ಅನುಸರಿಸಬೇಡಿ",
+  "s21kReviews": "(2.1k ವಿಮರ್ಶೆಗಳು)",
+  "followersFollowers": "{followers} ಅನುಯಾಯಿಗಳು",
+  "@followersFollowers": {
+    "placeholders": {
+      "followers": {
+        "type": "Object"
+      }
+    }
+  },
+  "gift": "ಉಡುಗೊರೆ",
+  "store": "ಅಂಗಡಿ",
+  "joinLiveSession": "ಲೈವ್ ಸೆಷನ್‌ಗೆ ಸೇರಿ",
+  "youLlBeNotified": "ನಿಮಗೆ ಸೂಚಿಸಲಾಗುತ್ತದೆ",
+  "thisStoreHasNoItemsYet": "ಈ ಅಂಗಡಿಯಲ್ಲಿ ಇನ್ನೂ ಯಾವುದೇ ವಸ್ತುಗಳು ಇಲ್ಲ.",
+  "filters": "ಶೋಧಕಗಳು",
+  "reset": "ಮರುಹೊಂದಿಸಿ",
+  "onlineNowOnly": "ಈಗ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಮಾತ್ರ",
+  "applyFilters": "ಫಿಲ್ಟರ್‌ಗಳನ್ನು ಅನ್ವಯಿಸಿ",
+  "giftingUnavailableForThisAstrologer": "ಈ ಜ್ಯೋತಿಷಿಗೆ ಉಡುಗೊರೆ ಲಭ್ಯವಿಲ್ಲ.",
+  "needTotalcostYourBalanceIsWallet": "₹{totalCost} ಬೇಕು — ನಿಮ್ಮ ಬ್ಯಾಲೆನ್ಸ್ ₹{balance} ಇದೆ. ದಯವಿಟ್ಟು ರೀಚಾರ್ಜ್ ಮಾಡಿ.",
+  "@needTotalcostYourBalanceIsWallet": {
+    "placeholders": {
+      "totalCost": {
+        "type": "Object"
+      },
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "sentQtyGiftNameToWidget": "{_qty} {name} ಅನ್ನು {astrologerName} 🎁 ಗೆ ಕಳುಹಿಸಲಾಗಿದೆ",
+  "@sentQtyGiftNameToWidget": {
+    "placeholders": {
+      "_qty": {
+        "type": "Object"
+      },
+      "name": {
+        "type": "Object"
+      },
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "sendAGiftToWidgetAstrologername": "{astrologerName} ಗೆ ಉಡುಗೊರೆ ಕಳುಹಿಸಿ",
+  "@sendAGiftToWidgetAstrologername": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "balanceContextWatchWalletproviderBalance": "ಬಾಕಿ: ₹{balance}",
+  "@balanceContextWatchWalletproviderBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "recharge": "ರೀಚಾರ್ಜ್ ಮಾಡಿ",
+  "gTokencostTk": "{tokenCost} ಧನ್ಯವಾದಗಳು",
+  "@gTokencostTk": {
+    "placeholders": {
+      "tokenCost": {
+        "type": "Object"
+      }
+    }
+  },
+  "quantity": "ಪ್ರಮಾಣ",
+  "min1Max100": "ಕನಿಷ್ಠ 1 · ಗರಿಷ್ಠ 100",
+  "comingSoon": "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ",
+  "summaryFromAstrologername": "{astrologerName} ರಿಂದ ಸಾರಾಂಶ",
+  "@summaryFromAstrologername": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "remindersSetForYou": "ನಿಮಗಾಗಿ ಜ್ಞಾಪನೆಗಳನ್ನು ಹೊಂದಿಸಲಾಗಿದೆ",
+  "suggestedForYou": "ನಿಮಗಾಗಿ ಸೂಚಿಸಲಾಗಿದೆ",
+  "couldNotSendImage": "ಚಿತ್ರವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "endConsultation": "ಸಮಾಲೋಚನೆಯನ್ನು ಕೊನೆಗೊಳಿಸುವುದೇ?",
+  "thisWillEndTheChatAnd": "ಇದು ಚಾಟ್ ಅನ್ನು ಕೊನೆಗೊಳಿಸುತ್ತದೆ ಮತ್ತು ಬಿಲ್ಲಿಂಗ್ ಅನ್ನು ನಿಲ್ಲಿಸುತ್ತದೆ.",
+  "keepChatting": "ಚಾಟ್ ಮಾಡುತ್ತಲೇ ಇರಿ",
+  "end": "ಅಂತ್ಯ",
+  "switchToType0TouppercaseType": "{toUpperCase}{substring} ಗೆ ಬದಲಾಯಿಸುವುದೇ?",
+  "@switchToType0TouppercaseType": {
+    "placeholders": {
+      "toUpperCase": {
+        "type": "Object"
+      },
+      "substring": {
+        "type": "Object"
+      }
+    }
+  },
+  "yourChatWillEndAndA": "ನಿಮ್ಮ ಚಾಟ್ ಕೊನೆಗೊಳ್ಳುತ್ತದೆ ಮತ್ತು ಹೊಸ {type} ಸಮಾಲೋಚನೆ {type2} ದರದಲ್ಲಿ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ.",
+  "@yourChatWillEndAndA": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      },
+      "type2": {
+        "type": "Object"
+      }
+    }
+  },
+  "switchLabel": "ಬದಲಿಸಿ",
+  "couldNotSwitchETostring": "ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: {toString}",
+  "@couldNotSwitchETostring": {
+    "placeholders": {
+      "toString": {
+        "type": "Object"
+      }
+    }
+  },
+  "switchToAudioCall": "ಆಡಿಯೋ ಕರೆಗೆ ಬದಲಿಸಿ",
+  "switchToVideoCall": "ವೀಡಿಯೊ ಕರೆಗೆ ಬದಲಿಸಿ",
+  "endConsultation2": "ಸಮಾಲೋಚನೆಯನ್ನು ಕೊನೆಗೊಳಿಸಿ",
+  "sendAGift": "ಉಡುಗೊರೆ ಕಳುಹಿಸಿ",
+  "sayHello": "ನಮಸ್ಕಾರ ಹೇಳಿ 🙏",
+  "typeAMessage": "ಸಂದೇಶವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+  "recommendedProduct": "ಶಿಫಾರಸು ಮಾಡಿದ ಉತ್ಪನ್ನ",
+  "view": "ವೀಕ್ಷಿಸಿ",
+  "connecting": "ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ...",
+  "myConsultations": "ನನ್ನ ಸಮಾಲೋಚನೆಗಳು",
+  "noConsultationsYet": "ಇನ್ನೂ ಯಾವುದೇ ಸಮಾಲೋಚನೆಗಳಿಲ್ಲ.",
+  "typelabelSTypeConsultation": "{type} ಸಮಾಲೋಚನೆ",
+  "@typelabelSTypeConsultation": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "viewChat": "ಚಾಟ್ ವೀಕ್ಷಿಸಿ",
+  "historyExpired": "ಇತಿಹಾಸ ಅವಧಿ ಮುಗಿದಿದೆ",
+  "connectingYourSTypeConsultation": "ನಿಮ್ಮ {type} ಸಮಾಲೋಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ…",
+  "@connectingYourSTypeConsultation": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "ringingTheAstrologer": "ಜ್ಯೋತಿಷಿಗೆ ಕರೆ ಮಾಡುವುದು",
+  "cancelRequest": "ವಿನಂತಿಯನ್ನು ರದ್ದುಮಾಡಿ",
+  "notNow": "ಈಗಲ್ಲ",
+  "thanksForYourFeedback": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದಗಳು!",
+  "couldNotSubmitPleaseTryAgain": "ಸಲ್ಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "consultationEnded": "ಸಮಾಲೋಚನೆ ಕೊನೆಗೊಂಡಿದೆ",
+  "hopeYouGotTheClarityYou": "ನೀವು ಬಯಸಿದ ಸ್ಪಷ್ಟತೆ ಸಿಕ್ಕಿದೆ ಎಂದು ಭಾವಿಸುತ್ತೇನೆ.",
+  "shareYourExperienceOptional": "ನಿಮ್ಮ ಅನುಭವವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ (ಐಚ್ಛಿಕ)",
+  "howWasTheCallQuality": "ಕರೆಯ ಗುಣಮಟ್ಟ ಹೇಗಿತ್ತು?",
+  "skip": "ಬಿಟ್ಟುಬಿಡಿ",
+  "submit": "ಸಲ್ಲಿಸಿ",
+  "close": "ಮುಚ್ಚಿ",
+  "viewProfile": "ಪ್ರೊಫೈಲ್ ವೀಕ್ಷಿಸಿ",
+  "vAppversion": "ವಿ{_appVersion}",
+  "@vAppversion": {
+    "placeholders": {
+      "_appVersion": {
+        "type": "Object"
+      }
+    }
+  },
+  "madeBy": "ಮಾಡಿದವರು",
+  "devifai": "ಡೆವಿಫೈಎಐ",
+  "withLabel": "❤️ ಜೊತೆ",
+  "leavingSoSoon": "ಇಷ್ಟು ಬೇಗ ಹೊರಟು ಹೋಗುತ್ತಿದ್ದೀರಾ?",
+  "stayLoggedIn": "ಲಾಗಿನ್ ಆಗಿರಿ",
+  "logOutAnyway": "ಹೇಗಾದರೂ ಲಾಗ್ ಔಟ್ ಮಾಡಿ",
+  "noNearbyAstrologersYet": "ಹತ್ತಿರದಲ್ಲಿ ಇನ್ನೂ ಯಾವುದೇ ಜ್ಯೋತಿಷಿಗಳು ಇಲ್ಲ.",
+  "bookAPooja": "ಪೂಜೆ ಬುಕ್ ಮಾಡಿ",
+  "panditLedPoojasAtYourChosen": "ನೀವು ಆಯ್ಕೆ ಮಾಡಿದ ದಿನಾಂಕದಂದು ಪಂಡಿತರ ನೇತೃತ್ವದ ಪೂಜೆಗಳು",
+  "back": "ಹಿಂದೆ",
+  "connectingToLive": "ಲೈವ್‌ಗೆ ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ...",
+  "live": "ಲೈವ್",
+  "thisLiveHasEnded": "ಈ ಲೈವ್ ಕೊನೆಗೊಂಡಿದೆ.",
+  "backToLive": "ಲೈವ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+  "sayHelloBeTheFirstTo": "ನಮಸ್ಕಾರ ಹೇಳಿ 👋 ಕಾಮೆಂಟ್ ಮಾಡುವ ಮೊದಲಿಗರಾಗಿರಿ",
+  "aiPollLive": "AI ಪೋಲ್ · ಲೈವ್",
+  "totalVotes": "{total} ಮತಗಳು",
+  "@totalVotes": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "addAComment": "ಕಾಮೆಂಟ್ ಸೇರಿಸಿ...",
+  "send": "ಕಳುಹಿಸಿ",
+  "liveNow": "ಈಗ ಲೈವ್",
+  "searchByAstrologerName": "ಜ್ಯೋತಿಷಿ ಹೆಸರಿನಿಂದ ಹುಡುಕಿ",
+  "noLiveAstrologerNamedSearchText": "“{trim}” ಹೆಸರಿನ ಯಾವುದೇ ಜೀವಂತ ಜ್ಯೋತಿಷಿ ಇಲ್ಲ.",
+  "@noLiveAstrologerNamedSearchText": {
+    "placeholders": {
+      "trim": {
+        "type": "Object"
+      }
+    }
+  },
+  "refresh": "ರಿಫ್ರೆಶ್ ಮಾಡಿ",
+  "join": "ಸೇರಿ",
+  "clearAllNotifications": "ಎಲ್ಲಾ ಅಧಿಸೂಚನೆಗಳನ್ನು ತೆರವುಗೊಳಿಸುವುದೇ?",
+  "thisPermanentlyDeletesAllYourNotifications": "ಇದು ನಿಮ್ಮ ಎಲ್ಲಾ ಅಧಿಸೂಚನೆಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ.",
+  "clearAll": "ಎಲ್ಲವನ್ನೂ ತೆರವುಗೊಳಿಸಿ",
+  "notifications": "ಅಧಿಸೂಚನೆಗಳು",
+  "markAllRead": "ಎಲ್ಲವನ್ನೂ ಓದಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಿ",
+  "noNotifications": "ಯಾವುದೇ ಅಧಿಸೂಚನೆಗಳಿಲ್ಲ",
+  "youReAllCaughtUp": "ನೀವು ಎಲ್ಲವನ್ನೂ ಪೂರ್ಣಗೊಳಿಸಿದ್ದೀರಿ.",
+  "nameIsRequired": "ಹೆಸರು ಅಗತ್ಯವಿದೆ",
+  "enterAValidPhone": "ಮಾನ್ಯವಾದ ಫೋನ್ ನಮೂದಿಸಿ",
+  "bookingConfirmed": "ಬುಕಿಂಗ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ 🎉",
+  "bookingFailedPleaseTryAgain": "ಬುಕಿಂಗ್ ವಿಫಲವಾಗಿದೆ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "addMoneyToContinue": "ಮುಂದುವರಿಯಲು ಹಣವನ್ನು ಸೇರಿಸಿ",
+  "addMoney": "ಹಣವನ್ನು ಸೇರಿಸಿ",
+  "bookWidgetPoojaName": "ಪುಸ್ತಕ {name}",
+  "@bookWidgetPoojaName": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "name": "ಹೆಸರು",
+  "phone": "ದೂರವಾಣಿ",
+  "addThePeopleThisPoojaIs": "ಈ ಪೂಜೆಯನ್ನು ({_maxPersons} ವರೆಗೆ) ಮಾಡುವ ಜನರನ್ನು ಸೇರಿಸಿ. ಮುಂದಿನದನ್ನು ಸೇರಿಸುವ ಮೊದಲು ಒಂದನ್ನು ಭರ್ತಿ ಮಾಡಿ.",
+  "@addThePeopleThisPoojaIs": {
+    "placeholders": {
+      "_maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "memberEKey1Name": "ಸದಸ್ಯರ ಹೆಸರು {key}",
+  "@memberEKey1Name": {
+    "placeholders": {
+      "key": {
+        "type": "Object"
+      }
+    }
+  },
+  "specialInstructionsOptional": "ವಿಶೇಷ ಸೂಚನೆಗಳು (ಐಚ್ಛಿಕ)",
+  "poojaDetails": "ಪೂಜಾ ವಿವರಗಳು",
+  "price": "ಬೆಲೆ",
+  "bookNow": "ಈಗ ಪುಸ್ತಕ ಮಾಡಿ",
+  "aboutThisPooja": "ಈ ಪೂಜೆಯ ಬಗ್ಗೆ",
+  "ourPanditWillCallYou": "ನಮ್ಮ ಪಂಡಿತರು ನಿಮಗೆ ಕರೆ ಮಾಡುತ್ತಾರೆ.",
+  "beforeThePoojaToConfirmThe": "ಪೂಜೆಗೆ ಮುನ್ನ, ಸಮಯ ಮತ್ತು ನಿಮ್ಮ ಸಂಕಲ್ಪ ವಿವರಗಳನ್ನು ಖಚಿತಪಡಿಸಲು.",
+  "howItWorks": "ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
+  "filterPoojas": "ಪೂಜೆಗಳನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಿ",
+  "maxBudgetMaxpriceRound": "ಗರಿಷ್ಠ ಬಜೆಟ್ · ₹{round}",
+  "@maxBudgetMaxpriceRound": {
+    "placeholders": {
+      "round": {
+        "type": "Object"
+      }
+    }
+  },
+  "minPersonsSupported": "ಕನಿಷ್ಠ ಬೆಂಬಲಿತ ವ್ಯಕ್ತಿಗಳು",
+  "apply": "ಅನ್ವಯಿಸು",
+  "searchPoojas": "ಪೂಜೆಗಳನ್ನು ಹುಡುಕಿ...",
+  "myProfile": "ನನ್ನ ಪ್ರೊಫೈಲ್",
+  "referEarn": "ಉಲ್ಲೇಖಿಸಿ ಮತ್ತು ಗಳಿಸಿ",
+  "couldNotLoadTryAgain": "ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "shareEarnIReward": "ಹಂಚಿಕೊಳ್ಳಿ ಮತ್ತು ₹{reward} ಗಳಿಸಿ",
+  "@shareEarnIReward": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "youGetIRewardOnYour": "ನಿಮ್ಮ ಸ್ನೇಹಿತರ ಮೊದಲ ರೀಚಾರ್ಜ್‌ನಲ್ಲಿ ನೀವು ₹{reward} ಪಡೆಯುತ್ತೀರಿ — ಮತ್ತು ಅವರಿಗೂ ₹{reward2} ಸಿಗುತ್ತದೆ.",
+  "@youGetIRewardOnYour": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      },
+      "reward2": {
+        "type": "Object"
+      }
+    }
+  },
+  "yourReferralCode": "ನಿಮ್ಮ ಉಲ್ಲೇಖ ಕೋಡ್",
+  "codeCopied": "ಕೋಡ್ ನಕಲಿಸಲಾಗಿದೆ",
+  "shareEarn": "ಹಂಚಿಕೊಳ್ಳಿ ಮತ್ತು ಗಳಿಸಿ",
+  "haveAFriendSCode": "ಸ್ನೇಹಿತರ ಕೋಡ್ ಇದೆಯೇ?",
+  "enterReferralCode": "ಉಲ್ಲೇಖ ಕೋಡ್ ನಮೂದಿಸಿ",
+  "aReferralCodeIsAppliedTo": "ನಿಮ್ಮ ಖಾತೆಗೆ ಉಲ್ಲೇಖ ಕೋಡ್ ಅನ್ನು ಅನ್ವಯಿಸಲಾಗಿದೆ.",
+  "feedbackSubmitted": "ಪ್ರತಿಕ್ರಿಯೆ ಸಲ್ಲಿಸಲಾಗಿದೆ",
+  "feedback": "ಪ್ರತಿಕ್ರಿಯೆ",
+  "applicationSubmitted": "ಅರ್ಜಿ ಸಲ್ಲಿಸಲಾಗಿದೆ",
+  "astrologerRegistration": "ಜ್ಯೋತಿಷಿ ನೋಂದಣಿ",
+  "joinRudragangaAsAnAstrologer": "ಜ್ಯೋತಿಷಿಯಾಗಿ {appName} ಸೇರಿ",
+  "@joinRudragangaAsAnAstrologer": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "tellUsAboutYourselfOurTeam": "ನಿಮ್ಮ ಬಗ್ಗೆ ನಮಗೆ ತಿಳಿಸಿ - ನಮ್ಮ ತಂಡವು ಪರಿಶೀಲಿಸಿ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+  "aboutUs": "ನಮ್ಮ ಬಗ್ಗೆ",
+  "rudraganga": "{appName} {appName}",
+  "@rudraganga": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "astrologyWellness": "ಜ್ಯೋತಿಷ್ಯ ಮತ್ತು ಯೋಗಕ್ಷೇಮ",
+  "v100MadeWithDevotion": "v1.0.0 · ಭಕ್ತಿಯಿಂದ ರಚಿಸಲಾಗಿದೆ",
+  "thanksForYourRating": "ನಿಮ್ಮ ರೇಟಿಂಗ್‌ಗೆ ಧನ್ಯವಾದಗಳು!",
+  "rateRudraganga": "ದರ {appName}",
+  "@rateRudraganga": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "howIsYourExperience": "ನಿಮ್ಮ ಅನುಭವ ಹೇಗಿದೆ?",
+  "writeAReviewOptional": "ವಿಮರ್ಶೆ ಬರೆಯಿರಿ (ಐಚ್ಛಿಕ)",
+  "saved": "ಉಳಿಸಲಾಗಿದೆ",
+  "notificationSetting": "ಅಧಿಸೂಚನೆ ಸೆಟ್ಟಿಂಗ್",
+  "howOften": "ಎಷ್ಟು ಬಾರಿ?",
+  "topicsYouCareAbout": "ನೀವು ಕಾಳಜಿ ವಹಿಸುವ ವಿಷಯಗಳು",
+  "ok": "ಸರಿ",
+  "allSet": "ಎಲ್ಲವೂ ಸಿದ್ಧವಾಗಿದೆ ✨",
+  "setPreferences": "ಆದ್ಯತೆಗಳನ್ನು ಹೊಂದಿಸಿ",
+  "save": "ಉಳಿಸಿ",
+  "bundlesCombos": "ಬಂಡಲ್‌ಗಳು ಮತ್ತು ಸಂಯೋಜನೆಗಳು",
+  "noCombosRightNow": "ಇದೀಗ ಯಾವುದೇ ಸಂಯೋಜನೆಗಳಿಲ್ಲ",
+  "addComboBIBundleprice": "ಕಾಂಬೊ ಸೇರಿಸಿ · ₹{bundlePrice}",
+  "@addComboBIBundleprice": {
+    "placeholders": {
+      "bundlePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "cart": "ಕಾರ್ಟ್",
+  "clear": "ಸ್ಪಷ್ಟ",
+  "yourCartIsEmpty": "ನಿಮ್ಮ ಕಾರ್ಟ್ ಖಾಲಿಯಾಗಿದೆ.",
+  "browseProductsAndAddThemHere": "ಉತ್ಪನ್ನಗಳನ್ನು ಬ್ರೌಸ್ ಮಾಡಿ ಮತ್ತು ಅವುಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ",
+  "walletBalanceAddTotalBalanceTo": "ವಾಲೆಟ್ ₹{balance} · ಚೆಕ್ಔಟ್ ಮಾಡಲು ₹{balance2} ಸೇರಿಸಿ",
+  "@walletBalanceAddTotalBalanceTo": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      },
+      "balance2": {
+        "type": "Object"
+      }
+    }
+  },
+  "walletBalance": "ವಾಲೆಟ್: ₹{balance}",
+  "@walletBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "couponTrimmedAppliedResDiscountOff": "ಕೂಪನ್ {trimmed} ಅನ್ವಯಿಸಲಾಗಿದೆ · ₹{discount} ರಿಯಾಯಿತಿ",
+  "@couponTrimmedAppliedResDiscountOff": {
+    "placeholders": {
+      "trimmed": {
+        "type": "Object"
+      },
+      "discount": {
+        "type": "Object"
+      }
+    }
+  },
+  "pleaseAddADeliveryAddress": "ದಯವಿಟ್ಟು ವಿತರಣಾ ವಿಳಾಸವನ್ನು ಸೇರಿಸಿ.",
+  "checkout": "ಚೆಕ್ಔಟ್",
+  "addNewAddress": "ಹೊಸ ವಿಳಾಸವನ್ನು ಸೇರಿಸಿ",
+  "appliedCodeAppliedAppliedDiscountOff": "{code} ಅನ್ವಯಿಸಲಾಗಿದೆ · ₹{discount} ರಿಯಾಯಿತಿ",
+  "@appliedCodeAppliedAppliedDiscountOff": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      },
+      "discount": {
+        "type": "Object"
+      }
+    }
+  },
+  "remove": "ತೆಗೆದುಹಾಕಿ",
+  "enterCouponCode": "ಕೂಪನ್ ಕೋಡ್ ನಮೂದಿಸಿ",
+  "viewAllCouponsLength": "ಎಲ್ಲವನ್ನೂ ವೀಕ್ಷಿಸಿ ({length})",
+  "@viewAllCouponsLength": {
+    "placeholders": {
+      "length": {
+        "type": "Object"
+      }
+    }
+  },
+  "availableOffers": "ಲಭ್ಯವಿರುವ ಕೊಡುಗೆಗಳು",
+  "minOrderCpMinordervalue": "ಕನಿಷ್ಠ ಆರ್ಡರ್ ₹{minOrderValue}",
+  "@minOrderCpMinordervalue": {
+    "placeholders": {
+      "minOrderValue": {
+        "type": "Object"
+      }
+    }
+  },
+  "applied": "ಅನ್ವಯಿಸಲಾಗಿದೆ",
+  "nothingToCheckout": "ಚೆಕ್ಔಟ್ ಮಾಡಲು ಏನೂ ಇಲ್ಲ",
+  "orderPlaced": "ಆರ್ಡರ್ ಮಾಡಲಾಗಿದೆ!",
+  "totalPaidFromYourWalletYour": "ನಿಮ್ಮ ವ್ಯಾಲೆಟ್‌ನಿಂದ ₹{total} ಪಾವತಿಸಲಾಗಿದೆ. ನಿಮ್ಮ ಆರ್ಡರ್ ದೃಢೀಕರಿಸಲ್ಪಟ್ಟಿದೆ ಮತ್ತು ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ.",
+  "@totalPaidFromYourWalletYour": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "orderOrderidLength6OrderidSubstring": "ಆರ್ಡರ್ #{orderId}",
+  "@orderOrderidLength6OrderidSubstring": {
+    "placeholders": {
+      "orderId": {
+        "type": "Object"
+      }
+    }
+  },
+  "continueShopping": "ಶಾಪಿಂಗ್ ಮುಂದುವರಿಸಿ",
+  "yourOrders": "ನಿಮ್ಮ ಆರ್ಡರ್‌ಗಳು",
+  "noOrdersYet": "ಇನ್ನೂ ಯಾವುದೇ ಆರ್ಡರ್‌ಗಳಿಲ್ಲ",
+  "yourOrdersWillAppearHereOnce": "ನೀವು ಅಂಗಡಿಯಿಂದ ಏನನ್ನಾದರೂ ಖರೀದಿಸಿದ ನಂತರ ನಿಮ್ಮ ಆರ್ಡರ್‌ಗಳು ಇಲ್ಲಿ ಗೋಚರಿಸುತ್ತವೆ.",
+  "invoiceIsStillBeingGeneratedTry": "ಇನ್‌ವಾಯ್ಸ್ ಇನ್ನೂ ರಚನೆಯಾಗುತ್ತಿದೆ. ಸ್ವಲ್ಪ ಸಮಯದಲ್ಲೇ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "couldNotOpenTheInvoice": "ಇನ್‌ವಾಯ್ಸ್ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "thanksOurTeamWillReachOut": "ಧನ್ಯವಾದಗಳು! ನಮ್ಮ ತಂಡವು ಈ ಆದೇಶದ ಕುರಿತು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+  "orderDetails": "ಆರ್ಡರ್ ವಿವರಗಳು",
+  "needHelp": "ಸಹಾಯ ಬೇಕು",
+  "needHelpWithThisOrder": "ಈ ಆರ್ಡರ್‌ಗೆ ಸಹಾಯ ಬೇಕೇ?",
+  "placedOnDate": "{date} ರಂದು ಇರಿಸಲಾಗಿದೆ",
+  "@placedOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "invoice": "ಸರಕುಪಟ್ಟಿ",
+  "download": "ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+  "needHelp2": "ಸಹಾಯ ಬೇಕು",
+  "orderWidgetOrderno": "ಆರ್ಡರ್ #{orderNo}",
+  "@orderWidgetOrderno": {
+    "placeholders": {
+      "orderNo": {
+        "type": "Object"
+      }
+    }
+  },
+  "whatWentWrong": "ಏನು ತಪ್ಪಾಯಿತು?",
+  "describeTheIssue": "ಸಮಸ್ಯೆಯನ್ನು ವಿವರಿಸಿ",
+  "tellUsWhatHappenedSoWe": "ಏನಾಯಿತು ಎಂದು ನಮಗೆ ತಿಳಿಸಿ ಇದರಿಂದ ನಾವು ಸಹಾಯ ಮಾಡಬಹುದು...",
+  "submitRequest": "ವಿನಂತಿಯನ್ನು ಸಲ್ಲಿಸಿ",
+  "addedToCart": "ಕಾರ್ಟ್‌ಗೆ ಸೇರಿಸಲಾಗಿದೆ",
+  "productUnavailable": "ಉತ್ಪನ್ನ ಲಭ್ಯವಿಲ್ಲ",
+  "pDiscountpercentOff": "{discountPercent}% ರಿಯಾಯಿತಿ",
+  "@pDiscountpercentOff": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "pReviewcountReviews": "{reviewCount} ವಿಮರ್ಶೆಗಳು",
+  "@pReviewcountReviews": {
+    "placeholders": {
+      "reviewCount": {
+        "type": "Object"
+      }
+    }
+  },
+  "pDiscountpercentOff2": "{discountPercent}% ರಿಯಾಯಿತಿ",
+  "@pDiscountpercentOff2": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "fewItemsLeft": "ಕೆಲವು ವಸ್ತುಗಳು ಉಳಿದಿವೆ",
+  "description": "ವಿವರಣೆ",
+  "frequentlyBoughtTogether": "ಆಗಾಗ್ಗೆ ಒಟ್ಟಿಗೆ ಖರೀದಿಸಲಾಗುತ್ತದೆ",
+  "viewAll": "ಎಲ್ಲವನ್ನೂ ವೀಕ್ಷಿಸಿ",
+  "addToCart": "ಕಾರ್ಟ್‌ಗೆ ಸೇರಿಸಿ",
+  "buyNow": "ಈಗ ಖರೀದಿಸಿ",
+  "searchProducts": "ಉತ್ಪನ್ನಗಳನ್ನು ಹುಡುಕಿ...",
+  "noProductsFound": "ಯಾವುದೇ ಉತ್ಪನ್ನಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+  "priceRange": "ಬೆಲೆ ಶ್ರೇಣಿ (₹)",
+  "min": "ಕನಿಷ್ಠ",
+  "max": "ಗರಿಷ್ಠ",
+  "inStockOnly": "ಸ್ಟಾಕ್‌ನಲ್ಲಿ ಮಾತ್ರ",
+  "sortBy": "ವಿಂಗಡಿಸಿ",
+  "addDeliveryAddress": "ವಿತರಣಾ ವಿಳಾಸವನ್ನು ಸೇರಿಸಿ",
+  "setAsDefaultAddress": "ಡೀಫಾಲ್ಟ್ ವಿಳಾಸವಾಗಿ ಹೊಂದಿಸಿ",
+  "saveAddress": "ವಿಳಾಸವನ್ನು ಉಳಿಸಿ",
+  "codeCouponCode": "ಕೋಡ್ {code}",
+  "@codeCouponCode": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      }
+    }
+  },
+  "saveBundleYousave": "₹{youSave} ಉಳಿಸಿ",
+  "@saveBundleYousave": {
+    "placeholders": {
+      "youSave": {
+        "type": "Object"
+      }
+    }
+  },
+  "bundleProductsLengthItemsCombo": "{length} ಐಟಂಗಳ ಸಂಯೋಜನೆ",
+  "@bundleProductsLengthItemsCombo": {
+    "placeholders": {
+      "length": {
+        "type": "Object"
+      }
+    }
+  },
+  "bundleDiscountpercentOff": "{discountPercent}% ರಿಯಾಯಿತಿ",
+  "@bundleDiscountpercentOff": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "fewLeft": "ಕೆಲವೇ ಉಳಿದಿವೆ",
+  "savePSaveamount": "₹{saveAmount} ಉಳಿಸಿ",
+  "@savePSaveamount": {
+    "placeholders": {
+      "saveAmount": {
+        "type": "Object"
+      }
+    }
+  },
+  "freeDelivery": "ಉಚಿತ ವಿತರಣೆ",
+  "searchWidgetTitleTolowercase": "ಹುಡುಕಿ {toLowerCase}…",
+  "@searchWidgetTitleTolowercase": {
+    "placeholders": {
+      "toLowerCase": {
+        "type": "Object"
+      }
+    }
+  },
+  "nothingHereYet": "ಇಲ್ಲಿ ಇನ್ನೂ ಏನೂ ಇಲ್ಲ",
+  "loadingSecurePayment": "ಸುರಕ್ಷಿತ ಪಾವತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+  "couldNotStartRecharge": "ರೀಚಾರ್ಜ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+  "paymentSuccessful": "ಪಾವತಿ ಯಶಸ್ವಿಯಾಗಿದೆ 🎉",
+  "paymentWasNotCompleted": "ಪಾವತಿ ಪೂರ್ಣಗೊಂಡಿಲ್ಲ.",
+  "couldNotStartRechargeTryAgain": "ರೀಚಾರ್ಜ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ, ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+  "wallet": "ವಾಲೆಟ್",
+  "availableBalance": "ಲಭ್ಯವಿರುವ ಬ್ಯಾಲೆನ್ಸ್",
+  "useItForPoojasConsultations": "ಪೂಜೆಗಳು ಮತ್ತು ಸಮಾಲೋಚನೆಗಳಿಗಾಗಿ ಇದನ್ನು ಬಳಸಿ",
+  "instantTopUp": "ತ್ವರಿತ ಟಾಪ್-ಅಪ್",
+  "noRechargePacksAvailableRightNow": "ಇದೀಗ ಯಾವುದೇ ರೀಚಾರ್ಜ್ ಪ್ಯಾಕ್‌ಗಳು ಲಭ್ಯವಿಲ್ಲ.",
+  "transactions": "ವಹಿವಾಟುಗಳು",
+  "endOfTransactions": "— ವಹಿವಾಟಿನ ಅಂತ್ಯ —",
+  "youGet": "ನೀವು ಪಡೆಯುತ್ತೀರಿ",
+  "packBonusBonus": "+₹{bonus} ಬೋನಸ್",
+  "@packBonusBonus": {
+    "placeholders": {
+      "bonus": {
+        "type": "Object"
+      }
+    }
+  },
+  "payPackAmount": "₹{amount} ಪಾವತಿಸಿ",
+  "@payPackAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "rudra": "ಆಸ್ಟ್ರೋ",
+  "ganga": "ಅಪ್ಲಿಕೇಶನ್",
+  "about": "ನಮ್ಮ ಬಗ್ಗೆ",
+  "astrologer": "ಜ್ಯೋತಿಷಿ",
+  "seeker": "ಅನ್ವೇಷಕ",
+  "free": "ಉಚಿತ",
+  "jan": "ಜನವರಿ",
+  "feb": "ಫೆಬ್ರವರಿ",
+  "mar": "ಮಾರ್ಚ್",
+  "apr": "ಏಪ್ರಿಲ್",
+  "may": "ಮೇ",
+  "jun": "ಜೂನ್",
+  "jul": "ಜುಲೈ",
+  "aug": "ಆಗಸ್ಟ್",
+  "sep": "ಸೆಪ್ಟೆಂಬರ್",
+  "oct": "ಅಕ್ಟೋಬರ್",
+  "nov": "ನವೆಂಬರ್",
+  "dec": "ಡಿಸೆಂಬರ್",
+  "english": "ಇಂಗ್ಲೀಷ್",
+  "all": "ಎಲ್ಲವೂ",
+  "vedic": "ವೈದಿಕ",
+  "tarot": "ಟ್ಯಾರೋ",
+  "numerology": "ಸಂಖ್ಯಾಶಾಸ್ತ್ರ",
+  "vastu": "ವಾಸ್ತು",
+  "palmistry": "ಹಸ್ತಸಾಮುದ್ರಿಕೆ",
+  "kp": "ಕೆ.ಪಿ.",
+  "love": "ಪ್ರೀತಿ",
+  "taraAi": "ತಾರಾ AI",
+  "instantVedicAnswers247": "ತತ್ಕ್ಷಣದ ವೇದ ಉತ್ತರಗಳು • 24×7",
+  "allLanguages": "ಎಲ್ಲಾ ಭಾಷೆಗಳು",
+  "jyotiAi": "ಜ್ಯೋತಿ ಎಐ",
+  "loveCareerGuidance": "ಪ್ರೀತಿ ಮತ್ತು ವೃತ್ತಿ ಮಾರ್ಗದರ್ಶನ",
+  "hindiEnglish": "ಹಿಂದಿ, ಇಂಗ್ಲಿಷ್",
+  "veduAi": "ವೇದು AI",
+  "remediesPredictions": "ಪರಿಹಾರಗಳು ಮತ್ತು ಭವಿಷ್ಯವಾಣಿಗಳು",
+  "couldNotLoadAstrologers": "ಜ್ಯೋತಿಷಿಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "aiAstrologers": "ಎ.ಐ. ಅಸ್ಟ್ರೋಲಾಜರ್ಸ್",
+  "featuredAstrologers": "ವೈಶಿಷ್ಟ್ಯಪೂರ್ಣ ಜ್ಯೋತಿಷಿಗಳು",
+  "astrologers": "ಜ್ಯೋತಿಷಿಗಳು",
+  "searchAiAstrologers": "AI ಜ್ಯೋತಿಷಿಗಳನ್ನು ಹುಡುಕಿ...",
+  "searchAstrologersByName": "ಹೆಸರಿನಿಂದ ಜ್ಯೋತಿಷಿಗಳನ್ನು ಹುಡುಕಿ...",
+  "aiChat": "AI ಚಾಟ್",
+  "noAstrologersMatch": "ಯಾವುದೇ ಜ್ಯೋತಿಷಿಗಳು ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ",
+  "noAstrologersYet": "ಇನ್ನೂ ಯಾವುದೇ ಜ್ಯೋತಿಷಿಗಳಿಲ್ಲ",
+  "couldnTSetTheReminderPlease": "ಜ್ಞಾಪನೆಯನ್ನು ಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "ai": "ಕೃತಕ ಬುದ್ಧಿಮತ್ತೆ",
+  "live2": "ಲೈವ್",
+  "online": "ಆನ್‌ಲೈನ್",
+  "busy": "ಕಾರ್ಯನಿರತ",
+  "offline": "ಆಫ್‌ಲೈನ್",
+  "chat": "ಚಾಟ್ ಮಾಡಿ",
+  "call": "ಕರೆ ಮಾಡಿ",
+  "video": "ವೀಡಿಯೊ",
+  "notEnoughBalanceToStartPlease": "ಪ್ರಾರಂಭಿಸಲು ಸಾಕಷ್ಟು ಬ್ಯಾಲೆನ್ಸ್ ಇಲ್ಲ. ದಯವಿಟ್ಟು ರೀಚಾರ್ಜ್ ಮಾಡಿ.",
+  "couldNotStartTheConsultationPlease": "ಸಮಾಲೋಚನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "share": "ಹಂಚಿ",
+  "follow": "ಅನುಸರಿಸಿ",
+  "chats": "ಚಾಟ್‌ಗಳು",
+  "calls": "ಕರೆಗಳು",
+  "videos": "ವೀಡಿಯೊಗಳು",
+  "gifts": "ಉಡುಗೊರೆಗಳು",
+  "languages": "ಭಾಷೆಗಳು",
+  "theyHaveGuidedThousandsOfSeekers": "ಅವರು ಸಾವಿರಾರು ಅನ್ವೇಷಕರಿಗೆ ವೃತ್ತಿ, ಮದುವೆ, ಹಣಕಾಸು ಮತ್ತು ಜೀವನ-ಮಾರ್ಗದ ಪ್ರಶ್ನೆಗಳ ಮೂಲಕ ಮಾರ್ಗದರ್ಶನ ನೀಡಿದ್ದಾರೆ.",
+  "theirReadingsBlendClassicalVedicPrinciples": "ಅವರ ವಾಚನಗಳು ಶಾಸ್ತ್ರೀಯ ವೈದಿಕ ತತ್ವಗಳನ್ನು ಪ್ರಾಯೋಗಿಕ, ಸಹಾನುಭೂತಿಯ ಮಾರ್ಗದರ್ಶನದೊಂದಿಗೆ ಬೆರೆಸುತ್ತವೆ - ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತವೆ.",
+  "findClarityAndActionableRemediesFor": "ಮುಂದಿನ ಹಾದಿಗೆ ಸ್ಪಷ್ಟತೆ ಮತ್ತು ಕಾರ್ಯಸಾಧ್ಯ ಪರಿಹಾರಗಳನ್ನು ಕಂಡುಕೊಳ್ಳಿ.",
+  "giftsReceived": "ಸ್ವೀಕರಿಸಿದ ಉಡುಗೊರೆಗಳು",
+  "reviews": "ವಿಮರ್ಶೆಗಳು",
+  "weLlNotifyYouTheMoment": "ಅವರು ಮುಕ್ತರಾದ ತಕ್ಷಣ ನಾವು ನಿಮಗೆ ತಿಳಿಸುತ್ತೇವೆ.",
+  "weLlNotifyYouTheMoment2": "ಅವರು ಆನ್‌ಲೈನ್‌ಗೆ ಬಂದ ಕೂಡಲೇ ನಾವು ನಿಮಗೆ ತಿಳಿಸುತ್ತೇವೆ.",
+  "getAHeadsUpTheMoment": "ಅವು ಲಭ್ಯವಾದ ತಕ್ಷಣ ಎಚ್ಚರಿಕೆ ಪಡೆಯಿರಿ.",
+  "couldNotLoadThisStore": "ಈ ಅಂಗಡಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "products": "ಉತ್ಪನ್ನಗಳು",
+  "poojas": "ಪೂಜೆಗಳು",
+  "book": "ಪುಸ್ತಕ",
+  "buy": "ಖರೀದಿಸಿ",
+  "lalKitab": "ಲಾಲ್ ಕಿತಾಬ್",
+  "hindi": "ಹಿಂದಿ",
+  "bengali": "ಬಂಗಾಳಿ",
+  "tamil": "ತಮಿಳು",
+  "marathi": "ಮರಾಠಿ",
+  "punjabi": "ಪಂಜಾಬಿ",
+  "telugu": "ತೆಲುಗು",
+  "expertise": "ಪರಿಣಿತಿ",
+  "couldNotLoadGifts": "ಉಡುಗೊರೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "notEnoughBalanceAddMoneyTo": "ಸಾಕಷ್ಟು ಬ್ಯಾಲೆನ್ಸ್ ಇಲ್ಲ. ಉಡುಗೊರೆಗಳನ್ನು ಕಳುಹಿಸಲು ಹಣವನ್ನು ಸೇರಿಸಿ.",
+  "couldNotSendTheGiftPlease": "ಉಡುಗೊರೆಯನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "connecting2": "ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ...",
+  "couldNotLoadThisChatHistory": "ಈ ಚಾಟ್ ಇತಿಹಾಸವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "thisChatHistoryIsNoLonger": "ಈ ಚಾಟ್ ಇತಿಹಾಸ ಇನ್ನು ಮುಂದೆ ಲಭ್ಯವಿಲ್ಲ\n(ಚಾಟ್‌ಗಳನ್ನು 7 ದಿನಗಳವರೆಗೆ ಇರಿಸಲಾಗುತ್ತದೆ).",
+  "dailyFor14Days": "ಪ್ರತಿದಿನ · 14 ದಿನಗಳವರೆಗೆ",
+  "dailyMantra": "ದೈನಂದಿನ ಮಂತ್ರ",
+  "reminder": "ಜ್ಞಾಪನೆ",
+  "audio": "ಆಡಿಯೋ",
+  "couldNotLoadYourConsultations": "ನಿಮ್ಮ ಸಮಾಲೋಚನೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "missed": "ತಪ್ಪಿಸಿಕೊಂಡಿದೆ",
+  "declined": "ನಿರಾಕರಿಸಲಾಗಿದೆ",
+  "cancelled": "ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ",
+  "lowBalance": "ಕಡಿಮೆ ಬ್ಯಾಲೆನ್ಸ್",
+  "rechargeNowToKeepYourConsultation": "ನಿಮ್ಮ ಸಮಾಲೋಚನೆಯನ್ನು ಮುಂದುವರಿಸಲು ಈಗಲೇ ರೀಚಾರ್ಜ್ ಮಾಡಿ. ನೀವು ಪಾವತಿಸುವಾಗ ನಿಮ್ಮ ಚಾಟ್ ತೆರೆದಿರುತ್ತದೆ.",
+  "sessionEndedLowBalance": "ನಿಮ್ಮ ಬ್ಯಾಲೆನ್ಸ್ ಖಾಲಿಯಾಗಿದೆ, ಆದ್ದರಿಂದ ಸಮಾಲೋಚನೆ ಕೊನೆಗೊಂಡಿದೆ. ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಮುಂದುವರಿಸಲು ರೀಚಾರ್ಜ್ ಮಾಡಿ.",
+  "couldNotLoadHoroscope": "ಜಾತಕವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "chooseSign": "ಬದಲಾವಣೆ ಚಿಹ್ನೆ",
+  "yesterday": "ನಿನ್ನೆ",
+  "today": "ಇಂದು",
+  "tomorrow": "ನಾಳೆ",
+  "totalScore": "ಒಟ್ಟಾರೆ ಅಂಕ",
+  "luckyColor": "ಅದೃಷ್ಟದ ಬಣ್ಣ",
+  "luckyNumber": "ಅದೃಷ್ಟ ಸಂಖ್ಯೆ",
+  "lifeAreas": "ಜೀವನ ಪ್ರದೇಶಗಳು",
+  "todaysReading": "ಇಂದಿನ ಓದುವಿಕೆ",
+  "career": "ವೃತ್ತಿಜೀವನ",
+  "finances": "ಹಣಕಾಸು",
+  "health": "ಆರೋಗ್ಯ",
+  "relationship": "ಸಂಬಂಧ",
+  "family": "ಕುಟುಂಬ",
+  "friends": "ಸ್ನೇಹಿತರು",
+  "travel": "ಪ್ರಯಾಣ",
+  "physique": "ಮೈಕಟ್ಟು",
+  "statusLabel": "ಸ್ಥಿತಿ",
+  "signAries": "ಮೇಷ ರಾಶಿ",
+  "signTaurus": "ವೃಷಭ ರಾಶಿ",
+  "signGemini": "ಮಿಥುನ ರಾಶಿ",
+  "signCancer": "ಕ್ಯಾನ್ಸರ್",
+  "signLeo": "ಸಿಂಹ ರಾಶಿ",
+  "signVirgo": "ಕನ್ಯಾರಾಶಿ",
+  "signLibra": "ತುಲಾ ರಾಶಿ",
+  "signScorpio": "ವೃಶ್ಚಿಕ ರಾಶಿ",
+  "signSagittarius": "ಧನು ರಾಶಿ",
+  "signCapricorn": "ಮಕರ ಸಂಕ್ರಾಂತಿ",
+  "signAquarius": "ಕುಂಭ ರಾಶಿ",
+  "signPisces": "ಮೀನ ರಾಶಿ",
+  "couldNotLoadPanchang": "ಪಂಚಾಂಗವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "tithi": "ತಿಥಿ",
+  "nakshatra": "ನಕ್ಷತ್ರ",
+  "yoga": "ಯೋಗ",
+  "karana": "ಕರಣ",
+  "weekday": "ವಾರದ ದಿನ",
+  "inauspiciousTimes": "ಅಶುಭ ಸಮಯಗಳು",
+  "rahuKaal": "ರಾಹು ಕಾಲ",
+  "gulikaKaal": "ಗುಳಿಕಾ ಕಾಲ್",
+  "yamaganda": "ಯಮಗಂಡ",
+  "duration": "ಅವಧಿ",
+  "coinsUsed": "ಬಳಸಿದ ನಾಣ್ಯಗಳು",
+  "guest": "ಅತಿಥಿ",
+  "changeLanguage": "ಭಾಷೆಯನ್ನು ಬದಲಾಯಿಸಿ",
+  "chooseYourKundli": "ನಿಮ್ಮ ಕುಂಡಲಿಯನ್ನು ಆರಿಸಿ",
+  "yourWalletReadingsAndSavedDetails": "ನಿಮ್ಮ ಕೈಚೀಲ, ಓದುವಿಕೆಗಳು ಮತ್ತು ಉಳಿಸಿದ ವಿವರಗಳು ಸುರಕ್ಷಿತವಾಗಿವೆ - ಆದರೆ ಲಾಗ್ ಔಟ್ ಆಗುವುದು ಎಂದರೆ ನಿಮ್ಮ ದೈನಂದಿನ ಜಾತಕ, ಕೊಡುಗೆಗಳು ಮತ್ತು ಜ್ಞಾಪನೆಗಳನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು. ನಕ್ಷತ್ರಗಳೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರಿ? ✨",
+  "offers": "ಕೊಡುಗೆಗಳು",
+  "dailyPanchang": "ದೈನಂದಿನ ಪಂಚಾಂಗ",
+  "talkToAstrologer": "ಜ್ಯೋತಿಷಿಯೊಂದಿಗೆ ಮಾತನಾಡಿ",
+  "brihatKundli": "ಬೃಹತ್ ಕುಂಡಲಿ",
+  "dailyNotes": "ದೈನಂದಿನ ಟಿಪ್ಪಣಿಗಳು",
+  "askAQuestion": "ಒಂದು ಪ್ರಶ್ನೆ ಕೇಳಿ",
+  "free50Pages": "ಉಚಿತ 50+ ಪುಟಗಳು",
+  "freeReport": "ಉಚಿತ ವರದಿ",
+  "freeMatrimony": "ಉಚಿತ ಮದುವೆ",
+  "matrimony": "ದಾಂಪತ್ಯ",
+  "loveMatch": "ಲವ್ ಮ್ಯಾಚ್",
+  "horoscope": "ಜಾತಕ",
+  "dailyHoroscope": "ದೈನಂದಿನ ಜಾತಕ",
+  "vedicAstrology": "ವೈದಿಕ ಜ್ಯೋತಿಷ್ಯ",
+  "acharyaVeda": "ಆಚಾರ್ಯ ವೇದ",
+  "panditRohan": "ಪಂಡಿತ್ ರೋಹನ್",
+  "guruMaya": "ಗುರು ಮಾಯಾ",
+  "jayaShastri": "ಜಯ ಶಾಸ್ತ್ರಿ",
+  "devSharma": "ದೇವ್ ಶರ್ಮಾ",
+  "sureshG": "ಸುರೇಶ್ ಜಿ.",
+  "lataP": "ಲತಾ ಪಿ.",
+  "kiranB": "ಕಿರಣ್ ಬಿ.",
+  "mohanT": "ಮೋಹನ್ ಟಿ.",
+  "anilJoshi": "ಅನಿಲ್ ಜೋಶಿ",
+  "meeraDevi": "ಮೀರಾ ದೇವಿ",
+  "raviKumar": "ರವಿ ಕುಮಾರ್",
+  "sunitaRao": "ಸುನೀತಾ ರಾವ್",
+  "bengaluruKarnataka": "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ",
+  "locating": "ಪತ್ತೆ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+  "festivalOffer": "ಹಬ್ಬದ ಕೊಡುಗೆ",
+  "upTo30OffOnGemstones": "ರತ್ನದ ಕಲ್ಲುಗಳ ಮೇಲೆ 30% ವರೆಗೆ ರಿಯಾಯಿತಿ",
+  "talkToTopAstrologers": "ಪ್ರಮುಖ ಜ್ಯೋತಿಷಿಗಳೊಂದಿಗೆ ಮಾತನಾಡಿ",
+  "firstConsultationSpecial": "ಮೊದಲ ಸಮಾಲೋಚನೆ ವಿಶೇಷ",
+  "rudrakshaCollection": "ರುದ್ರಾಕ್ಷ ಸಂಗ್ರಹ",
+  "authenticEnergised": "ಅಧಿಕೃತ ಮತ್ತು ಉತ್ಸಾಹಭರಿತ",
+  "resumeSession": "ಸೆಶನ್ ಪುನರಾರಂಭಿಸಿ",
+  "home": "ಮರಳಿ ಪ್ರಥಮ ಪುಟಕ್ಕೆ",
+  "aiAstro": "ಎಐ ಆಸ್ಟ್ರೋ",
+  "ask": "ಕೇಳಿ",
+  "history": "ಇತಿಹಾಸ",
+  "seeAll2": "ಎಲ್ಲವನ್ನೂ ನೋಡಿ",
+  "s1AcceptanceOfTheseTerms": "1. ಈ ನಿಯಮಗಳ ಸ್ವೀಕಾರ",
+  "termsOfService2": "ಸೇವಾ ನಿಯಮಗಳು",
+  "lastUpdated26June2026": "ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಿದ್ದು: 26 ಜೂನ್ 2026",
+  "rudragangaProvidesAstrologySpiritualAndWellness": "{appName} ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ವೈಯಕ್ತಿಕಕ್ಕಾಗಿ ಜ್ಯೋತಿಷ್ಯ, ಆಧ್ಯಾತ್ಮಿಕ ಮತ್ತು ಕ್ಷೇಮ ಸಮಾಲೋಚನೆಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ.",
+  "@rudragangaProvidesAstrologySpiritualAndWellness": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "reflectionOnlyOurServicesAreNot": "ಚಿಂತನೆ ಮಾತ್ರ. ನಮ್ಮ ಸೇವೆಗಳು ವೃತ್ತಿಪರ ವೈದ್ಯಕೀಯ, ಕಾನೂನು, ಹಣಕಾಸು,",
+  "orPsychologicalAdviceYouMustBe": "ಅಥವಾ ಮಾನಸಿಕ ಸಲಹೆ. ಅಪ್ಲಿಕೇಶನ್ ಬಳಸಲು ನೀವು 18 ಅಥವಾ ಅದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ವಯಸ್ಸಿನವರಾಗಿರಬೇಕು.",
+  "byCreatingAnAccountOrUsing": "ಖಾತೆಯನ್ನು ರಚಿಸುವ ಮೂಲಕ ಅಥವಾ {appName} ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್ ಮತ್ತು ಸಂಬಂಧಿತ ಸೇವೆಗಳನ್ನು ಬಳಸುವ ಮೂಲಕ (ದಿ",
+  "@byCreatingAnAccountOrUsing": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "servicesYouAgreeToBeBound": "\"ಸೇವೆಗಳು\"), ನೀವು ಈ ಸೇವಾ ನಿಯಮಗಳು ಮತ್ತು ನಮ್ಮ ಗೌಪ್ಯತಾ ನೀತಿ ಮತ್ತು ಮರುಪಾವತಿಗೆ ಬದ್ಧರಾಗಿರಲು ಒಪ್ಪುತ್ತೀರಿ",
+  "policyIfYouDoNotAgree": "ನೀತಿ. ನೀವು ಒಪ್ಪದಿದ್ದರೆ, ದಯವಿಟ್ಟು ಸೇವೆಗಳನ್ನು ಬಳಸಬೇಡಿ.",
+  "s2EligibilityYourAccount": "2. ಅರ್ಹತೆ ಮತ್ತು ನಿಮ್ಮ ಖಾತೆ",
+  "youMustBeAtLeast18": "ನೀವು ಕನಿಷ್ಠ 18 ವರ್ಷ ವಯಸ್ಸಿನವರಾಗಿರಬೇಕು ಮತ್ತು ಕಾನೂನುಬದ್ಧವಾಗಿ ಒಪ್ಪಂದ ಮಾಡಿಕೊಳ್ಳಲು ಸಮರ್ಥರಾಗಿರಬೇಕು.",
+  "youRegisterWithAPhoneNumber": "ನೀವು ಒಂದು ಬಾರಿಯ ಪಾಸ್‌ವರ್ಡ್ (OTP) ಮೂಲಕ ಪರಿಶೀಲಿಸಿದ ಫೋನ್ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ನೋಂದಾಯಿಸಿಕೊಳ್ಳುತ್ತೀರಿ. ಆ ಸಂಖ್ಯೆ ಮತ್ತು ಸಾಧನಕ್ಕೆ ಪ್ರವೇಶವನ್ನು ಸುರಕ್ಷಿತವಾಗಿರಿಸಿಕೊಳ್ಳುವುದು ನಿಮ್ಮ ಜವಾಬ್ದಾರಿಯಾಗಿದೆ.",
+  "youAgreeToProvideAccurateInformation": "ಜನನ ವಿವರಗಳನ್ನು ಒಳಗೊಂಡಂತೆ ನಿಖರವಾದ ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸಲು ನೀವು ಒಪ್ಪುತ್ತೀರಿ, ಅಲ್ಲಿ ನೀವು ಅವುಗಳನ್ನು ಓದುವಿಕೆಗಾಗಿ ಹಂಚಿಕೊಳ್ಳಲು ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳುತ್ತೀರಿ. ನಿಮ್ಮ ಖಾತೆಯ ಅಡಿಯಲ್ಲಿರುವ ಎಲ್ಲಾ ಚಟುವಟಿಕೆಗಳಿಗೆ ನೀವು ಜವಾಬ್ದಾರರಾಗಿರುತ್ತೀರಿ.",
+  "s3TheServicesWeOffer": "3. ನಾವು ನೀಡುವ ಸೇವೆಗಳು",
+  "rudragangaConnectsYouWithVerifiedAstrologers": "{appName} ಆಡಿಯೋ ಕರೆ, ವಿಡಿಯೋ ಕರೆ ಮೂಲಕ ಸಮಾಲೋಚನೆಗಾಗಿ ಪರಿಶೀಲಿಸಿದ ಜ್ಯೋತಿಷಿಗಳೊಂದಿಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ,",
+  "@rudragangaConnectsYouWithVerifiedAstrologers": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "andChatAndOffersRelatedFeatures": "ಮತ್ತು ಚಾಟ್, ಮತ್ತು ಕುಂಡಲಿ ಉತ್ಪಾದನೆ ಮತ್ತು ಹೊಂದಾಣಿಕೆಯಂತಹ ಸಂಬಂಧಿತ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ನೀಡುತ್ತದೆ, AI ಜ್ಯೋತಿಷಿ,",
+  "dailyHoroscopesPoojaBookingsAStore": "ದೈನಂದಿನ ಜಾತಕಗಳು, ಪೂಜಾ ಬುಕಿಂಗ್‌ಗಳು, ಆಧ್ಯಾತ್ಮಿಕ ಉತ್ಪನ್ನಗಳ ಅಂಗಡಿ, ಉಡುಗೊರೆಗಳು ಮತ್ತು ವೈವಾಹಿಕ ಹೊಂದಾಣಿಕೆ.",
+  "availabilityOfAnyFeatureOrAstrologer": "ಯಾವುದೇ ವೈಶಿಷ್ಟ್ಯ ಅಥವಾ ಜ್ಯೋತಿಷಿಯ ಲಭ್ಯತೆ ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಬದಲಾಗಬಹುದು.",
+  "s4WalletPricingBilling": "4. ವ್ಯಾಲೆಟ್, ಬೆಲೆ ನಿಗದಿ ಮತ್ತು ಬಿಲ್ಲಿಂಗ್",
+  "consultationsArePrepaidYouAddFunds": "ಸಮಾಲೋಚನೆಗಳು ಪೂರ್ವಪಾವತಿಯಾಗಿವೆ. ನೀವು ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿರುವ ವ್ಯಾಲೆಟ್‌ಗೆ ಹಣವನ್ನು ಸೇರಿಸುತ್ತೀರಿ ಮತ್ತು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಜ್ಯೋತಿಷಿ ಮತ್ತು ಸೇವೆಗೆ ತೋರಿಸಿರುವ ದರದಲ್ಲಿ ನಿಮಿಷಕ್ಕೆ ಪಾವತಿಸುತ್ತೀರಿ.",
+  "billingBeginsWhenTheAstrologerAccepts": "ಜ್ಯೋತಿಷಿ ಒಪ್ಪಿಕೊಂಡು ಅಧಿವೇಶನ ಸಂಪರ್ಕಗೊಂಡಾಗ ಬಿಲ್ಲಿಂಗ್ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ. ಸಂಪರ್ಕಗೊಂಡಾಗ ಮೊದಲ ನಿಮಿಷಕ್ಕೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಪ್ರತಿ ಮುಂದಿನ ನಿಮಿಷಕ್ಕೂ ಅದರ ಪ್ರಾರಂಭದಲ್ಲಿ ಶುಲ್ಕ ವಿಧಿಸಲಾಗುತ್ತದೆ. ಅಧಿವೇಶನದ ಸಮಯದಲ್ಲಿ ಲೈವ್ ಮೀಟರ್ ಅನ್ನು ತೋರಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ಬ್ಯಾಲೆನ್ಸ್ ಕಡಿಮೆಯಾದರೆ ಅಧಿವೇಶನವು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕೊನೆಗೊಳ್ಳುತ್ತದೆ.",
+  "paymentsAreProcessedByOurPayment": "ಪಾವತಿಗಳನ್ನು ನಮ್ಮ ಪಾವತಿ ಪಾಲುದಾರರು (PayU) ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುತ್ತಾರೆ. ನಾವು ಪೂರ್ಣ ಕಾರ್ಡ್ ವಿವರಗಳನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ.",
+  "walletBalancesAreForUseWithin": "ವ್ಯಾಲೆಟ್ ಬ್ಯಾಲೆನ್ಸ್‌ಗಳನ್ನು ಸೇವೆಗಳಲ್ಲಿ ಬಳಸಬಹುದು. ಅನ್ವಯವಾಗುವಲ್ಲಿ ಮರುಪಾವತಿಗಳನ್ನು ನಮ್ಮ ಮರುಪಾವತಿ ನೀತಿಯಿಂದ ನಿಯಂತ್ರಿಸಲಾಗುತ್ತದೆ.",
+  "pricesAreInIndianRupeesInr": "ಬೆಲೆಗಳು ಭಾರತೀಯ ರೂಪಾಯಿಗಳಲ್ಲಿ (INR) ಇದ್ದು, ಅನ್ವಯವಾಗುವ ತೆರಿಗೆಗಳನ್ನು ಒಳಗೊಂಡಿರಬಹುದು.",
+  "s5AcceptableUse": "5. ಸ್ವೀಕಾರಾರ್ಹ ಬಳಕೆ",
+  "youAgreeNotTo": "ನೀವು ಒಪ್ಪುವುದಿಲ್ಲ:",
+  "harassAbuseThreatenOrShareSexually": "ಜ್ಯೋತಿಷಿಗಳು ಅಥವಾ ಸಿಬ್ಬಂದಿಗೆ ಕಿರುಕುಳ, ನಿಂದನೆ, ಬೆದರಿಕೆ ಅಥವಾ ಲೈಂಗಿಕವಾಗಿ ಸ್ಪಷ್ಟವಾದ ಅಥವಾ ಕಾನೂನುಬಾಹಿರ ವಿಷಯವನ್ನು ಹಂಚಿಕೊಳ್ಳುವುದು.",
+  "impersonateAnyPersonOrProvideFalse": "ಯಾವುದೇ ವ್ಯಕ್ತಿಯಂತೆ ಸೋಗು ಹಾಕುವುದು, ಅಥವಾ ಸೇವೆ ಅಥವಾ ಮರುಪಾವತಿ ಪಡೆಯಲು ಸುಳ್ಳು ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸುವುದು.",
+  "attemptToTakeAConsultationOff": "ಶುಲ್ಕವನ್ನು ತಪ್ಪಿಸಲು ವೇದಿಕೆಯ ಹೊರಗೆ ಸಮಾಲೋಚನೆ ನಡೆಸಲು ಪ್ರಯತ್ನಿಸಿ, ಅಥವಾ ವೈಯಕ್ತಿಕ ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ಕೇಳಿ.",
+  "interfereWithScrapeOrAttemptTo": "ಸೇವೆಗಳಲ್ಲಿ ಅಥವಾ ಅವುಗಳ ಸುರಕ್ಷತೆಯಲ್ಲಿ ಹಸ್ತಕ್ಷೇಪ ಮಾಡುವುದು, ಕೆರೆದು ಹಾಕುವುದು ಅಥವಾ ಅಡ್ಡಿಪಡಿಸಲು ಪ್ರಯತ್ನಿಸುವುದು.",
+  "s6AstrologersOnThePlatform": "6. ವೇದಿಕೆಯಲ್ಲಿ ಜ್ಯೋತಿಷಿಗಳು",
+  "astrologersAreIndependentPractitionersWhoAre": "ಜ್ಯೋತಿಷಿಗಳು ಸ್ವತಂತ್ರ ವೈದ್ಯರು, ಅವರು ಗುರುತನ್ನು ಪರಿಶೀಲಿಸುತ್ತಾರೆ ಮತ್ತು {appName} ನಿಂದ ಅನುಮೋದಿಸುತ್ತಾರೆ.",
+  "@astrologersAreIndependentPractitionersWhoAre": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "beforeTheyCanOfferConsultationsThey": "ಅವರು ಸಮಾಲೋಚನೆಗಳನ್ನು ನೀಡುವ ಮೊದಲು. ನಾವು ವ್ಯಾಖ್ಯಾನಿಸುವ ಮಿತಿಯೊಳಗೆ ಅವರು ತಮ್ಮದೇ ಆದ ಪ್ರತಿ ನಿಮಿಷದ ದರಗಳನ್ನು ನಿಗದಿಪಡಿಸುತ್ತಾರೆ.",
+  "opinionsAndGuidanceSharedDuringA": "ಸಮಾಲೋಚನೆಯ ಸಮಯದಲ್ಲಿ ಹಂಚಿಕೊಳ್ಳಲಾದ ಅಭಿಪ್ರಾಯಗಳು ಮತ್ತು ಮಾರ್ಗದರ್ಶನಗಳು ವೈಯಕ್ತಿಕ ಜ್ಯೋತಿಷಿಯದ್ದಾಗಿರುತ್ತವೆ ಮತ್ತು",
+  "ofRudragangaWeAreNotResponsible": "{appName}. ಸಮಾಲೋಚನೆಯ ಆಧಾರದ ಮೇಲೆ ನೀವು ತೆಗೆದುಕೊಳ್ಳುವ ಯಾವುದೇ ನಿರ್ಧಾರಕ್ಕೆ ನಾವು ಜವಾಬ್ದಾರರಲ್ಲ.",
+  "@ofRudragangaWeAreNotResponsible": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "s7RecordingsContent": "7. ರೆಕಾರ್ಡಿಂಗ್‌ಗಳು ಮತ್ತು ವಿಷಯ",
+  "forQualitySafetyAndDisputeResolution": "ಗುಣಮಟ್ಟ, ಸುರಕ್ಷತೆ ಮತ್ತು ವಿವಾದ ಪರಿಹಾರಕ್ಕಾಗಿ, ಆಡಿಯೋ ಮತ್ತು ವಿಡಿಯೋ ಸಮಾಲೋಚನೆಗಳನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಬಹುದು. ನೀವು",
+  "consentToSuchRecordingByStarting": "ಸೆಷನ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸುವ ಮೂಲಕ ಅಂತಹ ರೆಕಾರ್ಡಿಂಗ್‌ಗೆ ಸಮ್ಮತಿ ನೀಡಿ. ಚಾಟ್ ಸಂಭಾಷಣೆಗಳನ್ನು ಸಂಗ್ರಹಿಸಲಾಗಿದೆ ಆದ್ದರಿಂದ ನೀವು ಮತ್ತೆ ಭೇಟಿ ಮಾಡಬಹುದು",
+  "themSeeOurPrivacyPolicyFor": "ಅವುಗಳನ್ನು ನಿರ್ವಹಿಸಬಹುದು. ಈ ಡೇಟಾವನ್ನು ಹೇಗೆ ನಿರ್ವಹಿಸಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ತಿಳಿಯಲು ನಮ್ಮ ಗೌಪ್ಯತಾ ನೀತಿಯನ್ನು ನೋಡಿ.",
+  "s8DisclaimerLimitationOfLiability": "8. ಹಕ್ಕು ನಿರಾಕರಣೆ ಮತ್ತು ಹೊಣೆಗಾರಿಕೆಯ ಮಿತಿ",
+  "theServicesAreProvidedAsIs": "ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಮನರಂಜನೆಯ ಪಕ್ಕದಲ್ಲಿರುವ ವೈಯಕ್ತಿಕ ಪ್ರತಿಬಿಂಬಕ್ಕಾಗಿ ಸೇವೆಗಳನ್ನು \"ಇರುವಂತೆಯೇ\" ಒದಗಿಸಲಾಗುತ್ತದೆ.",
+  "rudragangaMakesNoGuaranteeAboutThe": "ಯಾವುದೇ ಭವಿಷ್ಯವಾಣಿ ಅಥವಾ ಪರಿಹಾರದ ನಿಖರತೆಯ ಬಗ್ಗೆ {appName} ಯಾವುದೇ ಗ್ಯಾರಂಟಿ ನೀಡುವುದಿಲ್ಲ. ಗರಿಷ್ಠ ಮಟ್ಟಿಗೆ",
+  "@rudragangaMakesNoGuaranteeAboutThe": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "permittedByLawRudragangaSTotal": "ಕಾನೂನಿನಿಂದ ಅನುಮತಿಸಲಾದ, ಸೇವೆಗಳ ನಿಮ್ಮ ಬಳಕೆಯಿಂದ ಉಂಟಾಗುವ {appName} ನ ಒಟ್ಟು ಹೊಣೆಗಾರಿಕೆಯು ಸೀಮಿತವಾಗಿದೆ",
+  "@permittedByLawRudragangaSTotal": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "theAmountYouPaidIntoYour": "ಈವೆಂಟ್‌ಗೆ 30 ದಿನಗಳ ಮೊದಲು ನೀವು ನಿಮ್ಮ ವ್ಯಾಲೆಟ್‌ಗೆ ಪಾವತಿಸಿದ ಮೊತ್ತವು ಕ್ಲೈಮ್‌ಗೆ ಕಾರಣವಾಗುತ್ತದೆ. ನಾವು",
+  "areNotLiableForIndirectOr": "ಪರೋಕ್ಷ ಅಥವಾ ಪರಿಣಾಮಕಾರಿ ನಷ್ಟಗಳಿಗೆ ಹೊಣೆಗಾರರಾಗಿರುವುದಿಲ್ಲ.",
+  "s9SuspensionTermination": "9. ಅಮಾನತು ಮತ್ತು ಮುಕ್ತಾಯ",
+  "weMaySuspendOrTerminateYour": "ನೀವು ಈ ನಿಯಮಗಳನ್ನು ಉಲ್ಲಂಘಿಸಿದರೆ, ವಂಚನೆ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿದರೆ ಅಥವಾ ದುರುಪಯೋಗಪಡಿಸಿಕೊಂಡರೆ ನಾವು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಮಾನತುಗೊಳಿಸಬಹುದು ಅಥವಾ ಕೊನೆಗೊಳಿಸಬಹುದು",
+  "servicesYouMayStopUsingThe": "ಸೇವೆಗಳು. ನೀವು ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಸೇವೆಗಳನ್ನು ಬಳಸುವುದನ್ನು ನಿಲ್ಲಿಸಬಹುದು. ಕೆಲವು ನಿಬಂಧನೆಗಳು (ಪಾವತಿ ಬಾಧ್ಯತೆಗಳು,",
+  "disclaimersAndLimitationsOfLiabilitySurvive": "ಹಕ್ಕು ನಿರಾಕರಣೆಗಳು ಮತ್ತು ಹೊಣೆಗಾರಿಕೆಯ ಮಿತಿಗಳು) ಮುಕ್ತಾಯದಿಂದ ಬದುಕುಳಿಯುತ್ತವೆ.",
+  "s10ChangesToTheseTerms": "10. ಈ ನಿಯಮಗಳಿಗೆ ಬದಲಾವಣೆಗಳು",
+  "weMayUpdateTheseTermsFrom": "ನಾವು ಈ ನಿಯಮಗಳನ್ನು ಕಾಲಕಾಲಕ್ಕೆ ನವೀಕರಿಸಬಹುದು. ಗಮನಾರ್ಹ ಬದಲಾವಣೆಗಳನ್ನು ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಅಥವಾ ಮೂಲಕ ತಿಳಿಸಲಾಗುತ್ತದೆ",
+  "updatingTheLastUpdatedDateAbove": "ಮೇಲಿನ \"ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ\" ದಿನಾಂಕವನ್ನು ನವೀಕರಿಸುವುದು. ಬದಲಾವಣೆಗಳ ನಂತರ ನಿರಂತರ ಬಳಕೆ ಎಂದರೆ ನೀವು ಅವುಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತೀರಿ ಎಂದರ್ಥ.",
+  "s11ContactUs": "11. ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+  "questionsAboutTheseTermsReachUs": "ಈ ನಿಯಮಗಳ ಕುರಿತು ಪ್ರಶ್ನೆಗಳಿವೆಯೇ? ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿರುವ ಸಂಪರ್ಕ ಫಾರ್ಮ್ ಮೂಲಕ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿರುವ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+  "helpSupportSection": "ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ ವಿಭಾಗ.",
+  "privacyPolicy2": "ಗೌಪ್ಯತಾ ನೀತಿ",
+  "yourBirthDetailsConsultationsAndChats": "ನಿಮ್ಮ ಜನನ ವಿವರಗಳು, ಸಮಾಲೋಚನೆಗಳು ಮತ್ತು ಚಾಟ್‌ಗಳು ನಿಮಗೆ ವೈಯಕ್ತಿಕವಾಗಿವೆ. ಈ ನೀತಿಯು ನಾವು ಏನು ಮಾಡುತ್ತೇವೆ ಎಂಬುದನ್ನು ವಿವರಿಸುತ್ತದೆ",
+  "collectWhyAndTheControlYou": "ಸಂಗ್ರಹಿಸಿ, ಏಕೆ, ಮತ್ತು ಅದರ ಮೇಲೆ ನೀವು ಹೊಂದಿರುವ ನಿಯಂತ್ರಣ.",
+  "s1InformationWeCollect": "1. ನಾವು ಸಂಗ್ರಹಿಸುವ ಮಾಹಿತಿ",
+  "accountInformationYourNamePhoneNumber": "ಖಾತೆ ಮಾಹಿತಿ: ನಿಮ್ಮ ಹೆಸರು, ಫೋನ್ ಸಂಖ್ಯೆ (OTP ಮೂಲಕ ಪರಿಶೀಲಿಸಲಾಗಿದೆ), ಮತ್ತು ಇಮೇಲ್ ಒದಗಿಸಿದ್ದರೆ.",
+  "birthDetailsDateTimeAndPlace": "ಜನ್ಮ ವಿವರಗಳು: ಕುಂಡಲಿ ಮತ್ತು ವಾಚನಗಳಿಗಾಗಿ ನೀವು ಹಂಚಿಕೊಳ್ಳಲು ಆಯ್ಕೆ ಮಾಡಿದ ದಿನಾಂಕ, ಸಮಯ ಮತ್ತು ಜನ್ಮ ಸ್ಥಳ.",
+  "consultationDataChatMessagesAndAudio": "ಸಮಾಲೋಚನೆ ಡೇಟಾ: ಚಾಟ್ ಸಂದೇಶಗಳು ಮತ್ತು ಅನ್ವಯವಾಗುವಲ್ಲಿ ಆಡಿಯೋ/ವಿಡಿಯೋ ಕರೆ ರೆಕಾರ್ಡಿಂಗ್‌ಗಳು.",
+  "paymentDataWalletTransactionsAndPayment": "ಪಾವತಿ ಡೇಟಾ: ವ್ಯಾಲೆಟ್ ವಹಿವಾಟುಗಳು ಮತ್ತು ಪಾವತಿ ಉಲ್ಲೇಖಗಳು. ಕಾರ್ಡ್ ವಿವರಗಳನ್ನು ನಮ್ಮ ಪಾವತಿ ಪಾಲುದಾರರು (PayU) ನಿರ್ವಹಿಸುತ್ತಾರೆ; ನಾವು ಪೂರ್ಣ ಕಾರ್ಡ್ ಸಂಖ್ಯೆಗಳನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ.",
+  "deviceUsageDataDeviceTypeOperating": "ಸಾಧನ ಮತ್ತು ಬಳಕೆಯ ಡೇಟಾ: ಸಾಧನದ ಪ್ರಕಾರ, ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್, ನಿಮ್ಮ ಐಪಿ ವಿಳಾಸದಿಂದ ಪಡೆದ ಅಂದಾಜು ಸ್ಥಳ, ಭೇಟಿ ನೀಡಿದ ಪುಟಗಳು ಮತ್ತು ಸೇವೆಗಳನ್ನು ನಿರ್ವಹಿಸಲು ಮತ್ತು ಸುಧಾರಿಸಲು ಬಳಸುವ ಸಂವಹನಗಳು.",
+  "s2HowWeUseIt": "2. ನಾವು ಅದನ್ನು ಹೇಗೆ ಬಳಸುತ್ತೇವೆ",
+  "toCreateAndSecureYourAccount": "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಚಿಸಲು ಮತ್ತು ಸುರಕ್ಷಿತಗೊಳಿಸಲು ಮತ್ತು ನಿಮ್ಮ ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಲು.",
+  "toConnectYouWithAstrologersAnd": "ನಿಮ್ಮನ್ನು ಜ್ಯೋತಿಷಿಗಳೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಲು ಮತ್ತು ಸಮಾಲೋಚನೆಗಳು, ಕುಂಡಲಿ, ಜಾತಕ ಮತ್ತು ಇತರ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ನೀಡಲು.",
+  "toProcessWalletRechargesPerMinute": "ವ್ಯಾಲೆಟ್ ರೀಚಾರ್ಜ್‌ಗಳು, ಪ್ರತಿ ನಿಮಿಷದ ಬಿಲ್ಲಿಂಗ್, ಪಾವತಿಗಳು ಮತ್ತು ಆರ್ಡರ್ ಪೂರೈಸುವಿಕೆಯನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು.",
+  "toProvideSupportPreventFraudAnd": "ಬೆಂಬಲ ನೀಡಲು, ವಂಚನೆ ಮತ್ತು ದುರುಪಯೋಗವನ್ನು ತಡೆಯಲು ಮತ್ತು ಕಾನೂನು ಬಾಧ್ಯತೆಗಳನ್ನು ಪೂರೈಸಲು.",
+  "toUnderstandAndImproveHowThe": "ಅಪ್ಲಿಕೇಶನ್ ಮತ್ತು ವೆಬ್‌ಸೈಟ್ ಅನ್ನು ಹೇಗೆ ಬಳಸಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಮತ್ತು ಸುಧಾರಿಸಲು.",
+  "s3WhenWeShareInformation": "3. ನಾವು ಮಾಹಿತಿಯನ್ನು ಹಂಚಿಕೊಂಡಾಗ",
+  "weDoNotSellYourPersonal": "ನಾವು ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಮಾರಾಟ ಮಾಡುವುದಿಲ್ಲ. ನಾವು ಅದನ್ನು ಮಾತ್ರ ಹಂಚಿಕೊಳ್ಳುತ್ತೇವೆ:",
+  "withTheAstrologerYouConsultLimited": "ನೀವು ಸಮಾಲೋಚಿಸುವ ಜ್ಯೋತಿಷಿಯೊಂದಿಗೆ, ಓದುವಿಕೆಗೆ ಅಗತ್ಯವಿರುವಷ್ಟು ಸೀಮಿತಗೊಳಿಸಿ (ಉದಾ. ನಿಮ್ಮ ಜನ್ಮ ವಿವರಗಳು ಮತ್ತು ಚಾಟ್).",
+  "withServiceProvidersWhoHelpUs": "ಗೌಪ್ಯತೆಯ ಬಾಧ್ಯತೆಗಳ ಅಡಿಯಲ್ಲಿ - ಪಾವತಿ ಪ್ರಕ್ರಿಯೆ (PayU), ಕ್ಲೌಡ್ ಹೋಸ್ಟಿಂಗ್ ಮತ್ತು ಸಂಗ್ರಹಣೆ, ಸಂವಹನಗಳು (OTP ಗಾಗಿ WhatsApp/SMS), ಮತ್ತು ಅಧಿಸೂಚನೆಗಳು - ನಮಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ಸಹಾಯ ಮಾಡುವ ಸೇವಾ ಪೂರೈಕೆದಾರರೊಂದಿಗೆ.",
+  "whenRequiredByLawOrTo": "ಕಾನೂನಿನಿಂದ ಅಗತ್ಯವಿದ್ದಾಗ, ಅಥವಾ ಬಳಕೆದಾರರ ಹಕ್ಕುಗಳು, ಸುರಕ್ಷತೆ ಮತ್ತು ಆಸ್ತಿಯನ್ನು ರಕ್ಷಿಸಲು ಮತ್ತು {appName}.",
+  "@whenRequiredByLawOrTo": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "s4ConsultationRecordingsChats": "4. ಸಮಾಲೋಚನೆ ರೆಕಾರ್ಡಿಂಗ್‌ಗಳು ಮತ್ತು ಚಾಟ್‌ಗಳು",
+  "audioAndVideoConsultationsMayBe": "ಗುಣಮಟ್ಟ, ಸುರಕ್ಷತೆಗಾಗಿ ಆಡಿಯೋ ಮತ್ತು ವಿಡಿಯೋ ಸಮಾಲೋಚನೆಗಳನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಬಹುದು ಮತ್ತು ಚಾಟ್‌ಗಳನ್ನು ಸಂಗ್ರಹಿಸಬಹುದು ಮತ್ತು",
+  "disputeResolutionYouCanReviewYour": "ವಿವಾದ ಪರಿಹಾರ. ನೀವು ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಚಾಟ್ ಇತಿಹಾಸವನ್ನು ಪರಿಶೀಲಿಸಬಹುದು. ರೆಕಾರ್ಡಿಂಗ್‌ಗಳನ್ನು ಹೀಗೆ ಉಳಿಸಿಕೊಳ್ಳಲಾಗುತ್ತದೆ",
+  "describedBelowAndAccessedOnlyWhen": "ಕೆಳಗೆ ವಿವರಿಸಲಾಗಿದೆ ಮತ್ತು ಬೆಂಬಲ, ಸುರಕ್ಷತೆ ಅಥವಾ ಕಾನೂನು ಕಾರಣಗಳಿಗಾಗಿ ಅಗತ್ಯವಿದ್ದಾಗ ಮಾತ್ರ ಪ್ರವೇಶಿಸಬಹುದು.",
+  "s5AnalyticsCookies": "5. ವಿಶ್ಲೇಷಣೆಗಳು ಮತ್ತು ಕುಕೀಸ್",
+  "ourWebsiteUsesAFirstParty": "ನಮ್ಮ ವೆಬ್‌ಸೈಟ್ ರಿಟರ್ನ್ ಭೇಟಿಗಳನ್ನು ಗುರುತಿಸಲು, ಹೇಗೆ ಎಂಬುದನ್ನು ಅಳೆಯಲು ಮೊದಲ-ಪಕ್ಷದ ಕುಕೀ/ಗುರುತಿಸುವಿಕೆಯನ್ನು ಬಳಸುತ್ತದೆ",
+  "landingPagePerformsSuchAsWhich": "ಲ್ಯಾಂಡಿಂಗ್ ಪುಟವು ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ (ಉದಾಹರಣೆಗೆ ಯಾವ ವಿಭಾಗಗಳನ್ನು ಕ್ಲಿಕ್ ಮಾಡಲಾಗಿದೆ), ಮತ್ತು ಸೈನ್-ಅಪ್‌ಗಳನ್ನು ಮಾರ್ಕೆಟಿಂಗ್‌ಗೆ ಆರೋಪಿಸುತ್ತದೆ",
+  "campaignsThisIsUsedInAggregate": "ಅಭಿಯಾನಗಳು. ಅನುಭವವನ್ನು ಸುಧಾರಿಸಲು ಇದನ್ನು ಒಟ್ಟಾರೆಯಾಗಿ ಬಳಸಲಾಗುತ್ತದೆ. ನಾವು ಅಂದಾಜು ನಗರ/ಪ್ರದೇಶವನ್ನು ಪಡೆಯುತ್ತೇವೆ",
+  "fromYourIpAddressWeDo": "ನಿಮ್ಮ IP ವಿಳಾಸದಿಂದ; ನಾವು ವಿಶ್ಲೇಷಣೆಗಾಗಿ ನಿಖರವಾದ GPS ಸ್ಥಳವನ್ನು ಬಳಸುವುದಿಲ್ಲ.",
+  "s6DataRetention": "6. ಡೇಟಾ ಧಾರಣ",
+  "weKeepYourInformationForAs": "ನಿಮ್ಮ ಖಾತೆ ಸಕ್ರಿಯವಾಗಿರುವವರೆಗೆ ಮತ್ತು ಒದಗಿಸಲು ಅಗತ್ಯವಿರುವವರೆಗೆ ನಾವು ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಇರಿಸಿಕೊಳ್ಳುತ್ತೇವೆ",
+  "servicesComplyWithLegalObligationsResolve": "ಸೇವೆಗಳು, ಕಾನೂನು ಬಾಧ್ಯತೆಗಳನ್ನು ಅನುಸರಿಸುವುದು, ವಿವಾದಗಳನ್ನು ಪರಿಹರಿಸುವುದು ಮತ್ತು ನಮ್ಮ ಒಪ್ಪಂದಗಳನ್ನು ಜಾರಿಗೊಳಿಸುವುದು. ನೀವು",
+  "requestDeletionOfYourAccountAnd": "ಕಾನೂನುಬದ್ಧ ಧಾರಣಕ್ಕೆ ಒಳಪಟ್ಟು, ನಿಮ್ಮ ಖಾತೆ ಮತ್ತು ಸಂಬಂಧಿತ ವೈಯಕ್ತಿಕ ಡೇಟಾವನ್ನು ಅಳಿಸಲು ವಿನಂತಿಸಿ.",
+  "requirementsForExampleTransactionRecordsWe": "ಅವಶ್ಯಕತೆಗಳು (ಉದಾಹರಣೆಗೆ, ಲೆಕ್ಕಪತ್ರ ನಿರ್ವಹಣೆ ಮತ್ತು ತೆರಿಗೆಗಾಗಿ ನಾವು ಇಟ್ಟುಕೊಳ್ಳಬೇಕಾದ ವಹಿವಾಟು ದಾಖಲೆಗಳು).",
+  "s7Security": "7. ಭದ್ರತೆ",
+  "weUseIndustryStandardMeasuresEncryption": "ನಾವು ಉದ್ಯಮ-ಪ್ರಮಾಣಿತ ಕ್ರಮಗಳನ್ನು ಬಳಸುತ್ತೇವೆ - ಸಾಗಣೆಯಲ್ಲಿ ಎನ್‌ಕ್ರಿಪ್ಶನ್, ಪ್ರವೇಶ ನಿಯಂತ್ರಣಗಳು ಮತ್ತು ಸುರಕ್ಷಿತ",
+  "infrastructureToProtectYourInformationNo": "ಮೂಲಸೌಕರ್ಯ - ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ರಕ್ಷಿಸಲು. ಯಾವುದೇ ಪ್ರಸರಣ ಅಥವಾ ಸಂಗ್ರಹಣೆ ವಿಧಾನವು ಸಂಪೂರ್ಣವಾಗಿ ಅಲ್ಲ",
+  "secureSoWeCannotGuaranteeAbsolute": "ಸುರಕ್ಷಿತ, ಆದ್ದರಿಂದ ನಾವು ಸಂಪೂರ್ಣ ಭದ್ರತೆಯನ್ನು ಖಾತರಿಪಡಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.",
+  "s8YourRightsChoices": "8. ನಿಮ್ಮ ಹಕ್ಕುಗಳು ಮತ್ತು ಆಯ್ಕೆಗಳು",
+  "accessCorrectOrUpdateYourProfile": "ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಮತ್ತು ಜನನ ವಿವರಗಳನ್ನು ಪ್ರವೇಶಿಸಿ, ಸರಿಪಡಿಸಿ ಅಥವಾ ನವೀಕರಿಸಿ.",
+  "requestACopyOrDeletionOf": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೂಲಕ ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಡೇಟಾದ ನಕಲು ಅಥವಾ ಅಳಿಸುವಿಕೆಯನ್ನು ವಿನಂತಿಸಿ.",
+  "optOutOfPromotionalNotificationsIn": "ನಿಮ್ಮ ಸಾಧನ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಪ್ರಚಾರದ ಅಧಿಸೂಚನೆಗಳಿಂದ ಹೊರಗುಳಿಯಿರಿ.",
+  "s9Children": "9. ಮಕ್ಕಳು",
+  "theServicesAreIntendedForUsers": "ಈ ಸೇವೆಗಳು 18 ವರ್ಷ ಮತ್ತು ಅದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ವಯಸ್ಸಿನ ಬಳಕೆದಾರರಿಗಾಗಿ ಉದ್ದೇಶಿಸಲಾಗಿದೆ. ನಾವು ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಡೇಟಾವನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ",
+  "anyoneUnder18IfYouBelieve": "18 ವರ್ಷದೊಳಗಿನ ಯಾರಾದರೂ. ಅಪ್ರಾಪ್ತ ವಯಸ್ಕರು ಸೇವೆಗಳನ್ನು ಬಳಸಿದ್ದಾರೆಂದು ನೀವು ಭಾವಿಸಿದರೆ, ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ ಇದರಿಂದ ನಾವು ಅದನ್ನು ತೆಗೆದುಹಾಕಬಹುದು.",
+  "s10ChangesToThisPolicy": "10. ಈ ನೀತಿಯಲ್ಲಿನ ಬದಲಾವಣೆಗಳು",
+  "weMayUpdateThisPolicyMaterial": "ನಾವು ಈ ನೀತಿಯನ್ನು ನವೀಕರಿಸಬಹುದು. ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಅಥವಾ ನವೀಕರಿಸುವ ಮೂಲಕ ವಸ್ತು ಬದಲಾವಣೆಗಳನ್ನು ತಿಳಿಸಲಾಗುತ್ತದೆ",
+  "lastUpdatedDateAbove": "ಮೇಲೆ \"ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಿದ\" ದಿನಾಂಕ.",
+  "forPrivacyQuestionsOrDataRequests": "ಗೌಪ್ಯತೆ ಪ್ರಶ್ನೆಗಳು ಅಥವಾ ಡೇಟಾ ವಿನಂತಿಗಳಿಗಾಗಿ, ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿರುವ ಸಂಪರ್ಕ ಫಾರ್ಮ್ ಮೂಲಕ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ ಅಥವಾ",
+  "appSHelpSupportSection": "ಅಪ್ಲಿಕೇಶನ್‌ನ ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ ವಿಭಾಗವನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ.",
+  "s2026Rudraganga18ForGuidanceAnd": "© 2026 {appName} 18+ 1· ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಯೋಗಕ್ಷೇಮಕ್ಕಾಗಿ - ವೃತ್ತಿಪರ ಸಲಹೆಗೆ ಪರ್ಯಾಯವಲ್ಲ.",
+  "@s2026Rudraganga18ForGuidanceAnd": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "widthDeviceWidthInitialScale1": "ಅಗಲ=ಸಾಧನ-ಅಗಲ, ಆರಂಭಿಕ-ಸ್ಕೇಲ್=1, ಗರಿಷ್ಠ-ಸ್ಕೇಲ್=1",
+  "segoeUi": "ಸೆಗೋ ಯುಐ",
+  "vote": "ಮತ ಚಲಾಯಿಸಿ",
+  "couldnTLoadLiveSessions": "ಲೈವ್ ಸೆಷನ್‌ಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "noOneIsLiveRightNow": "ಈಗ ಯಾರೂ ಲೈವ್ ಆಗಿಲ್ಲ.",
+  "whenAnAstrologerGoesLiveThey": "ಜ್ಯೋತಿಷಿಯೊಬ್ಬರು ನೇರ ಪ್ರಸಾರವಾದಾಗ, ಅವರು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತಾರೆ. ರಿಫ್ರೆಶ್ ಮಾಡಲು ಕೆಳಗೆ ಎಳೆಯಿರಿ - ಅಥವಾ ಅಧಿಸೂಚನೆಗಾಗಿ ನೋಡಿ.",
+  "justNow": "ಇದೀಗ",
+  "couldNotLoad": "ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+  "continueLabel": "ಮುಂದುವರಿಸಿ",
+  "openSettings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ",
+  "somePermissionsAreBlockedTapA": "ಕೆಲವು ಅನುಮತಿಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ. ನಿರ್ಬಂಧಿಸಲಾದ ಐಟಂ ಅನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ (ಅಥವಾ \"ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ\") ಮತ್ತು ಅದನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ, ನಂತರ ಇಲ್ಲಿಗೆ ಹಿಂತಿರುಗಿ.",
+  "thesePermissionsAreRequiredToUse": "{appName} ಬಳಸಲು ಈ ಅನುಮತಿಗಳು ಅಗತ್ಯವಿದೆ. ಅದನ್ನು ನೀಡಲು ಯಾವುದೇ ಬಾಕಿ ಇರುವ ಐಟಂ ಅನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ.",
+  "@thesePermissionsAreRequiredToUse": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "settings2": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+  "allow": "ಅನುಮತಿಸಿ",
+  "blockedEnableItInSettings": "ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ — ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಅದನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
+  "allowsUpTo": "ವರೆಗೆ ಅನುಮತಿಸುತ್ತದೆ",
+  "bookingFailed": "ಬುಕಿಂಗ್ ವಿಫಲವಾಗಿದೆ",
+  "yourDetails": "ನಿಮ್ಮ ವಿವರಗಳು",
+  "fromYourProfile": "ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಿಂದ",
+  "familyMembers": "ಕುಟುಂಬ ಸದಸ್ಯರು",
+  "addMember": "ಸದಸ್ಯರನ್ನು ಸೇರಿಸಿ",
+  "addAnother": "ಇನ್ನೊಂದನ್ನು ಸೇರಿಸಿ",
+  "preferredDateOptional": "ಆದ್ಯತೆಯ ದಿನಾಂಕ (ಐಚ್ಛಿಕ)",
+  "anyDate": "ಯಾವುದೇ ದಿನಾಂಕ",
+  "bookNowFree": "ಈಗಲೇ ಬುಕ್ ಮಾಡಿ (ಉಚಿತ)",
+  "couldNotLoadThisPooja": "ಈ ಪೂಜೆಯನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "forLabel": "ಫಾರ್",
+  "s1Person": "1 ವ್ಯಕ್ತಿ",
+  "bookShareDetails": "ವಿವರಗಳನ್ನು ಬುಕ್ ಮಾಡಿ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳಿ",
+  "confirmYourBookingWithTheNames": "ಪೂಜೆ ನಡೆಯುವ ಹೆಸರುಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಬುಕಿಂಗ್ ಅನ್ನು ದೃಢೀಕರಿಸಿ.",
+  "panditCoordinates": "ಪಂಡಿತ್ ನಿರ್ದೇಶಾಂಕಗಳು",
+  "aVerifiedPanditCallsToFix": "ಒಬ್ಬ ದೃಢೀಕೃತ ಪಂಡಿತರು ಸಮಯವನ್ನು ನಿಗದಿಪಡಿಸಲು ಮತ್ತು ಸಮಗ್ರಿಯನ್ನು ವ್ಯವಸ್ಥೆ ಮಾಡಲು ಕರೆ ಮಾಡುತ್ತಾರೆ.",
+  "poojaPerformed": "ಪೂಜಾ ನೆರವೇರಿಸಿದರು",
+  "sankalpIsTakenInYourFamily": "ಸಂಕಲ್ಪವನ್ನು ನಿಮ್ಮ ಕುಟುಂಬದ ಹೆಸರಿನಲ್ಲಿ ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ, ಮತ್ತು ನಂತರ ಅನ್ವಯವಾಗುವ ಕಡೆ ಪ್ರಸಾದವನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುತ್ತದೆ.",
+  "couldNotLoadPoojas": "ಪೂಜೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "any": "ಯಾವುದೇ",
+  "noPoojasHere": "ಇಲ್ಲಿ ಪೂಜೆಗಳಿಲ್ಲ.",
+  "nothingMatchesTheCurrentFilters": "ಪ್ರಸ್ತುತ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಯಾವುದೂ ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ.",
+  "noPoojasAvailableYet": "ಇನ್ನೂ ಯಾವುದೇ ಪೂಜೆಗಳು ಲಭ್ಯವಿಲ್ಲ.",
+  "showAllPoojas": "ಎಲ್ಲಾ ಪೂಜೆಗಳನ್ನು ತೋರಿಸಿ",
+  "tapToViewDetailsBook": "ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಮತ್ತು ಬುಕ್ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "appliedYouBothEarnOnYour": "ಅನ್ವಯಿಸಲಾಗಿದೆ! ನಿಮ್ಮ ಮೊದಲ ರೀಚಾರ್ಜ್‌ನಲ್ಲಿ ನೀವಿಬ್ಬರೂ ಗಳಿಸುತ್ತೀರಿ.",
+  "shareYourCode": "ನಿಮ್ಮ ಕೋಡ್ ಹಂಚಿಕೊಳ್ಳಿ",
+  "sendYourCodeToFriendsVia": "ನಿಮ್ಮ ಕೋಡ್ ಅನ್ನು ಸ್ನೇಹಿತರಿಗೆ WhatsApp, SMS ಮೂಲಕ ಎಲ್ಲಿ ಬೇಕಾದರೂ ಕಳುಹಿಸಿ.",
+  "friendSignsUp": "ಸ್ನೇಹಿತ ಸೈನ್ ಅಪ್ ಮಾಡುತ್ತಾನೆ",
+  "theyEnterYourCodeInRefer": "ಸೈನ್ ಅಪ್ ಮಾಡಿದ ನಂತರ ಅವರು ನಿಮ್ಮ ಕೋಡ್ ಅನ್ನು Refer & Earn ನಲ್ಲಿ ನಮೂದಿಸುತ್ತಾರೆ.",
+  "feedbackReceived": "ಪ್ರತಿಕ್ರಿಯೆ ಸ್ವೀಕರಿಸಲಾಗಿದೆ ✓",
+  "thanksOurTeamWillLookInto": "ಧನ್ಯವಾದಗಳು — ನಮ್ಮ ತಂಡವು ಇದನ್ನು ಪರಿಶೀಲಿಸುತ್ತದೆ.",
+  "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+  "email": "ಇಮೇಲ್",
+  "phoneNumber": "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
+  "message": "ಸಂದೇಶ",
+  "requiredLabel": "ಅಗತ್ಯವಿದೆ",
+  "applicationReceived": "ಅರ್ಜಿ ಸ್ವೀಕರಿಸಲಾಗಿದೆ ✓",
+  "ourTeamWillReachOutAbout": "ನಮ್ಮ ತಂಡವು ನಿಮ್ಮ ಜ್ಯೋತಿಷಿ ಪ್ರೊಫೈಲ್ ಬಗ್ಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+  "enter10Digits": "10 ಅಂಕೆಗಳನ್ನು ನಮೂದಿಸಿ",
+  "aboutYouBioExpertiseExperience": "ನಿಮ್ಮ ಬಗ್ಗೆ (ಜೀವನ ಚರಿತ್ರೆ, ಪರಿಣತಿ, ಅನುಭವ)",
+  "rudragangaConnectsYouWithTrustedVedic": "{appName} ವೃತ್ತಿಜೀವನದ ಮಾರ್ಗದರ್ಶನಕ್ಕಾಗಿ ನಿಮ್ಮನ್ನು ವಿಶ್ವಾಸಾರ್ಹ ವೈದಿಕ ಜ್ಯೋತಿಷಿಗಳೊಂದಿಗೆ ಸಂಪರ್ಕಿಸುತ್ತದೆ,",
+  "@rudragangaConnectsYouWithTrustedVedic": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "marriageFinanceHealthAndLifeS": "ಮದುವೆ, ಹಣಕಾಸು, ಆರೋಗ್ಯ ಮತ್ತು ಜೀವನದ ದೊಡ್ಡ ಪ್ರಶ್ನೆಗಳು - ಚಾಟ್, ಕರೆ ಮತ್ತು ವೀಡಿಯೊ ಮೂಲಕ.",
+  "getYourFreeKundliDailyHoroscope": "ನಿಮ್ಮ ಉಚಿತ ಕುಂಡಲಿ, ದೈನಂದಿನ ಜಾತಕ, ಮದುವೆ, ಪೂಜೆಗಳು ಮತ್ತು ಪರಿಹಾರಗಳನ್ನು ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ ಪಡೆಯಿರಿ.\n\n",
+  "ourMissionIsToMakeAuthentic": "ನಮ್ಮ ಧ್ಯೇಯವೆಂದರೆ ಅಧಿಕೃತ, ಸಹಾನುಭೂತಿಯ ಆಧ್ಯಾತ್ಮಿಕ ಮಾರ್ಗದರ್ಶನವನ್ನು ಎಲ್ಲರಿಗೂ ಲಭ್ಯವಾಗುವಂತೆ ಮಾಡುವುದು,",
+  "inYourOwnLanguage": "ನಿಮ್ಮ ಸ್ವಂತ ಭಾಷೆಯಲ್ಲಿ.",
+  "verifiedExperiencedAstrologers": "ಪರಿಶೀಲಿಸಿದ, ಅನುಭವಿ ಜ್ಯೋತಿಷಿಗಳು",
+  "privateSecureConsultations": "ಖಾಸಗಿ ಮತ್ತು ಸುರಕ್ಷಿತ ಸಮಾಲೋಚನೆಗಳು",
+  "availableIn6IndianLanguages": "6 ಭಾರತೀಯ ಭಾಷೆಗಳಲ್ಲಿ ಲಭ್ಯವಿದೆ",
+  "thanksForRatingUs": "ನಮಗೆ ರೇಟಿಂಗ್ ನೀಡಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು ✓",
+  "yourFeedbackHelpsRudragangaGrow": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ {appName} ಬೆಳೆಯಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+  "@yourFeedbackHelpsRudragangaGrow": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "onceInADay": "ದಿನಕ್ಕೆ ಒಮ್ಮೆ",
+  "twiceInADay": "ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+  "asManyTimesAsItComes": "ಎಷ್ಟು ಬಾರಿ ಬಂದರೂ",
+  "never": "ಎಂದಿಗೂ ಇಲ್ಲ",
+  "cricket": "ಕ್ರಿಕೆಟ್",
+  "shareMarket": "ಷೇರು ಮಾರುಕಟ್ಟೆ",
+  "bollywood": "ಬಾಲಿವುಡ್",
+  "newMagazine": "ಹೊಸ ಪತ್ರಿಕೆ",
+  "festivals": "ಹಬ್ಬಗಳು",
+  "notificationsUpdated": "ಅಧಿಸೂಚನೆಗಳನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ ✓",
+  "youLlHearFromUsBased": "ನಿಮ್ಮ ಆಯ್ಕೆಗಳ ಆಧಾರದ ಮೇಲೆ ನೀವು ನಮ್ಮಿಂದ ಕೇಳುತ್ತೀರಿ.",
+  "yourChartsWillNowFollowYour": "ನಿಮ್ಮ ಚಾರ್ಟ್‌ಗಳು ಈಗ ನೀವು ಆಯ್ಕೆ ಮಾಡಿದ ಶೈಲಿಯನ್ನು ಅನುಸರಿಸುತ್ತವೆ.",
+  "chartStyle": "ಚಾರ್ಟ್ ಶೈಲಿ",
+  "northIndian": "ಉತ್ತರ ಭಾರತೀಯ",
+  "southIndian": "ದಕ್ಷಿಣ ಭಾರತೀಯ",
+  "monthSystem": "ತಿಂಗಳ ವ್ಯವಸ್ಥೆ",
+  "amanta": "ಅಮಂತ",
+  "purnimanta": "ಪೂರ್ಣಿಮಂತ",
+  "darkMode": "ಕತ್ತಲೆ ಮೋಡ್",
+  "off": "ಆಫ್",
+  "onLabel": "ಆನ್",
+  "useDeviceSettings": "ಸಾಧನ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬಳಸಿ",
+  "ayanamsa": "ಅಯನಾಂಶ",
+  "nCLahiri": "ಎನ್.ಸಿ. ಲಹಿರಿ",
+  "kpNew": "ಕೆಪಿ ನ್ಯೂ",
+  "kpOld": "ಕೆ.ಪಿ. ಓಲ್ಡ್",
+  "raman": "ರಾಮನ್",
+  "kpKhullar": "ಕೆ.ಪಿ. ಖುಲ್ಲರ್",
+  "subtotal": "ಉಪಮೊತ್ತ",
+  "youSave": "ನೀವು ಉಳಿಸಿ",
+  "total": "ಒಟ್ಟು",
+  "deliveryAddress": "ತಲುಪಿಸುವ ವಿಳಾಸ",
+  "orderSummary": "ಆರ್ಡರ್ ಸಾರಾಂಶ",
+  "couponsOffers": "ಕೂಪನ್‌ಗಳು ಮತ್ತು ಕೊಡುಗೆಗಳು",
+  "billDetails": "ಬಿಲ್ ವಿವರಗಳು",
+  "address": "ವಿಳಾಸ",
+  "productDiscount": "ಉತ್ಪನ್ನ ರಿಯಾಯಿತಿ",
+  "itemsSubtotal": "ಐಟಂಗಳ ಉಪಮೊತ್ತ",
+  "delivery": "ವಿತರಣೆ",
+  "free2": "ಉಚಿತ",
+  "toPay": "ಪಾವತಿಸಲು",
+  "dMmmYyyyHMmA": "d ತಿಮ್ಮಮ್ಮ ವವವವ, ಗಂ:ತಿಮ್ಮ a",
+  "couldNotDownloadInvoice": "ಇನ್‌ವಾಯ್ಸ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+  "orderNotFound": "ಆರ್ಡರ್ ಕಂಡುಬಂದಿಲ್ಲ.",
+  "activityTimeline": "ಚಟುವಟಿಕೆಯ ಕಾಲರೇಖೆ",
+  "eeeDMmmYyyyHMm": "EEE, d MMM ವವವ · ಗಂ:ನಿಮಿ a",
+  "totalPaid": "ಒಟ್ಟು ಪಾವತಿಸಲಾಗಿದೆ",
+  "orderPlaced2": "ಆರ್ಡರ್ ಮಾಡಲಾಗಿದೆ",
+  "dMmmHMmA": "d MMM, ಗಂ:mm a",
+  "generating": "ಉತ್ಪಾದಿಸಲಾಗುತ್ತಿದೆ...",
+  "pleaseDescribeTheIssue": "ದಯವಿಟ್ಟು ಸಮಸ್ಯೆಯನ್ನು ವಿವರಿಸಿ.",
+  "couldNotLoadProducts": "ಉತ್ಪನ್ನಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "newest": "ಹೊಸತು",
+  "priceLowHigh": "ಬೆಲೆ: ಕಡಿಮೆ → ಹೆಚ್ಚು",
+  "priceHighLow": "ಬೆಲೆ: ಹೆಚ್ಚು → ಕಡಿಮೆ",
+  "topRated": "ಅತ್ಯುತ್ತಮ ರೇಟಿಂಗ್ ಪಡೆದಿರುವುದು",
+  "s6DigitPin": "6-ಅಂಕಿಯ ಪಿನ್",
+  "addressLine1": "ವಿಳಾಸ ಸಾಲು 1 *",
+  "addressLine2": "ವಿಳಾಸ ಸಾಲು 2",
+  "city": "ನಗರ *",
+  "state": "ರಾಜ್ಯ *",
+  "pinCode": "ಪಿನ್ ಕೋಡ್ *",
+  "payment": "ಪಾವತಿ",
+  "pooja": "ಪೂಜಾ",
+  "shop": "ಅಂಗಡಿ",
+  "securePayment": "ಸುರಕ್ಷಿತ ಪಾವತಿ",
+  "noTransactionsMatchTheseFilters": "ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಯಾವುದೇ ವಹಿವಾಟುಗಳಿಲ್ಲ.",
+  "noTransactionsYet": "ಇನ್ನೂ ಯಾವುದೇ ವಹಿವಾಟುಗಳಿಲ್ಲ",
+  "moneyAdded": "ಹಣ ಸೇರಿಸಲಾಗಿದೆ",
+  "poojaBooking": "ಪೂಜಾ ಬುಕಿಂಗ್",
+  "videoCall": "ವೀಡಿಯೊ ಕರೆ",
+  "shopOrder": "ಅಂಗಡಿ ಆದೇಶ",
+  "refund": "ಮರುಪಾವತಿ",
+  "bonus": "ಬೋನಸ್",
+  "credited": "ಕ್ರೆಡಿಟ್ ಮಾಡಲಾಗಿದೆ",
+  "debited": "ಡೆಬಿಟ್ ಮಾಡಲಾಗಿದೆ",
+  "rg": "ಅ",
+  "aExperienceyearsYrsExp": "{experienceYears} ವರ್ಷಗಳ ಅವಧಿ",
+  "@aExperienceyearsYrsExp": {
+    "placeholders": {
+      "experienceYears": {
+        "type": "Object"
+      }
+    }
+  },
+  "weLlLetYouKnowWhen2": "{name} {reason} ಆದಾಗ ನಾವು ನಿಮಗೆ ತಿಳಿಸುತ್ತೇವೆ.",
+  "@weLlLetYouKnowWhen2": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "reason": {
+        "type": "Object"
+      }
+    }
+  },
+  "priceMin": "₹{price}/ನಿಮಿಷ",
+  "@priceMin": {
+    "placeholders": {
+      "price": {
+        "type": "Object"
+      }
+    }
+  },
+  "n1000000Tostringasfixed1M": "{toStringAsFixed}ಮಿ",
+  "@n1000000Tostringasfixed1M": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "n1000Tostringasfixed1K": "{toStringAsFixed}ಸಾ",
+  "@n1000Tostringasfixed1K": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "nameIsATrustedAstrologerWith": "{name} ಅವರು {desc} ನಲ್ಲಿ ಆಳವಾದ ಪರಿಣತಿಯನ್ನು ಹೊಂದಿರುವ ವಿಶ್ವಾಸಾರ್ಹ ಜ್ಯೋತಿಷಿ. ವೇದಿಕೆಯಲ್ಲಿ ವರ್ಷಗಳ ಅಭ್ಯಾಸದಿಂದ,",
+  "@nameIsATrustedAstrologerWith": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "desc": {
+        "type": "Object"
+      }
+    }
+  },
+  "chatMin": "₹{chat}/ನಿಮಿಷ",
+  "@chatMin": {
+    "placeholders": {
+      "chat": {
+        "type": "Object"
+      }
+    }
+  },
+  "callMin": "₹{call}/ನಿಮಿಷ",
+  "@callMin": {
+    "placeholders": {
+      "call": {
+        "type": "Object"
+      }
+    }
+  },
+  "videoMin": "₹{video}/ನಿಮಿಷ",
+  "@videoMin": {
+    "placeholders": {
+      "video": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsLive": "{name} ಲೈವ್ ಆಗಿದೆ",
+  "@widgetNameIsLive": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsInASession": "{name} ಇದೀಗ ಸೆಷನ್‌ನಲ್ಲಿದೆ.",
+  "@widgetNameIsInASession": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsOfflineRightNow": "{name} ಇದೀಗ ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿದೆ.",
+  "@widgetNameIsOfflineRightNow": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "storeFollowers1000Tostringasfixed1K": "{toStringAsFixed}ಸಾ",
+  "@storeFollowers1000Tostringasfixed1K": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "maxPriceMaxpriceRoundMin": "ಗರಿಷ್ಠ ಬೆಲೆ · ₹{round}/ನಿಮಿಷ",
+  "@maxPriceMaxpriceRoundMin": {
+    "placeholders": {
+      "round": {
+        "type": "Object"
+      }
+    }
+  },
+  "sendTotalTokens": "ಕಳುಹಿಸಿ · {total} ಟೋಕನ್‌ಗಳು",
+  "@sendTotalTokens": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "sTypeTouppercaseLive": "{toUpperCase} · ಲೈವ್",
+  "@sTypeTouppercaseLive": {
+    "placeholders": {
+      "toUpperCase": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetAstrologernameChatHistory": "{astrologerName} · ಚಾಟ್ ಇತಿಹಾಸ",
+  "@widgetAstrologernameChatHistory": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyAtRTimeofdayFor14": "ಪ್ರತಿದಿನ {timeOfDay} ಕ್ಕೆ · 14 ದಿನಗಳವರೆಗೆ",
+  "@dailyAtRTimeofdayFor14": {
+    "placeholders": {
+      "timeOfDay": {
+        "type": "Object"
+      }
+    }
+  },
+  "onRDate": "{date} ರಂದು",
+  "@onRDate": {
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "durSDurationsecSTotalamountCoins": "{durationSec} · {totalAmount} ನಾಣ್ಯಗಳು",
+  "@durSDurationsecSTotalamountCoins": {
+    "placeholders": {
+      "durationSec": {
+        "type": "Object"
+      },
+      "totalAmount": {
+        "type": "Object"
+      }
+    }
+  },
+  "aboutMinutesleftMinLeft": "ಸುಮಾರು {minutesLeft} ನಿಮಿಷ ಉಳಿದಿದೆ",
+  "@aboutMinutesleftMinLeft": {
+    "placeholders": {
+      "minutesLeft": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyPermissionPerm": "[ಹತ್ತಿರ] ಅನುಮತಿ = {perm}",
+  "@nearbyPermissionPerm": {
+    "placeholders": {
+      "perm": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyGetcurrentpositionFailedETryingLast": "[ಹತ್ತಿರದಲ್ಲಿ] getCurrentPosition ವಿಫಲವಾಗಿದೆ: {e} — ಕೊನೆಯದಾಗಿ ತಿಳಿದಿರುವ ಪ್ರಯತ್ನ",
+  "@nearbyGetcurrentpositionFailedETryingLast": {
+    "placeholders": {
+      "e": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyPositionPosLatitudePosLongitude": "[ಹತ್ತಿರದ] ಸ್ಥಾನ = {latitude}, {longitude}",
+  "@nearbyPositionPosLatitudePosLongitude": {
+    "placeholders": {
+      "latitude": {
+        "type": "Object"
+      },
+      "longitude": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyReversegeocodeCityCity": "[ಹತ್ತಿರ] ರಿವರ್ಸ್ ಜಿಯೋಕೋಡ್ ನಗರ = \"{city}\"",
+  "@nearbyReversegeocodeCityCity": {
+    "placeholders": {
+      "city": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyResolveErrorE": "[ಹತ್ತಿರದಲ್ಲಿ] ಪರಿಹಾರ ದೋಷ: {e}",
+  "@nearbyResolveErrorE": {
+    "placeholders": {
+      "e": {
+        "type": "Object"
+      }
+    }
+  },
+  "resumeSessionClock": "ರೆಸ್ಯೂಮ್ · {clock}",
+  "@resumeSessionClock": {
+    "placeholders": {
+      "clock": {
+        "type": "Object"
+      }
+    }
+  },
+  "rateperminMin": "₹{ratePerMin}/ನಿಮಿಷ",
+  "@rateperminMin": {
+    "placeholders": {
+      "ratePerMin": {
+        "type": "Object"
+      }
+    }
+  },
+  "checkYourConnectionAndTryAgain": "ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.\n({error})",
+  "@checkYourConnectionAndTryAgain": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffInminutesMAgo": "{inMinutes}ನಿ ಹಿಂದೆ",
+  "@diffInminutesMAgo": {
+    "placeholders": {
+      "inMinutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffInhoursHAgo": "{inHours}ಗಂ ಹಿಂದೆ",
+  "@diffInhoursHAgo": {
+    "placeholders": {
+      "inHours": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffIndaysDAgo": "{inDays}ದಿ ಹಿಂದೆ",
+  "@diffIndaysDAgo": {
+    "placeholders": {
+      "inDays": {
+        "type": "Object"
+      }
+    }
+  },
+  "thisPoojaCostsWidgetPoojaBaseprice": "ಈ ಪೂಜೆಗೆ ₹{basePrice} ವೆಚ್ಚವಾಗುತ್ತದೆ. ನಿಮ್ಮ ವ್ಯಾಲೆಟ್‌ನಲ್ಲಿ ಸಾಕಷ್ಟು ಬ್ಯಾಲೆನ್ಸ್ ಇಲ್ಲ — ಹಣವನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "@thisPoojaCostsWidgetPoojaBaseprice": {
+    "placeholders": {
+      "basePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "payWidgetPoojaBasepriceBook": "₹{basePrice} ಪಾವತಿಸಿ ಬುಕ್ ಮಾಡಿ",
+  "@payWidgetPoojaBasepriceBook": {
+    "placeholders": {
+      "basePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "upToPMaxpersons": "{maxPersons} ವರೆಗೆ",
+  "@upToPMaxpersons": {
+    "placeholders": {
+      "maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "aSacredPNamePerformedBy": "ಅನುಭವಿ ಪಂಡಿತರು ನಿರ್ವಹಿಸುವ ಪವಿತ್ರ {name}. ಸ್ಲಾಟ್ ಬುಕ್ ಮಾಡಿ, ನಮ್ಮ ತಂಡವು ವಿವರಗಳು ಮತ್ತು ಸಮಯವನ್ನು ಸಂಯೋಜಿಸಲು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+  "@aSacredPNamePerformedBy": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "upToPoojaMaxpersons": "{maxPersons} ವರೆಗೆ",
+  "@upToPoojaMaxpersons": {
+    "placeholders": {
+      "maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "earnIRewardOnRudraganga": "{appName} ನಲ್ಲಿ ₹{reward} ಗಳಿಸಿ",
+  "@earnIRewardOnRudraganga": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      },
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "bothEarnIReward": "ಇಬ್ಬರೂ ₹{reward} ಗಳಿಸುತ್ತಾರೆ",
+  "@bothEarnIReward": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "onTheirFirstWalletRechargeYou": "ಅವರ ಮೊದಲ ವ್ಯಾಲೆಟ್ ರೀಚಾರ್ಜ್‌ನಲ್ಲಿ, ನೀವಿಬ್ಬರೂ ತಕ್ಷಣ ₹{reward} ಪಡೆಯುತ್ತೀರಿ.",
+  "@onTheirFirstWalletRechargeYou": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "rechargeTotalBalance": "₹{balance} ರೀಚಾರ್ಜ್ ಮಾಡಿ",
+  "@rechargeTotalBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "itemTotalMrpQtycount": "ಒಟ್ಟು ಐಟಂ (MRP) · {qtyCount}",
+  "@itemTotalMrpQtycount": {
+    "placeholders": {
+      "qtyCount": {
+        "type": "Object"
+      }
+    }
+  },
+  "couponAppliedCode": "ಕೂಪನ್ ({code})",
+  "@couponAppliedCode": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      }
+    }
+  },
+  "placeOrderTotal": "ಪ್ಲೇಸ್ ಆರ್ಡರ್ · ₹{total}",
+  "@placeOrderTotal": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "pPriceWasPMrp": "₹{price} (₹{mrp} ಆಗಿತ್ತು)",
+  "@pPriceWasPMrp": {
+    "placeholders": {
+      "price": {
+        "type": "Object"
+      },
+      "mrp": {
+        "type": "Object"
+      }
+    }
+  },
+  "pNamePricelineUrl": "{name} â {priceLine}\n{url}",
+  "@pNamePricelineUrl": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "priceLine": {
+        "type": "Object"
+      },
+      "url": {
+        "type": "Object"
+      }
+    }
+  },
+  "ytWebviewErrorEErrorcodeE": "YT ವೆಬ್‌ವೀಕ್ಷಣೆ ದೋಷ: {errorCode} {description}",
+  "@ytWebviewErrorEErrorcodeE": {
+    "placeholders": {
+      "errorCode": {
+        "type": "Object"
+      },
+      "description": {
+        "type": "Object"
+      }
+    }
+  },
+  "rgpayHttpErrorEResponseStatuscode": "RGPAY http ದೋಷ: {statusCode}",
+  "@rgpayHttpErrorEResponseStatuscode": {
+    "placeholders": {
+      "statusCode": {
+        "type": "Object"
+      }
+    }
+  },
+  "rgpayResourceErrorEErrorcodeE": "RGPAY ಸಂಪನ್ಮೂಲ ದೋಷ: {errorCode} {description}",
+  "@rgpayResourceErrorEErrorcodeE": {
+    "placeholders": {
+      "errorCode": {
+        "type": "Object"
+      },
+      "description": {
+        "type": "Object"
+      }
+    }
+  }
+}

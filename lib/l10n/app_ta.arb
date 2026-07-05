@@ -1,0 +1,1694 @@
+{
+  "@@locale": "ta",
+  "appName": "ஆஸ்ட்ரோ செயலி",
+  "tagline": "ஜோதிடம் மற்றும் நல்வாழ்வு",
+  "splashBlessing": "தெளிவை நோக்கிய உங்கள் பயணம் இங்கிருந்து தொடங்குகிறது.",
+  "authWelcomeTitle": "வரவேற்கிறோம்",
+  "authWelcomeSubtitle": "உங்கள் தொலைபேசி எண்ணைப் பயன்படுத்தி உள்நுழையுங்கள் அல்லது உங்கள் கணக்கை உருவாக்குங்கள்.",
+  "phoneLabel": "தொலைபேசி எண்",
+  "phoneHint": "10 இலக்க மொபைல் எண்",
+  "phoneCountryCode": "+91",
+  "continueButton": "தொடரவும்",
+  "sendOtpButton": "OTP அனுப்பு",
+  "otpTitle": "உங்கள் எண்ணைச் சரிபார்க்கவும்",
+  "otpSubtitle": "{phone} க்கு அனுப்பப்பட்ட 6-இலக்க குறியீட்டை உள்ளிடவும்",
+  "@otpSubtitle": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "otpLabel": "OTP",
+  "verifyButton": "சரிபார்த்துத் தொடரவும்",
+  "resendOtp": "மீண்டும் அனுப்பும் குறியீடு",
+  "resendOtpIn": "{seconds} வினாடிகளில் மீண்டும் அனுப்பவும்",
+  "@resendOtpIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "changeNumber": "எண்ணை மாற்றவும்",
+  "termsNotice": "தொடர்வதன் மூலம் எங்கள் விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கையை நீங்கள் ஏற்றுக்கொள்கிறீர்கள்.",
+  "acceptPrefix": "நான் ஒப்புக்கொள்கிறேன்",
+  "acceptAnd": "மற்றும்",
+  "termsOfService": "சேவை விதிமுறைகள்",
+  "privacyPolicy": "தனியுரிமைக் கொள்கை",
+  "errInvalidPhone": "சரியான 10 இலக்க தொலைபேசி எண்ணை உள்ளிடவும்",
+  "errInvalidOtp": "6 இலக்கக் குறியீட்டை உள்ளிடவும்",
+  "errGeneric": "ஏதோ தவறு நிகழ்ந்துவிட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.",
+  "errNetwork": "இணைப்பு இல்லை. உங்கள் இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.",
+  "otpSent": "OTP அனுப்பப்பட்டது",
+  "loginSuccess": "உள்நுழைந்தார்",
+  "settings": "அமைப்புகள்",
+  "language": "மொழி",
+  "theme": "தீம்",
+  "themeSystem": "அமைப்பு",
+  "themeLight": "ஒளி",
+  "themeDark": "இருள்",
+  "homeWelcome": "நமஸ்காரம், {name}",
+  "@homeWelcome": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "logout": "வெளியேறு",
+  "onbTitle": "உங்களைப் பற்றி எங்களிடம் கூறுங்கள்",
+  "onbSubtitle": "இது உங்கள் வாசிப்புகளைத் தனிப்பயனாக்க எங்களுக்கு உதவுகிறது. இவற்றில் எதுவும் கட்டாயமில்லை — நீங்கள் இதைத் தவிர்த்துவிட்டுப் பின்னர் முடிக்கலாம்.",
+  "onbName": "உங்கள் பெயர்",
+  "onbAddPhoto": "புகைப்படத்தைச் சேர்க்கவும்",
+  "onbChangePhoto": "புகைப்படத்தை மாற்றவும்",
+  "onbGender": "பாலினம்",
+  "genderMale": "ஆண்",
+  "genderFemale": "திருமணம்",
+  "genderOther": "மற்றவை",
+  "onbDob": "பிறந்த தேதி",
+  "onbTob": "பிறந்த நேரம்",
+  "onbDontKnowTime": "என் பிறந்த நேரம் எனக்குத் தெரியாது.",
+  "onbPob": "பிறந்த இடம்",
+  "onbPobHint": "உங்கள் பிறந்த நகரத்தைத் தேடுங்கள்",
+  "onbLanguage": "விருப்பமான மொழி",
+  "onbSelectDate": "தேதியைத் தேர்ந்தெடுக்கவும்",
+  "onbSelectTime": "நேரத்தைத் தேர்ந்தெடுக்கவும்",
+  "onbSkip": "இப்போதைக்கு தவிர்க்கவும்",
+  "onbFinish": "முடிவு",
+  "onbSaved": "சுயவிவரம் மதிப்பிடப்பட்டது",
+  "completeProfile": "உங்கள் சுயவிவரத்தை முழுமையாக்குங்கள்",
+  "completeProfileCta": "அமைப்பை முடிக்கவும்",
+  "permTitle": "சில அனுமதிகள்",
+  "permSubtitle": "அழைப்புகள், அறிவிப்புகள் மற்றும் புகைப்படங்கள் தடையின்றி செயல்பட இவை தேவைப்படுகின்றன. நீங்கள் அமைப்புகளில் இவற்றை எப்போது வேண்டுமானாலும் மாற்றிக்கொள்ளலாம்.",
+  "permNotifications": "அறிவிப்புகள்",
+  "permNotificationsDesc": "ஆலோசனை அறிவிப்புகள், ஆர்டர் புதுப்பிப்புகள் மற்றும் நினைவூட்டல்கள்",
+  "permMic": "மைக்ரோஃபோன்",
+  "permMicDesc": "ஜோதிடர்களுடனான குரல் அழைப்புகளுக்கு",
+  "permCamera": "கேமரா",
+  "permCameraDesc": "வீடியோ அழைப்புகள் மற்றும் புகைப்படங்களைப் பதிவேற்றுவதற்கு",
+  "permPhotos": "புகைப்படங்கள்",
+  "permPhotosDesc": "உங்கள் சுயவிவரப் படத்தை அமைக்க",
+  "permAllow": "அணுகலை அனுமதிக்கவும்",
+  "permContinue": "தொடரவும்",
+  "permLocation": "இடம்",
+  "permLocationDesc": "உங்களுக்கு அருகிலுள்ள ஜோதிடர்களைக் கண்டறியுங்கள்",
+  "secFeatured": "சிறப்பு ஜோதிடர்கள்",
+  "secNearby": "அருகிலுள்ள ஜோதிடர்கள்",
+  "secCallChat": "அழைத்து உரையாடுங்கள்",
+  "secAiAstro": "AI ஜோதிடர்கள்",
+  "secProducts": "தயாரிப்புகள்",
+  "secVideos": "வீடியோக்கள்",
+  "secLessons": "ஜோதிடப் பாடங்கள்",
+  "secOthers": "மற்றவர்கள்",
+  "secHistory": "உங்கள் ஆலோசனைகள்",
+  "seeAll": "அனைத்தையும் காண்க",
+  "basedOnLocation": "உங்கள் இருப்பிடத்தின் அடிப்படையில்",
+  "shareApp": "நண்பர்களுடன் செயலியைப் பகிரவும்",
+  "startReadingHint": "இன்னும் கலந்தாய்வுகள் இல்லை. உங்கள் முதல் வாசிப்பைத் தொடங்குங்கள்.",
+  "startBtn": "தொடங்கு",
+  "namaste": "நமஸ்காரம்",
+  "kFreeKundli": "இலவச குண்டலி",
+  "kMatching": "பொருத்தம்",
+  "kBrihat": "பிருஹத் குண்டலி",
+  "kKundliAi": "குண்டலி AI+",
+  "tCareer": "தொழில்",
+  "tMarriage": "திருமணம்",
+  "tFinance": "நிதி",
+  "tHealth": "ஆரோக்கியம்",
+  "tEducation": "கல்வி",
+  "tTravel": "பயணம்",
+  "statusOnline": "ஆன்லைன்",
+  "statusBusy": "பிஸியாக",
+  "statusOffline": "ஆஃப்லைன்",
+  "retry": "மீண்டும் முயற்சி",
+  "chatNow": "இப்போது அரட்டையடிக்கவும்",
+  "notifyMe": "எனக்குத் தெரிவிக்கவும்",
+  "weLlLetYouKnowWhen": "{name}, {reason} ஆகும்போது உங்களுக்குத் தெரிவிப்போம்.",
+  "@weLlLetYouKnowWhen": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "reason": {
+        "type": "Object"
+      }
+    }
+  },
+  "thisAstrologerIsNotAvailableTo": "இந்த ஜோதிடரை இன்னும் கலந்தாலோசிக்க முடியாது.",
+  "youNeedAtLeastRateperminFor": "உங்களுக்கு ஒரு நிமிடத்திற்கு குறைந்தபட்சம் ₹{ratePerMin} தேவை. தயவுசெய்து ரீசார்ஜ் செய்யவும்.",
+  "@youNeedAtLeastRateperminFor": {
+    "placeholders": {
+      "ratePerMin": {
+        "type": "Object"
+      }
+    }
+  },
+  "completeYourProfile": "உங்கள் சுயவிவரத்தை முழுமையாக்குங்கள்",
+  "addYourDateTimePlaceOf": "ஜோதிடர் உங்களுக்கு மேலும் தெளிவான பலனை அளிக்க, உங்கள் பிறந்த தேதி, நேரம் மற்றும் இடத்தைக் குறிப்பிடவும்.",
+  "completeProfile2": "முழுமையான சுயவிவரம்",
+  "skipForNow": "இப்போதைக்கு தவிர்க்கவும்",
+  "unfollowWidgetName": "பின்தொடர்வதை நிறுத்தவா {name}?",
+  "@unfollowWidgetName": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "tellUsWhyOptionalItHelps": "காரணத்தைக் கூறுங்கள் (விருப்பப்பட்டால்) — அது எங்களை மேம்படுத்த உதவும்.",
+  "reasonOptional": "காரணம் (விருப்பத்திற்குரியது)",
+  "cancel": "ரத்துசெய்",
+  "unfollow": "பின்தொடர்வதை நிறுத்து",
+  "s21kReviews": "(2.1k மதிப்புரைகள்)",
+  "followersFollowers": "{followers} பின்தொடர்பவர்கள்",
+  "@followersFollowers": {
+    "placeholders": {
+      "followers": {
+        "type": "Object"
+      }
+    }
+  },
+  "gift": "பரிசு",
+  "store": "கடை",
+  "joinLiveSession": "நேரலை அமர்வில் இணையுங்கள்",
+  "youLlBeNotified": "உங்களுக்கு அறிவிக்கப்படும்",
+  "thisStoreHasNoItemsYet": "இந்தக் கடையில் இன்னும் பொருட்கள் எதுவும் இல்லை.",
+  "filters": "வடிப்பான்கள்",
+  "reset": "மீட்டமை",
+  "onlineNowOnly": "இப்போது ஆன்லைனில் மட்டும்",
+  "applyFilters": "வடிப்பான்களைப் பயன்படுத்துங்கள்",
+  "giftingUnavailableForThisAstrologer": "இந்த ஜோதிடருக்குப் பரிசளிக்கும் வசதி இல்லை.",
+  "needTotalcostYourBalanceIsWallet": "தேவை ₹{totalCost} — உங்கள் இருப்பு ₹{balance}. தயவுசெய்து ரீசார்ஜ் செய்யவும்.",
+  "@needTotalcostYourBalanceIsWallet": {
+    "placeholders": {
+      "totalCost": {
+        "type": "Object"
+      },
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "sentQtyGiftNameToWidget": "{_qty} {name} இலிருந்து {astrologerName} க்கு அனுப்பப்பட்டது 🎁",
+  "@sentQtyGiftNameToWidget": {
+    "placeholders": {
+      "_qty": {
+        "type": "Object"
+      },
+      "name": {
+        "type": "Object"
+      },
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "sendAGiftToWidgetAstrologername": "{astrologerName} க்கு ஒரு பரிசை அனுப்பவும்",
+  "@sendAGiftToWidgetAstrologername": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "balanceContextWatchWalletproviderBalance": "இருப்பு: ₹{balance}",
+  "@balanceContextWatchWalletproviderBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "recharge": "ரீசார்ஜ்",
+  "gTokencostTk": "{tokenCost} tk",
+  "@gTokencostTk": {
+    "placeholders": {
+      "tokenCost": {
+        "type": "Object"
+      }
+    }
+  },
+  "quantity": "அளவு",
+  "min1Max100": "குறைந்தபட்சம் 1 · அதிகபட்சம் 100",
+  "comingSoon": "விரைவில் வருகிறது",
+  "summaryFromAstrologername": "{astrologerName} இலிருந்து சுருக்கம்",
+  "@summaryFromAstrologername": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "remindersSetForYou": "உங்களுக்காக அமைக்கப்பட்ட நினைவூட்டல்கள்",
+  "suggestedForYou": "உங்களுக்காகப் பரிந்துரைக்கப்பட்டது",
+  "couldNotSendImage": "படத்தை அனுப்ப முடியவில்லை",
+  "endConsultation": "ஆலோசனையை முடிக்கவா?",
+  "thisWillEndTheChatAnd": "இது உரையாடலை முடித்து, கட்டணம் வசூலிப்பதையும் நிறுத்திவிடும்.",
+  "keepChatting": "தொடர்ந்து உரையாடுங்கள்",
+  "end": "முடிவு",
+  "switchToType0TouppercaseType": "{toUpperCase}{substring} க்கு மாறவா?",
+  "@switchToType0TouppercaseType": {
+    "placeholders": {
+      "toUpperCase": {
+        "type": "Object"
+      },
+      "substring": {
+        "type": "Object"
+      }
+    }
+  },
+  "yourChatWillEndAndA": "உங்கள் உரையாடல் முடிவடைந்து, புதிய {type} கலந்தாய்வு {type2} கட்டணத்தில் தொடங்கும்.",
+  "@yourChatWillEndAndA": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      },
+      "type2": {
+        "type": "Object"
+      }
+    }
+  },
+  "switchLabel": "சுவிட்ச்",
+  "couldNotSwitchETostring": "மாற்ற முடியவில்லை: {toString}",
+  "@couldNotSwitchETostring": {
+    "placeholders": {
+      "toString": {
+        "type": "Object"
+      }
+    }
+  },
+  "switchToAudioCall": "ஆடியோ அழைப்பிற்கு மாறவும்",
+  "switchToVideoCall": "வீடியோ அழைப்பிற்கு மாறவும்",
+  "endConsultation2": "ஆலோசனையை முடிக்கவும்",
+  "sendAGift": "பரிசு அனுப்புங்கள்",
+  "sayHello": "வணக்கம் சொல்லுங்கள் 🙏",
+  "typeAMessage": "ஒரு செய்தியைத் தட்டச்சு செய்யவும்…",
+  "recommendedProduct": "பரிந்துரைக்கப்பட்ட தயாரிப்பு",
+  "view": "பார்வை",
+  "connecting": "இணைக்கிறது…",
+  "myConsultations": "எனது ஆலோசனைகள்",
+  "noConsultationsYet": "இன்னும் ஆலோசனைகள் எதுவும் இல்லை",
+  "typelabelSTypeConsultation": "{type} ஆலோசனை",
+  "@typelabelSTypeConsultation": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "viewChat": "அரட்டையைக் காண்க",
+  "historyExpired": "வரலாறு காலாவதியானது",
+  "connectingYourSTypeConsultation": "உங்கள் {type} ஆலோசனையை இணைக்கிறது…",
+  "@connectingYourSTypeConsultation": {
+    "placeholders": {
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "ringingTheAstrologer": "ஜோதிடரை அழைப்பது",
+  "cancelRequest": "கோரிக்கையை ரத்துசெய்",
+  "notNow": "இப்போது இல்லை",
+  "thanksForYourFeedback": "உங்கள் கருத்துகளுக்கு நன்றி!",
+  "couldNotSubmitPleaseTryAgain": "சமர்ப்பிக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+  "consultationEnded": "ஆலோசனை நிறைவடைந்தது",
+  "hopeYouGotTheClarityYou": "நீங்கள் தேடிய தெளிவு கிடைத்திருக்கும் என நம்புகிறேன்.",
+  "shareYourExperienceOptional": "உங்கள் அனுபவத்தைப் பகிரவும் (விருப்பப்பட்டால்)",
+  "howWasTheCallQuality": "அழைப்பின் தரம் எப்படி இருந்தது?",
+  "skip": "தவிர்க்கவும்",
+  "submit": "சமர்ப்பிக்கவும்",
+  "close": "அருகில்",
+  "viewProfile": "சுயவிவரத்தைப் பார்க்கவும்",
+  "vAppversion": "v{_appVersion}",
+  "@vAppversion": {
+    "placeholders": {
+      "_appVersion": {
+        "type": "Object"
+      }
+    }
+  },
+  "madeBy": "உருவாக்கியவர்",
+  "devifai": "டெவிஃபை",
+  "withLabel": "அன்புடன் ❤️",
+  "leavingSoSoon": "இவ்வளவு சீக்கிரமாகப் புறப்படுகிறீர்களா?",
+  "stayLoggedIn": "உள்நுழைந்தே இருங்கள்",
+  "logOutAnyway": "இருப்பினும் வெளியேறவும்",
+  "noNearbyAstrologersYet": "இன்னும் அருகில் ஜோதிடர்கள் இல்லை",
+  "bookAPooja": "பூஜை முன்பதிவு செய்யுங்கள்",
+  "panditLedPoojasAtYourChosen": "நீங்கள் தேர்ந்தெடுத்த தேதியில் பண்டிதர் நடத்தும் பூஜைகள்",
+  "back": "திரும்பி",
+  "connectingToLive": "நேரலையுடன் இணைதல்…",
+  "live": "நேரலை",
+  "thisLiveHasEnded": "இந்த நேரலை முடிந்துவிட்டது.",
+  "backToLive": "மீண்டும் நேரலைக்கு",
+  "sayHelloBeTheFirstTo": "வணக்கம் சொல்லுங்கள் 👋 முதல் ஆளாகக் கருத்து தெரிவியுங்கள்",
+  "aiPollLive": "AI வாக்கெடுப்பு · நேரலை",
+  "totalVotes": "{total} வாக்குகள்",
+  "@totalVotes": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "addAComment": "ஒரு கருத்தைச் சேர்க்கவும்…",
+  "send": "அனுப்பு",
+  "liveNow": "இப்போது நேரலையில்",
+  "searchByAstrologerName": "ஜோதிடர் பெயர் மூலம் தேடவும்",
+  "noLiveAstrologerNamedSearchText": "“{trim}” என்ற பெயரில் நேரலை ஜோதிடர் இல்லை",
+  "@noLiveAstrologerNamedSearchText": {
+    "placeholders": {
+      "trim": {
+        "type": "Object"
+      }
+    }
+  },
+  "refresh": "புதுப்பிக்கவும்",
+  "join": "சேருங்கள்",
+  "clearAllNotifications": "அனைத்து அறிவிப்புகளையும் நீக்கவா?",
+  "thisPermanentlyDeletesAllYourNotifications": "இது உங்கள் அறிவிப்புகள் அனைத்தையும் நிரந்தரமாக நீக்கிவிடும்.",
+  "clearAll": "அனைத்தையும் அழி",
+  "notifications": "அறிவிப்புகள்",
+  "markAllRead": "அனைத்தையும் படித்ததாகக் குறிக்கவும்",
+  "noNotifications": "அறிவிப்புகள் இல்லை",
+  "youReAllCaughtUp": "நீங்கள் அனைத்தையும் தெரிந்துகொண்டீர்கள்.",
+  "nameIsRequired": "பெயர் தேவை",
+  "enterAValidPhone": "சரியான தொலைபேசி எண்ணை உள்ளிடவும்",
+  "bookingConfirmed": "முன்பதிவு உறுதிசெய்யப்பட்டது 🎉",
+  "bookingFailedPleaseTryAgain": "முன்பதிவு தோல்வியடைந்தது, மீண்டும் முயற்சிக்கவும்.",
+  "addMoneyToContinue": "தொடர பணம் சேர்க்கவும்",
+  "addMoney": "பணத்தைச் சேர்க்கவும்",
+  "bookWidgetPoojaName": "புத்தகம் {name}",
+  "@bookWidgetPoojaName": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "name": "பெயர்",
+  "phone": "தொலைபேசி",
+  "addThePeopleThisPoojaIs": "இந்தப் பூஜை யாருக்காகச் செய்யப்படுகிறதோ அந்த நபர்களைச் சேர்க்கவும் ({_maxPersons} வரை). அடுத்தவரைச் சேர்ப்பதற்கு முன் ஒருவரை நிரப்பவும்.",
+  "@addThePeopleThisPoojaIs": {
+    "placeholders": {
+      "_maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "memberEKey1Name": "உறுப்பினர் {key} பெயர்",
+  "@memberEKey1Name": {
+    "placeholders": {
+      "key": {
+        "type": "Object"
+      }
+    }
+  },
+  "specialInstructionsOptional": "சிறப்பு அறிவுறுத்தல்கள் (விருப்பத்திற்குரியது)",
+  "poojaDetails": "பூஜை விவரங்கள்",
+  "price": "விலை",
+  "bookNow": "இப்போதே முன்பதிவு செய்யுங்கள்",
+  "aboutThisPooja": "இந்த பூஜை பற்றி",
+  "ourPanditWillCallYou": "எங்கள் பண்டிதர் உங்களை அழைப்பார்.",
+  "beforeThePoojaToConfirmThe": "பூஜைக்கு முன், நேரத்தையும் உங்கள் சங்கல்ப விவரங்களையும் உறுதிப்படுத்திக் கொள்ளுங்கள்.",
+  "howItWorks": "இது எப்படி வேலை செய்கிறது",
+  "filterPoojas": "பூஜைகளை வடிகட்டவும்",
+  "maxBudgetMaxpriceRound": "அதிகபட்ச பட்ஜெட் · ₹{round}",
+  "@maxBudgetMaxpriceRound": {
+    "placeholders": {
+      "round": {
+        "type": "Object"
+      }
+    }
+  },
+  "minPersonsSupported": "குறைந்தபட்ச நபர்கள் ஆதரிக்கப்பட்டனர்",
+  "apply": "விண்ணப்பிக்கவும்",
+  "searchPoojas": "பூஜைகளைத் தேடுங்கள்…",
+  "myProfile": "எனது சுயவிவரம்",
+  "referEarn": "பரிந்துரைத்து சம்பாதிக்கவும்",
+  "couldNotLoadTryAgain": "ஏற்ற முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+  "shareEarnIReward": "பகிர்ந்து ₹⟦0 சம்பாதியுங்கள்⟧",
+  "@shareEarnIReward": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "youGetIRewardOnYour": "உங்கள் நண்பரின் முதல் ரீசார்ஜில் உங்களுக்கு ₹{reward} கிடைக்கும் — அவருக்கும் ₹{reward2} கிடைக்கும்.",
+  "@youGetIRewardOnYour": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      },
+      "reward2": {
+        "type": "Object"
+      }
+    }
+  },
+  "yourReferralCode": "உங்கள் பரிந்துரைக் குறியீடு",
+  "codeCopied": "குறியீடு நகலெடுக்கப்பட்டது",
+  "shareEarn": "பகிர்ந்து சம்பாதியுங்கள்",
+  "haveAFriendSCode": "நண்பரின் குறியீடு உங்களிடம் உள்ளதா?",
+  "enterReferralCode": "பரிந்துரைக் குறியீட்டை உள்ளிடவும்",
+  "aReferralCodeIsAppliedTo": "உங்கள் கணக்கில் ஒரு பரிந்துரைக் குறியீடு சேர்க்கப்பட்டுள்ளது.",
+  "feedbackSubmitted": "கருத்து சமர்ப்பிக்கப்பட்டது",
+  "feedback": "பின்னூட்டம்",
+  "applicationSubmitted": "விண்ணப்பம் சமர்ப்பிக்கப்பட்டது",
+  "astrologerRegistration": "ஜோதிடர் பதிவு",
+  "joinRudragangaAsAnAstrologer": "{appName} இல் ஜோதிடராக இணையுங்கள்",
+  "@joinRudragangaAsAnAstrologer": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "tellUsAboutYourselfOurTeam": "உங்களைப் பற்றி எங்களிடம் கூறுங்கள் — எங்கள் குழு அதை மதிப்பாய்வு செய்து உங்களைத் தொடர்புகொள்ளும்.",
+  "aboutUs": "எங்களைப் பற்றி",
+  "rudraganga": "{appName}",
+  "@rudraganga": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "astrologyWellness": "ஜோதிடம் மற்றும் நல்வாழ்வு",
+  "v100MadeWithDevotion": "பதிப்பு 1.0.0 · அர்ப்பணிப்புடன் உருவாக்கப்பட்டது",
+  "thanksForYourRating": "உங்கள் மதிப்பீட்டிற்கு நன்றி!",
+  "rateRudraganga": "விகிதம் {appName}",
+  "@rateRudraganga": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "howIsYourExperience": "உங்கள் அனுபவம் எப்படி இருக்கிறது?",
+  "writeAReviewOptional": "விமர்சனம் எழுதுங்கள் (விருப்பப்பட்டால்)",
+  "saved": "சேமிக்கப்பட்டது",
+  "notificationSetting": "அறிவிப்பு அமைப்பு",
+  "howOften": "எவ்வளவு அடிக்கடி?",
+  "topicsYouCareAbout": "நீங்கள் விரும்பும் தலைப்புகள்",
+  "ok": "சரி",
+  "allSet": "எல்லாம் தயார் ✨",
+  "setPreferences": "விருப்பத்தேர்வுகளை அமைக்கவும்",
+  "save": "சேமிக்கவும்",
+  "bundlesCombos": "தொகுப்புகள் மற்றும் காம்போக்கள்",
+  "noCombosRightNow": "தற்போது காம்போக்கள் எதுவும் இல்லை",
+  "addComboBIBundleprice": "காம்போ சேர்க்கவும் · ₹{bundlePrice}",
+  "@addComboBIBundleprice": {
+    "placeholders": {
+      "bundlePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "cart": "வண்டி",
+  "clear": "தெளிவான",
+  "yourCartIsEmpty": "உங்கள் கூடை காலியாக உள்ளது",
+  "browseProductsAndAddThemHere": "பொருட்களைப் பார்த்து அவற்றை இங்கே சேர்க்கவும்.",
+  "walletBalanceAddTotalBalanceTo": "வாலட் ₹{balance} · செக் அவுட்டில் ₹{balance2} சேர்க்கவும்",
+  "@walletBalanceAddTotalBalanceTo": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      },
+      "balance2": {
+        "type": "Object"
+      }
+    }
+  },
+  "walletBalance": "வாலட்: ₹{balance}",
+  "@walletBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "couponTrimmedAppliedResDiscountOff": "கூப்பன் {trimmed} பயன்படுத்தப்பட்டது · ₹{discount} தள்ளுபடி",
+  "@couponTrimmedAppliedResDiscountOff": {
+    "placeholders": {
+      "trimmed": {
+        "type": "Object"
+      },
+      "discount": {
+        "type": "Object"
+      }
+    }
+  },
+  "pleaseAddADeliveryAddress": "தயவுசெய்து விநியோக முகவரியைச் சேர்க்கவும்.",
+  "checkout": "செக் அவுட்",
+  "addNewAddress": "புதிய முகவரியைச் சேர்க்கவும்",
+  "appliedCodeAppliedAppliedDiscountOff": "{code} பயன்படுத்தப்பட்டது · ₹{discount} தள்ளுபடி",
+  "@appliedCodeAppliedAppliedDiscountOff": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      },
+      "discount": {
+        "type": "Object"
+      }
+    }
+  },
+  "remove": "அகற்று",
+  "enterCouponCode": "கூப்பன் குறியீட்டை உள்ளிடவும்",
+  "viewAllCouponsLength": "அனைத்தையும் காண்க ({length})",
+  "@viewAllCouponsLength": {
+    "placeholders": {
+      "length": {
+        "type": "Object"
+      }
+    }
+  },
+  "availableOffers": "கிடைக்கக்கூடிய சலுகைகள்",
+  "minOrderCpMinordervalue": "குறைந்தபட்ச ஆர்டர் ₹{minOrderValue}",
+  "@minOrderCpMinordervalue": {
+    "placeholders": {
+      "minOrderValue": {
+        "type": "Object"
+      }
+    }
+  },
+  "applied": "பயன்படுத்தப்பட்ட",
+  "nothingToCheckout": "சரிபார்க்க எதுவும் இல்லை",
+  "orderPlaced": "ஆர்டர் செய்யப்பட்டது!",
+  "totalPaidFromYourWalletYour": "உங்கள் வாலட்டிலிருந்து ₹{total} செலுத்தப்பட்டது. உங்கள் ஆர்டர் உறுதிசெய்யப்பட்டுவிட்டது, விரைவில் அனுப்பப்படும்.",
+  "@totalPaidFromYourWalletYour": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "orderOrderidLength6OrderidSubstring": "ஆர்டர் எண் #{orderId}",
+  "@orderOrderidLength6OrderidSubstring": {
+    "placeholders": {
+      "orderId": {
+        "type": "Object"
+      }
+    }
+  },
+  "continueShopping": "தொடர்ந்து ஷாப்பிங் செய்யுங்கள்",
+  "yourOrders": "உங்கள் ஆர்டர்கள்",
+  "noOrdersYet": "இன்னும் ஆர்டர்கள் எதுவும் வரவில்லை",
+  "yourOrdersWillAppearHereOnce": "நீங்கள் கடையில் இருந்து ஏதேனும் வாங்கியவுடன், உங்கள் ஆர்டர்கள் இங்கே தோன்றும்.",
+  "invoiceIsStillBeingGeneratedTry": "விலைப்பட்டியல் இன்னும் உருவாக்கப்பட்டு வருகிறது. சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்.",
+  "couldNotOpenTheInvoice": "விலைப்பட்டியலைத் திறக்க முடியவில்லை",
+  "thanksOurTeamWillReachOut": "நன்றி! எங்கள் குழுவினர் இந்த ஆர்டர் குறித்து உங்களைத் தொடர்புகொள்வார்கள்.",
+  "orderDetails": "ஆர்டர் விவரங்கள்",
+  "needHelp": "உதவி தேவை",
+  "needHelpWithThisOrder": "இந்த ஆர்டர் தொடர்பாக உதவி தேவையா?",
+  "placedOnDate": "{date} இல் வைக்கப்பட்டது",
+  "@placedOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "invoice": "விலைப்பட்டியல்",
+  "download": "பதிவிறக்கம்",
+  "needHelp2": "உதவி தேவை",
+  "orderWidgetOrderno": "ஆர்டர் எண் #{orderNo}",
+  "@orderWidgetOrderno": {
+    "placeholders": {
+      "orderNo": {
+        "type": "Object"
+      }
+    }
+  },
+  "whatWentWrong": "என்ன தவறு நடந்தது?",
+  "describeTheIssue": "பிரச்சினையை விவரிக்கவும்",
+  "tellUsWhatHappenedSoWe": "என்ன நடந்தது என்று சொல்லுங்கள், நாங்கள் உதவ முடியும்...",
+  "submitRequest": "கோரிக்கையைச் சமர்ப்பிக்கவும்",
+  "addedToCart": "கூடையில் சேர்க்கப்பட்டது",
+  "productUnavailable": "பொருள் கிடைக்கவில்லை",
+  "pDiscountpercentOff": "{discountPercent}% தள்ளுபடி",
+  "@pDiscountpercentOff": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "pReviewcountReviews": "{reviewCount} மதிப்புரைகள்",
+  "@pReviewcountReviews": {
+    "placeholders": {
+      "reviewCount": {
+        "type": "Object"
+      }
+    }
+  },
+  "pDiscountpercentOff2": "{discountPercent}% தள்ளுபடி",
+  "@pDiscountpercentOff2": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "fewItemsLeft": "சில பொருட்கள் மட்டுமே மீதமுள்ளன",
+  "description": "விளக்கம்",
+  "frequentlyBoughtTogether": "அடிக்கடி ஒன்றாக வாங்கப்பட்டது",
+  "viewAll": "அனைத்தையும் காண்க",
+  "addToCart": "கூடையில் சேர்க்கவும்",
+  "buyNow": "இப்போதே வாங்குங்கள்",
+  "searchProducts": "தயாரிப்புகளைத் தேடுங்கள்…",
+  "noProductsFound": "பொருட்கள் எதுவும் காணப்படவில்லை",
+  "priceRange": "விலை வரம்பு (₹)",
+  "min": "மின்",
+  "max": "மேக்ஸ்",
+  "inStockOnly": "கையிருப்பில் மட்டுமே",
+  "sortBy": "வரிசைப்படுத்து",
+  "addDeliveryAddress": "விநியோக முகவரியைச் சேர்க்கவும்",
+  "setAsDefaultAddress": "இயல்புநிலை முகவரியாக அமைக்கவும்",
+  "saveAddress": "முகவரியைச் சேமிக்கவும்",
+  "codeCouponCode": "குறியீடு {code}",
+  "@codeCouponCode": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      }
+    }
+  },
+  "saveBundleYousave": "₹⟦0 சேமிக்கவும்",
+  "@saveBundleYousave": {
+    "placeholders": {
+      "youSave": {
+        "type": "Object"
+      }
+    }
+  },
+  "bundleProductsLengthItemsCombo": "{length} பொருட்களின் காம்போ",
+  "@bundleProductsLengthItemsCombo": {
+    "placeholders": {
+      "length": {
+        "type": "Object"
+      }
+    }
+  },
+  "bundleDiscountpercentOff": "{discountPercent}% தள்ளுபடி",
+  "@bundleDiscountpercentOff": {
+    "placeholders": {
+      "discountPercent": {
+        "type": "Object"
+      }
+    }
+  },
+  "fewLeft": "சிலரே எஞ்சியுள்ளனர்",
+  "savePSaveamount": "₹⟦0 சேமிக்கவும்",
+  "@savePSaveamount": {
+    "placeholders": {
+      "saveAmount": {
+        "type": "Object"
+      }
+    }
+  },
+  "freeDelivery": "இலவச டெலிவரி",
+  "searchWidgetTitleTolowercase": "தேடு {toLowerCase}…",
+  "@searchWidgetTitleTolowercase": {
+    "placeholders": {
+      "toLowerCase": {
+        "type": "Object"
+      }
+    }
+  },
+  "nothingHereYet": "இன்னும் இங்கே எதுவும் இல்லை.",
+  "loadingSecurePayment": "பாதுகாப்பான கட்டணம் ஏற்றப்படுகிறது…",
+  "couldNotStartRecharge": "ரீசார்ஜ் தொடங்க முடியவில்லை",
+  "paymentSuccessful": "பணம் செலுத்துதல் வெற்றிகரமாக முடிந்தது 🎉",
+  "paymentWasNotCompleted": "பணம் செலுத்துதல் நிறைவடையவில்லை",
+  "couldNotStartRechargeTryAgain": "மீள்நிரப்பலைத் தொடங்க முடியவில்லை, மீண்டும் முயற்சிக்கவும்.",
+  "wallet": "பணப்பை",
+  "availableBalance": "இருப்பு",
+  "useItForPoojasConsultations": "பூஜைகள் மற்றும் ஆலோசனைகளுக்கு இதைப் பயன்படுத்துங்கள்",
+  "instantTopUp": "தானிய டாப்-அப்",
+  "noRechargePacksAvailableRightNow": "தற்போது ரீசார்ஜ் பேக்குகள் எதுவும் கிடைக்கவில்லை.",
+  "transactions": "பரிவர்த்தனைகள்",
+  "endOfTransactions": "— பரிவர்த்தனைகளின் முடிவு —",
+  "youGet": "நீங்கள் பெறுவது",
+  "packBonusBonus": "+₹{bonus} போனஸ்",
+  "@packBonusBonus": {
+    "placeholders": {
+      "bonus": {
+        "type": "Object"
+      }
+    }
+  },
+  "payPackAmount": "₹⟦0 செலுத்தவும்",
+  "@payPackAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "rudra": "வானியல்",
+  "ganga": "செயலி",
+  "about": "பற்றி",
+  "astrologer": "ஜோதிடர்",
+  "seeker": "தேடுபவர்",
+  "free": "இலவசம்",
+  "jan": "ஜனவரி",
+  "feb": "டிசம்பர்",
+  "mar": "மார்",
+  "apr": "ஏப்ரல்",
+  "may": "மே",
+  "jun": "ஜூன்",
+  "jul": "ஜூலை",
+  "aug": "ஆகஸ்ட்",
+  "sep": "செப்டம்பர்",
+  "oct": "அக்டோபர்",
+  "nov": "நவம்பர்",
+  "dec": "டிசம்பர்",
+  "english": "ஆங்கிலம்",
+  "all": "அனைத்தும்",
+  "vedic": "வேத",
+  "tarot": "டாரட்",
+  "numerology": "எண் கணிதம்",
+  "vastu": "வாஸ்து",
+  "palmistry": "கைரேகை சாஸ்திரம்",
+  "kp": "கே.பி.",
+  "love": "காதல்",
+  "taraAi": "தாரா ஏஐ",
+  "instantVedicAnswers247": "உடனடி வேத பதில்கள் • 24×7",
+  "allLanguages": "அனைத்து மொழிகளும்",
+  "jyotiAi": "ஜோதி ஏஐ",
+  "loveCareerGuidance": "காதல் மற்றும் தொழில் வழிகாட்டுதல்",
+  "hindiEnglish": "ஹிந்தி, ஆங்கிலம்",
+  "veduAi": "வேடு ஏஐ",
+  "remediesPredictions": "பரிகாரங்கள் மற்றும் கணிப்புகள்",
+  "couldNotLoadAstrologers": "ஜோதிடர்களை ஏற்ற முடியவில்லை",
+  "aiAstrologers": "AI ஜோதிடர்கள்",
+  "featuredAstrologers": "சிறப்பு ஜோதிடர்கள்",
+  "astrologers": "ஜோதிடர்கள்",
+  "searchAiAstrologers": "செயற்கை நுண்ணறிவு ஜோதிடர்களைத் தேடுங்கள்…",
+  "searchAstrologersByName": "பெயர் மூலம் ஜோதிடர்களைத் தேடுங்கள்…",
+  "aiChat": "AI அரட்டை",
+  "noAstrologersMatch": "ஜோதிடர்கள் யாரும் பொருந்தவில்லை",
+  "noAstrologersYet": "இன்னும் ஜோதிடர்கள் இல்லை",
+  "couldnTSetTheReminderPlease": "நினைவூட்டலை அமைக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+  "ai": "செயற்கை நுண்ணறிவு",
+  "live2": "நேரலை",
+  "online": "ஆன்லைன்",
+  "busy": "பிஸியாக",
+  "offline": "ஆஃப்லைன்",
+  "chat": "அரட்டை",
+  "call": "அழைப்பு",
+  "video": "வீடியோ",
+  "notEnoughBalanceToStartPlease": "தொடங்குவதற்குப் போதுமான இருப்பு இல்லை. தயவுசெய்து ரீசார்ஜ் செய்யவும்.",
+  "couldNotStartTheConsultationPlease": "ஆலோசனையைத் தொடங்க முடியவில்லை. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.",
+  "share": "பகிர்",
+  "follow": "பின்தொடரவும்",
+  "chats": "அரட்டைகள்",
+  "calls": "அழைப்புகள்",
+  "videos": "வீடியோக்கள்",
+  "gifts": "பரிசுகள்",
+  "languages": "மொழிகள்",
+  "theyHaveGuidedThousandsOfSeekers": "அவர்கள் தொழில், திருமணம், நிதி மற்றும் வாழ்க்கைப் பாதை தொடர்பான கேள்விகளில் ஆயிரக்கணக்கான தேடுவோருக்கு வழிகாட்டியுள்ளனர்.",
+  "theirReadingsBlendClassicalVedicPrinciples": "அவர்களின் வாசிப்புகள், பாரம்பரிய வேதக் கோட்பாடுகளை நடைமுறைக்கு உகந்த, கருணையான வழிகாட்டுதலுடன் கலந்து, உங்களுக்கு உதவுகின்றன.",
+  "findClarityAndActionableRemediesFor": "வரும் காலத்திற்கான தெளிவையும், செயல்படுத்தக்கூடிய தீர்வுகளையும் கண்டறியுங்கள்.",
+  "giftsReceived": "பெறப்பட்ட பரிசுகள்",
+  "reviews": "விமர்சனங்கள்",
+  "weLlNotifyYouTheMoment": "அவை காலியானவுடன் உங்களுக்குத் தெரிவிப்போம்.",
+  "weLlNotifyYouTheMoment2": "அவர்கள் ஆன்லைனில் வந்தவுடன் உங்களுக்குத் தெரிவிப்போம்.",
+  "getAHeadsUpTheMoment": "அவை கிடைக்கும் தருணத்திலேயே முன்அறிவிப்பைப் பெறுங்கள்.",
+  "couldNotLoadThisStore": "இந்தக் கடையை ஏற்ற முடியவில்லை",
+  "products": "தயாரிப்புகள்",
+  "poojas": "பூஜைகள்",
+  "book": "புத்தகம்",
+  "buy": "வாங்க",
+  "lalKitab": "லால் கிதாப்",
+  "hindi": "ஹிந்தி",
+  "bengali": "பெங்காலி",
+  "tamil": "நாகர்",
+  "marathi": "மராத்தி",
+  "punjabi": "பஞ்சாபி",
+  "telugu": "தெலுங்கு",
+  "expertise": "நிபுணத்துவம்",
+  "couldNotLoadGifts": "பரிசுகளை ஏற்ற முடியவில்லை",
+  "notEnoughBalanceAddMoneyTo": "இருப்பு போதாது. பரிசுகள் அனுப்ப பணம் சேர்க்கவும்.",
+  "couldNotSendTheGiftPlease": "பரிசை அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+  "connecting2": "இணைக்கிறது…",
+  "couldNotLoadThisChatHistory": "இந்த உரையாடல் வரலாற்றை ஏற்ற முடியவில்லை",
+  "thisChatHistoryIsNoLonger": "இந்த உரையாடல் வரலாறு இனி கிடைக்காது\n(உரையாடல்கள் 7 நாட்களுக்குச் சேமிக்கப்படும்).",
+  "dailyFor14Days": "தினமும் · 14 நாட்களுக்கு",
+  "dailyMantra": "தினசரி மந்திரம்",
+  "reminder": "நினைவூட்டல்",
+  "audio": "ஆடியோ",
+  "couldNotLoadYourConsultations": "உங்கள் ஆலோசனைகளை ஏற்ற முடியவில்லை",
+  "missed": "தவறவிட்டது",
+  "declined": "நிராகரிக்கப்பட்டது",
+  "cancelled": "ரத்து செய்யப்பட்டது",
+  "lowBalance": "குறைந்த இருப்பு",
+  "rechargeNowToKeepYourConsultation": "உங்கள் ஆலோசனையைத் தொடர இப்போதே ரீசார்ஜ் செய்யுங்கள். நீங்கள் பணம் செலுத்தும்போதும் உங்கள் அரட்டை திறந்தே இருக்கும்.",
+  "sessionEndedLowBalance": "உங்கள் இருப்புத் தீர்ந்துவிட்டதால், கலந்தாய்வு முடிவடைந்தது. எப்போது வேண்டுமானாலும் தொடர, மீண்டும் ரீசார்ஜ் செய்துகொள்ளுங்கள்.",
+  "couldNotLoadHoroscope": "ஜாதகத்தை ஏற்ற முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+  "chooseSign": "அடையாளத்தை மாற்றவும்",
+  "yesterday": "நேற்று",
+  "today": "இன்று",
+  "tomorrow": "நாளை",
+  "totalScore": "ஒட்டுமொத்த மதிப்பெண்",
+  "luckyColor": "அதிர்ஷ்ட நிறம்",
+  "luckyNumber": "அதிர்ஷ்ட எண்",
+  "lifeAreas": "வாழ்க்கை பகுதிகள்",
+  "todaysReading": "இன்றைய வாசிப்பு",
+  "career": "தொழில்",
+  "finances": "நிதி",
+  "health": "ஆரோக்கியம்",
+  "relationship": "உறவு",
+  "family": "குடும்பம்",
+  "friends": "நண்பர்கள்",
+  "travel": "பயணம்",
+  "physique": "உடல்",
+  "statusLabel": "நிலை",
+  "signAries": "மேஷம்",
+  "signTaurus": "டாரன்கள்",
+  "signGemini": "ஜெமினி",
+  "signCancer": "புற்றுநோய்",
+  "signLeo": "லியோ",
+  "signVirgo": "கன்னி",
+  "signLibra": "துலாம்",
+  "signScorpio": "விருச்சிகம்",
+  "signSagittarius": "தனுசு",
+  "signCapricorn": "மகரம்",
+  "signAquarius": "கும்பம்",
+  "signPisces": "மீனம்",
+  "couldNotLoadPanchang": "பஞ்சாங்கத்தை ஏற்ற முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+  "tithi": "திதி",
+  "nakshatra": "நட்சத்திரம்",
+  "yoga": "யோகா",
+  "karana": "கரணா",
+  "weekday": "வாரநாள்",
+  "inauspiciousTimes": "அசுபமான காலங்கள்",
+  "rahuKaal": "ராகு கால்",
+  "gulikaKaal": "குலிகா கால்",
+  "yamaganda": "யமகண்டா",
+  "duration": "கால அளவு",
+  "coinsUsed": "பயன்படுத்தப்பட்ட நாணயங்கள்",
+  "guest": "விருந்தினர்",
+  "changeLanguage": "மொழியை மாற்றவும்",
+  "chooseYourKundli": "உங்கள் குண்டலியைத் தேர்ந்தெடுக்கவும்",
+  "yourWalletReadingsAndSavedDetails": "உங்கள் பணப்பை, பலன்கள் மற்றும் சேமிக்கப்பட்ட விவரங்கள் பாதுகாப்பாக இருக்கும் — ஆனால் வெளியேறினால் உங்கள் தினசரி ராசிபலன், சலுகைகள் மற்றும் நினைவூட்டல்களைத் தவறவிடுவீர்கள். நட்சத்திரங்களுடன் தொடர்பில் இருங்கள்? ✨",
+  "offers": "சலுகைகள்",
+  "dailyPanchang": "தினசரி பஞ்சாங்கம்",
+  "talkToAstrologer": "ஜோதிடரிடம் பேசுங்கள்",
+  "brihatKundli": "பிருஹத் குண்டலி",
+  "dailyNotes": "தினசரி குறிப்புகள்",
+  "askAQuestion": "ஒரு கேள்வி கேளுங்கள்",
+  "free50Pages": "50+ பக்கங்கள் இலவசம்",
+  "freeReport": "இலவச அறிக்கை",
+  "freeMatrimony": "இலவச திருமணம்",
+  "matrimony": "திருமணம்",
+  "loveMatch": "காதல் போட்டி",
+  "horoscope": "ஜாதகம்",
+  "dailyHoroscope": "தினசரி ராசிபலன்",
+  "vedicAstrology": "வேத ஜோதிடம்",
+  "acharyaVeda": "ஆச்சார்ய வேதம்",
+  "panditRohan": "பண்டிட் ரோஹன்",
+  "guruMaya": "குரு மாயா",
+  "jayaShastri": "ஜெய சாஸ்திரி",
+  "devSharma": "தேவ் ஷர்மா",
+  "sureshG": "சுரேஷ் ஜி.",
+  "lataP": "லதா பி.",
+  "kiranB": "கிரண் பி.",
+  "mohanT": "மோகன் டி.",
+  "anilJoshi": "அனில் ஜோஷி",
+  "meeraDevi": "மீரா தேவி",
+  "raviKumar": "ரவி குமார்",
+  "sunitaRao": "சுனிதா ராவ்",
+  "bengaluruKarnataka": "பெங்களூரு, கர்நாடகா",
+  "locating": "கண்டறிதல்…",
+  "festivalOffer": "பண்டிகை சலுகை",
+  "upTo30OffOnGemstones": "இரத்தினக்கற்களுக்கு 30% வரை தள்ளுபடி",
+  "talkToTopAstrologers": "சிறந்த ஜோதிடர்களுடன் பேசுங்கள்",
+  "firstConsultationSpecial": "முதல் ஆலோசனை சிறப்பு",
+  "rudrakshaCollection": "ருத்ராட்ச சேகரிப்பு",
+  "authenticEnergised": "உண்மையான மற்றும் ஆற்றல்மிக்க",
+  "resumeSession": "அமர்வை மீண்டும் தொடங்கு",
+  "home": "வீடு",
+  "aiAstro": "AI ஆஸ்ட்ரோ",
+  "ask": "கேளுங்கள்",
+  "history": "வரலாறு",
+  "seeAll2": "அனைத்தையும் காண்க",
+  "s1AcceptanceOfTheseTerms": "1. இந்த விதிமுறைகளை ஏற்றுக்கொள்வது",
+  "termsOfService2": "சேவை விதிமுறைகள்",
+  "lastUpdated26June2026": "கடைசியாகப் புதுப்பிக்கப்பட்டது: 26 ஜூன் 2026",
+  "rudragangaProvidesAstrologySpiritualAndWellness": "{appName} வழிகாட்டுதல் மற்றும் தனிப்பட்ட தேவைகளுக்காக ஜோதிடம், ஆன்மீகம் மற்றும் நல்வாழ்வு ஆலோசனைகளை வழங்குகிறது.",
+  "@rudragangaProvidesAstrologySpiritualAndWellness": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "reflectionOnlyOurServicesAreNot": "இது வெறும் பிரதிபலிப்பு மட்டுமே. எங்கள் சேவைகள் தொழில்முறை மருத்துவம், சட்டம், நிதி போன்றவற்றிற்கு மாற்றாகாது.",
+  "orPsychologicalAdviceYouMustBe": "அல்லது உளவியல் ஆலோசனை. இந்தச் செயலியைப் பயன்படுத்த உங்களுக்கு 18 வயது அல்லது அதற்கு மேற்பட்ட வயது இருக்க வேண்டும்.",
+  "byCreatingAnAccountOrUsing": "ஒரு கணக்கை உருவாக்குவதன் மூலம் அல்லது {appName} மொபைல் செயலி மற்றும் அது தொடர்பான சேவைகளைப் பயன்படுத்துவதன் மூலம் (",
+  "@byCreatingAnAccountOrUsing": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "servicesYouAgreeToBeBound": "“சேவைகள்” என்பதன் கீழ், இந்தச் சேவை விதிமுறைகள் மற்றும் எங்கள் தனியுரிமைக் கொள்கை மற்றும் பணம் திரும்பப்பெறுதல் கொள்கைக்குக் கட்டுப்பட நீங்கள் ஒப்புக்கொள்கிறீர்கள்.",
+  "policyIfYouDoNotAgree": "கொள்கை. நீங்கள் உடன்படவில்லை எனில், தயவுசெய்து சேவைகளைப் பயன்படுத்த வேண்டாம்.",
+  "s2EligibilityYourAccount": "2. தகுதி மற்றும் உங்கள் கணக்கு",
+  "youMustBeAtLeast18": "உங்களுக்குக் குறைந்தபட்சம் 18 வயது நிரம்பியிருக்க வேண்டும் மற்றும் சட்டப்படி ஒப்பந்தம் செய்துகொள்ளும் தகுதி பெற்றிருக்க வேண்டும்.",
+  "youRegisterWithAPhoneNumber": "ஒருமுறை கடவுச்சொல் (OTP) மூலம் சரிபார்க்கப்பட்ட தொலைபேசி எண்ணைப் பயன்படுத்தி நீங்கள் பதிவு செய்கிறீர்கள். அந்த எண் மற்றும் சாதனத்திற்கான அணுகலைப் பாதுகாப்பாக வைத்திருப்பது உங்கள் பொறுப்பாகும்.",
+  "youAgreeToProvideAccurateInformation": "பலன் கணிப்பிற்காக நீங்கள் பகிர விரும்பும் பட்சத்தில், பிறப்பு விவரங்கள் உட்பட துல்லியமான தகவல்களை வழங்க ஒப்புக்கொள்கிறீர்கள். உங்கள் கணக்கின் கீழ் நடைபெறும் அனைத்து செயல்பாடுகளுக்கும் நீங்களே பொறுப்பாவீர்கள்.",
+  "s3TheServicesWeOffer": "3. நாங்கள் வழங்கும் சேவைகள்",
+  "rudragangaConnectsYouWithVerifiedAstrologers": "{appName}, ஒலி அழைப்பு, காணொளி அழைப்பு மூலம் கலந்தாலோசனைகளுக்காக, சரிபார்க்கப்பட்ட ஜோதிடர்களுடன் உங்களை இணைக்கிறது.",
+  "@rudragangaConnectsYouWithVerifiedAstrologers": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "andChatAndOffersRelatedFeatures": "மற்றும் அரட்டை, மேலும் ஜாதக உருவாக்கம் மற்றும் பொருத்தம், ஒரு AI ஜோதிடர் போன்ற தொடர்புடைய அம்சங்களையும் வழங்குகிறது.",
+  "dailyHoroscopesPoojaBookingsAStore": "தினசரி ராசிபலன்கள், பூஜை முன்பதிவுகள், ஆன்மீகப் பொருட்கள் கடை, பரிசளித்தல் மற்றும் திருமணப் பொருத்தம்.",
+  "availabilityOfAnyFeatureOrAstrologer": "எந்தவொரு அம்சம் அல்லது ஜோதிடரின் கிடைக்கும்தன்மை எந்த நேரத்திலும் மாறக்கூடும்.",
+  "s4WalletPricingBilling": "4. வாலட், விலை நிர்ணயம் மற்றும் பில்லிங்",
+  "consultationsArePrepaidYouAddFunds": "ஆலோசனைகளுக்கு முன்பணம் செலுத்த வேண்டும். நீங்கள் இணைவதற்கு முன்பு, செயலிக்குள் இருக்கும் பணப்பையில் பணத்தைச் சேர்த்து, ஜோதிடர் மற்றும் சேவைக்குக் காட்டப்படும் நிமிடக் கட்டண விகிதத்தில் பணம் செலுத்த வேண்டும்.",
+  "billingBeginsWhenTheAstrologerAccepts": "ஜோதிடர் ஏற்றுக்கொண்டு அமர்வு இணைக்கப்பட்டவுடன் கட்டணம் வசூலிக்கத் தொடங்குகிறது. முதல் நிமிடம் இணைக்கப்பட்டவுடன் கட்டணம் வசூலிக்கப்படும், மேலும் ஒவ்வொரு அடுத்த நிமிடமும் அதன் தொடக்கத்தில் கட்டணம் வசூலிக்கப்படும். அமர்வின் போது நேரலை மீட்டர் காட்டப்படும், மேலும் உங்கள் இருப்பு குறைந்தால் அமர்வு தானாகவே முடிவடையும்.",
+  "paymentsAreProcessedByOurPayment": "பணம் செலுத்துதல் எங்கள் கட்டணக் கூட்டாளரான (PayU) மூலம் செயல்படுத்தப்படுகிறது. நாங்கள் முழு அட்டை விவரங்களையும் சேமிப்பதில்லை.",
+  "walletBalancesAreForUseWithin": "வாலட் இருப்புகள் சேவைகளுக்குள் பயன்படுத்துவதற்காக மட்டுமே. பணம் திரும்பப் பெறுதல், பொருந்தக்கூடிய இடங்களில், எங்கள் பணம் திரும்பப் பெறுதல் கொள்கையின்படி நிர்வகிக்கப்படும்.",
+  "pricesAreInIndianRupeesInr": "விலைகள் இந்திய ரூபாயில் (INR) குறிப்பிடப்பட்டுள்ளன, மேலும் இதில் பொருந்தக்கூடிய வரிகளும் அடங்கலாம்.",
+  "s5AcceptableUse": "5. ஏற்றுக்கொள்ளத்தக்க பயன்பாடு",
+  "youAgreeNotTo": "நீங்கள் பின்வருவனவற்றைச் செய்ய மாட்டீர்கள் என ஒப்புக்கொள்கிறீர்கள்:",
+  "harassAbuseThreatenOrShareSexually": "ஜோதிடர்கள் அல்லது ஊழியர்களைத் துன்புறுத்துதல், நிந்தித்தல், அச்சுறுத்துதல் அல்லது பாலியல் ரீதியாக வெளிப்படையான அல்லது சட்டவிரோதமான உள்ளடக்கத்தைப் பகிர்தல்.",
+  "impersonateAnyPersonOrProvideFalse": "ஒரு சேவையைப் பெறுவதற்கோ அல்லது பணத்தைத் திரும்பப் பெறுவதற்கோ, எந்தவொரு நபராகவும் ஆள்மாறாட்டம் செய்வது அல்லது தவறான தகவல்களை வழங்குவது.",
+  "attemptToTakeAConsultationOff": "கட்டணங்களைத் தவிர்ப்பதற்காக, தளத்திற்கு வெளியே கலந்தாலோசனையை மேற்கொள்ள முயற்சிப்பது அல்லது தனிப்பட்ட தொடர்பு விவரங்களைக் கோருவது.",
+  "interfereWithScrapeOrAttemptTo": "சேவைகளில் அல்லது அவற்றின் பாதுகாப்பில் குறுக்கிடுதல், தகவல்களைச் சுரண்டுதல் அல்லது சீர்குலைக்க முயற்சித்தல்.",
+  "s6AstrologersOnThePlatform": "6. மேடையில் உள்ள ஜோதிடர்கள்",
+  "astrologersAreIndependentPractitionersWhoAre": "ஜோதிடர்கள் என்பவர்கள் {appName} ஆல் அடையாளம் சரிபார்க்கப்பட்டு அங்கீகரிக்கப்பட்ட சுயாதீனமான தொழில் வல்லுநர்கள் ஆவர்.",
+  "@astrologersAreIndependentPractitionersWhoAre": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "beforeTheyCanOfferConsultationsThey": "அவர்கள் ஆலோசனைகளை வழங்குவதற்கு முன்பு, நாங்கள் வரையறுக்கும் வரம்புகளுக்குள் தங்களின் நிமிடக் கட்டணங்களைத் தாங்களே நிர்ணயித்துக் கொள்கிறார்கள்.",
+  "opinionsAndGuidanceSharedDuringA": "ஆலோசனையின் போது பகிரப்படும் கருத்துக்களும் வழிகாட்டுதல்களும் அந்தந்த ஜோதிடருடையவையே அன்றி வேறு யாருடையதும் அல்ல.",
+  "ofRudragangaWeAreNotResponsible": "{appName}. கலந்தாலோசனையின் அடிப்படையில் நீங்கள் எடுக்கும் எந்தவொரு முடிவுக்கும் நாங்கள் பொறுப்பல்ல.",
+  "@ofRudragangaWeAreNotResponsible": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "s7RecordingsContent": "7. பதிவுகள் மற்றும் உள்ளடக்கம்",
+  "forQualitySafetyAndDisputeResolution": "தரம், பாதுகாப்பு மற்றும் தகராறு தீர்வு ஆகிய காரணங்களுக்காக, ஒலி மற்றும் காணொளிக் கலந்தாய்வுகள் பதிவு செய்யப்படலாம்.",
+  "consentToSuchRecordingByStarting": "ஒரு அமர்வைத் தொடங்குவதன் மூலம் அத்தகைய பதிவிற்கு ஒப்புதல் அளிக்கவும். அரட்டை உரையாடல்கள் சேமிக்கப்படுகின்றன, எனவே நீங்கள் அவற்றை மீண்டும் பார்க்கலாம்.",
+  "themSeeOurPrivacyPolicyFor": "அவற்றை. இந்தத் தரவு எவ்வாறு கையாளப்படுகிறது என்பதை அறிய எங்கள் தனியுரிமைக் கொள்கையைப் பார்க்கவும்.",
+  "s8DisclaimerLimitationOfLiability": "8. பொறுப்புத் துறப்பு மற்றும் பொறுப்பு வரம்பு",
+  "theServicesAreProvidedAsIs": "இந்தச் சேவைகள், வழிகாட்டுதல் மற்றும் பொழுதுபோக்கு சார்ந்த தனிப்பட்ட சுயசிந்தனைக்காக, உள்ளபடியே வழங்கப்படுகின்றன.",
+  "rudragangaMakesNoGuaranteeAboutThe": "{appName} எந்தவொரு முன்னறிவிப்பு அல்லது பரிகாரத்தின் துல்லியத்தன்மை குறித்தும் எந்த உத்தரவாதமும் அளிக்கவில்லை. அதிகபட்ச அளவிற்கு",
+  "@rudragangaMakesNoGuaranteeAboutThe": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "permittedByLawRudragangaSTotal": "சட்டத்தால் அனுமதிக்கப்பட்டால், நீங்கள் சேவைகளைப் பயன்படுத்துவதால் எழும் {appName}-இன் மொத்தப் பொறுப்பானது இதற்குள் வரம்பிடப்பட்டுள்ளது.",
+  "@permittedByLawRudragangaSTotal": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "theAmountYouPaidIntoYour": "உரிமைகோரலுக்கு வழிவகுக்கும் நிகழ்வுக்கு முந்தைய 30 நாட்களில் உங்கள் வாலட்டில் நீங்கள் செலுத்திய தொகை. நாங்கள்",
+  "areNotLiableForIndirectOr": "மறைமுக அல்லது பின்விளைவு இழப்புகளுக்குப் பொறுப்பாக மாட்டார்கள்.",
+  "s9SuspensionTermination": "9. தற்காலிகப் பணிநீக்கம் மற்றும் பணி நீக்கம்",
+  "weMaySuspendOrTerminateYour": "நீங்கள் இந்த விதிமுறைகளை மீறினால், மோசடி செய்ய முயன்றால், அல்லது தவறாகப் பயன்படுத்தினால், நாங்கள் உங்கள் கணக்கை இடைநிறுத்தலாம் அல்லது முடக்கலாம்.",
+  "servicesYouMayStopUsingThe": "சேவைகள். நீங்கள் எந்த நேரத்திலும் சேவைகளைப் பயன்படுத்துவதை நிறுத்திக்கொள்ளலாம். சில விதிமுறைகள் (கட்டணக் கடமைகள்,",
+  "disclaimersAndLimitationsOfLiabilitySurvive": "பொறுப்புத் துறப்புகள் மற்றும் பொறுப்பு வரம்புகள் ஆகியவை ஒப்பந்தம் முடிவடைந்த பின்னரும் செல்லுபடியாகும்.",
+  "s10ChangesToTheseTerms": "10. இந்த விதிமுறைகளில் மாற்றங்கள்",
+  "weMayUpdateTheseTermsFrom": "நாங்கள் இந்த விதிமுறைகளை அவ்வப்போது புதுப்பிக்கலாம். குறிப்பிடத்தக்க மாற்றங்கள் செயலியில் அல்லது இதன்மூலம் அறிவிக்கப்படும்.",
+  "updatingTheLastUpdatedDateAbove": "மேலே உள்ள “கடைசியாகப் புதுப்பிக்கப்பட்ட” தேதியைப் புதுப்பித்தல். மாற்றங்களுக்குப் பிறகும் தொடர்ந்து பயன்படுத்துவது, நீங்கள் அவற்றை ஏற்றுக்கொள்கிறீர்கள் என்பதைக் குறிக்கும்.",
+  "s11ContactUs": "11. எங்களைத் தொடர்பு கொள்ளுங்கள்",
+  "questionsAboutTheseTermsReachUs": "இந்த விதிமுறைகள் குறித்து ஏதேனும் கேள்விகள் உள்ளதா? எங்கள் இணையதளத்தில் உள்ள தொடர்புப் படிவத்தின் மூலமாகவோ அல்லது செயலியில் உள்ள படிவத்தின் மூலமாகவோ எங்களைத் தொடர்பு கொள்ளுங்கள்.",
+  "helpSupportSection": "உதவி மற்றும் ஆதரவுப் பிரிவு.",
+  "privacyPolicy2": "தனியுரிமைக் கொள்கை",
+  "yourBirthDetailsConsultationsAndChats": "உங்கள் பிறப்பு விவரங்கள், கலந்தாய்வுகள் மற்றும் உரையாடல்கள் உங்களுக்கே உரியவை. நாங்கள் என்ன செய்கிறோம் என்பதை இந்தக் கொள்கை விளக்குகிறது.",
+  "collectWhyAndTheControlYou": "சேகரிப்பது, ஏன் சேகரிப்பது, மற்றும் அதன் மீது உங்களுக்கு இருக்கும் கட்டுப்பாடு.",
+  "s1InformationWeCollect": "1. நாங்கள் சேகரிக்கும் தகவல்கள்",
+  "accountInformationYourNamePhoneNumber": "கணக்குத் தகவல்கள்: உங்கள் பெயர், தொலைபேசி எண் (OTP மூலம் சரிபார்க்கப்பட்டது), மற்றும் வழங்கப்பட்டிருந்தால் மின்னஞ்சல் முகவரி.",
+  "birthDetailsDateTimeAndPlace": "பிறப்பு விவரங்கள்: ஜாதகம் மற்றும் பலன் கூறுவதற்காக நீங்கள் பகிர விரும்பும் பிறந்த தேதி, நேரம் மற்றும் இடம்.",
+  "consultationDataChatMessagesAndAudio": "ஆலோசனைத் தரவுகள்: அரட்டைச் செய்திகள், மற்றும் தேவைப்படும் இடங்களில் ஒலி/ஒளி அழைப்புப் பதிவுகள்.",
+  "paymentDataWalletTransactionsAndPayment": "பணம் செலுத்தும் தரவுகள்: பணப்பை பரிவர்த்தனைகள் மற்றும் பணம் செலுத்தியதற்கான குறிப்புகள். அட்டை விவரங்கள் எங்கள் பணம் செலுத்தும் கூட்டாளரால் (PayU) கையாளப்படுகின்றன; நாங்கள் முழு அட்டை எண்களையும் சேமிப்பதில்லை.",
+  "deviceUsageDataDeviceTypeOperating": "சேவைகளை இயக்குவதற்கும் மேம்படுத்துவதற்கும் பயன்படுத்தப்படும் சாதனம் மற்றும் பயன்பாட்டுத் தரவு: சாதன வகை, இயக்க முறைமை, உங்கள் IP முகவரியிலிருந்து பெறப்பட்ட தோராயமான இருப்பிடம், பார்வையிட்ட பக்கங்கள் மற்றும் ஊடாட்டங்கள்.",
+  "s2HowWeUseIt": "2. நாம் அதை எவ்வாறு பயன்படுத்துகிறோம்",
+  "toCreateAndSecureYourAccount": "உங்கள் கணக்கை உருவாக்கிப் பாதுகாக்கவும், உங்கள் அடையாளத்தைச் சரிபார்க்கவும்.",
+  "toConnectYouWithAstrologersAnd": "உங்களை ஜோதிடர்களுடன் இணைக்கவும், ஆலோசனைகள், ஜாதகம், ராசிபலன்கள் மற்றும் பிற அம்சங்களை வழங்கவும்.",
+  "toProcessWalletRechargesPerMinute": "வாலட் ரீசார்ஜ்கள், நிமிடக் கட்டண வசூல், பணம் வழங்குதல் மற்றும் ஆர்டர் நிறைவேற்றுதல் ஆகியவற்றைச் செயல்படுத்த.",
+  "toProvideSupportPreventFraudAnd": "ஆதரவளிக்கவும், மோசடி மற்றும் முறைகேடுகளைத் தடுக்கவும், சட்டப்பூர்வ கடமைகளை நிறைவேற்றவும்.",
+  "toUnderstandAndImproveHowThe": "செயலி மற்றும் இணையதளம் பயன்படுத்தப்படும் விதத்தைப் புரிந்துகொண்டு அதை மேம்படுத்துதல்.",
+  "s3WhenWeShareInformation": "3. நாம் தகவல்களைப் பகிரும்போது",
+  "weDoNotSellYourPersonal": "நாங்கள் உங்கள் தனிப்பட்ட தகவல்களை விற்பனை செய்வதில்லை. நாங்கள் அவற்றை பின்வருவனவற்றுக்கு மட்டுமே பகிர்கிறோம்:",
+  "withTheAstrologerYouConsultLimited": "நீங்கள் கலந்தாலோசிக்கும் ஜோதிடருடன், பலனைக் கணிப்பதற்குத் தேவையானவை மட்டுமே (உதாரணமாக, உங்கள் பிறந்த விவரங்கள் மற்றும் உரையாடல்).",
+  "withServiceProvidersWhoHelpUs": "பணம் செலுத்தும் செயல்முறை (PayU), கிளவுட் ஹோஸ்டிங் மற்றும் சேமிப்பகம், தகவல் தொடர்பு (OTP-க்கான WhatsApp/SMS) மற்றும் அறிவிப்புகள் போன்ற, எங்கள் செயல்பாடுகளுக்கு உதவும் சேவை வழங்குநர்களுடன் நாங்கள் ரகசியக் காப்பு கடமைகளுக்கு உட்பட்டுள்ளோம்.",
+  "whenRequiredByLawOrTo": "சட்டப்படி தேவைப்படும்போது, அல்லது பயனர்கள் மற்றும் {appName} ஆகியோரின் உரிமைகள், பாதுகாப்பு மற்றும் சொத்துக்களைப் பாதுகாப்பதற்காக.",
+  "@whenRequiredByLawOrTo": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "s4ConsultationRecordingsChats": "4. கலந்தாய்வுப் பதிவுகள் மற்றும் உரையாடல்கள்",
+  "audioAndVideoConsultationsMayBe": "தரம், பாதுகாப்பு மற்றும் நலன் கருதி, ஒலி மற்றும் காணொளிக் கலந்தாய்வுகள் பதிவு செய்யப்படலாம், மேலும் உரையாடல்கள் சேமிக்கப்படுகின்றன.",
+  "disputeResolutionYouCanReviewYour": "தகராறு தீர்வு. செயலியில் உங்கள் அரட்டை வரலாற்றை நீங்கள் பார்க்கலாம். பதிவுகள் பின்வருமாறு தக்கவைக்கப்படுகின்றன.",
+  "describedBelowAndAccessedOnlyWhen": "கீழே விவரிக்கப்பட்டுள்ளபடி, ஆதரவு, பாதுகாப்பு அல்லது சட்டக் காரணங்களுக்காகத் தேவைப்படும்போது மட்டுமே அணுகப்படும்.",
+  "s5AnalyticsCookies": "5. பகுப்பாய்வுகள் மற்றும் குக்கீகள்",
+  "ourWebsiteUsesAFirstParty": "மீண்டும் வருகை தருபவர்களை அடையாளம் காணவும், பயனர்களின் பயன்பாட்டை அளவிடவும் எங்கள் இணையதளம் ஒரு முதல் தரப்பு குக்கீ/அடையாளங்காட்டியைப் பயன்படுத்துகிறது.",
+  "landingPagePerformsSuchAsWhich": "முகப்புப் பக்கத்தின் செயல்திறன் (எடுத்துக்காட்டாக, எந்தப் பிரிவுகள் கிளிக் செய்யப்படுகின்றன), மற்றும் பதிவுசெய்தல்களைச் சந்தைப்படுத்தலுடன் தொடர்புபடுத்துதல்.",
+  "campaignsThisIsUsedInAggregate": "பிரச்சாரங்கள். அனுபவத்தை மேம்படுத்துவதற்காக இது ஒட்டுமொத்தமாகப் பயன்படுத்தப்படுகிறது. நாங்கள் தோராயமான நகரம்/பிராந்தியத்தை வருவிக்கிறோம்.",
+  "fromYourIpAddressWeDo": "உங்கள் IP முகவரியிலிருந்து; நாங்கள் பகுப்பாய்விற்காகத் துல்லியமான GPS இருப்பிடத்தைப் பயன்படுத்துவதில்லை.",
+  "s6DataRetention": "6. தரவு தக்கவைப்பு",
+  "weKeepYourInformationForAs": "உங்கள் கணக்கு செயலில் இருக்கும் வரையிலும், சேவைகளை வழங்கத் தேவைப்படும் வரையிலும் உங்கள் தகவல்களை நாங்கள் வைத்திருக்கிறோம்.",
+  "servicesComplyWithLegalObligationsResolve": "சேவைகள், சட்டப்பூர்வ கடமைகளுக்கு இணங்குதல், தகராறுகளைத் தீர்த்தல் மற்றும் நமது ஒப்பந்தங்களைச் செயல்படுத்துதல். நீங்கள்",
+  "requestDeletionOfYourAccountAnd": "சட்டப்பூர்வ தக்கவைப்புக்கு உட்பட்டு, உங்கள் கணக்கு மற்றும் அதனுடன் தொடர்புடைய தனிப்பட்ட தரவுகளை நீக்குமாறு கோரவும்.",
+  "requirementsForExampleTransactionRecordsWe": "தேவைகள் (உதாரணமாக, கணக்கியல் மற்றும் வரிவிதிப்புக்காக நாம் வைத்திருக்க வேண்டிய பரிவர்த்தனைப் பதிவுகள்).",
+  "s7Security": "7. பாதுகாப்பு",
+  "weUseIndustryStandardMeasuresEncryption": "நாங்கள் பரிமாற்றத்தின் போது குறியாக்கம், அணுகல் கட்டுப்பாடுகள் மற்றும் பாதுகாப்பான போன்ற தொழில்துறை தரநிலை நடவடிக்கைகளைப் பயன்படுத்துகிறோம்.",
+  "infrastructureToProtectYourInformationNo": "உங்கள் தகவலைப் பாதுகாப்பதற்கான உள்கட்டமைப்பு. எந்தவொரு பரிமாற்ற அல்லது சேமிப்பு முறையும் முழுமையாகப் பாதுகாப்பானது அல்ல.",
+  "secureSoWeCannotGuaranteeAbsolute": "பாதுகாப்பானது, எனவே எங்களால் முழுமையான பாதுகாப்பிற்கு உத்தரவாதம் அளிக்க முடியாது.",
+  "s8YourRightsChoices": "8. உங்கள் உரிமைகள் மற்றும் தேர்வுகள்",
+  "accessCorrectOrUpdateYourProfile": "செயலியில் உங்கள் சுயவிவரம் மற்றும் பிறப்பு விவரங்களை அணுகவும், திருத்தவும் அல்லது புதுப்பிக்கவும்.",
+  "requestACopyOrDeletionOf": "உங்கள் தனிப்பட்ட தரவுகளின் நகலைப் பெற அல்லது அவற்றை நீக்க, எங்களைத் தொடர்பு கொள்ளுங்கள்.",
+  "optOutOfPromotionalNotificationsIn": "உங்கள் சாதனம் அல்லது செயலி அமைப்புகளில் விளம்பர அறிவிப்புகளிலிருந்து விலகிக்கொள்ளுங்கள்.",
+  "s9Children": "9. குழந்தைகள்",
+  "theServicesAreIntendedForUsers": "இந்தச் சேவைகள் 18 வயது மற்றும் அதற்கு மேற்பட்ட பயனர்களுக்காக உருவாக்கப்பட்டவை. நாங்கள் தெரிந்தே யாரிடமிருந்தும் தரவுகளைச் சேகரிப்பதில்லை.",
+  "anyoneUnder18IfYouBelieve": "18 வயதுக்குட்பட்ட எவரும். ஒரு சிறுவர் இந்தச் சேவைகளைப் பயன்படுத்தியதாக நீங்கள் நம்பினால், அதை நாங்கள் அகற்றுவதற்காக எங்களைத் தொடர்பு கொள்ளவும்.",
+  "s10ChangesToThisPolicy": "10. இந்தக் கொள்கையில் மாற்றங்கள்",
+  "weMayUpdateThisPolicyMaterial": "நாங்கள் இந்தக் கொள்கையைப் புதுப்பிக்கக்கூடும். குறிப்பிடத்தக்க மாற்றங்கள் செயலியில் அல்லது புதுப்பிப்பதன் மூலம் அறிவிக்கப்படும்.",
+  "lastUpdatedDateAbove": "மேலே உள்ள “கடைசியாகப் புதுப்பிக்கப்பட்ட” தேதி.",
+  "forPrivacyQuestionsOrDataRequests": "தனியுரிமை தொடர்பான கேள்விகள் அல்லது தரவுக் கோரிக்கைகளுக்கு, எங்கள் இணையதளத்தில் உள்ள தொடர்புப் படிவத்தின் மூலமாகவோ அல்லது",
+  "appSHelpSupportSection": "செயலியின் உதவி மற்றும் ஆதரவுப் பிரிவு.",
+  "s2026Rudraganga18ForGuidanceAnd": "© 2026 {appName} · 18+ · வழிகாட்டுதல் மற்றும் நல்வாழ்விற்காக \nதொழில்முறை ஆலோசனைக்கு மாற்றானது அல்ல.",
+  "@s2026Rudraganga18ForGuidanceAnd": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "widthDeviceWidthInitialScale1": "அகலம்=சாதனத்தின் அகலம், ஆரம்ப அளவு=1, அதிகபட்ச அளவு=1",
+  "segoeUi": "செகோ UI",
+  "vote": "வாக்களியுங்கள்",
+  "couldnTLoadLiveSessions": "நேரலை அமர்வுகளை ஏற்ற முடியவில்லை",
+  "noOneIsLiveRightNow": "தற்போது யாரும் நேரலையில் இல்லை.",
+  "whenAnAstrologerGoesLiveThey": "ஒரு ஜோதிடர் நேரலைக்கு வரும்போது, அவர் இங்கே தோன்றுவார். புதுப்பிக்கக் கீழே இழுக்கவும் — அல்லது அறிவிப்புக்காகக் காத்திருக்கவும்.",
+  "justNow": "சற்று முன்பு",
+  "couldNotLoad": "ஏற்ற முடியவில்லை",
+  "continueLabel": "தொடரவும்",
+  "openSettings": "அமைப்புகளைத் திறக்கவும்",
+  "somePermissionsAreBlockedTapA": "சில அனுமதிகள் தடுக்கப்பட்டுள்ளன. தடுக்கப்பட்ட உருப்படியைத் (அல்லது “அமைப்புகளைத் திற”) தட்டி அதைச் செயல்படுத்திவிட்டு, பின்னர் இங்குத் திரும்பவும்.",
+  "thesePermissionsAreRequiredToUse": "{appName}-ஐப் பயன்படுத்த இந்த அனுமதிகள் தேவை. அனுமதி வழங்க, நிலுவையில் உள்ள எந்தவொரு உருப்படியையும் தட்டவும்.",
+  "@thesePermissionsAreRequiredToUse": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "settings2": "அமைப்புகள்",
+  "allow": "அனுமதி",
+  "blockedEnableItInSettings": "தடுக்கப்பட்டுள்ளது — அமைப்புகளில் இதை இயக்கவும்",
+  "allowsUpTo": "வரை அனுமதிக்கிறது",
+  "bookingFailed": "முன்பதிவு தோல்வியடைந்தது",
+  "yourDetails": "உங்கள் விவரங்கள்",
+  "fromYourProfile": "உங்கள் சுயவிவரத்திலிருந்து",
+  "familyMembers": "குடும்ப உறுப்பினர்கள்",
+  "addMember": "உறுப்பினரைச் சேர்க்கவும்",
+  "addAnother": "இன்னொன்றைச் சேர்க்கவும்",
+  "preferredDateOptional": "விருப்பமான தேதி (விருப்பத்திற்குரியது)",
+  "anyDate": "எந்த தேதியும்",
+  "bookNowFree": "இப்போதே முன்பதிவு செய்யுங்கள் (இலவசம்)",
+  "couldNotLoadThisPooja": "இந்தப் பூஜையை ஏற்ற முடியவில்லை",
+  "forLabel": "பக்கம்",
+  "s1Person": "1 நபர்",
+  "bookShareDetails": "பதிவு செய்து விவரங்களைப் பகிரவும்",
+  "confirmYourBookingWithTheNames": "பூஜை செய்யப்படும் நபர்களின் பெயர்களைக் கூறி உங்கள் முன்பதிவை உறுதிப்படுத்தவும்.",
+  "panditCoordinates": "பண்டிட் ஒருங்கிணைப்புகள்",
+  "aVerifiedPanditCallsToFix": "சரிபார்க்கப்பட்ட ஒரு பண்டிதர், நேரத்தை நிர்ணயிக்கவும் சாமான்களை ஏற்பாடு செய்யவும் அழைக்கிறார்.",
+  "poojaPerformed": "பூஜை செய்யப்பட்டது",
+  "sankalpIsTakenInYourFamily": "சங்கல்பம் உங்கள் குடும்பத்தினரின் பெயரில் எடுக்கப்பட்டு, பின்னர் தகுந்த இடங்களில் பிரசாதம் பகிர்ந்தளிக்கப்படும்.",
+  "couldNotLoadPoojas": "பூஜைகளை ஏற்ற முடியவில்லை",
+  "any": "ஏதேனும்",
+  "noPoojasHere": "இங்கே பூஜைகள் இல்லை",
+  "nothingMatchesTheCurrentFilters": "தற்போதைய வடிப்பான்களுடன் எதுவும் பொருந்தவில்லை.",
+  "noPoojasAvailableYet": "இன்னும் பூஜைகள் எதுவும் கிடைக்கவில்லை",
+  "showAllPoojas": "அனைத்து பூஜைகளையும் காட்டு",
+  "tapToViewDetailsBook": "விவரங்களைக் காணவும் முன்பதிவு செய்யவும் தட்டவும்.",
+  "appliedYouBothEarnOnYour": "செயல்படுத்தப்பட்டது! உங்கள் இருவருக்கும் முதல் ரீசார்ஜிலேயே வருமானம் கிடைக்கும்.",
+  "shareYourCode": "உங்கள் குறியீட்டைப் பகிரவும்",
+  "sendYourCodeToFriendsVia": "உங்கள் குறியீட்டை வாட்ஸ்அப், எஸ்எம்எஸ் என எங்கு வேண்டுமானாலும் நண்பர்களுக்கு அனுப்புங்கள்.",
+  "friendSignsUp": "நண்பர் பதிவு செய்கிறார்",
+  "theyEnterYourCodeInRefer": "அவர்கள் பதிவுசெய்த பிறகு, ரெஃபர் & ஏர்ன் (Refer & Earn) திட்டத்தில் உங்கள் குறியீட்டை உள்ளிடுவார்கள்.",
+  "feedbackReceived": "கருத்துகள் பெறப்பட்டன ✓",
+  "thanksOurTeamWillLookInto": "நன்றி — எங்கள் குழுவினர் இது குறித்து ஆராய்வார்கள்.",
+  "fullName": "முழு பெயர்",
+  "email": "மின்னஞ்சல்",
+  "phoneNumber": "தொலைபேசி எண்",
+  "message": "செய்தி",
+  "requiredLabel": "தேவைப்படும்",
+  "applicationReceived": "விண்ணப்பம் பெறப்பட்டது ✓",
+  "ourTeamWillReachOutAbout": "உங்கள் ஜோதிடர் சுயவிவரம் குறித்து எங்கள் குழு உங்களைத் தொடர்புகொள்ளும்.",
+  "enter10Digits": "10 இலக்கங்களை உள்ளிடவும்",
+  "aboutYouBioExpertiseExperience": "உங்களைப் பற்றி (சுயவிவரம், நிபுணத்துவம், அனுபவம்)",
+  "rudragangaConnectsYouWithTrustedVedic": "{appName} தொழில் வழிகாட்டுதல், நம்பகமான வேத ஜோதிடர்களுடன் உங்களை இணைக்கிறது.",
+  "@rudragangaConnectsYouWithTrustedVedic": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "marriageFinanceHealthAndLifeS": "திருமணம், நிதி, ஆரோக்கியம் மற்றும் வாழ்க்கையின் முக்கிய கேள்விகள் — அரட்டை, அழைப்பு மற்றும் காணொளி வாயிலாக.",
+  "getYourFreeKundliDailyHoroscope": "உங்கள் இலவச ஜாதகம், தினசரி ராசிபலன், திருமண ஏற்பாடு, பூஜைகள் மற்றும் பரிகாரங்கள் அனைத்தையும் ஒரே இடத்தில் பெறுங்கள்.\n\n",
+  "ourMissionIsToMakeAuthentic": "உண்மையான, கருணையான ஆன்மீக வழிகாட்டுதலை அனைவருக்கும் கிடைக்கச் செய்வதே எங்கள் நோக்கம்.",
+  "inYourOwnLanguage": "உங்கள் சொந்த மொழியில்.",
+  "verifiedExperiencedAstrologers": "சரிபார்க்கப்பட்ட, அனுபவம் வாய்ந்த ஜோதிடர்கள்",
+  "privateSecureConsultations": "தனிப்பட்ட மற்றும் பாதுகாப்பான ஆலோசனைகள்",
+  "availableIn6IndianLanguages": "6 இந்திய மொழிகளில் கிடைக்கிறது",
+  "thanksForRatingUs": "எங்களுக்கு மதிப்பளித்ததற்கு நன்றி ✓",
+  "yourFeedbackHelpsRudragangaGrow": "உங்கள் கருத்துகள் {appName} வளர உதவுகின்றன.",
+  "@yourFeedbackHelpsRudragangaGrow": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "onceInADay": "ஒரு நாளைக்கு ஒரு முறை",
+  "twiceInADay": "ஒரு நாளைக்கு இரண்டு முறை",
+  "asManyTimesAsItComes": "எத்தனை முறை வந்தாலும்",
+  "never": "ஒருபோதும்",
+  "cricket": "கிரிக்கெட்",
+  "shareMarket": "பங்குச் சந்தை",
+  "bollywood": "பாலிவுட்",
+  "newMagazine": "புதிய இதழ்",
+  "festivals": "திருவிழாக்கள்",
+  "notificationsUpdated": "அறிவிப்புகள் புதுப்பிக்கப்பட்டன ✓",
+  "youLlHearFromUsBased": "உங்கள் விருப்பங்களின் அடிப்படையில் எங்களிடமிருந்து பதில் வரும்.",
+  "yourChartsWillNowFollowYour": "இனி உங்கள் விளக்கப்படங்கள் நீங்கள் தேர்ந்தெடுத்த பாணியைப் பின்பற்றும்.",
+  "chartStyle": "விளக்கப்பட பாணி",
+  "northIndian": "வட இந்திய",
+  "southIndian": "தென்னிந்தியர்",
+  "monthSystem": "மாத அமைப்பு",
+  "amanta": "அமண்டா",
+  "purnimanta": "பூர்ணிமந்தா",
+  "darkMode": "இருண்ட பயன்முறை",
+  "off": "ஆஃப்",
+  "onLabel": "ஆன்",
+  "useDeviceSettings": "சாதன அமைப்புகளைப் பயன்படுத்தவும்",
+  "ayanamsa": "அயனாம்சம்",
+  "nCLahiri": "என்.சி. லஹிரி",
+  "kpNew": "கேபி புதிய",
+  "kpOld": "கேபி பழைய",
+  "raman": "ராமன்",
+  "kpKhullar": "கே.பி. குல்லர்",
+  "subtotal": "மொத்த தொகை",
+  "youSave": "நீங்கள் சேமிக்கிறீர்கள்",
+  "total": "மொத்தம்",
+  "deliveryAddress": "விநியோக முகவரி",
+  "orderSummary": "ஆர்டர் சுருக்கம்",
+  "couponsOffers": "கூப்பன்கள் மற்றும் சலுகைகள்",
+  "billDetails": "மசோதா விவரங்கள்",
+  "address": "முகவரி",
+  "productDiscount": "பொருள் தள்ளுபடி",
+  "itemsSubtotal": "பொருட்களின் மொத்தத்தொகை",
+  "delivery": "விநியோகம்",
+  "free2": "இலவசம்",
+  "toPay": "பணம் செலுத்த",
+  "dMmmYyyyHMmA": "டி எம்எம்எம் ய்ய்ய்ய், ஹெச்:எம்எம் ஏ",
+  "couldNotDownloadInvoice": "விலைப்பட்டியலைப் பதிவிறக்க முடியவில்லை",
+  "orderNotFound": "ஆர்டர் காணப்படவில்லை",
+  "activityTimeline": "செயல்பாட்டு காலவரிசை",
+  "eeeDMmmYyyyHMm": "ஈஈஈ, டி எம்எம்எம் ஒய்ஒய்ஒய்ஒய் · எச்:மிமீ ஏ",
+  "totalPaid": "மொத்தமாக செலுத்தப்பட்டது",
+  "orderPlaced2": "ஆர்டர் செய்யப்பட்டது",
+  "dMmmHMmA": "டி எம்எம்எம், எச்:எம்எம் அ",
+  "generating": "உருவாக்குகிறது…",
+  "pleaseDescribeTheIssue": "தயவுசெய்து சிக்கலை விவரிக்கவும்.",
+  "couldNotLoadProducts": "தயாரிப்புகளை ஏற்ற முடியவில்லை",
+  "newest": "புதிய",
+  "priceLowHigh": "விலை: குறைவு→அதிகம்",
+  "priceHighLow": "விலை: அதிகம்→குறைவு",
+  "topRated": "சிறந்த மதிப்பீடு பெற்ற",
+  "s6DigitPin": "6-இலக்க PIN",
+  "addressLine1": "முகவரி வரி 1 *",
+  "addressLine2": "முகவரி வரி 2",
+  "city": "நகரம் *",
+  "state": "மாநிலம் *",
+  "pinCode": "பின் குறியீடு *",
+  "payment": "பணம் செலுத்துதல்",
+  "pooja": "பூஜா",
+  "shop": "கடை",
+  "securePayment": "பாதுகாப்பான கட்டணம்",
+  "noTransactionsMatchTheseFilters": "இந்த வடிகட்டிகளுடன் எந்தப் பரிவர்த்தனைகளும் பொருந்தவில்லை.",
+  "noTransactionsYet": "இன்னும் பரிவர்த்தனைகள் எதுவும் இல்லை",
+  "moneyAdded": "பணம் சேர்க்கப்பட்டது",
+  "poojaBooking": "பூஜை முன்பதிவு",
+  "videoCall": "வீடியோ அழைப்பு",
+  "shopOrder": "கடை ஆர்டர்",
+  "refund": "பணத்தைத் திரும்பப் பெறுதல்",
+  "bonus": "போனஸ்",
+  "credited": "வரவு வைக்கப்பட்டது",
+  "debited": "பற்று வைக்கப்பட்டது",
+  "rg": "ஒரு",
+  "aExperienceyearsYrsExp": "{experienceYears} வருட அனுபவம்",
+  "@aExperienceyearsYrsExp": {
+    "placeholders": {
+      "experienceYears": {
+        "type": "Object"
+      }
+    }
+  },
+  "weLlLetYouKnowWhen2": "{name}, {reason} ஆகும்போது உங்களுக்குத் தெரிவிப்போம்.",
+  "@weLlLetYouKnowWhen2": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "reason": {
+        "type": "Object"
+      }
+    }
+  },
+  "priceMin": "₹{price}/நிமிடம்",
+  "@priceMin": {
+    "placeholders": {
+      "price": {
+        "type": "Object"
+      }
+    }
+  },
+  "n1000000Tostringasfixed1M": "{toStringAsFixed}M",
+  "@n1000000Tostringasfixed1M": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "n1000Tostringasfixed1K": "{toStringAsFixed}k",
+  "@n1000Tostringasfixed1K": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "nameIsATrustedAstrologerWith": "{name} என்பவர் {desc} இல் ஆழ்ந்த நிபுணத்துவம் பெற்ற ஒரு நம்பகமான ஜோதிடர். இந்தத் தளத்தில் பல வருடப் பயிற்சியின் மூலம்,",
+  "@nameIsATrustedAstrologerWith": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "desc": {
+        "type": "Object"
+      }
+    }
+  },
+  "chatMin": "₹{chat}/நிமிடம்",
+  "@chatMin": {
+    "placeholders": {
+      "chat": {
+        "type": "Object"
+      }
+    }
+  },
+  "callMin": "₹{call}/நிமிடம்",
+  "@callMin": {
+    "placeholders": {
+      "call": {
+        "type": "Object"
+      }
+    }
+  },
+  "videoMin": "₹{video}/நிமிடம்",
+  "@videoMin": {
+    "placeholders": {
+      "video": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsLive": "{name} நேரலையில் உள்ளது",
+  "@widgetNameIsLive": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsInASession": "{name} தற்போது ஒரு அமர்வில் உள்ளது",
+  "@widgetNameIsInASession": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetNameIsOfflineRightNow": "{name} தற்போது ஆஃப்லைனில் உள்ளது",
+  "@widgetNameIsOfflineRightNow": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "storeFollowers1000Tostringasfixed1K": "{toStringAsFixed}k",
+  "@storeFollowers1000Tostringasfixed1K": {
+    "placeholders": {
+      "toStringAsFixed": {
+        "type": "Object"
+      }
+    }
+  },
+  "maxPriceMaxpriceRoundMin": "அதிகபட்ச விலை · ₹{round}/நிமிடம்",
+  "@maxPriceMaxpriceRoundMin": {
+    "placeholders": {
+      "round": {
+        "type": "Object"
+      }
+    }
+  },
+  "sendTotalTokens": "அனுப்பு · {total} டோக்கன்கள்",
+  "@sendTotalTokens": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "sTypeTouppercaseLive": "{toUpperCase} · நேரலை",
+  "@sTypeTouppercaseLive": {
+    "placeholders": {
+      "toUpperCase": {
+        "type": "Object"
+      }
+    }
+  },
+  "widgetAstrologernameChatHistory": "{astrologerName} · அரட்டை வரலாறு",
+  "@widgetAstrologernameChatHistory": {
+    "placeholders": {
+      "astrologerName": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyAtRTimeofdayFor14": "தினமும் {timeOfDay} · 14 நாட்களுக்கு",
+  "@dailyAtRTimeofdayFor14": {
+    "placeholders": {
+      "timeOfDay": {
+        "type": "Object"
+      }
+    }
+  },
+  "onRDate": "{date} இல்",
+  "@onRDate": {
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "durSDurationsecSTotalamountCoins": "{durationSec} · {totalAmount} நாணயங்கள்",
+  "@durSDurationsecSTotalamountCoins": {
+    "placeholders": {
+      "durationSec": {
+        "type": "Object"
+      },
+      "totalAmount": {
+        "type": "Object"
+      }
+    }
+  },
+  "aboutMinutesleftMinLeft": "சுமார் {minutesLeft} நிமிடங்கள் மீதமுள்ளன",
+  "@aboutMinutesleftMinLeft": {
+    "placeholders": {
+      "minutesLeft": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyPermissionPerm": "[அருகில்] அனுமதி = {perm}",
+  "@nearbyPermissionPerm": {
+    "placeholders": {
+      "perm": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyGetcurrentpositionFailedETryingLast": "[அருகில்] getCurrentPosition தோல்வியடைந்தது: {e} — கடைசியாக அறியப்பட்டதை முயற்சிக்கிறது",
+  "@nearbyGetcurrentpositionFailedETryingLast": {
+    "placeholders": {
+      "e": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyPositionPosLatitudePosLongitude": "[அருகில்] நிலை = {latitude}, {longitude}",
+  "@nearbyPositionPosLatitudePosLongitude": {
+    "placeholders": {
+      "latitude": {
+        "type": "Object"
+      },
+      "longitude": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyReversegeocodeCityCity": "[அருகிலுள்ள] ரிவர்ஸ்ஜியோகோட் நகரம் = \"{city}\"",
+  "@nearbyReversegeocodeCityCity": {
+    "placeholders": {
+      "city": {
+        "type": "Object"
+      }
+    }
+  },
+  "nearbyResolveErrorE": "[அருகில்] தீர்வுப் பிழை: {e}",
+  "@nearbyResolveErrorE": {
+    "placeholders": {
+      "e": {
+        "type": "Object"
+      }
+    }
+  },
+  "resumeSessionClock": "சுயவிவரம் · {clock}",
+  "@resumeSessionClock": {
+    "placeholders": {
+      "clock": {
+        "type": "Object"
+      }
+    }
+  },
+  "rateperminMin": "₹{ratePerMin}/நிமிடம்",
+  "@rateperminMin": {
+    "placeholders": {
+      "ratePerMin": {
+        "type": "Object"
+      }
+    }
+  },
+  "checkYourConnectionAndTryAgain": "உங்கள் இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.\n\n({error})",
+  "@checkYourConnectionAndTryAgain": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffInminutesMAgo": "{inMinutes}மீ முன்பு",
+  "@diffInminutesMAgo": {
+    "placeholders": {
+      "inMinutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffInhoursHAgo": "{inHours}h முன்பு",
+  "@diffInhoursHAgo": {
+    "placeholders": {
+      "inHours": {
+        "type": "Object"
+      }
+    }
+  },
+  "diffIndaysDAgo": "{inDays}d முன்பு",
+  "@diffIndaysDAgo": {
+    "placeholders": {
+      "inDays": {
+        "type": "Object"
+      }
+    }
+  },
+  "thisPoojaCostsWidgetPoojaBaseprice": "இந்தப் பூஜைக்கு ₹{basePrice} செலவாகும். உங்கள் பணப்பையில் போதுமான இருப்பு இல்லை — பணத்தைச் சேர்த்து மீண்டும் முயற்சிக்கவும்.",
+  "@thisPoojaCostsWidgetPoojaBaseprice": {
+    "placeholders": {
+      "basePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "payWidgetPoojaBasepriceBook": "₹{basePrice} செலுத்தி முன்பதிவு செய்யுங்கள்",
+  "@payWidgetPoojaBasepriceBook": {
+    "placeholders": {
+      "basePrice": {
+        "type": "Object"
+      }
+    }
+  },
+  "upToPMaxpersons": "{maxPersons} வரை",
+  "@upToPMaxpersons": {
+    "placeholders": {
+      "maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "aSacredPNamePerformedBy": "அனுபவம் வாய்ந்த பண்டிதர்களால் நிகழ்த்தப்படும் ஒரு புனிதமான {name} சடங்கு. ஒரு நேரத்தை முன்பதிவு செய்யுங்கள், விவரங்களையும் நேரத்தையும் ஒருங்கிணைக்க எங்கள் குழு உங்களைத் தொடர்புகொள்ளும்.",
+  "@aSacredPNamePerformedBy": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "upToPoojaMaxpersons": "{maxPersons} வரை",
+  "@upToPoojaMaxpersons": {
+    "placeholders": {
+      "maxPersons": {
+        "type": "Object"
+      }
+    }
+  },
+  "earnIRewardOnRudraganga": "⟦1-க்கு ₹{reward} சம்பாதியுங்கள்",
+  "@earnIRewardOnRudraganga": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      },
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "bothEarnIReward": "இருவரும் ₹{reward} சம்பாதிக்கிறார்கள்",
+  "@bothEarnIReward": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "onTheirFirstWalletRechargeYou": "உங்கள் வாலட்டை முதல் முறை ரீசார்ஜ் செய்யும்போது, உங்கள் இருவருக்கும் உடனடியாக ₹{reward} கிடைக்கும்.",
+  "@onTheirFirstWalletRechargeYou": {
+    "placeholders": {
+      "reward": {
+        "type": "Object"
+      }
+    }
+  },
+  "rechargeTotalBalance": "ரீசார்ஜ் ₹{balance}",
+  "@rechargeTotalBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "Object"
+      }
+    }
+  },
+  "itemTotalMrpQtycount": "பொருட்களின் மொத்த விலை (MRP) · {qtyCount}",
+  "@itemTotalMrpQtycount": {
+    "placeholders": {
+      "qtyCount": {
+        "type": "Object"
+      }
+    }
+  },
+  "couponAppliedCode": "கூப்பன் ({code})",
+  "@couponAppliedCode": {
+    "placeholders": {
+      "code": {
+        "type": "Object"
+      }
+    }
+  },
+  "placeOrderTotal": "ஆர்டர் செய்யுங்கள் · ₹{total}",
+  "@placeOrderTotal": {
+    "placeholders": {
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "pPriceWasPMrp": "₹{price} (முன்பு ₹{mrp})",
+  "@pPriceWasPMrp": {
+    "placeholders": {
+      "price": {
+        "type": "Object"
+      },
+      "mrp": {
+        "type": "Object"
+      }
+    }
+  },
+  "pNamePricelineUrl": "{name} {priceLine}\n{url}",
+  "@pNamePricelineUrl": {
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      },
+      "priceLine": {
+        "type": "Object"
+      },
+      "url": {
+        "type": "Object"
+      }
+    }
+  },
+  "ytWebviewErrorEErrorcodeE": "YT வெப்வியூ பிழை: {errorCode} {description}",
+  "@ytWebviewErrorEErrorcodeE": {
+    "placeholders": {
+      "errorCode": {
+        "type": "Object"
+      },
+      "description": {
+        "type": "Object"
+      }
+    }
+  },
+  "rgpayHttpErrorEResponseStatuscode": "RGPAY http பிழை: {statusCode}",
+  "@rgpayHttpErrorEResponseStatuscode": {
+    "placeholders": {
+      "statusCode": {
+        "type": "Object"
+      }
+    }
+  },
+  "rgpayResourceErrorEErrorcodeE": "RGPAY வளப் பிழை: {errorCode} {description}",
+  "@rgpayResourceErrorEErrorcodeE": {
+    "placeholders": {
+      "errorCode": {
+        "type": "Object"
+      },
+      "description": {
+        "type": "Object"
+      }
+    }
+  }
+}

@@ -9,8 +9,11 @@ import 'app_localizations_as.dart';
 import 'app_localizations_bn.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_hi.dart';
+import 'app_localizations_kn.dart';
 import 'app_localizations_mr.dart';
 import 'app_localizations_pa.dart';
+import 'app_localizations_ta.dart';
+import 'app_localizations_te.dart';
 
 // ignore_for_file: type=lint
 
@@ -101,8 +104,11 @@ abstract class L10n {
     Locale('bn'),
     Locale('en'),
     Locale('hi'),
+    Locale('kn'),
     Locale('mr'),
-    Locale('pa')
+    Locale('pa'),
+    Locale('ta'),
+    Locale('te')
   ];
 
   /// No description provided for @appName.
@@ -5163,8 +5169,11 @@ class _L10nDelegate extends LocalizationsDelegate<L10n> {
         'bn',
         'en',
         'hi',
+        'kn',
         'mr',
-        'pa'
+        'pa',
+        'ta',
+        'te'
       ].contains(locale.languageCode);
 
   @override
@@ -5182,10 +5191,16 @@ L10n lookupL10n(Locale locale) {
       return L10nEn();
     case 'hi':
       return L10nHi();
+    case 'kn':
+      return L10nKn();
     case 'mr':
       return L10nMr();
     case 'pa':
       return L10nPa();
+    case 'ta':
+      return L10nTa();
+    case 'te':
+      return L10nTe();
   }
 
   throw FlutterError(

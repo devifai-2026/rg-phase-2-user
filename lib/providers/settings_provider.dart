@@ -32,6 +32,9 @@ class SettingsProvider extends ChangeNotifier {
     Locale('mr'),
     Locale('pa'),
     Locale('as'),
+    Locale('kn'),
+    Locale('te'),
+    Locale('ta'),
   ];
 
   /// Native names for the language picker.
@@ -42,6 +45,9 @@ class SettingsProvider extends ChangeNotifier {
     'mr': 'मराठी',
     'pa': 'ਪੰਜਾਬੀ',
     'as': 'অসমীয়া',
+    'kn': 'ಕನ್ನಡ',
+    'te': 'తెలుగు',
+    'ta': 'தமிழ்',
   };
 
   Future<void> load() async {
