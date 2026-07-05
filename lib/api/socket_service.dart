@@ -61,6 +61,12 @@ class SocketService extends ChangeNotifier {
   Timer? _statusPollTimer;
   final Set<String> _watchedProfileIds = {};
 
+  // Socket host with the same fallback strategy as the REST client: if the
+  // primary host's DNS/connection keeps failing, switch to the deterministic
+  // sslip.io fallback (which never flaps) and rebuild the socket there.
+  String _socketHost = ApiConfig.socketUrl;
+  int _connectErrors = 0;
+
   /// Connect (idempotent). Call after login / on cold-start when a session exists.
   void connect() {
     final token = _tokens.accessToken;
@@ -73,7 +79,7 @@ class SocketService extends ChangeNotifier {
     }
 
     _socket = io.io(
-      ApiConfig.socketUrl,
+      _socketHost,
       io.OptionBuilder()
           // WEBSOCKET ONLY. On Android, socket_io_client's XHR-polling transport
           // hangs (long-poll GET times out → "Connecting…" forever). Websocket is
@@ -95,6 +101,7 @@ class SocketService extends ChangeNotifier {
     final s = _socket!;
     s.onConnect((_) {
       _connected = true;
+      _connectErrors = 0; // healthy again
       _startHeartbeat();
       _startStatusPoll();
       notifyListeners();
@@ -107,7 +114,21 @@ class SocketService extends ChangeNotifier {
     });
     // On reconnect attempts, always send the freshest token (it may have rotated).
     s.onReconnectAttempt((_) => s.auth = {'token': _tokens.accessToken ?? ''});
-    s.onConnectError((_) {/* surfaced via `connected` */});
+    s.onConnectError((_) {
+      // After a few failed attempts on the primary host, assume its DNS is
+      // unresolvable on this network and rebuild the socket on the sslip.io
+      // fallback (once). REST already does the same, so realtime follows suit.
+      _connectErrors++;
+      if (_connectErrors >= 3 &&
+          ApiConfig.hasFallback &&
+          _socketHost != ApiConfig.fallbackHost) {
+        _socketHost = ApiConfig.fallbackHost;
+        _connectErrors = 0;
+        try { _socket?.dispose(); } catch (_) {}
+        _socket = null;
+        connect(); // rebuild on the fallback host
+      }
+    });
 
     // Core server → client events (see FLUTTER_API.md §7).
     s.on('incoming-request', (d) => onIncomingRequest?.call(_map(d)));
