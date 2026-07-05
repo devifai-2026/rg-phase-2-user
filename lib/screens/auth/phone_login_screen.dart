@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:smart_auth/smart_auth.dart';
 
 import '../../api/api_client.dart';
+import '../../api/app_config_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/auth_provider.dart';
 import '../../theme/rg_colors.dart';
@@ -98,6 +99,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
     final c = context.rg;
     final t = L10n.of(context);
     final auth = context.watch<AuthProvider>();
+    final brand = context.watch<AppConfigService>().appName;
 
     return Scaffold(
       backgroundColor: c.ground,
@@ -129,7 +131,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 12),
-                const Center(child: RgLogo(size: 84)),
+                Center(child: RgLogo(size: 84, brandName: brand)),
                 const SizedBox(height: 36),
                 Text(t.authWelcomeTitle,
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: c.ink)),
