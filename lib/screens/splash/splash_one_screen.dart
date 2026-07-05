@@ -67,7 +67,7 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
             child: Image.network(
               splashImg,
               fit: fit,
-              errorBuilder: (_, __, ___) => const Center(child: RgLogo(size: 150, showWordmark: true)),
+              errorBuilder: (_, __, ___) => Center(child: RgLogo(size: 150, showWordmark: true, brandName: cfg.appName)),
             ),
           ),
         ),
@@ -81,7 +81,7 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
           opacity: _fade,
           child: ScaleTransition(
             scale: _scale,
-            child: const RgLogo(size: 150, showWordmark: true),
+            child: RgLogo(size: 150, showWordmark: true, brandName: cfg.appName),
           ),
         ),
       ),

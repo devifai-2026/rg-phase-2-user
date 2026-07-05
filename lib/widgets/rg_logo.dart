@@ -10,7 +10,11 @@ import '../theme/rg_colors.dart';
 class RgLogo extends StatelessWidget {
   final double size;
   final bool showWordmark;
-  const RgLogo({super.key, this.size = 120, this.showWordmark = false});
+  /// Tenant brand name to show under the mark. White-label: pass the tenant's
+  /// appName so the fallback splash/login never shows a hardcoded brand. When
+  /// null/empty the wordmark is omitted (mark only).
+  final String? brandName;
+  const RgLogo({super.key, this.size = 120, this.showWordmark = false, this.brandName});
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +27,25 @@ class RgLogo extends StatelessWidget {
           height: size,
           child: CustomPaint(painter: _RgMarkPainter(red: c.redDeep, gold: c.gold, ink: c.ink)),
         ),
-        if (showWordmark) ...[
+        if (showWordmark && (brandName ?? '').trim().isNotEmpty) ...[
           SizedBox(height: size * 0.16),
-          Text.rich(
-            TextSpan(children: [
-              // Brand wordmark — never localized.
-              TextSpan(text: 'Rudra', style: TextStyle(color: c.ink)),
-              TextSpan(text: 'ganga', style: TextStyle(color: c.red)),
-            ]),
-            style: TextStyle(
-              fontSize: size * 0.22,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 0.5,
-            ),
-          ),
+          // Tenant brand wordmark — split so the tail is accent-coloured, like the
+          // original. White-label: uses the passed brandName, never a hardcoded one.
+          Builder(builder: (_) {
+            final name = brandName!.trim();
+            final cut = name.length > 4 ? (name.length / 2).ceil() : name.length;
+            return Text.rich(
+              TextSpan(children: [
+                TextSpan(text: name.substring(0, cut), style: TextStyle(color: c.ink)),
+                if (cut < name.length) TextSpan(text: name.substring(cut), style: TextStyle(color: c.red)),
+              ]),
+              style: TextStyle(
+                fontSize: size * 0.22,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 0.5,
+              ),
+            );
+          }),
         ],
       ],
     );
