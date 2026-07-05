@@ -25,6 +25,7 @@ import '../onboarding/onboarding_screen.dart';
 import '../../widgets/slide_route.dart';
 import '../astrologers/astrologer_profile_screen.dart';
 import '../astrologers/astrologer_list_screen.dart';
+import '../consult/consultation_history_screen.dart';
 import '../notifications/notifications_screen.dart';
 import '../pooja/pooja_list_screen.dart';
 import '../shop/product_list_screen.dart';
@@ -189,10 +190,14 @@ class HomeTab extends StatelessWidget {
             ),
 
             // ── History ──
-            SectionHeader(t.secHistory, seeAllLabel: t.seeAll, onSeeAll: () => _soon(context, t.secHistory)),
+            // See all → the real consultation history; Start (empty state) →
+            // the astrologer list so a first-timer can begin a consultation.
+            SectionHeader(t.secHistory, seeAllLabel: t.seeAll,
+                onSeeAll: () => Navigator.of(context).push(slideRoute(const ConsultationHistoryScreen()))),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-              child: _EmptyHistory(hint: t.startReadingHint, startLabel: t.startBtn, onTap: () => _soon(context, t.secFeatured)),
+              child: _EmptyHistory(hint: t.startReadingHint, startLabel: t.startBtn,
+                  onTap: () => Navigator.of(context).push(slideRoute(const AstrologerListScreen()))),
             ),
 
             // ── Share ──
