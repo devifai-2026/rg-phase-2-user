@@ -1718,5 +1718,21 @@
   "stay": "Stay",
   "@stay": {
     "description": "Back-to-exit cancel (stay) button"
+  },
+  "yourName": "Your name",
+  "@yourName": {
+    "description": "Numerology name field label"
+  },
+  "enterYourName": "Enter your name",
+  "@enterYourName": {
+    "description": "Numerology name field hint"
+  },
+  "runNumerology": "Reveal my numbers",
+  "@runNumerology": {
+    "description": "Numerology run button"
+  },
+  "numerologyIntro": "Discover the numbers that shape your destiny, personality and soul.",
+  "@numerologyIntro": {
+    "description": "Numerology intro"
   }
 }

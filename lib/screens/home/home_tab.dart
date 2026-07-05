@@ -17,6 +17,7 @@ import '../../services/deep_link.dart';
 import '../../theme/rg_colors.dart';
 import '../common/coming_soon_screen.dart';
 import '../horoscope/horoscope_screen.dart';
+import '../numerology/numerology_screen.dart';
 import '../panchang/panchang_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../../widgets/slide_route.dart';
@@ -172,15 +173,12 @@ class HomeTab extends StatelessWidget {
                 childAspectRatio: 0.82,
                 children: [
                   OthersIcon(icon: Icons.calendar_month_outlined, label: t.dailyPanchang, onTap: () => Navigator.of(context).push(slideRoute(const PanchangScreen()))),
-                  OthersIcon(icon: Icons.support_agent_outlined, label: t.talkToAstrologer, onTap: () => _soon(context, t.astrologers)),
                   OthersIcon(icon: Icons.menu_book_outlined, label: t.brihatKundli, onTap: () => _soon(context, t.brihatKundli, Icons.menu_book_outlined)),
-                  OthersIcon(icon: Icons.edit_note_outlined, label: t.dailyNotes, onTap: () => _soon(context, t.dailyNotes, Icons.edit_note_outlined)),
-                  OthersIcon(icon: Icons.help_outline, label: t.askAQuestion, onTap: () => _soon(context, t.askAQuestion, Icons.help_outline)),
                   OthersIcon(icon: Icons.auto_awesome, svgAsset: 'assets/images/ic_kundli_ai.svg', label: 'Kundli AI+', onTap: () => _soon(context, 'Kundli AI+', Icons.auto_awesome)),
-                  OthersIcon(icon: Icons.pin_outlined, label: t.numerology, onTap: () => _soon(context, t.numerology, Icons.pin_outlined)),
+                  // Numerology — instant, VedicAstro-backed (no cron).
+                  OthersIcon(icon: Icons.pin_outlined, label: t.numerology, onTap: () => Navigator.of(context).push(slideRoute(const NumerologyScreen()))),
                   OthersIcon(icon: Icons.picture_as_pdf_outlined, label: t.free50Pages, onTap: () => _soon(context, t.freeReport, Icons.picture_as_pdf_outlined)),
                   OthersIcon(icon: Icons.diversity_3_outlined, label: t.freeMatrimony, onTap: () => _soon(context, t.matrimony, Icons.diversity_3_outlined)),
-                  OthersIcon(icon: Icons.book_outlined, label: t.lalKitab, onTap: () => _soon(context, t.lalKitab, Icons.book_outlined)),
                   OthersIcon(icon: Icons.favorite_border, label: t.loveMatch, onTap: () => _soon(context, t.loveMatch, Icons.favorite_border)),
                   OthersIcon(icon: Icons.nightlight_outlined, label: t.horoscope, onTap: () => Navigator.of(context).push(slideRoute(const HoroscopeScreen()))),
                 ],

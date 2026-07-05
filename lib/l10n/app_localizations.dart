@@ -5195,6 +5195,30 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Stay'**
   String get stay;
+
+  /// Numerology name field label
+  ///
+  /// In en, this message translates to:
+  /// **'Your name'**
+  String get yourName;
+
+  /// Numerology name field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get enterYourName;
+
+  /// Numerology run button
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal my numbers'**
+  String get runNumerology;
+
+  /// Numerology intro
+  ///
+  /// In en, this message translates to:
+  /// **'Discover the numbers that shape your destiny, personality and soul.'**
+  String get numerologyIntro;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
