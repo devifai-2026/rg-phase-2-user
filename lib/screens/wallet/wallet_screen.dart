@@ -162,7 +162,10 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
       if (!mounted) return;
       if (txnid.isEmpty) { _toast(L10n.of(context).couldNotStartRecharge); return; }
       // Open the PayU checkout INSIDE the app (WebView) — never the browser.
-      final url = '${ApiConfig.host}/api/payments/payu/recharge-redirect/$txnid';
+      // The WebView carries no X-Tenant header/bearer token, so pass the tenant
+      // as a query param; the backend threads it through the whole PayU chain.
+      final tenantQ = ApiConfig.tenant.isNotEmpty ? '?tenant=${Uri.encodeComponent(ApiConfig.tenant)}' : '';
+      final url = '${ApiConfig.host}/api/payments/payu/recharge-redirect/$txnid$tenantQ';
       final result = await Navigator.of(context).push<bool>(
         slideRoute(PaymentWebViewScreen(url: url, title: L10n.of(context).securePayment)),
       );
