@@ -18,6 +18,8 @@ import '../../theme/rg_colors.dart';
 import '../common/coming_soon_screen.dart';
 import '../horoscope/horoscope_screen.dart';
 import '../numerology/numerology_screen.dart';
+import '../matching/matching_screen.dart';
+import '../manglik/manglik_screen.dart';
 import '../panchang/panchang_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../../widgets/slide_route.dart';
@@ -79,10 +81,10 @@ class HomeTab extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
               child: Row(
                 children: [
-                  _FeatureTile(icon: Icons.grid_view_rounded, svgAsset: 'assets/images/ic_free_kundli.svg', label: t.kFreeKundli, onTap: () => _soon(context, t.kFreeKundli, Icons.grid_view_rounded)),
-                  _FeatureTile(icon: Icons.favorite, label: t.kMatching, onTap: () => _soon(context, t.kMatching, Icons.favorite)),
+                  _FeatureTile(icon: Icons.favorite, label: t.kMatching, onTap: () => Navigator.of(context).push(slideRoute(const MatchingScreen()))),
                   _FeatureTile(icon: Icons.menu_book_outlined, label: t.kBrihat, onTap: () => _soon(context, t.kBrihat, Icons.menu_book_outlined)),
-                  _FeatureTile(icon: Icons.auto_awesome, svgAsset: 'assets/images/ic_kundli_ai.svg', label: t.kKundliAi, onTap: () => _soon(context, t.kKundliAi, Icons.auto_awesome)),
+                  _FeatureTile(icon: Icons.pin_outlined, label: t.numerology, onTap: () => Navigator.of(context).push(slideRoute(const NumerologyScreen()))),
+                  _FeatureTile(icon: Icons.nightlight_outlined, label: t.horoscope, onTap: () => Navigator.of(context).push(slideRoute(const HoroscopeScreen()))),
                 ],
               ),
             ),
@@ -174,12 +176,13 @@ class HomeTab extends StatelessWidget {
                 children: [
                   OthersIcon(icon: Icons.calendar_month_outlined, label: t.dailyPanchang, onTap: () => Navigator.of(context).push(slideRoute(const PanchangScreen()))),
                   OthersIcon(icon: Icons.menu_book_outlined, label: t.brihatKundli, onTap: () => _soon(context, t.brihatKundli, Icons.menu_book_outlined)),
-                  OthersIcon(icon: Icons.auto_awesome, svgAsset: 'assets/images/ic_kundli_ai.svg', label: 'Kundli AI+', onTap: () => _soon(context, 'Kundli AI+', Icons.auto_awesome)),
                   // Numerology — instant, VedicAstro-backed (no cron).
                   OthersIcon(icon: Icons.pin_outlined, label: t.numerology, onTap: () => Navigator.of(context).push(slideRoute(const NumerologyScreen()))),
-                  OthersIcon(icon: Icons.picture_as_pdf_outlined, label: t.free50Pages, onTap: () => _soon(context, t.freeReport, Icons.picture_as_pdf_outlined)),
-                  OthersIcon(icon: Icons.diversity_3_outlined, label: t.freeMatrimony, onTap: () => _soon(context, t.matrimony, Icons.diversity_3_outlined)),
-                  OthersIcon(icon: Icons.favorite_border, label: t.loveMatch, onTap: () => _soon(context, t.loveMatch, Icons.favorite_border)),
+                  // Compatibility (aggregate match) — Love Match + Matrimony both open it.
+                  OthersIcon(icon: Icons.diversity_3_outlined, label: t.freeMatrimony, onTap: () => Navigator.of(context).push(slideRoute(const MatchingScreen()))),
+                  OthersIcon(icon: Icons.favorite_border, label: t.loveMatch, onTap: () => Navigator.of(context).push(slideRoute(const MatchingScreen()))),
+                  // Manglik Dosh — instant dosha check.
+                  OthersIcon(icon: Icons.warning_amber_rounded, label: t.manglikDosh, onTap: () => Navigator.of(context).push(slideRoute(const ManglikScreen()))),
                   OthersIcon(icon: Icons.nightlight_outlined, label: t.horoscope, onTap: () => Navigator.of(context).push(slideRoute(const HoroscopeScreen()))),
                 ],
               ),

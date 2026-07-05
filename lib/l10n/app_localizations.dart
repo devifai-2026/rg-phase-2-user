@@ -5219,6 +5219,90 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Discover the numbers that shape your destiny, personality and soul.'**
   String get numerologyIntro;
+
+  /// Birth form DOB
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth'**
+  String get dateOfBirth;
+
+  /// Birth form TOB
+  ///
+  /// In en, this message translates to:
+  /// **'Time of birth'**
+  String get timeOfBirth;
+
+  /// Birth form place search
+  ///
+  /// In en, this message translates to:
+  /// **'Birth place'**
+  String get birthPlace;
+
+  /// Manglik dosha feature
+  ///
+  /// In en, this message translates to:
+  /// **'Manglik Dosh'**
+  String get manglikDosh;
+
+  /// Matching result heading
+  ///
+  /// In en, this message translates to:
+  /// **'Compatibility'**
+  String get compatibility;
+
+  /// Matching first partner
+  ///
+  /// In en, this message translates to:
+  /// **'Partner 1'**
+  String get partner1;
+
+  /// Matching second partner
+  ///
+  /// In en, this message translates to:
+  /// **'Partner 2'**
+  String get partner2;
+
+  /// Matching run button
+  ///
+  /// In en, this message translates to:
+  /// **'Check compatibility'**
+  String get checkCompatibility;
+
+  /// Manglik run button
+  ///
+  /// In en, this message translates to:
+  /// **'Check Manglik Dosh'**
+  String get checkManglik;
+
+  /// Matching intro
+  ///
+  /// In en, this message translates to:
+  /// **'Check marriage compatibility — Guna Milan, doshas and an overall score.'**
+  String get matchingIntro;
+
+  /// Manglik intro
+  ///
+  /// In en, this message translates to:
+  /// **'Check whether Manglik (Mangal) dosha is present, and by how much.'**
+  String get manglikIntro;
+
+  /// Matching validation
+  ///
+  /// In en, this message translates to:
+  /// **'Enter both partners’ birth details.'**
+  String get fillBothPartners;
+
+  /// Birth form validation
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the birth details.'**
+  String get enterBirthDetails;
+
+  /// Matching overall score label
+  ///
+  /// In en, this message translates to:
+  /// **'Overall score'**
+  String get overallScore;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

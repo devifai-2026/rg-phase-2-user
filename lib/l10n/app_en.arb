@@ -1734,5 +1734,61 @@
   "numerologyIntro": "Discover the numbers that shape your destiny, personality and soul.",
   "@numerologyIntro": {
     "description": "Numerology intro"
+  },
+  "dateOfBirth": "Date of birth",
+  "@dateOfBirth": {
+    "description": "Birth form DOB"
+  },
+  "timeOfBirth": "Time of birth",
+  "@timeOfBirth": {
+    "description": "Birth form TOB"
+  },
+  "birthPlace": "Birth place",
+  "@birthPlace": {
+    "description": "Birth form place search"
+  },
+  "manglikDosh": "Manglik Dosh",
+  "@manglikDosh": {
+    "description": "Manglik dosha feature"
+  },
+  "compatibility": "Compatibility",
+  "@compatibility": {
+    "description": "Matching result heading"
+  },
+  "partner1": "Partner 1",
+  "@partner1": {
+    "description": "Matching first partner"
+  },
+  "partner2": "Partner 2",
+  "@partner2": {
+    "description": "Matching second partner"
+  },
+  "checkCompatibility": "Check compatibility",
+  "@checkCompatibility": {
+    "description": "Matching run button"
+  },
+  "checkManglik": "Check Manglik Dosh",
+  "@checkManglik": {
+    "description": "Manglik run button"
+  },
+  "matchingIntro": "Check marriage compatibility — Guna Milan, doshas and an overall score.",
+  "@matchingIntro": {
+    "description": "Matching intro"
+  },
+  "manglikIntro": "Check whether Manglik (Mangal) dosha is present, and by how much.",
+  "@manglikIntro": {
+    "description": "Manglik intro"
+  },
+  "fillBothPartners": "Enter both partners’ birth details.",
+  "@fillBothPartners": {
+    "description": "Matching validation"
+  },
+  "enterBirthDetails": "Enter the birth details.",
+  "@enterBirthDetails": {
+    "description": "Birth form validation"
+  },
+  "overallScore": "Overall score",
+  "@overallScore": {
+    "description": "Matching overall score label"
   }
 }
