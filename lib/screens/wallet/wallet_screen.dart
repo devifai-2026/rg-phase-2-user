@@ -25,6 +25,9 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
   List<WalletTxn> _txns = [];
   bool _loading = true;
   bool _txnLoading = false;
+  // True when the server revalidation failed AND we had no cached balance/txns to
+  // show — so the UI can offer Retry instead of a confident (but wrong) ₹0 / empty.
+  bool _loadFailed = false;
   // Transaction filters.
   int? _filterDays; // null = all time; else 7/14/30
   String? _filterSource; // null = all; else 'recharge'/'pooja'/'call'/…
@@ -98,10 +101,13 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
         _txnPage = 1;
         _txnHasMore = t.length >= _pageSize;
         _loading = false;
+        _loadFailed = false;
       });
       context.read<WalletProvider>().setBalance(_balance); // keep Home top bar in sync
     } catch (_) {
-      if (mounted) setState(() => _loading = false); // keep cached packs on failure
+      // Keep any cached packs, but flag the failure so we don't present a
+      // confident ₹0 / empty history as if it were real, loaded data.
+      if (mounted) setState(() { _loading = false; _loadFailed = true; });
     }
   }
 
@@ -271,6 +277,25 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
 
             if (_txnLoading)
               Padding(padding: const EdgeInsets.all(20), child: Center(child: CircularProgressIndicator(color: c.red)))
+            else if (_loadFailed && _txns.isEmpty)
+              // Load failed and we have nothing to show — offer Retry rather than
+              // pretending the history is empty.
+              Container(
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(color: c.ground2, borderRadius: BorderRadius.circular(14), border: Border.all(color: c.line)),
+                child: Column(children: [
+                  Icon(Icons.cloud_off_outlined, color: c.muted, size: 34),
+                  const SizedBox(height: 10),
+                  Text(L10n.of(context).errNetwork, style: TextStyle(color: c.muted, fontSize: 13), textAlign: TextAlign.center),
+                  const SizedBox(height: 12),
+                  OutlinedButton.icon(
+                    onPressed: _load,
+                    icon: const Icon(Icons.refresh, size: 18),
+                    label: Text(L10n.of(context).retry),
+                    style: OutlinedButton.styleFrom(foregroundColor: c.red, side: BorderSide(color: c.red)),
+                  ),
+                ]),
+              )
             else if (_txns.isEmpty)
               Container(
                 padding: const EdgeInsets.all(24),
