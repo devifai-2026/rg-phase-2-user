@@ -2914,4 +2914,84 @@ class L10nTa extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY வளப் பிழை: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'உங்கள் பெயர்';
+
+  @override
+  String get enterYourName => 'உங்கள் பெயரை உள்ளிடவும்';
+
+  @override
+  String get runNumerology => 'எண் கணிதத்தை இயக்கு';
+
+  @override
+  String get numerologyIntro =>
+      'உங்கள் பெயர் மற்றும் பிறந்த தேதியிலிருந்து உங்கள் எண்கள், அவற்றின் பொருள் அறியுங்கள்.';
+
+  @override
+  String get dateOfBirth => 'பிறந்த தேதி';
+
+  @override
+  String get timeOfBirth => 'பிறந்த நேரம்';
+
+  @override
+  String get birthPlace => 'பிறந்த இடம்';
+
+  @override
+  String get manglikDosh => 'மாங்லிக் தோஷம்';
+
+  @override
+  String get compatibility => 'பொருத்தம்';
+
+  @override
+  String get partner1 => 'பெண்';
+
+  @override
+  String get partner2 => 'ஆண்';
+
+  @override
+  String get checkCompatibility => 'பொருத்தத்தைச் சரிபார்';
+
+  @override
+  String get checkManglik => 'மாங்லிக் தோஷத்தைச் சரிபார்';
+
+  @override
+  String get matchingIntro =>
+      'திருமணப் பொருத்தத்தைச் சரிபார் — குண மிலன், தோஷங்கள் மற்றும் மொத்த மதிப்பெண்.';
+
+  @override
+  String get manglikIntro =>
+      'மாங்லிக் (செவ்வாய்) தோஷம் உள்ளதா, எவ்வளவு என்பதைச் சரிபார்.';
+
+  @override
+  String get fillBothPartners =>
+      'இரு துணைகளின் பிறப்பு விவரங்களையும் உள்ளிடவும்.';
+
+  @override
+  String get enterBirthDetails => 'பிறப்பு விவரங்களை உள்ளிடவும்.';
+
+  @override
+  String get overallScore => 'மொத்த மதிப்பெண்';
 }

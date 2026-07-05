@@ -1755,11 +1755,11 @@
   "@compatibility": {
     "description": "Matching result heading"
   },
-  "partner1": "Partner 1",
+  "partner1": "Girl",
   "@partner1": {
     "description": "Matching first partner"
   },
-  "partner2": "Partner 2",
+  "partner2": "Boy",
   "@partner2": {
     "description": "Matching second partner"
   },

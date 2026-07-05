@@ -2906,4 +2906,83 @@ class L10nKn extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY ಸಂಪನ್ಮೂಲ ದೋಷ: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'ನಿಮ್ಮ ಹೆಸರು';
+
+  @override
+  String get enterYourName => 'ನಿಮ್ಮ ಹೆಸರು ನಮೂದಿಸಿ';
+
+  @override
+  String get runNumerology => 'ಸಂಖ್ಯಾಶಾಸ್ತ್ರ ಚಲಾಯಿಸಿ';
+
+  @override
+  String get numerologyIntro =>
+      'ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಹುಟ್ಟಿದ ದಿನಾಂಕದಿಂದ ನಿಮ್ಮ ಸಂಖ್ಯೆಗಳು ಮತ್ತು ಅವುಗಳ ಅರ್ಥ ತಿಳಿಯಿರಿ.';
+
+  @override
+  String get dateOfBirth => 'ಹುಟ್ಟಿದ ದಿನಾಂಕ';
+
+  @override
+  String get timeOfBirth => 'ಹುಟ್ಟಿದ ಸಮಯ';
+
+  @override
+  String get birthPlace => 'ಹುಟ್ಟಿದ ಸ್ಥಳ';
+
+  @override
+  String get manglikDosh => 'ಮಾಂಗ್ಲಿಕ್ ದೋಷ';
+
+  @override
+  String get compatibility => 'ಹೊಂದಾಣಿಕೆ';
+
+  @override
+  String get partner1 => 'ಹುಡುಗಿ';
+
+  @override
+  String get partner2 => 'ಹುಡುಗ';
+
+  @override
+  String get checkCompatibility => 'ಹೊಂದಾಣಿಕೆ ಪರಿಶೀಲಿಸಿ';
+
+  @override
+  String get checkManglik => 'ಮಾಂಗ್ಲಿಕ್ ದೋಷ ಪರಿಶೀಲಿಸಿ';
+
+  @override
+  String get matchingIntro =>
+      'ಮದುವೆ ಹೊಂದಾಣಿಕೆ ಪರಿಶೀಲಿಸಿ — ಗುಣ ಮಿಲನ, ದೋಷಗಳು ಮತ್ತು ಒಟ್ಟು ಅಂಕ.';
+
+  @override
+  String get manglikIntro =>
+      'ಮಾಂಗ್ಲಿಕ್ (ಮಂಗಳ) ದೋಷ ಇದೆಯೇ ಮತ್ತು ಎಷ್ಟು ಎಂದು ಪರಿಶೀಲಿಸಿ.';
+
+  @override
+  String get fillBothPartners => 'ಇಬ್ಬರೂ ಸಂಗಾತಿಗಳ ಜನ್ಮ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ.';
+
+  @override
+  String get enterBirthDetails => 'ಜನ್ಮ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ.';
+
+  @override
+  String get overallScore => 'ಒಟ್ಟು ಅಂಕ';
 }

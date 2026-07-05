@@ -5253,13 +5253,13 @@ abstract class L10n {
   /// Matching first partner
   ///
   /// In en, this message translates to:
-  /// **'Partner 1'**
+  /// **'Girl'**
   String get partner1;
 
   /// Matching second partner
   ///
   /// In en, this message translates to:
-  /// **'Partner 2'**
+  /// **'Boy'**
   String get partner2;
 
   /// Matching run button

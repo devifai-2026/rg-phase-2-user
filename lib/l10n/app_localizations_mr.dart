@@ -2892,4 +2892,82 @@ class L10nMr extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY resource error: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'तुमचे नाव';
+
+  @override
+  String get enterYourName => 'तुमचे नाव प्रविष्ट करा';
+
+  @override
+  String get runNumerology => 'अंकशास्त्र चालवा';
+
+  @override
+  String get numerologyIntro =>
+      'तुमच्या नाव आणि जन्म तारखेवरून तुमचे अंक व त्यांचे अर्थ जाणून घ्या.';
+
+  @override
+  String get dateOfBirth => 'जन्म तारीख';
+
+  @override
+  String get timeOfBirth => 'जन्म वेळ';
+
+  @override
+  String get birthPlace => 'जन्मस्थान';
+
+  @override
+  String get manglikDosh => 'मांगलिक दोष';
+
+  @override
+  String get compatibility => 'सुसंगतता';
+
+  @override
+  String get partner1 => 'मुलगी';
+
+  @override
+  String get partner2 => 'मुलगा';
+
+  @override
+  String get checkCompatibility => 'सुसंगतता तपासा';
+
+  @override
+  String get checkManglik => 'मांगलिक दोष तपासा';
+
+  @override
+  String get matchingIntro =>
+      'विवाह सुसंगतता तपासा — गुण मिलन, दोष आणि एकूण गुण.';
+
+  @override
+  String get manglikIntro => 'मांगलिक (मंगळ) दोष आहे का आणि किती हे तपासा.';
+
+  @override
+  String get fillBothPartners => 'दोन्ही जोडीदारांचे जन्म तपशील प्रविष्ट करा.';
+
+  @override
+  String get enterBirthDetails => 'जन्म तपशील प्रविष्ट करा.';
+
+  @override
+  String get overallScore => 'एकूण गुण';
 }

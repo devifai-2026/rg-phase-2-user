@@ -2900,4 +2900,83 @@ class L10nTe extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY వనరు లోపం: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'మీ పేరు';
+
+  @override
+  String get enterYourName => 'మీ పేరును నమోదు చేయండి';
+
+  @override
+  String get runNumerology => 'సంఖ్యాశాస్త్రం అమలు చేయండి';
+
+  @override
+  String get numerologyIntro =>
+      'మీ పేరు, పుట్టిన తేదీ నుండి మీ సంఖ్యలు, వాటి అర్థాలను తెలుసుకోండి.';
+
+  @override
+  String get dateOfBirth => 'పుట్టిన తేదీ';
+
+  @override
+  String get timeOfBirth => 'పుట్టిన సమయం';
+
+  @override
+  String get birthPlace => 'పుట్టిన స్థలం';
+
+  @override
+  String get manglikDosh => 'మాంగ్లిక్ దోషం';
+
+  @override
+  String get compatibility => 'అనుకూలత';
+
+  @override
+  String get partner1 => 'అమ్మాయి';
+
+  @override
+  String get partner2 => 'అబ్బాయి';
+
+  @override
+  String get checkCompatibility => 'అనుకూలతను తనిఖీ చేయండి';
+
+  @override
+  String get checkManglik => 'మాంగ్లిక్ దోషాన్ని తనిఖీ చేయండి';
+
+  @override
+  String get matchingIntro =>
+      'వివాహ అనుకూలతను తనిఖీ చేయండి — గుణ మిలన్, దోషాలు మరియు మొత్తం స్కోర్.';
+
+  @override
+  String get manglikIntro =>
+      'మాంగ్లిక్ (మంగళ) దోషం ఉందా, ఎంత ఉందో తనిఖీ చేయండి.';
+
+  @override
+  String get fillBothPartners => 'ఇద్దరు భాగస్వాముల జనన వివరాలను నమోదు చేయండి.';
+
+  @override
+  String get enterBirthDetails => 'జనన వివరాలను నమోదు చేయండి.';
+
+  @override
+  String get overallScore => 'మొత్తం స్కోర్';
 }

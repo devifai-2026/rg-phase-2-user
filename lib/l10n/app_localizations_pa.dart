@@ -2894,4 +2894,83 @@ class L10nPa extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY resource error: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'ਤੁਹਾਡਾ ਨਾਮ';
+
+  @override
+  String get enterYourName => 'ਆਪਣਾ ਨਾਮ ਦਰਜ ਕਰੋ';
+
+  @override
+  String get runNumerology => 'ਅੰਕ ਵਿਗਿਆਨ ਚਲਾਓ';
+
+  @override
+  String get numerologyIntro =>
+      'ਆਪਣੇ ਨਾਮ ਅਤੇ ਜਨਮ ਮਿਤੀ ਤੋਂ ਆਪਣੇ ਅੰਕ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਅਰਥ ਜਾਣੋ।';
+
+  @override
+  String get dateOfBirth => 'ਜਨਮ ਮਿਤੀ';
+
+  @override
+  String get timeOfBirth => 'ਜਨਮ ਸਮਾਂ';
+
+  @override
+  String get birthPlace => 'ਜਨਮ ਸਥਾਨ';
+
+  @override
+  String get manglikDosh => 'ਮਾਂਗਲਿਕ ਦੋਸ਼';
+
+  @override
+  String get compatibility => 'ਅਨੁਕੂਲਤਾ';
+
+  @override
+  String get partner1 => 'ਕੁੜੀ';
+
+  @override
+  String get partner2 => 'ਮੁੰਡਾ';
+
+  @override
+  String get checkCompatibility => 'ਅਨੁਕੂਲਤਾ ਜਾਂਚੋ';
+
+  @override
+  String get checkManglik => 'ਮਾਂਗਲਿਕ ਦੋਸ਼ ਜਾਂਚੋ';
+
+  @override
+  String get matchingIntro =>
+      'ਵਿਆਹ ਦੀ ਅਨੁਕੂਲਤਾ ਜਾਂਚੋ — ਗੁਣ ਮਿਲਾਨ, ਦੋਸ਼ ਅਤੇ ਕੁੱਲ ਸਕੋਰ।';
+
+  @override
+  String get manglikIntro =>
+      'ਜਾਂਚੋ ਕਿ ਮਾਂਗਲਿਕ (ਮੰਗਲ) ਦੋਸ਼ ਹੈ ਜਾਂ ਨਹੀਂ, ਅਤੇ ਕਿੰਨਾ।';
+
+  @override
+  String get fillBothPartners => 'ਦੋਵਾਂ ਸਾਥੀਆਂ ਦੇ ਜਨਮ ਵੇਰਵੇ ਦਰਜ ਕਰੋ।';
+
+  @override
+  String get enterBirthDetails => 'ਜਨਮ ਵੇਰਵੇ ਦਰਜ ਕਰੋ।';
+
+  @override
+  String get overallScore => 'ਕੁੱਲ ਸਕੋਰ';
 }

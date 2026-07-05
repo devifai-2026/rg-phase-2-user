@@ -2888,4 +2888,83 @@ class L10nEn extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY resource error: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'Your name';
+
+  @override
+  String get enterYourName => 'Enter your name';
+
+  @override
+  String get runNumerology => 'Reveal my numbers';
+
+  @override
+  String get numerologyIntro =>
+      'Discover the numbers that shape your destiny, personality and soul.';
+
+  @override
+  String get dateOfBirth => 'Date of birth';
+
+  @override
+  String get timeOfBirth => 'Time of birth';
+
+  @override
+  String get birthPlace => 'Birth place';
+
+  @override
+  String get manglikDosh => 'Manglik Dosh';
+
+  @override
+  String get compatibility => 'Compatibility';
+
+  @override
+  String get partner1 => 'Girl';
+
+  @override
+  String get partner2 => 'Boy';
+
+  @override
+  String get checkCompatibility => 'Check compatibility';
+
+  @override
+  String get checkManglik => 'Check Manglik Dosh';
+
+  @override
+  String get matchingIntro =>
+      'Check marriage compatibility — Guna Milan, doshas and an overall score.';
+
+  @override
+  String get manglikIntro =>
+      'Check whether Manglik (Mangal) dosha is present, and by how much.';
+
+  @override
+  String get fillBothPartners => 'Enter both partners’ birth details.';
+
+  @override
+  String get enterBirthDetails => 'Enter the birth details.';
+
+  @override
+  String get overallScore => 'Overall score';
 }

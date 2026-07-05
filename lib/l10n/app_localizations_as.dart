@@ -2895,4 +2895,83 @@ class L10nAs extends L10n {
   String rgpayResourceErrorEErrorcodeE(Object errorCode, Object description) {
     return 'RGPAY resource error: $errorCode $description';
   }
+
+  @override
+  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+
+  @override
+  String get welcomeBonusBody =>
+      'has been added to your wallet. Start your first consultation on us.';
+
+  @override
+  String get welcomeBonusCta => 'Start exploring';
+
+  @override
+  String get exitAppTitle => 'Leave the app?';
+
+  @override
+  String get exitAppBody => 'Are you sure you want to exit?';
+
+  @override
+  String get exitAppConfirm => 'Exit';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get yourName => 'আপোনাৰ নাম';
+
+  @override
+  String get enterYourName => 'আপোনাৰ নাম লিখক';
+
+  @override
+  String get runNumerology => 'সংখ্যাতত্ত্ব চলাওক';
+
+  @override
+  String get numerologyIntro =>
+      'আপোনাৰ নাম আৰু জন্ম তাৰিখৰ পৰা আপোনাৰ সংখ্যা আৰু সিহঁতৰ অৰ্থ জানক।';
+
+  @override
+  String get dateOfBirth => 'জন্ম তাৰিখ';
+
+  @override
+  String get timeOfBirth => 'জন্ম সময়';
+
+  @override
+  String get birthPlace => 'জন্মস্থান';
+
+  @override
+  String get manglikDosh => 'মাংলিক দোষ';
+
+  @override
+  String get compatibility => 'সামঞ্জস্য';
+
+  @override
+  String get partner1 => 'ছোৱালী';
+
+  @override
+  String get partner2 => 'ল’ৰা';
+
+  @override
+  String get checkCompatibility => 'সামঞ্জস্য পৰীক্ষা কৰক';
+
+  @override
+  String get checkManglik => 'মাংলিক দোষ পৰীক্ষা কৰক';
+
+  @override
+  String get matchingIntro =>
+      'বিবাহৰ সামঞ্জস্য পৰীক্ষা কৰক — গুণ মিলন, দোষ আৰু সৰ্বমুঠ স্ক’ৰ।';
+
+  @override
+  String get manglikIntro =>
+      'মাংলিক (মঙ্গল) দোষ আছে নেকি আৰু কিমান, পৰীক্ষা কৰক।';
+
+  @override
+  String get fillBothPartners => 'দুয়োজন সংগীৰ জন্মৰ বিৱৰণ দিয়ক।';
+
+  @override
+  String get enterBirthDetails => 'জন্মৰ বিৱৰণ দিয়ক।';
+
+  @override
+  String get overallScore => 'সৰ্বমুঠ স্ক’ৰ';
 }
