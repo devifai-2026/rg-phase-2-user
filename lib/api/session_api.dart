@@ -39,6 +39,10 @@ class SessionInfo {
   final DateTime? startedAt;
   final DateTime? endedAt;
 
+  /// Server's "now" at response time — pairs with [startedAt] so the client can
+  /// correct for device clock skew and show the server-exact elapsed timer.
+  final DateTime? serverNow;
+
   /// True only for completed chat sessions whose message history is still within
   /// the 7-day retention window (i.e. the transcript can still be viewed).
   final bool canViewChat;
@@ -54,6 +58,7 @@ class SessionInfo {
     this.endReason,
     this.startedAt,
     this.endedAt,
+    this.serverNow,
     this.canViewChat = false,
   });
 
@@ -68,6 +73,7 @@ class SessionInfo {
         endReason: j['endReason']?.toString(),
         startedAt: j['startedAt'] != null ? DateTime.tryParse(j['startedAt'].toString())?.toLocal() : null,
         endedAt: j['endedAt'] != null ? DateTime.tryParse(j['endedAt'].toString())?.toLocal() : null,
+        serverNow: j['serverNow'] != null ? DateTime.tryParse(j['serverNow'].toString())?.toLocal() : null,
         canViewChat: j['canViewChat'] == true,
       );
 }

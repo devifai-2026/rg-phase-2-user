@@ -67,13 +67,19 @@ class SocketService extends ChangeNotifier {
   String _socketHost = ApiConfig.socketUrl;
   int _connectErrors = 0;
 
+  /// The freshest handshake auth (token may have rotated since connect).
+  Map<String, dynamic> _authPayload([String? token]) => {
+        'token': token ?? _tokens.accessToken ?? '',
+        if (ApiConfig.tenant.isNotEmpty) 'tenant': ApiConfig.tenant,
+      };
+
   /// Connect (idempotent). Call after login / on cold-start when a session exists.
   void connect() {
     final token = _tokens.accessToken;
     if (token == null || token.isEmpty) return;
     if (_socket != null) {
       // Refresh auth token + ensure connected.
-      _socket!.auth = {'token': token};
+      _socket!.auth = _authPayload(token);
       if (!_socket!.connected) _socket!.connect();
       return;
     }
@@ -90,15 +96,17 @@ class SocketService extends ChangeNotifier {
           // token carries the tenant in its JWT claim; also pass the build's
           // tenant slug explicitly so the backend can route the handshake even
           // before the token is decoded.
-          .setAuth({
-            'token': token,
-            if (ApiConfig.tenant.isNotEmpty) 'tenant': ApiConfig.tenant,
-          })
+          .setAuth(_authPayload(token))
           .enableReconnection()
           .build(),
     );
 
     final s = _socket!;
+    // socket_io_client caches the Manager+Socket per URL and a REUSED socket
+    // ignores the opts auth above (auth is only read in the Socket constructor)
+    // — after a logout→login that means the handshake would carry the PREVIOUS
+    // user's token. Assign auth directly so the freshest identity always wins.
+    s.auth = _authPayload(token);
     s.onConnect((_) {
       _connected = true;
       _connectErrors = 0; // healthy again
@@ -113,7 +121,7 @@ class SocketService extends ChangeNotifier {
       notifyListeners();
     });
     // On reconnect attempts, always send the freshest token (it may have rotated).
-    s.onReconnectAttempt((_) => s.auth = {'token': _tokens.accessToken ?? ''});
+    s.onReconnectAttempt((_) => s.auth = _authPayload());
     s.onConnectError((_) {
       // After a few failed attempts on the primary host, assume its DNS is
       // unresolvable on this network and rebuild the socket on the sslip.io

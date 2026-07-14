@@ -125,7 +125,10 @@ class SessionProvider extends ChangeNotifier {
       // Rejoin the socket room so live events (accept/messages/timer/end) resume.
       socket.joinSession(s.sessionId);
       if (_phase == SessionPhase.ongoing) {
-        if (_startedAt != null) _startTicker(); else syncStartedAt();
+        if (_startedAt != null) _startTicker();
+        // Always re-anchor to server truth: samples the clock offset (exact
+        // timer) and starts the ticker when startedAt wasn't in the payload.
+        syncStartedAt();
       }
       notifyListeners();
       return true;
@@ -168,8 +171,10 @@ class SessionProvider extends ChangeNotifier {
   bool get started => _startedAt != null;
   void onStarted(Map<String, dynamic> d) {
     if (d['sessionId'] != _sessionId) return;
+    // serverNow pairs with startedAt → clock-offset correction (exact timer).
+    _adoptServerNow(d['serverNow']?.toString());
     final started = d['startedAt']?.toString();
-    _startedAt = started != null ? DateTime.tryParse(started)?.toLocal() : DateTime.now();
+    _startedAt = started != null ? DateTime.tryParse(started)?.toLocal() : _nowCorrected;
     _startTicker();
     notifyListeners();
   }
@@ -241,10 +246,15 @@ class SessionProvider extends ChangeNotifier {
     final id = _sessionId;
     if (id == null) return;
     try {
+      final t0 = DateTime.now();
       final info = await _api.detail(id);
+      // Clock-offset sample: serverNow centered on the request midpoint.
+      if (info.serverNow != null) {
+        _adoptServerNow(info.serverNow!.toIso8601String(), rtt: DateTime.now().difference(t0));
+      }
       if (info.startedAt != null) {
         _startedAt = info.startedAt;
-        if (_ticker == null) _startTicker(); else _tick();
+        if (_ticker == null) { _startTicker(); } else { _tick(); _scheduleNextTick(); }
         notifyListeners();
       }
     } catch (_) {/* keep local clock */}
@@ -264,16 +274,47 @@ class SessionProvider extends ChangeNotifier {
   }
 
   // ── Timer ──
+
+  // Device↔server clock offset (serverNow − deviceNow), captured whenever the
+  // server hands us a timestamp pair. Corrects device clock skew so the timer
+  // shows the server's elapsed time exactly (and matches the astrologer app).
+  Duration _clockOffset = Duration.zero;
+
+  /// Adopt a server "now" (ISO). [rtt] — the request round-trip, when known —
+  /// centers the sample so network latency doesn't bias the offset.
+  void _adoptServerNow(String? iso, {Duration rtt = Duration.zero}) {
+    final serverNow = iso != null ? DateTime.tryParse(iso)?.toLocal() : null;
+    if (serverNow == null) return;
+    _clockOffset = serverNow.difference(DateTime.now()) + Duration(milliseconds: rtt.inMilliseconds ~/ 2);
+  }
+
+  /// Server-corrected wall clock.
+  DateTime get _nowCorrected => DateTime.now().add(_clockOffset);
+
   void _startTicker() {
-    _startedAt ??= DateTime.now();
+    _startedAt ??= _nowCorrected;
     _ticker?.cancel();
     _tick();
-    _ticker = Timer.periodic(const Duration(seconds: 1), (_) => _tick());
+    _scheduleNextTick();
+  }
+
+  // Self-scheduling ticks aligned to the session's second boundary, so the
+  // displayed second flips exactly when the server's does (no ±1s jitter from
+  // an arbitrary Timer.periodic phase).
+  void _scheduleNextTick() {
+    _ticker?.cancel();
+    if (_startedAt == null) return;
+    final elapsedMs = _nowCorrected.difference(_startedAt!).inMilliseconds;
+    final msToBoundary = 1000 - (elapsedMs % 1000);
+    _ticker = Timer(Duration(milliseconds: msToBoundary.clamp(1, 1000)), () {
+      _tick();
+      _scheduleNextTick();
+    });
   }
 
   void _tick() {
     if (_startedAt == null) return;
-    _elapsedSec = DateTime.now().difference(_startedAt!).inSeconds;
+    _elapsedSec = _nowCorrected.difference(_startedAt!).inSeconds;
     if (_elapsedSec < 0) _elapsedSec = 0;
     notifyListeners();
   }
