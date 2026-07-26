@@ -2980,4 +2980,8 @@ class L10nPa extends L10n {
 
   @override
   String get chatHistoryExpired => 'ਚੈਟ ਇਤਿਹਾਸ ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ';
+
+  @override
+  String get noAnswerPleaseTryAgain =>
+      'ਕੋਈ ਜਵਾਬ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
 }

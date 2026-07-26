@@ -1717,5 +1717,6 @@
   "exitAppBody": "நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?",
   "exitAppConfirm": "வெளியேறு",
   "stay": "இரு",
-  "chatHistoryExpired": "அரட்டை வரலாறு காலாவதியானது"
+  "chatHistoryExpired": "அரட்டை வரலாறு காலாவதியானது",
+  "noAnswerPleaseTryAgain": "பதில் இல்லை. மீண்டும் முயற்சிக்கவும்."
 }

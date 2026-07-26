@@ -96,6 +96,14 @@ class SessionProvider extends ChangeNotifier {
     _startedAt = null;
     messages.clear();
     notifyListeners();
+    // The astrologer may already have declined while our POST was in flight; that
+    // event was buffered because we had no id to match it against. Apply it now.
+    if (_pendingTerminalSessionId != null && _pendingTerminalSessionId == info.sessionId) {
+      _applyRingTerminal(_pendingTerminalReason ?? 'The astrologer declined the request.');
+    } else {
+      _pendingTerminalSessionId = null; // stale buffer from an older attempt
+      _pendingTerminalReason = null;
+    }
     return info;
   }
 
@@ -183,11 +191,33 @@ class SessionProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  // A terminal ring event that arrived BEFORE `_sessionId` was assigned, kept so
+  // request() can apply it the moment it learns its own id. The astrologer can
+  // decline faster than our own POST /sessions response returns, and the id guard
+  // in _endRinging would otherwise drop that event permanently — leaving the
+  // seeker on a ringing screen for a session the server already closed.
+  String? _pendingTerminalSessionId;
+  String? _pendingTerminalReason;
+
   void onRejected(Map<String, dynamic> d) => _endRinging(d, 'The astrologer declined the request.');
   void onMissed(Map<String, dynamic> d) => _endRinging(d, 'No answer. Please try again.');
 
   void _endRinging(Map<String, dynamic> d, String reason) {
-    if (d['sessionId'] != _sessionId) return;
+    final sid = d['sessionId']?.toString();
+    if (sid == null) return;
+    if (_sessionId == null) {
+      // We don't know our session id yet — remember it and let request() decide.
+      _pendingTerminalSessionId = sid;
+      _pendingTerminalReason = reason;
+      return;
+    }
+    if (sid != _sessionId) return;
+    _applyRingTerminal(reason);
+  }
+
+  void _applyRingTerminal(String reason) {
+    _pendingTerminalSessionId = null;
+    _pendingTerminalReason = null;
     _rejectionReason = reason;
     _phase = SessionPhase.ended;
     notifyListeners();

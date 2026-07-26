@@ -2981,4 +2981,7 @@ class L10nBn extends L10n {
 
   @override
   String get chatHistoryExpired => 'চ্যাট ইতিহাসের মেয়াদ শেষ';
+
+  @override
+  String get noAnswerPleaseTryAgain => 'কোনো উত্তর নেই। আবার চেষ্টা করুন।';
 }

@@ -865,5 +865,6 @@
   "exitAppBody": "क्या आप वाकई बाहर निकलना चाहते हैं?",
   "exitAppConfirm": "बाहर निकलें",
   "stay": "रुकें",
-  "chatHistoryExpired": "चैट इतिहास समाप्त हो गया"
+  "chatHistoryExpired": "चैट इतिहास समाप्त हो गया",
+  "noAnswerPleaseTryAgain": "कोई उत्तर नहीं। कृपया पुनः प्रयास करें।"
 }

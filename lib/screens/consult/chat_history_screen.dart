@@ -7,6 +7,7 @@ import '../../providers/auth_provider.dart';
 import '../../theme/rg_colors.dart';
 import '../../widgets/cached_image.dart';
 import '../../widgets/secure_screen.dart';
+import '../../widgets/shared_product_card.dart';
 import '../../widgets/slide_route.dart';
 import '../shop/product_detail_screen.dart';
 import 'image_viewer.dart';
@@ -153,6 +154,9 @@ class _Bubble extends StatelessWidget {
       );
     }
     final mine = myId != null && msg.sender == myId;
+    // A shared product carries no text and no mediaUrl, so without this branch
+    // it fell through to the text bubble below and rendered as an empty box.
+    if (msg.hasProduct) return SharedProductCard(product: msg.product!, mine: mine);
     return Align(
       alignment: mine ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(

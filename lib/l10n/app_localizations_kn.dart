@@ -2992,4 +2992,8 @@ class L10nKn extends L10n {
 
   @override
   String get chatHistoryExpired => 'ಚಾಟ್ ಇತಿಹಾಸದ ಅವಧಿ ಮುಗಿದಿದೆ';
+
+  @override
+  String get noAnswerPleaseTryAgain =>
+      'ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
 }

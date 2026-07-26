@@ -9,10 +9,10 @@ import '../../l10n/app_localizations.dart';
 import '../../api/socket_service.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/session_provider.dart';
-import '../shop/product_detail_screen.dart';
 import '../../theme/rg_colors.dart';
 import '../../widgets/cached_image.dart';
 import '../../widgets/secure_screen.dart';
+import '../../widgets/shared_product_card.dart';
 import '../astrologers/gift_sheet.dart';
 import 'call_screen.dart';
 import 'image_viewer.dart';
@@ -398,40 +398,9 @@ class _Bubble extends StatelessWidget {
     final mine = myId != null && msg.sender == myId;
 
     // Astrologer-shared product card → tap opens the product detail page.
-    if (msg.hasProduct) {
-      final p = msg.product!;
-      return Align(
-        alignment: mine ? Alignment.centerRight : Alignment.centerLeft,
-        child: GestureDetector(
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (_) => ProductDetailScreen(productId: p.productId),
-          )),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 10),
-            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.66),
-            decoration: BoxDecoration(color: c.ground2, borderRadius: BorderRadius.circular(14), border: Border.all(color: c.gold.withValues(alpha: 0.5))),
-            clipBehavior: Clip.antiAlias,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-              if (p.image != null && p.image!.isNotEmpty)
-                CachedImage(url: p.image, fit: BoxFit.cover, width: double.infinity, height: 130),
-              Padding(
-                padding: const EdgeInsets.all(11),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-                  Row(children: [Icon(Icons.storefront, size: 13, color: c.gold), const SizedBox(width: 5), Text(L10n.of(context).recommendedProduct, style: TextStyle(color: c.gold, fontSize: 11, fontWeight: FontWeight.w700))]),
-                  const SizedBox(height: 6),
-                  Text(p.name, maxLines: 2, overflow: TextOverflow.ellipsis, style: TextStyle(color: c.ink, fontWeight: FontWeight.w700, fontSize: 14)),
-                  const SizedBox(height: 6),
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    Text('₹${p.price}', style: TextStyle(color: c.ink, fontWeight: FontWeight.w800, fontSize: 15)),
-                    Row(children: [Text(L10n.of(context).view, style: TextStyle(color: c.gold, fontWeight: FontWeight.w700, fontSize: 12.5)), Icon(Icons.chevron_right, size: 16, color: c.gold)]),
-                  ]),
-                ]),
-              ),
-            ]),
-          ),
-        ),
-      );
-    }
+    // Shared with the read-only history view (see SharedProductCard) so the two
+    // can't drift again.
+    if (msg.hasProduct) return SharedProductCard(product: msg.product!, mine: mine);
 
     return Align(
       alignment: mine ? Alignment.centerRight : Alignment.centerLeft,

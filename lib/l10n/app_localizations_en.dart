@@ -2974,4 +2974,7 @@ class L10nEn extends L10n {
 
   @override
   String get chatHistoryExpired => 'Chat History Expired';
+
+  @override
+  String get noAnswerPleaseTryAgain => 'No answer. Please try again.';
 }

@@ -107,8 +107,13 @@ class _SessionEndDialogState extends State<_SessionEndDialog> {
   // quality is optional when an astrologer rating block is shown (and vice
   // versa) — previously Submit required EVERY block to be filled, so a user who
   // rated only one block saw a permanently-greyed Submit ("only Skip works").
+  // ALSO enabled by a written comment alone. Requiring a star meant a user who
+  // typed feedback and never tapped a star saw only a greyed Submit next to an
+  // active Skip — indistinguishable from "there is no Submit button".
   bool get _canSubmit =>
-      (_showAstrologer && _rating > 0) || (_showCallQuality && _callQuality > 0);
+      (_showAstrologer && _rating > 0) ||
+      (_showCallQuality && _callQuality > 0) ||
+      (_showAstrologer && _comment.text.trim().isNotEmpty);
 
   @override
   void initState() {
@@ -262,6 +267,10 @@ class _SessionEndDialogState extends State<_SessionEndDialog> {
                       maxLines: 3,
                       minLines: 1,
                       maxLength: 1000,
+                      // _canSubmit now reads this text, so the action row must
+                      // rebuild as it changes or Submit would stay greyed until
+                      // some other setState happened to fire.
+                      onChanged: (_) => setState(() {}),
                       style: TextStyle(color: c.ink),
                       decoration: InputDecoration(
                         hintText: L10n.of(context).shareYourExperienceOptional,

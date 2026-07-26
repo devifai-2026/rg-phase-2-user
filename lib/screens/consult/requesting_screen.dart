@@ -29,20 +29,45 @@ class _RequestingScreenState extends State<RequestingScreen> with SingleTickerPr
   // happen at most once.
   bool _navigatedAway = false;
 
+  // Last-resort backstop. Every terminal outcome (accept/reject/miss/cancel)
+  // normally arrives as a socket event, but if the socket is momentarily down
+  // nothing else clears this screen and the user rings forever. The server's ring
+  // window is 60s, so give it a little longer and then leave with a message.
+  static const _ringCeiling = Duration(seconds: 75);
+  Timer? _ringTimer;
+
   @override
   void initState() {
     super.initState();
     _pulse = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200))..repeat(reverse: true);
     // React to phase changes driven by the SessionProvider (socket events).
     context.read<SessionProvider>().addListener(_onSession);
+    _ringTimer = Timer(_ringCeiling, _onRingCeiling);
   }
 
   @override
   void dispose() {
+    _ringTimer?.cancel();
     _pulse.dispose();
     // Listener may already be removed if we navigated away; guard with try.
     try { context.read<SessionProvider>().removeListener(_onSession); } catch (_) {}
     super.dispose();
+  }
+
+  /// The ring window elapsed with no terminal event — reconcile with the server
+  /// and leave rather than spinning indefinitely.
+  Future<void> _onRingCeiling() async {
+    if (!mounted || _navigatedAway) return;
+    final s = context.read<SessionProvider>();
+    // Cancel server-side too, so the astrologer's ring and the wallet lock don't
+    // outlive this screen. Best-effort: we leave regardless.
+    try { await s.cancel(context.read<SocketService>()); } catch (_) {}
+    if (!mounted || _navigatedAway) return;
+    _navigatedAway = true;
+    Navigator.of(context).pop();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(L10n.of(context).noAnswerPleaseTryAgain)),
+    );
   }
 
   void _onSession() {

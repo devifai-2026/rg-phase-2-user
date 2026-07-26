@@ -5315,6 +5315,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Chat History Expired'**
   String get chatHistoryExpired;
+
+  /// No description provided for @noAnswerPleaseTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer. Please try again.'**
+  String get noAnswerPleaseTryAgain;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -865,5 +865,6 @@
   "exitAppBody": "আপুনি নিশ্চিতভাৱে ওলাই যাব বিচাৰেনে?",
   "exitAppConfirm": "ওলাই যাওক",
   "stay": "থাকক",
-  "chatHistoryExpired": "চেট ইতিহাসৰ ম্যাদ উকলিল"
+  "chatHistoryExpired": "চেট ইতিহাসৰ ম্যাদ উকলিল",
+  "noAnswerPleaseTryAgain": "কোনো উত্তৰ নাই। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।"
 }

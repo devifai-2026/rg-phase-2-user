@@ -865,5 +865,6 @@
   "exitAppBody": "আপনি কি নিশ্চিত বেরোতে চান?",
   "exitAppConfirm": "বেরোন",
   "stay": "থাকুন",
-  "chatHistoryExpired": "চ্যাট ইতিহাসের মেয়াদ শেষ"
+  "chatHistoryExpired": "চ্যাট ইতিহাসের মেয়াদ শেষ",
+  "noAnswerPleaseTryAgain": "কোনো উত্তর নেই। আবার চেষ্টা করুন।"
 }

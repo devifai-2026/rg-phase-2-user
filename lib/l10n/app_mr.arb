@@ -865,5 +865,6 @@
   "exitAppBody": "तुम्हाला नक्की बाहेर पडायचे आहे का?",
   "exitAppConfirm": "बाहेर पडा",
   "stay": "थांबा",
-  "chatHistoryExpired": "चॅट इतिहास कालबाह्य झाला"
+  "chatHistoryExpired": "चॅट इतिहास कालबाह्य झाला",
+  "noAnswerPleaseTryAgain": "उत्तर मिळाले नाही. कृपया पुन्हा प्रयत्न करा."
 }

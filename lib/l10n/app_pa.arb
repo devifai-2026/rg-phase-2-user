@@ -865,5 +865,6 @@
   "exitAppBody": "ਕੀ ਤੁਸੀਂ ਸੱਚਮੁੱਚ ਬਾਹਰ ਨਿਕਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
   "exitAppConfirm": "ਬਾਹਰ ਨਿਕਲੋ",
   "stay": "ਰੁਕੋ",
-  "chatHistoryExpired": "ਚੈਟ ਇਤਿਹਾਸ ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ"
+  "chatHistoryExpired": "ਚੈਟ ਇਤਿਹਾਸ ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ",
+  "noAnswerPleaseTryAgain": "ਕੋਈ ਜਵਾਬ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 }

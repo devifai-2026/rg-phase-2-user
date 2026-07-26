@@ -1717,5 +1717,6 @@
   "exitAppBody": "ನೀವು ಖಚಿತವಾಗಿ ನಿರ್ಗಮಿಸಲು ಬಯಸುವಿರಾ?",
   "exitAppConfirm": "ನಿರ್ಗಮಿಸಿ",
   "stay": "ಉಳಿಯಿರಿ",
-  "chatHistoryExpired": "ಚಾಟ್ ಇತಿಹಾಸದ ಅವಧಿ ಮುಗಿದಿದೆ"
+  "chatHistoryExpired": "ಚಾಟ್ ಇತಿಹಾಸದ ಅವಧಿ ಮುಗಿದಿದೆ",
+  "noAnswerPleaseTryAgain": "ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
 }

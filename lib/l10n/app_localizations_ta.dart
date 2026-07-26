@@ -3001,4 +3001,7 @@ class L10nTa extends L10n {
 
   @override
   String get chatHistoryExpired => 'அரட்டை வரலாறு காலாவதியானது';
+
+  @override
+  String get noAnswerPleaseTryAgain => 'பதில் இல்லை. மீண்டும் முயற்சிக்கவும்.';
 }

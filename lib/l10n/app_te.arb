@@ -1717,5 +1717,6 @@
   "exitAppBody": "మీరు నిజంగా నిష్క్రమించాలనుకుంటున్నారా?",
   "exitAppConfirm": "నిష్క్రమించు",
   "stay": "ఉండండి",
-  "chatHistoryExpired": "చాట్ చరిత్ర గడువు ముగిసింది"
+  "chatHistoryExpired": "చాట్ చరిత్ర గడువు ముగిసింది",
+  "noAnswerPleaseTryAgain": "స్పందన లేదు. దయచేసి మళ్లీ ప్రయత్నించండి."
 }

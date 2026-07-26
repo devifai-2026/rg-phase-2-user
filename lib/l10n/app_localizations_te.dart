@@ -2986,4 +2986,8 @@ class L10nTe extends L10n {
 
   @override
   String get chatHistoryExpired => 'చాట్ చరిత్ర గడువు ముగిసింది';
+
+  @override
+  String get noAnswerPleaseTryAgain =>
+      'స్పందన లేదు. దయచేసి మళ్లీ ప్రయత్నించండి.';
 }

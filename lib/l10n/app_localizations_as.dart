@@ -2981,4 +2981,8 @@ class L10nAs extends L10n {
 
   @override
   String get chatHistoryExpired => 'চেট ইতিহাসৰ ম্যাদ উকলিল';
+
+  @override
+  String get noAnswerPleaseTryAgain =>
+      'কোনো উত্তৰ নাই। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।';
 }

@@ -2977,4 +2977,8 @@ class L10nMr extends L10n {
 
   @override
   String get chatHistoryExpired => 'चॅट इतिहास कालबाह्य झाला';
+
+  @override
+  String get noAnswerPleaseTryAgain =>
+      'उत्तर मिळाले नाही. कृपया पुन्हा प्रयत्न करा.';
 }
