@@ -9,7 +9,6 @@ import '../../l10n/app_localizations.dart';
 import '../../api/socket_service.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/session_provider.dart';
-import '../../providers/wallet_provider.dart';
 import '../shop/product_detail_screen.dart';
 import '../../theme/rg_colors.dart';
 import '../../widgets/cached_image.dart';
@@ -20,7 +19,7 @@ import 'image_viewer.dart';
 import 'session_popups.dart';
 
 /// Live chat consultation room. Text + image messages, system bubbles, a running
-/// timer, the live wallet balance, gifting, and a switch-to-call/video action.
+/// timer, gifting, and a switch-to-call/video action.
 /// Per-minute billing + low-balance warnings come from the backend over the
 /// socket (routed through SessionProvider).
 class ChatRoomScreen extends StatefulWidget {
@@ -245,7 +244,6 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> with WidgetsBindingObse
   Widget build(BuildContext context) {
     final c = context.rg;
     final s = context.watch<SessionProvider>();
-    final wallet = context.watch<WalletProvider>();
     final myId = context.read<AuthProvider>().user?.id;
 
     // Back MINIMIZES the room (session keeps running); a floating "Resume"
@@ -273,17 +271,6 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> with WidgetsBindingObse
             ])),
           ]),
           actions: [
-            // Live wallet chip.
-            Center(child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
-              decoration: BoxDecoration(color: c.gold.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(20)),
-              child: Row(mainAxisSize: MainAxisSize.min, children: [
-                Icon(Icons.monetization_on_outlined, size: 13, color: c.gold),
-                const SizedBox(width: 3),
-                Text('${wallet.balance}', style: TextStyle(color: c.gold, fontWeight: FontWeight.w800, fontSize: 12.5)),
-              ]),
-            )),
-            const SizedBox(width: 2),
             // Quick switch to Audio / Video right in the top bar (ends the chat,
             // starts a fresh call/video request — see _switchTo). Plus an explicit
             // End button. Gift moves to the overflow menu.

@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import '../../api/socket_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/session_provider.dart';
-import '../../providers/wallet_provider.dart';
 import '../../services/agora_session.dart';
 import '../../theme/rg_colors.dart';
 import '../../widgets/secure_screen.dart';
@@ -13,7 +12,7 @@ import 'session_popups.dart';
 
 /// Live audio/video consultation. Joins the Agora channel using the token from
 /// `request-accepted`, shows the remote/local video (video) or an avatar
-/// (audio), with mute/camera controls, a running timer and the live wallet.
+/// (audio), with mute/camera controls and a running timer.
 /// Billing + low-balance warnings come from the backend via SessionProvider.
 class CallScreen extends StatefulWidget {
   const CallScreen({super.key});
@@ -158,7 +157,6 @@ class _CallScreenState extends State<CallScreen>
   Widget build(BuildContext context) {
     final c = context.rg;
     final s = context.watch<SessionProvider>();
-    final wallet = context.watch<WalletProvider>();
     final showVideo = _isVideo && !_mock && !_leaving && _agora.engine != null && _agora.remoteUid != null;
 
     // Back MINIMIZES the call (audio keeps running; Resume bar on Home brings it
@@ -209,7 +207,7 @@ class _CallScreenState extends State<CallScreen>
                 ),
               ),
 
-            // Header: name, call-type/timer, wallet.
+            // Header: name, call-type/timer.
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -223,8 +221,6 @@ class _CallScreenState extends State<CallScreen>
                     const SizedBox(height: 6),
                     _typePill(c, s),
                   ])),
-                  const SizedBox(width: 12),
-                  _walletPill(c, wallet),
                 ]),
               ),
             ),
@@ -311,21 +307,6 @@ class _CallScreenState extends State<CallScreen>
       ]),
     );
   }
-
-  // Premium gold coin pill showing the live wallet balance.
-  Widget _walletPill(RgColors c, WalletProvider wallet) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [c.gold.withValues(alpha: 0.30), c.gold.withValues(alpha: 0.16)]),
-          borderRadius: BorderRadius.circular(22),
-          border: Border.all(color: c.gold.withValues(alpha: 0.55)),
-        ),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(Icons.monetization_on, size: 16, color: c.gold),
-          const SizedBox(width: 5),
-          Text('${wallet.balance}', style: TextStyle(color: c.gold, fontWeight: FontWeight.w900, fontSize: 14)),
-        ]),
-      );
 
   Widget _remoteView(RgColors c, SessionProvider s) {
     if (_isVideo && !_mock && !_leaving && _agora.engine != null && _agora.remoteUid != null) {
