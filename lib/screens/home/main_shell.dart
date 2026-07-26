@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import '../../api/app_config_service.dart';
 import '../../api/socket_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/session_provider.dart';
+import '../../providers/settings_provider.dart';
 import '../../theme/rg_colors.dart';
 import '../auth/signup_bonus_dialog.dart';
 import '../astrologers/astrologer_list_screen.dart';
@@ -37,6 +39,11 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    // A language change must refresh every API-bound rail: their content is
+    // translated SERVER-side, so the ARB swap alone leaves bios/category names in
+    // the old language. Bridging onto homeRefreshTick reuses the refetch path the
+    // rails already listen to, so no screen needs its own language listener.
+    languageRefreshTick.addListener(_onLanguageChanged);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       context.read<SocketService>().trackPage(_tabRoutes[_index]);
@@ -54,7 +61,18 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    languageRefreshTick.removeListener(_onLanguageChanged);
     super.dispose();
+  }
+
+  /// Language switched → refetch every localised rail, and drop the user back to
+  /// Home so they see the whole app in the new language at once (the effect the
+  /// "restart the app" idea was after, without killing the process).
+  void _onLanguageChanged() {
+    if (!mounted) return;
+    homeRefreshTick.value++;
+    setState(() => _index = 0);
+    context.read<AppConfigService>().refresh();
   }
 
   @override
