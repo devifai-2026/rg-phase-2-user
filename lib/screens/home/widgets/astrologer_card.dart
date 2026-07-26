@@ -54,8 +54,19 @@ class AstrologerCard extends StatelessWidget {
     return SizedBox(
       // Wider so the full name fits (no premature ellipsis / right-side gap).
       width: 100,
-      child: Column(
-        children: [
+      // The rails give this card a FIXED height (see home_tab.dart). A 2-line
+      // name in a tall script (Bengali/Devanagari) plus the rating row and the
+      // language chips can exceed that by a few pixels, which Flutter reports as
+      // "BOTTOM OVERFLOWED BY 5.0 PIXELS". Scaling down instead of clipping
+      // keeps every element visible and, unlike bumping the magic height, it
+      // also survives a larger system font scale and a 3-line name.
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: SizedBox(
+          width: 100,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
           // Avatar with the status ring (no overlaid pill).
           Container(
             padding: const EdgeInsets.all(2.5),
@@ -111,7 +122,9 @@ class AstrologerCard extends StatelessWidget {
           const SizedBox(height: 4),
           Text(ai ? L10n.of(context).free : L10n.of(context).rateperminMin(ratePerMin),
               style: TextStyle(color: c.gold, fontSize: 10.5, fontWeight: FontWeight.w600)),
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }
