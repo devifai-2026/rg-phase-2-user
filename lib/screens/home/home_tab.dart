@@ -534,11 +534,16 @@ class _NearbySectionState extends State<_NearbySection> {
   /// geocode to a city, then load that city's astrologers. Never prompts here —
   /// permission is asked once during onboarding; we just use it if available.
   Future<void> _resolve() async {
-    final t = L10n.of(context);
+    // NO L10n.of(context) here. This runs from initState, where depending on an
+    // inherited widget throws ("dependOnInheritedWidgetOfExactType<
+    // _LocalizationsScope>() was called before _NearbySectionState.initState()
+    // completed") — which aborted _resolve() before it ever fetched, so the
+    // Nearby rail silently never loaded. The only use was a debugPrint, so it
+    // does not need to be localised at all.
     String? city;
     try {
       final perm = await Geolocator.checkPermission();
-      debugPrint(t.nearbyPermissionPerm(perm));
+      debugPrint('nearby: location permission $perm');
       if (perm == LocationPermission.always || perm == LocationPermission.whileInUse) {
         // getCurrentPosition can hang on emulators with no live fix — fall back
         // to the last known position if it times out / returns null.
@@ -547,19 +552,19 @@ class _NearbySectionState extends State<_NearbySection> {
           pos = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low)
               .timeout(const Duration(seconds: 6));
         } catch (e) {
-          debugPrint(t.nearbyGetcurrentpositionFailedETryingLast(e));
+          debugPrint('nearby: getCurrentPosition failed ($e); trying last known');
           pos = await Geolocator.getLastKnownPosition();
         }
         pos ??= await Geolocator.getLastKnownPosition();
-        debugPrint(t.nearbyPositionPosLatitudePosLongitude(pos?.latitude ?? 'null', pos?.longitude ?? 'null'));
+        debugPrint('nearby: position ${pos?.latitude ?? 'null'},${pos?.longitude ?? 'null'}');
         if (!mounted) return;
         if (pos != null) {
           city = await context.read<ProfileApi>().reverseGeocode(pos.latitude, pos.longitude);
-          debugPrint(t.nearbyReversegeocodeCityCity(city));
+          debugPrint('nearby: reverseGeocode city=\$city');
         }
       }
     } catch (e) {
-      debugPrint(t.nearbyResolveErrorE(e)); // optional — fall through to no-city list
+      debugPrint('nearby: resolve error \$e'); // optional — fall through to no-city list
     }
 
     if (!mounted) return;

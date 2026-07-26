@@ -123,6 +123,19 @@ class WalletApi {
     return raw.map((e) => WalletTxn.fromJson(e as Map<String, dynamic>)).toList();
   }
 
+  /// Tax invoice for one of my recharge transactions.
+  ///
+  /// Returns the hosted PDF URL, or null when the document is still being
+  /// rendered (the backend queues the render, so a just-completed recharge can
+  /// be `pdfStatus: 'pending'` for a moment). The backend backfills an invoice
+  /// for older recharges on first request, so this works retroactively.
+  Future<String?> rechargeInvoiceUrl(String txnId) async {
+    final data = await _api.get('/wallet/transactions/$txnId/invoice');
+    final inv = (data is Map ? data['invoice'] : null) as Map?;
+    final url = inv?['pdfUrl']?.toString();
+    return (url == null || url.isEmpty) ? null : url;
+  }
+
   /// Start a recharge → returns the txnid used to open the PayU checkout page.
   Future<String> initiateRecharge(int amountRupees) async {
     final data = await _api.post('/wallet/recharge/initiate', body: {'amountRupees': amountRupees});

@@ -65,21 +65,31 @@ class _CachedImageState extends State<CachedImage> {
   }
 
   /// Failure state that can recover itself — tap anywhere on the tile to refetch.
+  ///
+  /// Deliberately does NOT set width/height from the widget: most callers leave
+  /// them null and rely on the parent for size, and passing null through to a
+  /// Container inside an unbounded parent threw "BoxConstraints forces an
+  /// infinite width" — which took the whole subtree down with it. Filling the
+  /// space we are given works for both a sized slot and an unsized one. The
+  /// icon+label are wrapped in FittedBox so they shrink rather than overflow in a
+  /// small thumbnail (a 52px product tile, say).
   Widget _retryTile(RgColors c, String url) => GestureDetector(
         onTap: () => _retry(url),
         behavior: HitTestBehavior.opaque,
         child: Container(
-          width: widget.width,
-          height: widget.height,
           color: c.ground2,
           alignment: Alignment.center,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.refresh_rounded, color: c.muted, size: 24),
-              const SizedBox(height: 4),
-              Text('Retry', style: TextStyle(color: c.muted, fontSize: 11, fontWeight: FontWeight.w600)),
-            ],
+          padding: const EdgeInsets.all(4),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.refresh_rounded, color: c.muted, size: 24),
+                const SizedBox(height: 4),
+                Text('Retry', style: TextStyle(color: c.muted, fontSize: 11, fontWeight: FontWeight.w600)),
+              ],
+            ),
           ),
         ),
       );

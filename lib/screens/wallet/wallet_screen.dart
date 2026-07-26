@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../api/api_config.dart';
 import '../../api/wallet_api.dart';
@@ -531,9 +532,45 @@ class _PackCard extends StatelessWidget {
   }
 }
 
-class _TxnRow extends StatelessWidget {
+class _TxnRow extends StatefulWidget {
   final WalletTxn txn;
   const _TxnRow({required this.txn});
+
+  @override
+  State<_TxnRow> createState() => _TxnRowState();
+}
+
+class _TxnRowState extends State<_TxnRow> {
+  bool _fetchingInvoice = false;
+
+  WalletTxn get txn => widget.txn;
+
+  /// Only a paid recharge produces a tax invoice — consultation debits are drawn
+  /// from an already-invoiced balance, so showing the action on them would
+  /// promise a document that does not exist.
+  bool get _invoiceable => txn.isCredit && txn.source == 'recharge';
+
+  /// Fetch the hosted PDF URL and hand it to the browser/PDF viewer. The backend
+  /// renders asynchronously and backfills older recharges, so a freshly-completed
+  /// recharge can legitimately have no URL yet — say so instead of failing.
+  Future<void> _openInvoice() async {
+    if (_fetchingInvoice) return;
+    setState(() => _fetchingInvoice = true);
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      final url = await context.read<WalletApi>().rechargeInvoiceUrl(txn.id);
+      if (url == null) {
+        messenger.showSnackBar(const SnackBar(content: Text('Your invoice is still being prepared. Try again in a moment.')));
+        return;
+      }
+      final ok = await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      if (!ok) messenger.showSnackBar(const SnackBar(content: Text('Could not open the invoice')));
+    } catch (_) {
+      messenger.showSnackBar(const SnackBar(content: Text('Could not fetch the invoice')));
+    } finally {
+      if (mounted) setState(() => _fetchingInvoice = false);
+    }
+  }
 
   static const _months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -581,6 +618,25 @@ class _TxnRow extends StatelessWidget {
           if (subtitle.isNotEmpty) ...[
             const SizedBox(height: 2),
             Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: c.muted, fontSize: 11)),
+          ],
+          // Recharges are the only rows with a tax invoice behind them.
+          if (_invoiceable) ...[
+            const SizedBox(height: 4),
+            InkWell(
+              onTap: _fetchingInvoice ? null : _openInvoice,
+              borderRadius: BorderRadius.circular(6),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+                child: Row(mainAxisSize: MainAxisSize.min, children: [
+                  _fetchingInvoice
+                      ? SizedBox(height: 11, width: 11, child: CircularProgressIndicator(strokeWidth: 1.6, color: c.gold))
+                      : Icon(Icons.receipt_long_rounded, size: 13, color: c.gold),
+                  const SizedBox(width: 4),
+                  Text(_fetchingInvoice ? 'Opening…' : 'Download invoice',
+                      style: TextStyle(color: c.gold, fontSize: 11, fontWeight: FontWeight.w700)),
+                ]),
+              ),
+            ),
           ],
         ])),
         const SizedBox(width: 8),
