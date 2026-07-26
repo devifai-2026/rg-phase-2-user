@@ -29,12 +29,21 @@ class AstrologerCard extends StatelessWidget {
   /// card still lines up. Single source of truth — the rails used to hardcode
   /// 158, which a 2-line Bengali/Devanagari name overran by 5px.
   ///
-  /// Fixed chrome is the 65px avatar (60 + ring) + 7px gap + rating row + chip
-  /// row + ₹/min line; the variable part is the name, which wraps to at most 2
-  /// lines. Scales with the user's font setting, since that is what pushed the
-  /// original constant over the edge.
+  /// Breakdown of the column this card builds, top to bottom:
+  ///   avatar 65 (r=30 → 60, + 2.5 padding + 2 ring on both sides)
+  ///   + 7  gap
+  ///   + 28 name — 2 lines at fontSize 12, height 1.15
+  ///   + 17 rating row (3 gap + 14 line)
+  ///   + 24 language chips (4 gap + 20 chip)
+  ///   + 18 ₹/min (4 gap + 14 line)
+  ///   = 159, plus 4 slack so a descender or a 1px rounding difference in a
+  ///     tall script can't reintroduce the overflow.
+  ///
+  /// Only the TEXT scales with the user's font setting — the avatar and the gaps
+  /// are fixed — so the two parts are scaled separately rather than multiplying
+  /// the whole thing.
   static double railHeight(BuildContext context) =>
-      98 + MediaQuery.textScalerOf(context).scale(60);
+      100 + MediaQuery.textScalerOf(context).scale(63);
 
   @override
   Widget build(BuildContext context) {
@@ -65,18 +74,19 @@ class AstrologerCard extends StatelessWidget {
     return SizedBox(
       // Wider so the full name fits (no premature ellipsis / right-side gap).
       width: 100,
-      // The rails give this card a FIXED height (see home_tab.dart) so all cards
-      // line up. A 2-line name in a tall script (Bengali/Devanagari) plus the
-      // rating row and the language chips overran it by a few pixels
-      // ("BOTTOM OVERFLOWED BY 5.0 PIXELS"), so the rail height is now derived
-      // from this card's own content rather than a magic constant — see
-      // [railHeight]. Everything stays visible; nothing is scaled or clipped.
-      child: Center(
-        child: SizedBox(
-          width: 100,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+      // The rails give this card a FIXED height (see [railHeight]) so all cards
+      // line up. That height is computed from the content below, but a computed
+      // constant is still a constant: a font this code has never seen could
+      // report a taller line and reintroduce the 5px overflow. So the name is
+      // ALSO wrapped in Flexible (below) — if the box is ever a pixel short, the
+      // name drops to one line instead of the card overflowing. Belt and braces:
+      // the height is normally exact, and the layout degrades safely if it isn't.
+      // NOT wrapped in Center/MainAxisSize.min: the Column must receive the
+      // rail's bounded height for the Flexible name to have anything to flex
+      // against. With min sizing the Column is unbounded and Flexible is inert,
+      // which is exactly how the original overflowed instead of degrading.
+      child: Column(
+        children: [
           // Avatar with the status ring (no overlaid pill).
           Container(
             padding: const EdgeInsets.all(2.5),
@@ -94,11 +104,15 @@ class AstrologerCard extends StatelessWidget {
           const SizedBox(height: 7),
           // Full name — wrap to up to 2 lines (uses the card's full width) before
           // ellipsizing, so "Pandit Saanvi" etc. is never cut to "Pandit Sa…".
-          SizedBox(
+          // Flexible so the name is what gives way if the rail is ever a pixel
+          // short, rather than the card overflowing its box.
+          Flexible(
+            child: SizedBox(
             width: double.infinity,
             child: Text(name, maxLines: 2, softWrap: true, overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(color: c.ink, fontWeight: FontWeight.w600, fontSize: 12, height: 1.15)),
+            ),
           ),
           // Rating ★ + value.
           if (showRating) ...[
@@ -132,9 +146,7 @@ class AstrologerCard extends StatelessWidget {
           const SizedBox(height: 4),
           Text(ai ? L10n.of(context).free : L10n.of(context).rateperminMin(ratePerMin),
               style: TextStyle(color: c.gold, fontSize: 10.5, fontWeight: FontWeight.w600)),
-            ],
-          ),
-        ),
+        ],
       ),
     );
   }

@@ -145,10 +145,13 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> with WidgetsBindingObse
     final myId = context.read<AuthProvider>().user?.id;
     final messenger = ScaffoldMessenger.of(context);
     final picker = ImagePicker();
-    final x = await picker.pickImage(source: ImageSource.gallery, maxWidth: 1280, imageQuality: 85);
+    // No quality/size hints here — they are unreliable across formats (see
+    // ImagePrep). We take the picked file as-is and normalise it ourselves.
+    final x = await picker.pickImage(source: ImageSource.gallery, requestFullMetadata: false);
     if (x == null) return;
     setState(() => _sending = true);
     try {
+      // uploadImage normalises to a compact JPEG for every caller — see there.
       final url = await profileApi.uploadImage(File(x.path));
       socket.sendMessage(s.sessionId!, mediaUrl: url, mediaType: 'image');
       s.messages.add(ChatMsg(

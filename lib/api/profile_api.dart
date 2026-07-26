@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 
+import '../utils/image_prep.dart';
 import 'api_client.dart';
 
 /// Result of a follow toggle / follow-state read: am I following + the public
@@ -36,10 +37,17 @@ class ProfileApi {
   final ApiClient _api;
   ProfileApi(this._api);
 
-  /// Upload a profile photo (multipart field "image") → hosted URL (GCS).
+  /// Upload an image (multipart field "image") → hosted URL (GCS).
+  ///
+  /// Normalises to a compact JPEG first, for every caller. `ImagePicker`'s
+  /// `imageQuality` is silently ignored for PNG — and Android screenshots are
+  /// PNG — so callers passing a quality hint still uploaded full-size files,
+  /// leaving the receiving chat bubble on a spinner long enough to look broken.
+  /// Centralised here so no upload path can regress by forgetting to convert.
   Future<String> uploadImage(File file) async {
+    final prepared = await ImagePrep.toUploadableJpeg(file);
     final form = FormData.fromMap({
-      'image': await MultipartFile.fromFile(file.path, filename: file.path.split('/').last),
+      'image': await MultipartFile.fromFile(prepared.path, filename: prepared.path.split('/').last),
     });
     final data = await _api.post('/users/upload', body: form);
     return (data as Map<String, dynamic>)['url'] as String;
