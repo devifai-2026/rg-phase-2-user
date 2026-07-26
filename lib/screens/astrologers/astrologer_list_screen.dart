@@ -52,7 +52,19 @@ class _AstrologerListScreenState extends State<AstrologerListScreen> {
       _filters.expertise.length + _filters.languages.length + (_filters.onlineOnly ? 1 : 0) + (_filters.maxPrice < 100 ? 1 : 0);
 
   // Category chips — first is "All", rest map to the `expertise` query param.
-  static const _cats = ['All', 'Vedic', 'Tarot', 'Numerology', 'Vastu', 'Palmistry', 'KP', 'Love'];
+  // Sourced from the admin-curated catalog (GET /astrologers/expertise) so a
+  // category the admin creates shows up here. The const list is only a first
+  // paint / offline fallback; note the old hardcoded set included values like
+  // "Love" that no astrologer was ever tagged with, so the chip returned an
+  // empty list.
+  static const _catsFallback = ['All', 'Vedic', 'Tarot', 'Numerology', 'Vastu', 'Palmistry', 'KP'];
+  List<String> _cats = _catsFallback;
+
+  Future<void> _loadCategories() async {
+    final list = await context.read<AstrologerApi>().expertiseCatalog();
+    if (!mounted || list.isEmpty) return;
+    setState(() => _cats = ['All', ...list]);
+  }
 
   // Live list state + pagination.
   static const _pageSize = 20;
@@ -83,6 +95,7 @@ class _AstrologerListScreenState extends State<AstrologerListScreen> {
   void initState() {
     super.initState();
     _api = context.read<AstrologerApi>();
+    _loadCategories(); // admin-curated expertise chips
     _scroll.addListener(_onScroll);
     // Realtime: patch a card's status the moment its astrologer goes
     // online/busy/offline (no refetch, no spinner).

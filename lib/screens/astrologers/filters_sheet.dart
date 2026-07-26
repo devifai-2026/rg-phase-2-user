@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../api/astrologer_api.dart';
 import '../../l10n/app_localizations.dart';
 import '../../theme/rg_colors.dart';
 
-/// Astrologer filters (static UI): expertise, languages, availability, price.
+/// Astrologer filters: expertise (admin-curated catalog), languages,
 /// Returns the chosen filters via Navigator.pop; the list applies them later.
 class AstrologerFilters {
   final Set<String> expertise;
@@ -29,13 +31,30 @@ class _FiltersSheet extends StatefulWidget {
 }
 
 class _FiltersSheetState extends State<_FiltersSheet> {
-  static const _expertise = ['Vedic', 'Tarot', 'Numerology', 'Vastu', 'Palmistry', 'KP', 'Love', 'Lal Kitab'];
+  // Fallback only. The real list is the admin-curated catalog fetched below —
+  // a hardcoded array meant an expertise the admin created never appeared here.
+  static const _expertiseFallback = ['Vedic', 'Tarot', 'Numerology', 'Vastu', 'Palmistry', 'KP', 'Lal Kitab'];
   static const _languages = ['Hindi', 'English', 'Bengali', 'Tamil', 'Marathi', 'Punjabi', 'Telugu'];
 
+  List<String> _expertise = _expertiseFallback;
   late final Set<String> _exp = {...widget.current.expertise};
   late final Set<String> _lang = {...widget.current.languages};
   late bool _online = widget.current.onlineOnly;
   late double _maxPrice = widget.current.maxPrice;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadExpertise();
+  }
+
+  Future<void> _loadExpertise() async {
+    final list = await context.read<AstrologerApi>().expertiseCatalog();
+    if (!mounted || list.isEmpty) return;
+    // Keep any already-selected value visible even if it left the catalog.
+    final merged = {...list, ..._exp}.toList();
+    setState(() => _expertise = merged);
+  }
 
   @override
   Widget build(BuildContext context) {

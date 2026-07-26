@@ -96,6 +96,22 @@ class AstrologerApi {
   final Map<String, Astrologer> _profileCache = {};
   final Map<String, DateTime> _profileCachedAt = {};
 
+  /// The admin-curated expertise catalog (GET /astrologers/expertise). Cached
+  /// for the app session: it changes rarely and every filter sheet needs it.
+  /// Falls back to an empty list so a fetch failure never blocks the sheet.
+  List<String>? _expertiseCache;
+  Future<List<String>> expertiseCatalog() async {
+    if (_expertiseCache != null) return _expertiseCache!;
+    try {
+      final data = await _api.get('/astrologers/expertise');
+      final raw = (data is List) ? data : const [];
+      _expertiseCache = raw.map((e) => e.toString()).where((e) => e.isNotEmpty).toList();
+    } catch (_) {
+      _expertiseCache = const [];
+    }
+    return _expertiseCache!;
+  }
+
   /// List astrologers. Filters: q (name), expertise (category), language,
   /// online, featured, maxPrice (lowest enabled rate ≤ this), city ("nearby"),
   /// random (server-side $sample for the home rail; unpaginated, varies/call).
