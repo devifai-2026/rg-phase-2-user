@@ -31,6 +31,10 @@ class L10nAs extends L10n {
   String get phoneHint => '১০ অংকৰ মোবাইল নম্বৰ';
 
   @override
+  String get phoneWhatsappNote =>
+      'আপোনাৰ WhatsApp নম্বৰ দিয়ক — OTP WhatsApp-ত পঠোৱা হ\'ব';
+
+  @override
   String get phoneCountryCode => '+91';
 
   @override
@@ -2897,26 +2901,26 @@ class L10nAs extends L10n {
   }
 
   @override
-  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+  String get welcomeBonusTitle => 'স্বাগতম উপহাৰ আনলক হ’ল!';
 
   @override
   String get welcomeBonusBody =>
-      'has been added to your wallet. Start your first consultation on us.';
+      'আপোনাৰ ৱালেটত যোগ কৰা হৈছে। আপোনাৰ প্ৰথম পৰামৰ্শ আমাৰ তৰফৰ পৰা আৰম্ভ কৰক।';
 
   @override
-  String get welcomeBonusCta => 'Start exploring';
+  String get welcomeBonusCta => 'আৰম্ভ কৰক';
 
   @override
-  String get exitAppTitle => 'Leave the app?';
+  String get exitAppTitle => 'এপ্‌টো বন্ধ কৰিবনে?';
 
   @override
-  String get exitAppBody => 'Are you sure you want to exit?';
+  String get exitAppBody => 'আপুনি নিশ্চিতভাৱে ওলাই যাব বিচাৰেনে?';
 
   @override
-  String get exitAppConfirm => 'Exit';
+  String get exitAppConfirm => 'ওলাই যাওক';
 
   @override
-  String get stay => 'Stay';
+  String get stay => 'থাকক';
 
   @override
   String get yourName => 'আপোনাৰ নাম';
@@ -2974,4 +2978,7 @@ class L10nAs extends L10n {
 
   @override
   String get overallScore => 'সৰ্বমুঠ স্ক’ৰ';
+
+  @override
+  String get chatHistoryExpired => 'চেট ইতিহাসৰ ম্যাদ উকলিল';
 }

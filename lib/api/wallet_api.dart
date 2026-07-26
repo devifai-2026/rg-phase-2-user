@@ -36,16 +36,41 @@ class WalletTxn {
   final int amount;
   final String? description;
   final DateTime? createdAt;
-  const WalletTxn({required this.id, required this.type, required this.source, required this.amount, this.description, this.createdAt});
+  /// Consultation rows only: billed minutes and the per-minute rate, so the
+  /// list can show "2 min · ₹50/min" under the title.
+  final int? minutes;
+  final int? ratePerMin;
+  const WalletTxn({
+    required this.id,
+    required this.type,
+    required this.source,
+    required this.amount,
+    this.description,
+    this.createdAt,
+    this.minutes,
+    this.ratePerMin,
+  });
   bool get isCredit => type == 'credit';
-  factory WalletTxn.fromJson(Map<String, dynamic> j) => WalletTxn(
-        id: (j['_id'] ?? j['id']).toString(),
-        type: (j['type'] ?? '').toString(),
-        source: (j['source'] ?? '').toString(),
-        amount: (j['amount'] as num?)?.toInt() ?? 0,
-        description: j['description']?.toString(),
-        createdAt: j['createdAt'] != null ? DateTime.tryParse(j['createdAt'].toString())?.toLocal() : null,
-      );
+
+  /// "2 min · ₹50/min" — null when this isn't a per-minute consultation row.
+  String? get rateDetail {
+    if (minutes == null || ratePerMin == null || minutes! < 1 || ratePerMin! < 1) return null;
+    return '$minutes min · ₹$ratePerMin/min';
+  }
+
+  factory WalletTxn.fromJson(Map<String, dynamic> j) {
+    final meta = (j['meta'] is Map) ? Map<String, dynamic>.from(j['meta'] as Map) : const {};
+    return WalletTxn(
+      id: (j['_id'] ?? j['id']).toString(),
+      type: (j['type'] ?? '').toString(),
+      source: (j['source'] ?? '').toString(),
+      amount: (j['amount'] as num?)?.toInt() ?? 0,
+      description: j['description']?.toString(),
+      createdAt: j['createdAt'] != null ? DateTime.tryParse(j['createdAt'].toString())?.toLocal() : null,
+      minutes: (meta['minutes'] as num?)?.toInt(),
+      ratePerMin: (meta['ratePerMin'] as num?)?.toInt(),
+    );
+  }
 }
 
 /// Wallet: balance, recharge packs, transactions, and starting a PayU recharge.

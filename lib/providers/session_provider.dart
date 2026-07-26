@@ -129,6 +129,10 @@ class SessionProvider extends ChangeNotifier {
         // Always re-anchor to server truth: samples the clock offset (exact
         // timer) and starts the ticker when startedAt wasn't in the payload.
         syncStartedAt();
+        // Rehydrate the transcript. After a cold start (app killed / swiped out
+        // of RAM) the in-memory list is empty, so without this the user rejoins
+        // an ongoing chat that looks like it has no history at all.
+        if (s.type == 'chat') loadMessages();
       }
       notifyListeners();
       return true;

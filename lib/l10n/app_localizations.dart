@@ -153,6 +153,12 @@ abstract class L10n {
   /// **'10-digit mobile number'**
   String get phoneHint;
 
+  /// Auth screen note: the phone number must be on WhatsApp because the OTP is delivered via WhatsApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your WhatsApp number — we send the OTP on WhatsApp'**
+  String get phoneWhatsappNote;
+
   /// No description provided for @phoneCountryCode.
   ///
   /// In en, this message translates to:
@@ -5303,6 +5309,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Overall score'**
   String get overallScore;
+
+  /// No description provided for @chatHistoryExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat History Expired'**
+  String get chatHistoryExpired;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

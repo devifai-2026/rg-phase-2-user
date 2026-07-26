@@ -7,6 +7,10 @@
   "authWelcomeSubtitle": "Sign in or create your account with your phone number",
   "phoneLabel": "Phone number",
   "phoneHint": "10-digit mobile number",
+  "phoneWhatsappNote": "Enter your WhatsApp number — we send the OTP on WhatsApp",
+  "@phoneWhatsappNote": {
+    "description": "Auth screen note: the phone number must be on WhatsApp because the OTP is delivered via WhatsApp."
+  },
   "phoneCountryCode": "+91",
   "continueButton": "Continue",
   "sendOtpButton": "Send OTP",
@@ -1790,5 +1794,6 @@
   "overallScore": "Overall score",
   "@overallScore": {
     "description": "Matching overall score label"
-  }
+  },
+  "chatHistoryExpired": "Chat History Expired"
 }

@@ -31,6 +31,10 @@ class L10nEn extends L10n {
   String get phoneHint => '10-digit mobile number';
 
   @override
+  String get phoneWhatsappNote =>
+      'Enter your WhatsApp number — we send the OTP on WhatsApp';
+
+  @override
   String get phoneCountryCode => '+91';
 
   @override
@@ -2967,4 +2971,7 @@ class L10nEn extends L10n {
 
   @override
   String get overallScore => 'Overall score';
+
+  @override
+  String get chatHistoryExpired => 'Chat History Expired';
 }

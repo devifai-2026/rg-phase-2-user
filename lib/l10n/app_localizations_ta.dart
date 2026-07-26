@@ -32,6 +32,10 @@ class L10nTa extends L10n {
   String get phoneHint => '10 இலக்க மொபைல் எண்';
 
   @override
+  String get phoneWhatsappNote =>
+      'உங்கள் WhatsApp எண்ணை உள்ளிடவும் — OTP WhatsApp இல் அனுப்பப்படும்';
+
+  @override
   String get phoneCountryCode => '+91';
 
   @override
@@ -2916,26 +2920,26 @@ class L10nTa extends L10n {
   }
 
   @override
-  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+  String get welcomeBonusTitle => 'வரவேற்பு பரிசு திறக்கப்பட்டது!';
 
   @override
   String get welcomeBonusBody =>
-      'has been added to your wallet. Start your first consultation on us.';
+      'உங்கள் வாலெட்டில் சேர்க்கப்பட்டது. உங்கள் முதல் ஆலோசனையை எங்கள் சார்பில் தொடங்குங்கள்.';
 
   @override
-  String get welcomeBonusCta => 'Start exploring';
+  String get welcomeBonusCta => 'தொடங்குங்கள்';
 
   @override
-  String get exitAppTitle => 'Leave the app?';
+  String get exitAppTitle => 'ஆப்பை மூடவா?';
 
   @override
-  String get exitAppBody => 'Are you sure you want to exit?';
+  String get exitAppBody => 'நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?';
 
   @override
-  String get exitAppConfirm => 'Exit';
+  String get exitAppConfirm => 'வெளியேறு';
 
   @override
-  String get stay => 'Stay';
+  String get stay => 'இரு';
 
   @override
   String get yourName => 'உங்கள் பெயர்';
@@ -2994,4 +2998,7 @@ class L10nTa extends L10n {
 
   @override
   String get overallScore => 'மொத்த மதிப்பெண்';
+
+  @override
+  String get chatHistoryExpired => 'அரட்டை வரலாறு காலாவதியானது';
 }

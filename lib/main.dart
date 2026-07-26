@@ -139,6 +139,9 @@ Future<void> main() async {
     push.registerWithBackend(); // fire-and-forget; self-recovers on token refresh
     notifications.load(); // prime the inbox + unread badge
     wallet.refresh(); // prime the wallet balance for the Home top bar
+    // Backstop for balance changes that emit no wallet-updated event (admin
+    // adjustment, direct DB edit) — the socket covers everything else.
+    wallet.startPolling();
     cart.refresh(); // prime the store cart + badge count
     // RESUME: if a consultation is still live server-side (app was killed mid-
     // session), rehydrate it so the Home resume bar reappears and the user can

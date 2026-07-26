@@ -7,6 +7,7 @@
   "authWelcomeSubtitle": "మీ ఫోన్ నంబర్‌తో సైన్ ఇన్ చేయండి లేదా మీ ఖాతాను సృష్టించుకోండి.",
   "phoneLabel": "ఫోన్ నంబర్",
   "phoneHint": "10-అంకెల మొబైల్ నంబర్",
+  "phoneWhatsappNote": "మీ WhatsApp నంబర్ నమోదు చేయండి — OTP WhatsApp లో పంపబడుతుంది",
   "phoneCountryCode": "+91",
   "continueButton": "కొనసాగించండి",
   "sendOtpButton": "OTP పంపండి",
@@ -1715,5 +1716,6 @@
   "exitAppTitle": "యాప్ మూసివేయాలా?",
   "exitAppBody": "మీరు నిజంగా నిష్క్రమించాలనుకుంటున్నారా?",
   "exitAppConfirm": "నిష్క్రమించు",
-  "stay": "ఉండండి"
+  "stay": "ఉండండి",
+  "chatHistoryExpired": "చాట్ చరిత్ర గడువు ముగిసింది"
 }

@@ -31,6 +31,10 @@ class L10nTe extends L10n {
   String get phoneHint => '10-అంకెల మొబైల్ నంబర్';
 
   @override
+  String get phoneWhatsappNote =>
+      'మీ WhatsApp నంబర్ నమోదు చేయండి — OTP WhatsApp లో పంపబడుతుంది';
+
+  @override
   String get phoneCountryCode => '+91';
 
   @override
@@ -2902,26 +2906,26 @@ class L10nTe extends L10n {
   }
 
   @override
-  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+  String get welcomeBonusTitle => 'స్వాగత బహుమతి అన్‌లాక్ అయింది!';
 
   @override
   String get welcomeBonusBody =>
-      'has been added to your wallet. Start your first consultation on us.';
+      'మీ వాలెట్‌కు జోడించబడింది. మీ మొదటి సంప్రదింపును మా తరఫున ప్రారంభించండి.';
 
   @override
-  String get welcomeBonusCta => 'Start exploring';
+  String get welcomeBonusCta => 'ప్రారంభించండి';
 
   @override
-  String get exitAppTitle => 'Leave the app?';
+  String get exitAppTitle => 'యాప్ మూసివేయాలా?';
 
   @override
-  String get exitAppBody => 'Are you sure you want to exit?';
+  String get exitAppBody => 'మీరు నిజంగా నిష్క్రమించాలనుకుంటున్నారా?';
 
   @override
-  String get exitAppConfirm => 'Exit';
+  String get exitAppConfirm => 'నిష్క్రమించు';
 
   @override
-  String get stay => 'Stay';
+  String get stay => 'ఉండండి';
 
   @override
   String get yourName => 'మీ పేరు';
@@ -2979,4 +2983,7 @@ class L10nTe extends L10n {
 
   @override
   String get overallScore => 'మొత్తం స్కోర్';
+
+  @override
+  String get chatHistoryExpired => 'చాట్ చరిత్ర గడువు ముగిసింది';
 }

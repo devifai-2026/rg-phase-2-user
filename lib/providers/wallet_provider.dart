@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 import '../api/wallet_api.dart';
@@ -32,9 +34,35 @@ class WalletProvider extends ChangeNotifier {
     if (b != null) setBalance(b);
   }
 
+  Timer? _poll;
+
+  /// Re-fetch the balance on a fixed interval.
+  ///
+  /// `wallet-updated` covers every change the BACKEND makes, but a balance
+  /// edited out-of-band (admin action, direct DB write) emits no event, so the
+  /// app would keep showing a stale figure until the next launch. Polling is
+  /// the backstop; setBalance() no-ops when the value is unchanged, so an idle
+  /// wallet costs one cheap request and zero rebuilds.
+  void startPolling({Duration every = const Duration(seconds: 10)}) {
+    _poll?.cancel();
+    _poll = Timer.periodic(every, (_) => refresh());
+  }
+
+  void stopPolling() {
+    _poll?.cancel();
+    _poll = null;
+  }
+
   void reset() {
+    stopPolling();
     _balance = 0;
     _loaded = false;
     notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    stopPolling();
+    super.dispose();
   }
 }

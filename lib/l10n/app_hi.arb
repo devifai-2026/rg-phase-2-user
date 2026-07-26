@@ -6,6 +6,7 @@
   "authWelcomeSubtitle": "अपने फ़ोन नंबर से साइन इन करें या खाता बनाएँ",
   "phoneLabel": "फ़ोन नंबर",
   "phoneHint": "10 अंकों का मोबाइल नंबर",
+  "phoneWhatsappNote": "अपना WhatsApp नंबर डालें — OTP WhatsApp पर भेजा जाएगा",
   "phoneCountryCode": "+91",
   "continueButton": "आगे बढ़ें",
   "sendOtpButton": "OTP भेजें",
@@ -863,5 +864,6 @@
   "exitAppTitle": "ऐप बंद करें?",
   "exitAppBody": "क्या आप वाकई बाहर निकलना चाहते हैं?",
   "exitAppConfirm": "बाहर निकलें",
-  "stay": "रुकें"
+  "stay": "रुकें",
+  "chatHistoryExpired": "चैट इतिहास समाप्त हो गया"
 }

@@ -7,6 +7,7 @@
   "authWelcomeSubtitle": "உங்கள் தொலைபேசி எண்ணைப் பயன்படுத்தி உள்நுழையுங்கள் அல்லது உங்கள் கணக்கை உருவாக்குங்கள்.",
   "phoneLabel": "தொலைபேசி எண்",
   "phoneHint": "10 இலக்க மொபைல் எண்",
+  "phoneWhatsappNote": "உங்கள் WhatsApp எண்ணை உள்ளிடவும் — OTP WhatsApp இல் அனுப்பப்படும்",
   "phoneCountryCode": "+91",
   "continueButton": "தொடரவும்",
   "sendOtpButton": "OTP அனுப்பு",
@@ -1715,5 +1716,6 @@
   "exitAppTitle": "ஆப்பை மூடவா?",
   "exitAppBody": "நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?",
   "exitAppConfirm": "வெளியேறு",
-  "stay": "இரு"
+  "stay": "இரு",
+  "chatHistoryExpired": "அரட்டை வரலாறு காலாவதியானது"
 }

@@ -31,6 +31,10 @@ class L10nBn extends L10n {
   String get phoneHint => '১০ সংখ্যার মোবাইল নম্বর';
 
   @override
+  String get phoneWhatsappNote =>
+      'আপনার WhatsApp নম্বর দিন — OTP WhatsApp-এ পাঠানো হবে';
+
+  @override
   String get phoneCountryCode => '+91';
 
   @override
@@ -2897,26 +2901,26 @@ class L10nBn extends L10n {
   }
 
   @override
-  String get welcomeBonusTitle => 'Welcome gift unlocked!';
+  String get welcomeBonusTitle => 'স্বাগত উপহার আনলক হয়েছে!';
 
   @override
   String get welcomeBonusBody =>
-      'has been added to your wallet. Start your first consultation on us.';
+      'আপনার ওয়ালেটে যোগ করা হয়েছে। আপনার প্রথম পরামর্শ আমাদের পক্ষ থেকে শুরু করুন।';
 
   @override
-  String get welcomeBonusCta => 'Start exploring';
+  String get welcomeBonusCta => 'শুরু করুন';
 
   @override
-  String get exitAppTitle => 'Leave the app?';
+  String get exitAppTitle => 'অ্যাপ থেকে বেরোবেন?';
 
   @override
-  String get exitAppBody => 'Are you sure you want to exit?';
+  String get exitAppBody => 'আপনি কি নিশ্চিত বেরোতে চান?';
 
   @override
-  String get exitAppConfirm => 'Exit';
+  String get exitAppConfirm => 'বেরোন';
 
   @override
-  String get stay => 'Stay';
+  String get stay => 'থাকুন';
 
   @override
   String get yourName => 'আপনার নাম';
@@ -2974,4 +2978,7 @@ class L10nBn extends L10n {
 
   @override
   String get overallScore => 'সামগ্রিক স্কোর';
+
+  @override
+  String get chatHistoryExpired => 'চ্যাট ইতিহাসের মেয়াদ শেষ';
 }

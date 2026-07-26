@@ -84,7 +84,24 @@ class _ConsultationHistoryScreenState extends State<ConsultationHistoryScreen> {
     return s == 0 ? '${m}m' : '${m}m ${s}s';
   }
 
+  /// Transcripts are retained for 7 days after the consultation ends. Past
+  /// that, the row is still listed (it's a billing record) but the chat can no
+  /// longer be opened.
+  static const _historyRetention = Duration(days: 7);
+
+  bool _chatExpired(SessionInfo s) {
+    final ended = s.endedAt ?? s.startedAt;
+    if (ended == null) return false; // unknown age → let the server decide
+    return DateTime.now().difference(ended) > _historyRetention;
+  }
+
   void _openChat(SessionInfo s) {
+    if (_chatExpired(s)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(L10n.of(context).chatHistoryExpired)),
+      );
+      return;
+    }
     // The history row doesn't carry the astrologer's name, so the transcript
     // header falls back to a neutral label.
     Navigator.of(context).push(MaterialPageRoute(

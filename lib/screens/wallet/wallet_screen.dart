@@ -550,6 +550,10 @@ class _TxnRow extends StatelessWidget {
     final title = (txn.description != null && txn.description!.isNotEmpty) ? txn.description! : label;
     final d = txn.createdAt;
     final dateStr = d != null ? '${d.day} ${_months[d.month]} ${d.year}' : '';
+    // Consultation rows carry billed minutes + rate ("2 min · ₹50/min"); append
+    // it to the date line so the charge is self-explanatory.
+    final detail = txn.rateDetail;
+    final subtitle = detail == null ? dateStr : (dateStr.isEmpty ? detail : '$dateStr · $detail');
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -562,9 +566,9 @@ class _TxnRow extends StatelessWidget {
         const SizedBox(width: 12),
         Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(title, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: c.ink, fontWeight: FontWeight.w700, fontSize: 13.5)),
-          if (dateStr.isNotEmpty) ...[
+          if (subtitle.isNotEmpty) ...[
             const SizedBox(height: 2),
-            Text(dateStr, style: TextStyle(color: c.muted, fontSize: 11)),
+            Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: c.muted, fontSize: 11)),
           ],
         ])),
         const SizedBox(width: 8),
