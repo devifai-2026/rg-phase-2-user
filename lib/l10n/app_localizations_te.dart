@@ -2990,4 +2990,18 @@ class L10nTe extends L10n {
   @override
   String get noAnswerPleaseTryAgain =>
       'స్పందన లేదు. దయచేసి మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get restartForLanguageTitle =>
+      'మార్పు పూర్తి చేయడానికి యాప్‌ను తిరిగి తెరవండి';
+
+  @override
+  String get restartForLanguageBody =>
+      'యాప్‌ను మూసివేసి తిరిగి తెరవండి, అప్పుడు జ్యోతిష్కుల ప్రొఫైల్‌లు, విభాగాలు మరియు పూజలు — అన్నీ మీ కొత్త భాషలో కనిపిస్తాయి.';
+
+  @override
+  String get restartNow => 'యాప్ మూసివేయండి';
+
+  @override
+  String get restartLater => 'ఇప్పుడు వద్దు';
 }

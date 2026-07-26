@@ -2996,4 +2996,18 @@ class L10nKn extends L10n {
   @override
   String get noAnswerPleaseTryAgain =>
       'ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get restartForLanguageTitle =>
+      'ಬದಲಾವಣೆ ಪೂರ್ಣಗೊಳಿಸಲು ಆ್ಯಪ್ ಮತ್ತೆ ತೆರೆಯಿರಿ';
+
+  @override
+  String get restartForLanguageBody =>
+      'ಆ್ಯಪ್ ಮುಚ್ಚಿ ಮತ್ತೆ ತೆರೆಯಿರಿ, ಇದರಿಂದ ಜ್ಯೋತಿಷಿ ಪ್ರೊಫೈಲ್, ವರ್ಗಗಳು ಮತ್ತು ಪೂಜೆ — ಎಲ್ಲವೂ ನಿಮ್ಮ ಹೊಸ ಭಾಷೆಯಲ್ಲಿ ಕಾಣಿಸುತ್ತದೆ.';
+
+  @override
+  String get restartNow => 'ಆ್ಯಪ್ ಮುಚ್ಚಿ';
+
+  @override
+  String get restartLater => 'ಈಗ ಬೇಡ';
 }

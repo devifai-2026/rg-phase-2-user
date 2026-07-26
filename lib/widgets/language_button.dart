@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import '../l10n/app_localizations.dart';
@@ -20,6 +21,49 @@ class LanguageButton extends StatelessWidget {
       onPressed: () => showLanguageSheet(context),
     );
   }
+}
+
+/// After a language change, offer to close the app so it reopens fully in the new
+/// language.
+///
+/// `setLocale` already swaps the app's own strings and refetches the localised
+/// rails, so this is an optional polish step, not a requirement — hence a
+/// dismissible dialog rather than a forced restart. Android has no supported
+/// self-restart API, so "Close app" does exactly that (SystemNavigator.pop) and
+/// the copy says so plainly instead of promising an automatic relaunch.
+///
+/// Shown on a post-frame callback so it is built AFTER MaterialApp has rebuilt
+/// with the new locale — otherwise the prompt itself would appear in the OLD
+/// language, which is precisely the thing being fixed.
+void _promptRestart(BuildContext context) {
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    if (!context.mounted) return;
+    final c = context.rg;
+    final t = L10n.of(context);
+    showDialog<void>(
+      context: context,
+      builder: (dctx) => AlertDialog(
+        backgroundColor: c.card,
+        title: Text(t.restartForLanguageTitle,
+            style: TextStyle(color: c.ink, fontWeight: FontWeight.w800, fontSize: 17)),
+        content: Text(t.restartForLanguageBody, style: TextStyle(color: c.muted, height: 1.4)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dctx).pop(),
+            child: Text(t.restartLater, style: TextStyle(color: c.muted, fontWeight: FontWeight.w700)),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(backgroundColor: c.red),
+            onPressed: () {
+              Navigator.of(dctx).pop();
+              SystemNavigator.pop(); // closes the app; the user reopens it
+            },
+            child: Text(t.restartNow, style: const TextStyle(fontWeight: FontWeight.w800)),
+          ),
+        ],
+      ),
+    );
+  });
 }
 
 Future<void> showLanguageSheet(BuildContext context) {
@@ -69,6 +113,7 @@ Future<void> showLanguageSheet(BuildContext context) {
                             ? Icon(Icons.check_circle, color: c.red)
                             : null,
                         onTap: () {
+                          final changed = current != locale.languageCode;
                           // 1) App-wide + local storage (SharedPreferences).
                           settings.setLocale(locale);
                           // 2) Persist to DB when logged in (fire-and-forget).
@@ -76,6 +121,13 @@ Future<void> showLanguageSheet(BuildContext context) {
                             auth.updateProfile({'language': locale.languageCode}).catchError((_) => auth.user!);
                           }
                           Navigator.of(ctx).pop();
+                          // 3) Offer a restart. setLocale already refetches the
+                          // localised rails, but a cold start is the only way to
+                          // guarantee EVERY screen (including ones already built
+                          // deeper in the stack) is rebuilt in the new language.
+                          // Only when the language actually changed — re-picking
+                          // the current one shouldn't nag.
+                          if (changed) _promptRestart(context);
                         },
                       ),
                   ],

@@ -2984,4 +2984,18 @@ class L10nHi extends L10n {
   @override
   String get noAnswerPleaseTryAgain =>
       'कोई उत्तर नहीं। कृपया पुनः प्रयास करें।';
+
+  @override
+  String get restartForLanguageTitle =>
+      'बदलाव पूरा करने के लिए ऐप फिर से खोलें';
+
+  @override
+  String get restartForLanguageBody =>
+      'ऐप बंद करके दोबारा खोलें, ताकि ज्योतिषी प्रोफ़ाइल, श्रेणियाँ और पूजा — सब कुछ आपकी नई भाषा में दिखे।';
+
+  @override
+  String get restartNow => 'ऐप बंद करें';
+
+  @override
+  String get restartLater => 'अभी नहीं';
 }

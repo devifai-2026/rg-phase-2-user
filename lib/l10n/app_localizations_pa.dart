@@ -2984,4 +2984,17 @@ class L10nPa extends L10n {
   @override
   String get noAnswerPleaseTryAgain =>
       'ਕੋਈ ਜਵਾਬ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get restartForLanguageTitle => 'ਤਬਦੀਲੀ ਪੂਰੀ ਕਰਨ ਲਈ ਐਪ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ';
+
+  @override
+  String get restartForLanguageBody =>
+      'ਐਪ ਬੰਦ ਕਰਕੇ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ, ਤਾਂ ਜੋ ਜੋਤਸ਼ੀ ਪ੍ਰੋਫ਼ਾਈਲ, ਸ਼੍ਰੇਣੀਆਂ ਅਤੇ ਪੂਜਾ — ਸਭ ਕੁਝ ਤੁਹਾਡੀ ਨਵੀਂ ਭਾਸ਼ਾ ਵਿੱਚ ਦਿਖੇ।';
+
+  @override
+  String get restartNow => 'ਐਪ ਬੰਦ ਕਰੋ';
+
+  @override
+  String get restartLater => 'ਹੁਣ ਨਹੀਂ';
 }

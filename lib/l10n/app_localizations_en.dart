@@ -2977,4 +2977,17 @@ class L10nEn extends L10n {
 
   @override
   String get noAnswerPleaseTryAgain => 'No answer. Please try again.';
+
+  @override
+  String get restartForLanguageTitle => 'Restart to finish switching';
+
+  @override
+  String get restartForLanguageBody =>
+      'Close and reopen the app so everything — astrologer profiles, categories and poojas — appears in your new language.';
+
+  @override
+  String get restartNow => 'Close app';
+
+  @override
+  String get restartLater => 'Not now';
 }

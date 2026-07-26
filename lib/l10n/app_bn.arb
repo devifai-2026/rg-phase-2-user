@@ -866,5 +866,9 @@
   "exitAppConfirm": "বেরোন",
   "stay": "থাকুন",
   "chatHistoryExpired": "চ্যাট ইতিহাসের মেয়াদ শেষ",
-  "noAnswerPleaseTryAgain": "কোনো উত্তর নেই। আবার চেষ্টা করুন।"
+  "noAnswerPleaseTryAgain": "কোনো উত্তর নেই। আবার চেষ্টা করুন।",
+  "restartForLanguageTitle": "পরিবর্তন সম্পূর্ণ করতে অ্যাপ আবার খুলুন",
+  "restartForLanguageBody": "অ্যাপটি বন্ধ করে আবার খুলুন, যাতে জ্যোতিষীর প্রোফাইল, বিভাগ ও পূজা — সবকিছু আপনার নতুন ভাষায় দেখা যায়।",
+  "restartNow": "অ্যাপ বন্ধ করুন",
+  "restartLater": "এখন নয়"
 }

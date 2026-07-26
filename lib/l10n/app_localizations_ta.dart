@@ -3004,4 +3004,18 @@ class L10nTa extends L10n {
 
   @override
   String get noAnswerPleaseTryAgain => 'பதில் இல்லை. மீண்டும் முயற்சிக்கவும்.';
+
+  @override
+  String get restartForLanguageTitle =>
+      'மாற்றத்தை முடிக்க ஆப்ஸை மீண்டும் திறக்கவும்';
+
+  @override
+  String get restartForLanguageBody =>
+      'ஆப்ஸை மூடி மீண்டும் திறக்கவும், அதனால் ஜோதிடர் விவரங்கள், பிரிவுகள் மற்றும் பூஜைகள் — அனைத்தும் உங்கள் புதிய மொழியில் தெரியும்.';
+
+  @override
+  String get restartNow => 'ஆப்ஸை மூடு';
+
+  @override
+  String get restartLater => 'இப்போது இல்லை';
 }

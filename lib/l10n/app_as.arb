@@ -866,5 +866,9 @@
   "exitAppConfirm": "ওলাই যাওক",
   "stay": "থাকক",
   "chatHistoryExpired": "চেট ইতিহাসৰ ম্যাদ উকলিল",
-  "noAnswerPleaseTryAgain": "কোনো উত্তৰ নাই। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।"
+  "noAnswerPleaseTryAgain": "কোনো উত্তৰ নাই। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
+  "restartForLanguageTitle": "সলনি সম্পূৰ্ণ কৰিবলৈ এপ্ পুনৰ খোলক",
+  "restartForLanguageBody": "এপ্‌টো বন্ধ কৰি পুনৰ খোলক, যাতে জ্যোতিষীৰ প্ৰ'ফাইল, শ্ৰেণী আৰু পূজা — সকলো আপোনাৰ নতুন ভাষাত দেখা যায়।",
+  "restartNow": "এপ্ বন্ধ কৰক",
+  "restartLater": "এতিয়া নহয়"
 }

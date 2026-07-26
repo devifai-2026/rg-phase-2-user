@@ -5321,6 +5321,30 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'No answer. Please try again.'**
   String get noAnswerPleaseTryAgain;
+
+  /// Title of the dialog shown after the user picks a new app language.
+  ///
+  /// In en, this message translates to:
+  /// **'Restart to finish switching'**
+  String get restartForLanguageTitle;
+
+  /// Explains that a restart makes server-translated content appear in the new language.
+  ///
+  /// In en, this message translates to:
+  /// **'Close and reopen the app so everything — astrologer profiles, categories and poojas — appears in your new language.'**
+  String get restartForLanguageBody;
+
+  /// Confirm button: closes the app so the user can reopen it.
+  ///
+  /// In en, this message translates to:
+  /// **'Close app'**
+  String get restartNow;
+
+  /// Dismiss button: keep using the app without restarting.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get restartLater;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -866,5 +866,9 @@
   "exitAppConfirm": "बाहेर पडा",
   "stay": "थांबा",
   "chatHistoryExpired": "चॅट इतिहास कालबाह्य झाला",
-  "noAnswerPleaseTryAgain": "उत्तर मिळाले नाही. कृपया पुन्हा प्रयत्न करा."
+  "noAnswerPleaseTryAgain": "उत्तर मिळाले नाही. कृपया पुन्हा प्रयत्न करा.",
+  "restartForLanguageTitle": "बदल पूर्ण करण्यासाठी अॅप पुन्हा उघडा",
+  "restartForLanguageBody": "अॅप बंद करून पुन्हा उघडा, जेणेकरून ज्योतिषी प्रोफाइल, श्रेण्या आणि पूजा — सर्व काही तुमच्या नवीन भाषेत दिसेल.",
+  "restartNow": "अॅप बंद करा",
+  "restartLater": "आता नको"
 }

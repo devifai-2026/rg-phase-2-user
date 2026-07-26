@@ -866,5 +866,9 @@
   "exitAppConfirm": "बाहर निकलें",
   "stay": "रुकें",
   "chatHistoryExpired": "चैट इतिहास समाप्त हो गया",
-  "noAnswerPleaseTryAgain": "कोई उत्तर नहीं। कृपया पुनः प्रयास करें।"
+  "noAnswerPleaseTryAgain": "कोई उत्तर नहीं। कृपया पुनः प्रयास करें।",
+  "restartForLanguageTitle": "बदलाव पूरा करने के लिए ऐप फिर से खोलें",
+  "restartForLanguageBody": "ऐप बंद करके दोबारा खोलें, ताकि ज्योतिषी प्रोफ़ाइल, श्रेणियाँ और पूजा — सब कुछ आपकी नई भाषा में दिखे।",
+  "restartNow": "ऐप बंद करें",
+  "restartLater": "अभी नहीं"
 }

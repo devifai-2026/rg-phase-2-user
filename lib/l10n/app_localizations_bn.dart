@@ -2984,4 +2984,18 @@ class L10nBn extends L10n {
 
   @override
   String get noAnswerPleaseTryAgain => 'কোনো উত্তর নেই। আবার চেষ্টা করুন।';
+
+  @override
+  String get restartForLanguageTitle =>
+      'পরিবর্তন সম্পূর্ণ করতে অ্যাপ আবার খুলুন';
+
+  @override
+  String get restartForLanguageBody =>
+      'অ্যাপটি বন্ধ করে আবার খুলুন, যাতে জ্যোতিষীর প্রোফাইল, বিভাগ ও পূজা — সবকিছু আপনার নতুন ভাষায় দেখা যায়।';
+
+  @override
+  String get restartNow => 'অ্যাপ বন্ধ করুন';
+
+  @override
+  String get restartLater => 'এখন নয়';
 }

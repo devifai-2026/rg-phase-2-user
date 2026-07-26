@@ -1796,5 +1796,21 @@
     "description": "Matching overall score label"
   },
   "chatHistoryExpired": "Chat History Expired",
-  "noAnswerPleaseTryAgain": "No answer. Please try again."
+  "noAnswerPleaseTryAgain": "No answer. Please try again.",
+  "restartForLanguageTitle": "Restart to finish switching",
+  "@restartForLanguageTitle": {
+    "description": "Title of the dialog shown after the user picks a new app language."
+  },
+  "restartForLanguageBody": "Close and reopen the app so everything — astrologer profiles, categories and poojas — appears in your new language.",
+  "@restartForLanguageBody": {
+    "description": "Explains that a restart makes server-translated content appear in the new language."
+  },
+  "restartNow": "Close app",
+  "@restartNow": {
+    "description": "Confirm button: closes the app so the user can reopen it."
+  },
+  "restartLater": "Not now",
+  "@restartLater": {
+    "description": "Dismiss button: keep using the app without restarting."
+  }
 }

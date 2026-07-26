@@ -2985,4 +2985,17 @@ class L10nAs extends L10n {
   @override
   String get noAnswerPleaseTryAgain =>
       'কোনো উত্তৰ নাই। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।';
+
+  @override
+  String get restartForLanguageTitle => 'সলনি সম্পূৰ্ণ কৰিবলৈ এপ্ পুনৰ খোলক';
+
+  @override
+  String get restartForLanguageBody =>
+      'এপ্‌টো বন্ধ কৰি পুনৰ খোলক, যাতে জ্যোতিষীৰ প্ৰ\'ফাইল, শ্ৰেণী আৰু পূজা — সকলো আপোনাৰ নতুন ভাষাত দেখা যায়।';
+
+  @override
+  String get restartNow => 'এপ্ বন্ধ কৰক';
+
+  @override
+  String get restartLater => 'এতিয়া নহয়';
 }

@@ -2981,4 +2981,17 @@ class L10nMr extends L10n {
   @override
   String get noAnswerPleaseTryAgain =>
       'उत्तर मिळाले नाही. कृपया पुन्हा प्रयत्न करा.';
+
+  @override
+  String get restartForLanguageTitle => 'बदल पूर्ण करण्यासाठी अॅप पुन्हा उघडा';
+
+  @override
+  String get restartForLanguageBody =>
+      'अॅप बंद करून पुन्हा उघडा, जेणेकरून ज्योतिषी प्रोफाइल, श्रेण्या आणि पूजा — सर्व काही तुमच्या नवीन भाषेत दिसेल.';
+
+  @override
+  String get restartNow => 'अॅप बंद करा';
+
+  @override
+  String get restartLater => 'आता नको';
 }
