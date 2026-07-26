@@ -236,9 +236,21 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
             else if (_packs.isEmpty)
               Text(L10n.of(context).noRechargePacksAvailableRightNow, style: TextStyle(color: c.muted, fontSize: 13))
             else
-              // Premium horizontal rail of recharge tiles.
+              // Premium horizontal rail of recharge tiles. Every card is the SAME
+              // height and shows ALL of its perks, so the rail is sized to the
+              // pack with the most perks rather than to a hardcoded constant.
+              // A fixed 210 clipped the Pay button off any pack the admin gave
+              // four perks ("BOTTOM OVERFLOWED BY 20 PIXELS") — the perk count is
+              // admin-controlled, so it cannot be baked into a magic number.
+              // 150 covers the fixed chrome (price, bonus pill, Pay button and
+              // padding); each perk line is 13px icon + 4px gap. Scales with the
+              // user's font setting via textScaler.
               SizedBox(
-                height: 210,
+                height: 150 +
+                    MediaQuery.textScalerOf(context).scale(17) *
+                        _packs
+                            .map((p) => p.benefits.where((b) => b.trim().isNotEmpty).take(4).length)
+                            .fold(0, (a, b) => a > b ? a : b),
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.zero,

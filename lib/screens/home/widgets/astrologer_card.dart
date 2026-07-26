@@ -25,6 +25,17 @@ class AstrologerCard extends StatelessWidget {
     this.imageUrl,
   });
 
+  /// Height the home rails must give this card so nothing overflows and every
+  /// card still lines up. Single source of truth — the rails used to hardcode
+  /// 158, which a 2-line Bengali/Devanagari name overran by 5px.
+  ///
+  /// Fixed chrome is the 65px avatar (60 + ring) + 7px gap + rating row + chip
+  /// row + ₹/min line; the variable part is the name, which wraps to at most 2
+  /// lines. Scales with the user's font setting, since that is what pushed the
+  /// original constant over the edge.
+  static double railHeight(BuildContext context) =>
+      98 + MediaQuery.textScalerOf(context).scale(60);
+
   @override
   Widget build(BuildContext context) {
     final c = context.rg;
@@ -54,14 +65,13 @@ class AstrologerCard extends StatelessWidget {
     return SizedBox(
       // Wider so the full name fits (no premature ellipsis / right-side gap).
       width: 100,
-      // The rails give this card a FIXED height (see home_tab.dart). A 2-line
-      // name in a tall script (Bengali/Devanagari) plus the rating row and the
-      // language chips can exceed that by a few pixels, which Flutter reports as
-      // "BOTTOM OVERFLOWED BY 5.0 PIXELS". Scaling down instead of clipping
-      // keeps every element visible and, unlike bumping the magic height, it
-      // also survives a larger system font scale and a 3-line name.
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
+      // The rails give this card a FIXED height (see home_tab.dart) so all cards
+      // line up. A 2-line name in a tall script (Bengali/Devanagari) plus the
+      // rating row and the language chips overran it by a few pixels
+      // ("BOTTOM OVERFLOWED BY 5.0 PIXELS"), so the rail height is now derived
+      // from this card's own content rather than a magic constant — see
+      // [railHeight]. Everything stays visible; nothing is scaled or clipped.
+      child: Center(
         child: SizedBox(
           width: 100,
           child: Column(

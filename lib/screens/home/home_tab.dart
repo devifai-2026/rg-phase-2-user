@@ -307,7 +307,7 @@ class _FeaturedRailState extends State<_FeaturedRail> {
             onSeeAll: () => Navigator.of(context).push(slideRoute(
                 AstrologerListScreen(featured: true, title: widget.title)))),
         SizedBox(
-          height: 158,
+          height: AstrologerCard.railHeight(context),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -425,7 +425,7 @@ class _CallChatRailState extends State<_CallChatRail> {
             onSeeAll: () => Navigator.of(context).push(slideRoute(
                 AstrologerListScreen(title: widget.title)))),
         SizedBox(
-          height: 158,
+          height: AstrologerCard.railHeight(context),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -618,7 +618,7 @@ class _NearbySectionState extends State<_NearbySection> {
   Widget _rail() {
     final live = _items;
     return SizedBox(
-      height: 158,
+      height: AstrologerCard.railHeight(context),
       child: (live == null)
           ? const Center(child: CircularProgressIndicator()) // API-only: loader, no dummy
           : (live.isEmpty
