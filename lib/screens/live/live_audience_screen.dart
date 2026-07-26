@@ -193,6 +193,15 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
     setState(() => _myVotedPollId = poll['id'] as String?);
     try {
       await _liveApi.vote(widget.liveSessionId, poll['id'].toString(), optionId);
+      // Answered → take the card away. Leaving it on screen (even greyed) just
+      // covers the broadcast for something the viewer has already done; the
+      // astrologer keeps the pinned tally on their side.
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Thanks for voting!'), duration: Duration(seconds: 2)),
+        );
+        setState(() => _poll = null);
+      }
     } catch (_) {
       // Revert the local guard on failure (e.g. already voted server-side stays).
     }
@@ -247,9 +256,32 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
                   ? _endedOverlay(c)
                   : _error != null
                       ? _errorView(c)
-                      : Column(children: [
-                          Expanded(flex: 5, child: _videoArea(c)),
-                          Expanded(flex: 6, child: _bottomPanel(c)),
+                      // FULL-SCREEN video with the comments/composer OVERLAID,
+                      // like Facebook/Instagram Live. It used to be a 5:6 split,
+                      // which gave the comments MORE room than the broadcast and
+                      // left the video letterboxed into a small strip.
+                      : Stack(children: [
+                          Positioned.fill(child: _videoArea(c)),
+                          // Comments sit in the lower half only, so the
+                          // astrologer's face is never covered. Gradient scrim
+                          // keeps white text legible over a bright video.
+                          Positioned(
+                            left: 0, right: 0, bottom: 0,
+                            height: MediaQuery.of(context).size.height * 0.52,
+                            child: IgnorePointer(
+                              ignoring: true,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [Colors.transparent, Colors.black.withValues(alpha: 0.72)],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(left: 0, right: 0, bottom: 0, child: _overlayPanel(c)),
                         ]),
         ),
       ),
@@ -345,21 +377,40 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
         ),
       );
 
-  Widget _bottomPanel(RgColors c) => Container(
-        decoration: BoxDecoration(color: c.ground, borderRadius: const BorderRadius.vertical(top: Radius.circular(18))),
-        child: Column(children: [
-          if (_poll != null) _pollCard(c, _poll!),
-          Expanded(child: _commentList(c)),
-          _composer(c),
-        ]),
-      );
+  /// Comments + poll + composer as a TRANSPARENT overlay on the video.
+  ///
+  /// Height is content-driven (capped at ~42% of the screen) rather than a fixed
+  /// flex share, so a quiet room shows almost nothing and the broadcast fills the
+  /// display. The old panel was an opaque sheet taking 6/11 of the screen even
+  /// when there were no comments at all.
+  Widget _overlayPanel(RgColors c) {
+    final maxCommentH = MediaQuery.of(context).size.height * 0.42;
+    return Column(mainAxisSize: MainAxisSize.min, children: [
+      if (_poll != null)
+        Padding(padding: const EdgeInsets.symmetric(horizontal: 10), child: _pollCard(c, _poll!)),
+      ConstrainedBox(
+        constraints: BoxConstraints(maxHeight: maxCommentH),
+        child: _commentList(c),
+      ),
+      _composer(c),
+    ]);
+  }
 
   Widget _commentList(RgColors c) {
     if (_comments.isEmpty) {
-      return Center(child: Text(L10n.of(context).sayHelloBeTheFirstTo, style: TextStyle(color: c.muted)));
+      // Sized to the text, NOT centred in the available box: as an overlay a
+      // Center would claim the whole 42% and dim the video for no reason.
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        child: Text(L10n.of(context).sayHelloBeTheFirstTo,
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.75), fontSize: 13)),
+      );
     }
     return ListView.builder(
       controller: _scroll,
+      // shrinkWrap so the overlay only occupies what the comments need, instead
+      // of always claiming the full cap and dimming the broadcast.
+      shrinkWrap: true,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
       itemCount: _comments.length,
       itemBuilder: (_, i) {
@@ -374,11 +425,16 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
     final user = (m['user'] is Map) ? Map<String, dynamic>.from(m['user']) : {};
     return Padding(
       padding: const EdgeInsets.only(bottom: 9),
+      // WHITE with a soft shadow: these now sit ON the video, so the themed
+      // `c.ink` (dark in light mode) was unreadable over a bright broadcast.
       child: RichText(
-        text: TextSpan(children: [
-          TextSpan(text: '${user['name'] ?? 'Guest'}  ', style: TextStyle(color: c.gold, fontWeight: FontWeight.w700, fontSize: 13)),
-          TextSpan(text: (m['text'] ?? '').toString(), style: TextStyle(color: c.ink, fontSize: 13.5)),
-        ]),
+        text: TextSpan(
+          style: const TextStyle(shadows: [Shadow(color: Colors.black54, blurRadius: 3, offset: Offset(0, 1))]),
+          children: [
+            TextSpan(text: '${user['name'] ?? 'Guest'}  ', style: TextStyle(color: c.gold, fontWeight: FontWeight.w700, fontSize: 13)),
+            TextSpan(text: (m['text'] ?? '').toString(), style: const TextStyle(color: Colors.white, fontSize: 13.5)),
+          ],
+        ),
       ),
     );
   }
@@ -455,8 +511,10 @@ class _LiveAudienceScreenState extends State<LiveAudienceScreen> {
   }
 
   Widget _composer(RgColors c) => Container(
-        padding: const EdgeInsets.fromLTRB(12, 8, 12, 12),
-        decoration: BoxDecoration(border: Border(top: BorderSide(color: c.line))),
+        // Bottom inset so the field clears the gesture bar now that it floats
+        // over the video rather than sitting inside an opaque panel. No top
+        // border — there is no panel edge to delineate any more.
+        padding: EdgeInsets.fromLTRB(12, 8, 12, 12 + MediaQuery.of(context).viewPadding.bottom * 0.5),
         child: Row(children: [
           Expanded(
             child: TextField(
