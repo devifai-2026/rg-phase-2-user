@@ -3018,4 +3018,69 @@ class L10nTa extends L10n {
 
   @override
   String get restartLater => 'இப்போது இல்லை';
+
+  @override
+  String get done => 'சரி';
+
+  @override
+  String get somethingWentWrong => 'ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.';
+
+  @override
+  String get askYourQuestion => 'உங்கள் கேள்வியைக் கேளுங்கள்…';
+
+  @override
+  String get aiGreetingTitle => 'வணக்கம் 🙏';
+
+  @override
+  String get aiGreetingBody =>
+      'உங்கள் மனதில் உள்ளதைச் சொல்லுங்கள், நான் உங்கள் ஜாதகத்தைப் பார்த்துச் சொல்கிறேன்.';
+
+  @override
+  String get aiPickLanguage => 'நீங்கள் எந்த மொழியில் பேச விரும்புகிறீர்கள்?';
+
+  @override
+  String get aiRemedy => 'பரிகாரம்';
+
+  @override
+  String get aiEnded => 'இந்த ஆலோசனை முடிந்தது.';
+
+  @override
+  String minLeftMinutes(String count) {
+    return '$count நிமிடம் மீதம்';
+  }
+
+  @override
+  String aiEndedBilled(String minutes) {
+    return 'ஆலோசனை முடிந்தது. $minutes நிமிட கட்டணம்.';
+  }
+
+  @override
+  String aiBillingNote(String rate) {
+    return 'முதல் செய்தி அனுப்பும்போது ₹$rate/நிமிடம் கட்டணம் தொடங்கும், இப்போது இல்லை.';
+  }
+
+  @override
+  String get readingYourChart => 'உங்கள் ஜாதகத்தைப் பார்க்கிறோம்…';
+
+  @override
+  String get getMyReading => 'என் பலனைப் பாருங்கள்';
+
+  @override
+  String get suggestedRemedies => 'பரிந்துரைக்கப்பட்ட பரிகாரங்கள்';
+
+  @override
+  String get birthDetailsNeededBody =>
+      'பிறப்பு விவரங்கள் ஜாதகத்தைத் துல்லியமாகப் படிக்க உதவும். ஒரு முறை மட்டுமே கேட்போம்.';
+
+  @override
+  String birthDetailsNeededFor(String topic) {
+    return '$topic க்கான பிறப்பு விவரங்கள்';
+  }
+
+  @override
+  String get addBirthTimeForSharper =>
+      'சரியான பிறப்பு நேரம் தந்தால் இந்தப் பலன் இன்னும் துல்லியமாக இருக்கும்.';
+
+  @override
+  String get noAiAstrologersYet => 'இன்னும் எந்த AI ஜோதிடரும் இல்லை.';
 }

@@ -4,9 +4,11 @@ import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../api/astrologer_api.dart';
 import '../../api/profile_api.dart';
+import '../../api/ai_api.dart';
 import '../../api/socket_service.dart';
 import '../../providers/wallet_provider.dart';
 import '../../theme/rg_colors.dart';
+import '../ai/ai_chat_screen.dart';
 import '../common/coming_soon_screen.dart';
 import '../wallet/wallet_screen.dart';
 import '../../widgets/cached_image.dart';
@@ -90,6 +92,8 @@ class _AstrologerListScreenState extends State<AstrologerListScreen> {
   ];
 
   StreamSubscription? _statusSub;
+  List<AiPersona> _personas = [];
+  bool _aiEnabled = true;
 
   @override
   void initState() {
@@ -113,7 +117,25 @@ class _AstrologerListScreenState extends State<AstrologerListScreen> {
       }
       _load();
     } else {
-      _loading = false;
+      // AI mode: fetch the real personas. This list was hardcoded placeholders
+      // until GET /ai/personas existed.
+      _loadPersonas();
+    }
+  }
+
+  /// AI personas from the backend. Failure leaves an empty list with a retry,
+  /// rather than falling back to fake cards that cannot be chatted with.
+  Future<void> _loadPersonas() async {
+    try {
+      final r = await context.read<AiApi>().personas();
+      if (!mounted) return;
+      setState(() {
+        _personas = r.items;
+        _aiEnabled = r.enabled;
+        _loading = false;
+      });
+    } catch (_) {
+      if (mounted) setState(() { _personas = []; _loading = false; });
     }
   }
 
@@ -344,16 +366,49 @@ class _AstrologerListScreenState extends State<AstrologerListScreen> {
     );
   }
 
+  /// Shown when the tenant has AI switched off, or has created no personas yet.
+  /// Deliberately not fake cards: a card that cannot open a chat is worse than none.
+  Widget _aiUnavailable(RgColors c) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Icon(Icons.auto_awesome, size: 40, color: c.muted),
+            const SizedBox(height: 12),
+            Text(L10n.of(context).noAiAstrologersYet,
+                textAlign: TextAlign.center, style: TextStyle(color: c.muted, fontSize: 13.5)),
+          ]),
+        ),
+      );
+
   Widget _buildBody(RgColors c, bool ai) {
-    // AI mode: static placeholder list, filtered by the search box.
+    // AI mode: the tenant's AI personas, filtered by the search box.
     if (ai) {
+      if (_loading) return Center(child: CircularProgressIndicator(color: c.violet));
+      if (!_aiEnabled) return _aiUnavailable(c);
       final q = _search.text.trim().toLowerCase();
-      final data = _ai.where((d) => q.isEmpty || (d['name'] as String).toLowerCase().contains(q)).toList();
+      final data = _personas.where((p) => q.isEmpty || p.name.toLowerCase().contains(q)).toList();
+      if (data.isEmpty) return _aiUnavailable(c);
       return ListView.separated(
         padding: const EdgeInsets.all(16),
         itemCount: data.length,
         separatorBuilder: (_, __) => const SizedBox(height: 12),
-        itemBuilder: (_, i) => _AstroCard(data: data[i], ai: true, onTap: () => _soon(L10n.of(context).aiChat, Icons.auto_awesome)),
+        itemBuilder: (_, i) {
+          final p = data[i];
+          return _AstroCard(
+            // _buildAiCard reads these keys; the gradient card visual is kept.
+            data: {
+              'name': p.name,
+              'desc': p.tagline ?? p.description ?? '',
+              'lang': p.languages.isEmpty ? '' : p.languages.join(', '),
+              'chat': p.chatRatePerMin,
+              'avatar': p.avatar,
+            },
+            ai: true,
+            onTap: () => Navigator.of(context).push(
+              slideRoute(AiChatScreen(persona: p, topic: p.topic.isEmpty ? null : p.topic)),
+            ),
+          );
+        },
       );
     }
 

@@ -5345,6 +5345,114 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Not now'**
   String get restartLater;
+
+  /// Generic confirm button.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// Generic error message.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get somethingWentWrong;
+
+  /// Placeholder in the AI chat input.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask your question…'**
+  String get askYourQuestion;
+
+  /// Greeting heading shown before the first AI chat message.
+  ///
+  /// In en, this message translates to:
+  /// **'Namaste 🙏'**
+  String get aiGreetingTitle;
+
+  /// Greeting body inviting the seeker to ask.
+  ///
+  /// In en, this message translates to:
+  /// **'Share what is on your mind and I will read your birth chart for you.'**
+  String get aiGreetingBody;
+
+  /// Prompt above the language chips in AI chat.
+  ///
+  /// In en, this message translates to:
+  /// **'Which language would you like to talk in?'**
+  String get aiPickLanguage;
+
+  /// Label on the mantra/remedy card.
+  ///
+  /// In en, this message translates to:
+  /// **'REMEDY'**
+  String get aiRemedy;
+
+  /// Shown when an AI consultation has ended.
+  ///
+  /// In en, this message translates to:
+  /// **'This consultation has ended.'**
+  String get aiEnded;
+
+  /// Minutes of reserved balance remaining.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} min left'**
+  String minLeftMinutes(String count);
+
+  /// AI consultation ended, with minutes billed.
+  ///
+  /// In en, this message translates to:
+  /// **'Consultation ended. {minutes} min billed.'**
+  String aiEndedBilled(String minutes);
+
+  /// Explains that billing starts on the first message, not on opening.
+  ///
+  /// In en, this message translates to:
+  /// **'Billing starts at ₹{rate}/min when you send your first message, not now.'**
+  String aiBillingNote(String rate);
+
+  /// Loading text while the reading is generated.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading your chart…'**
+  String get readingYourChart;
+
+  /// Submit button on the birth-details form.
+  ///
+  /// In en, this message translates to:
+  /// **'Get my reading'**
+  String get getMyReading;
+
+  /// Heading above the mantra cards.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested remedies'**
+  String get suggestedRemedies;
+
+  /// Explains why birth details are needed.
+  ///
+  /// In en, this message translates to:
+  /// **'Your birth details let the chart be read accurately. We will only ask once.'**
+  String get birthDetailsNeededBody;
+
+  /// Heading when asking for birth details for a topic reading.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth details for your {topic} reading'**
+  String birthDetailsNeededFor(String topic);
+
+  /// Nudge shown when the birth time is unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Adding your exact birth time would make this reading sharper.'**
+  String get addBirthTimeForSharper;
+
+  /// Empty state on the AI Astro tab.
+  ///
+  /// In en, this message translates to:
+  /// **'No AI astrologers are available yet.'**
+  String get noAiAstrologersYet;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

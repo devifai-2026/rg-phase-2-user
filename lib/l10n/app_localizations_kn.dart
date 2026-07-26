@@ -3010,4 +3010,69 @@ class L10nKn extends L10n {
 
   @override
   String get restartLater => 'ಈಗ ಬೇಡ';
+
+  @override
+  String get done => 'ಸರಿ';
+
+  @override
+  String get somethingWentWrong => 'ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get askYourQuestion => 'ನಿಮ್ಮ ಪ್ರಶ್ನೆ ಕೇಳಿ…';
+
+  @override
+  String get aiGreetingTitle => 'ನಮಸ್ಕಾರ 🙏';
+
+  @override
+  String get aiGreetingBody =>
+      'ನಿಮ್ಮ ಮನಸ್ಸಿನ ಮಾತು ಹೇಳಿ, ನಾನು ನಿಮ್ಮ ಜನ್ಮ ಕುಂಡಲಿ ನೋಡಿ ಹೇಳುತ್ತೇನೆ.';
+
+  @override
+  String get aiPickLanguage => 'ನೀವು ಯಾವ ಭಾಷೆಯಲ್ಲಿ ಮಾತನಾಡಲು ಬಯಸುತ್ತೀರಿ?';
+
+  @override
+  String get aiRemedy => 'ಪರಿಹಾರ';
+
+  @override
+  String get aiEnded => 'ಈ ಸಲಹೆ ಮುಗಿದಿದೆ.';
+
+  @override
+  String minLeftMinutes(String count) {
+    return '$count ನಿಮಿಷ ಉಳಿದಿದೆ';
+  }
+
+  @override
+  String aiEndedBilled(String minutes) {
+    return 'ಸಲಹೆ ಮುಗಿಯಿತು. $minutes ನಿಮಿಷ ಶುಲ್ಕ.';
+  }
+
+  @override
+  String aiBillingNote(String rate) {
+    return 'ಮೊದಲ ಸಂದೇಶ ಕಳುಹಿಸಿದಾಗ ₹$rate/ನಿಮಿಷ ಶುಲ್ಕ ಶುರುವಾಗುತ್ತದೆ, ಈಗ ಅಲ್ಲ.';
+  }
+
+  @override
+  String get readingYourChart => 'ನಿಮ್ಮ ಕುಂಡಲಿ ನೋಡುತ್ತಿದ್ದೇವೆ…';
+
+  @override
+  String get getMyReading => 'ನನ್ನ ಫಲ ನೋಡಿ';
+
+  @override
+  String get suggestedRemedies => 'ಸೂಚಿಸಿದ ಪರಿಹಾರಗಳು';
+
+  @override
+  String get birthDetailsNeededBody =>
+      'ಜನ್ಮ ವಿವರಗಳಿಂದ ಕುಂಡಲಿಯನ್ನು ನಿಖರವಾಗಿ ಓದಬಹುದು. ಒಮ್ಮೆ ಮಾತ್ರ ಕೇಳುತ್ತೇವೆ.';
+
+  @override
+  String birthDetailsNeededFor(String topic) {
+    return '$topic ಗಾಗಿ ಜನ್ಮ ವಿವರಗಳು';
+  }
+
+  @override
+  String get addBirthTimeForSharper =>
+      'ನಿಖರವಾದ ಜನ್ಮ ಸಮಯ ನೀಡಿದರೆ ಈ ಫಲ ಹೆಚ್ಚು ನಿಖರವಾಗುತ್ತದೆ.';
+
+  @override
+  String get noAiAstrologersYet => 'ಇನ್ನೂ ಯಾವುದೇ AI ಜ್ಯೋತಿಷಿ ಲಭ್ಯವಿಲ್ಲ.';
 }

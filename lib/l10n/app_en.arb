@@ -1812,5 +1812,97 @@
   "restartLater": "Not now",
   "@restartLater": {
     "description": "Dismiss button: keep using the app without restarting."
+  },
+  "done": "Done",
+  "@done": {
+    "description": "Generic confirm button."
+  },
+  "somethingWentWrong": "Something went wrong. Please try again.",
+  "@somethingWentWrong": {
+    "description": "Generic error message."
+  },
+  "askYourQuestion": "Ask your question…",
+  "@askYourQuestion": {
+    "description": "Placeholder in the AI chat input."
+  },
+  "aiGreetingTitle": "Namaste 🙏",
+  "@aiGreetingTitle": {
+    "description": "Greeting heading shown before the first AI chat message."
+  },
+  "aiGreetingBody": "Share what is on your mind and I will read your birth chart for you.",
+  "@aiGreetingBody": {
+    "description": "Greeting body inviting the seeker to ask."
+  },
+  "aiPickLanguage": "Which language would you like to talk in?",
+  "@aiPickLanguage": {
+    "description": "Prompt above the language chips in AI chat."
+  },
+  "aiRemedy": "REMEDY",
+  "@aiRemedy": {
+    "description": "Label on the mantra/remedy card."
+  },
+  "aiEnded": "This consultation has ended.",
+  "@aiEnded": {
+    "description": "Shown when an AI consultation has ended."
+  },
+  "minLeftMinutes": "{count} min left",
+  "@minLeftMinutes": {
+    "description": "Minutes of reserved balance remaining.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "aiEndedBilled": "Consultation ended. {minutes} min billed.",
+  "@aiEndedBilled": {
+    "description": "AI consultation ended, with minutes billed.",
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "aiBillingNote": "Billing starts at ₹{rate}/min when you send your first message, not now.",
+  "@aiBillingNote": {
+    "description": "Explains that billing starts on the first message, not on opening.",
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "readingYourChart": "Reading your chart…",
+  "@readingYourChart": {
+    "description": "Loading text while the reading is generated."
+  },
+  "getMyReading": "Get my reading",
+  "@getMyReading": {
+    "description": "Submit button on the birth-details form."
+  },
+  "suggestedRemedies": "Suggested remedies",
+  "@suggestedRemedies": {
+    "description": "Heading above the mantra cards."
+  },
+  "birthDetailsNeededBody": "Your birth details let the chart be read accurately. We will only ask once.",
+  "@birthDetailsNeededBody": {
+    "description": "Explains why birth details are needed."
+  },
+  "birthDetailsNeededFor": "Birth details for your {topic} reading",
+  "@birthDetailsNeededFor": {
+    "description": "Heading when asking for birth details for a topic reading.",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "addBirthTimeForSharper": "Adding your exact birth time would make this reading sharper.",
+  "@addBirthTimeForSharper": {
+    "description": "Nudge shown when the birth time is unknown."
+  },
+  "noAiAstrologersYet": "No AI astrologers are available yet.",
+  "@noAiAstrologersYet": {
+    "description": "Empty state on the AI Astro tab."
   }
 }

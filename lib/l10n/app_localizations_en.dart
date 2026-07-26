@@ -2990,4 +2990,69 @@ class L10nEn extends L10n {
 
   @override
   String get restartLater => 'Not now';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get somethingWentWrong => 'Something went wrong. Please try again.';
+
+  @override
+  String get askYourQuestion => 'Ask your question…';
+
+  @override
+  String get aiGreetingTitle => 'Namaste 🙏';
+
+  @override
+  String get aiGreetingBody =>
+      'Share what is on your mind and I will read your birth chart for you.';
+
+  @override
+  String get aiPickLanguage => 'Which language would you like to talk in?';
+
+  @override
+  String get aiRemedy => 'REMEDY';
+
+  @override
+  String get aiEnded => 'This consultation has ended.';
+
+  @override
+  String minLeftMinutes(String count) {
+    return '$count min left';
+  }
+
+  @override
+  String aiEndedBilled(String minutes) {
+    return 'Consultation ended. $minutes min billed.';
+  }
+
+  @override
+  String aiBillingNote(String rate) {
+    return 'Billing starts at ₹$rate/min when you send your first message, not now.';
+  }
+
+  @override
+  String get readingYourChart => 'Reading your chart…';
+
+  @override
+  String get getMyReading => 'Get my reading';
+
+  @override
+  String get suggestedRemedies => 'Suggested remedies';
+
+  @override
+  String get birthDetailsNeededBody =>
+      'Your birth details let the chart be read accurately. We will only ask once.';
+
+  @override
+  String birthDetailsNeededFor(String topic) {
+    return 'Birth details for your $topic reading';
+  }
+
+  @override
+  String get addBirthTimeForSharper =>
+      'Adding your exact birth time would make this reading sharper.';
+
+  @override
+  String get noAiAstrologersYet => 'No AI astrologers are available yet.';
 }

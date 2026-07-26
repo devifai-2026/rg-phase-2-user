@@ -31,6 +31,7 @@ import 'api/store_charges_api.dart';
 import 'api/offers_api.dart';
 import 'api/referral_api.dart';
 import 'api/socket_service.dart';
+import 'api/ai_api.dart';
 import 'api/session_api.dart';
 import 'api/token_store.dart';
 import 'theme/rg_colors.dart';
@@ -107,6 +108,7 @@ Future<void> main() async {
   final socket = SocketService(tokens);
   final wallet = WalletProvider(walletApi);
   final sessionApi = SessionApi(api);
+  final aiApi = AiApi(api);
   final liveApi = LiveApi(api);
   final horoscopeApi = HoroscopeApi(api);
   final panchangApi = PanchangApi(api);
@@ -169,7 +171,7 @@ Future<void> main() async {
   });
   appLinks.uriLinkStream.listen((uri) => DeepLink.fromUri(uri.toString()));
 
-  runApp(RgUserApp(settings: settings, auth: auth, profileApi: profileApi, giftApi: giftApi, poojaApi: poojaApi, walletApi: walletApi, astrologerApi: astrologerApi, categoryApi: categoryApi, productApi: productApi, videoApi: videoApi, contentApi: contentApi, shopApi: shopApi, orderApi: orderApi, storeChargesApi: storeChargesApi, offersApi: offersApi, referralApi: referralApi, cart: cart, wallet: wallet, push: push, socket: socket, appConfig: appConfig, notifications: notifications, session: session, sessionApi: sessionApi, liveApi: liveApi, horoscopeApi: horoscopeApi, panchangApi: panchangApi, numerologyApi: numerologyApi, vedicExtrasApi: vedicExtrasApi));
+  runApp(RgUserApp(settings: settings, auth: auth, profileApi: profileApi, giftApi: giftApi, poojaApi: poojaApi, walletApi: walletApi, astrologerApi: astrologerApi, categoryApi: categoryApi, productApi: productApi, videoApi: videoApi, contentApi: contentApi, shopApi: shopApi, orderApi: orderApi, storeChargesApi: storeChargesApi, offersApi: offersApi, referralApi: referralApi, cart: cart, wallet: wallet, push: push, socket: socket, appConfig: appConfig, notifications: notifications, session: session, sessionApi: sessionApi, aiApi: aiApi, liveApi: liveApi, horoscopeApi: horoscopeApi, panchangApi: panchangApi, numerologyApi: numerologyApi, vedicExtrasApi: vedicExtrasApi));
 }
 
 class RgUserApp extends StatelessWidget {
@@ -197,12 +199,13 @@ class RgUserApp extends StatelessWidget {
   final NotificationsProvider notifications;
   final SessionProvider session;
   final SessionApi sessionApi;
+  final AiApi aiApi;
   final LiveApi liveApi;
   final HoroscopeApi horoscopeApi;
   final PanchangApi panchangApi;
   final NumerologyApi numerologyApi;
   final VedicExtrasApi vedicExtrasApi;
-  const RgUserApp({super.key, required this.settings, required this.auth, required this.profileApi, required this.giftApi, required this.poojaApi, required this.walletApi, required this.astrologerApi, required this.categoryApi, required this.productApi, required this.videoApi, required this.contentApi, required this.shopApi, required this.orderApi, required this.storeChargesApi, required this.offersApi, required this.referralApi, required this.cart, required this.wallet, required this.push, required this.socket, required this.appConfig, required this.notifications, required this.session, required this.sessionApi, required this.liveApi, required this.horoscopeApi, required this.panchangApi, required this.numerologyApi, required this.vedicExtrasApi});
+  const RgUserApp({super.key, required this.settings, required this.auth, required this.profileApi, required this.giftApi, required this.poojaApi, required this.walletApi, required this.astrologerApi, required this.categoryApi, required this.productApi, required this.videoApi, required this.contentApi, required this.shopApi, required this.orderApi, required this.storeChargesApi, required this.offersApi, required this.referralApi, required this.cart, required this.wallet, required this.push, required this.socket, required this.appConfig, required this.notifications, required this.session, required this.sessionApi, required this.aiApi, required this.liveApi, required this.horoscopeApi, required this.panchangApi, required this.numerologyApi, required this.vedicExtrasApi});
 
   @override
   Widget build(BuildContext context) {
@@ -217,6 +220,7 @@ class RgUserApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: cart),
         ChangeNotifierProvider.value(value: session),
         Provider.value(value: sessionApi),
+        Provider.value(value: aiApi),
         Provider.value(value: liveApi),
         Provider.value(value: horoscopeApi),
         Provider.value(value: panchangApi),

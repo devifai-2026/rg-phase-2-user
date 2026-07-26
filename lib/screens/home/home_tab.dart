@@ -15,6 +15,7 @@ import '../../providers/notifications_provider.dart';
 import '../../providers/wallet_provider.dart';
 import '../../services/deep_link.dart';
 import '../../theme/rg_colors.dart';
+import '../ai/topic_reading_screen.dart';
 import '../common/coming_soon_screen.dart';
 import '../horoscope/horoscope_screen.dart';
 import '../numerology/numerology_screen.dart';
@@ -51,6 +52,11 @@ class HomeTab extends StatelessWidget {
 
   void _soon(BuildContext context, String title, [IconData icon = Icons.auto_awesome]) {
     Navigator.of(context).push(slideRoute(ComingSoonScreen(title: title, icon: icon)));
+  }
+
+  /// Open a chart-based reading for a life area (Career, Marriage, ...).
+  void _reading(BuildContext context, String topic, String title, IconData icon) {
+    Navigator.of(context).push(slideRoute(TopicReadingScreen(topic: topic, title: title, icon: icon)));
   }
 
   @override
@@ -97,12 +103,16 @@ class HomeTab extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
                 children: [
-                  _TopicChip(icon: Icons.work_outline, label: t.tCareer, onTap: () => _soon(context, t.tCareer)),
-                  _TopicChip(icon: Icons.volunteer_activism_outlined, label: t.tMarriage, onTap: () => _soon(context, t.tMarriage)),
-                  _TopicChip(icon: Icons.show_chart, label: t.tFinance, onTap: () => _soon(context, t.tFinance)),
-                  _TopicChip(icon: Icons.health_and_safety_outlined, label: t.tHealth, onTap: () => _soon(context, t.tHealth)),
-                  _TopicChip(icon: Icons.school_outlined, label: t.tEducation, onTap: () => _soon(context, t.tEducation)),
-                  _TopicChip(icon: Icons.flight_takeoff_outlined, label: t.tTravel, onTap: () => _soon(context, t.tTravel)),
+                  // Each chip opens a chart-based reading for that life area.
+                  // These were all dead ends ("Coming soon") until the reading
+                  // endpoint existed; the topic string must match the backend's
+                  // aiAstrologerService.TOPICS.
+                  _TopicChip(icon: Icons.work_outline, label: t.tCareer, onTap: () => _reading(context, 'career', t.tCareer, Icons.work_outline)),
+                  _TopicChip(icon: Icons.volunteer_activism_outlined, label: t.tMarriage, onTap: () => _reading(context, 'marriage', t.tMarriage, Icons.volunteer_activism_outlined)),
+                  _TopicChip(icon: Icons.show_chart, label: t.tFinance, onTap: () => _reading(context, 'finance', t.tFinance, Icons.show_chart)),
+                  _TopicChip(icon: Icons.health_and_safety_outlined, label: t.tHealth, onTap: () => _reading(context, 'health', t.tHealth, Icons.health_and_safety_outlined)),
+                  _TopicChip(icon: Icons.school_outlined, label: t.tEducation, onTap: () => _reading(context, 'education', t.tEducation, Icons.school_outlined)),
+                  _TopicChip(icon: Icons.flight_takeoff_outlined, label: t.tTravel, onTap: () => _reading(context, 'travel', t.tTravel, Icons.flight_takeoff_outlined)),
                 ],
               ),
             ),

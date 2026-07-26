@@ -2998,4 +2998,70 @@ class L10nAs extends L10n {
 
   @override
   String get restartLater => 'এতিয়া নহয়';
+
+  @override
+  String get done => 'ঠিক আছে';
+
+  @override
+  String get somethingWentWrong =>
+      'কিবা ভুল হ\'ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।';
+
+  @override
+  String get askYourQuestion => 'আপোনাৰ প্ৰশ্ন সোধক…';
+
+  @override
+  String get aiGreetingTitle => 'নমস্কাৰ 🙏';
+
+  @override
+  String get aiGreetingBody =>
+      'আপোনাৰ মনৰ কথা কওক, মই আপোনাৰ জন্মকুণ্ডলী চাই ক\'ম।';
+
+  @override
+  String get aiPickLanguage => 'আপুনি কোন ভাষাত কথা পাতিব বিচাৰে?';
+
+  @override
+  String get aiRemedy => 'প্ৰতিকাৰ';
+
+  @override
+  String get aiEnded => 'এই পৰামৰ্শ সমাপ্ত হ\'ল।';
+
+  @override
+  String minLeftMinutes(String count) {
+    return '$count মিনিট বাকী';
+  }
+
+  @override
+  String aiEndedBilled(String minutes) {
+    return 'পৰামৰ্শ সমাপ্ত। $minutes মিনিটৰ চাৰ্জ হ\'ল।';
+  }
+
+  @override
+  String aiBillingNote(String rate) {
+    return 'প্ৰথম বাৰ্তা পঠালে ₹$rate/মিনিট চাৰ্জ আৰম্ভ হ\'ব, এতিয়া নহয়।';
+  }
+
+  @override
+  String get readingYourChart => 'আপোনাৰ কুণ্ডলী চাই আছোঁ…';
+
+  @override
+  String get getMyReading => 'মোৰ ফলাদেশ চাওক';
+
+  @override
+  String get suggestedRemedies => 'প্ৰস্তাৱিত প্ৰতিকাৰ';
+
+  @override
+  String get birthDetailsNeededBody =>
+      'জন্মৰ বিৱৰণে কুণ্ডলী শুদ্ধভাৱে পঢ়িব দিয়ে। আমি এবাৰেই সুধিম।';
+
+  @override
+  String birthDetailsNeededFor(String topic) {
+    return '$topicৰ বাবে জন্মৰ বিৱৰণ';
+  }
+
+  @override
+  String get addBirthTimeForSharper =>
+      'জন্মৰ সঠিক সময় দিলে এই ফলাদেশ অধিক নিখুঁত হ\'ব।';
+
+  @override
+  String get noAiAstrologersYet => 'এতিয়ালৈকে কোনো AI জ্যোতিষী উপলব্ধ নহয়।';
 }
