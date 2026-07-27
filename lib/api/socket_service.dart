@@ -34,6 +34,10 @@ class SocketService extends ChangeNotifier {
   void Function(Map<String, dynamic>)? onWalletUpdated;
   void Function(Map<String, dynamic>)? onNewNotification;
   void Function(Map<String, dynamic>)? onSessionEnded;
+  /// The server ended an AI chat on its own — funds exhausted, the max-minutes
+  /// cap, or a crisis turn. Without this the open chat screen never learned the
+  /// session was over and kept its timer running against a closed session.
+  void Function(Map<String, dynamic>)? onAiChatEnded;
   // ── Consultation session signalling (user side) ──
   void Function(Map<String, dynamic>)? onRequestAccepted;
   void Function(Map<String, dynamic>)? onSessionStarted; // both joined → timer/billing start
@@ -144,6 +148,7 @@ class SocketService extends ChangeNotifier {
     s.on('wallet-updated', (d) => onWalletUpdated?.call(_map(d)));
     s.on('new-notification', (d) => onNewNotification?.call(_map(d)));
     s.on('session-ended', (d) => onSessionEnded?.call(_map(d)));
+    s.on('ai-chat-ended', (d) => onAiChatEnded?.call(_map(d)));
     // Consultation session lifecycle.
     s.on('request-accepted', (d) => onRequestAccepted?.call(_map(d)));
     s.on('session-started', (d) => onSessionStarted?.call(_map(d)));

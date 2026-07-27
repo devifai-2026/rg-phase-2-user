@@ -152,8 +152,19 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
     final t = L10n.of(context);
     return showDialog<bool>(
       context: context,
+      // c.card is the translucent GLASS token (alpha .045 in dark) — it is meant
+      // to sit on the ground as a panel, not to be a dialog surface. Used here it
+      // made the modal read as fully transparent. Use the lifted ground instead,
+      // which is opaque, and deepen the scrim so the page behind clearly recedes.
+      barrierColor: Colors.black.withValues(alpha: 0.66),
       builder: (ctx) => AlertDialog(
-        backgroundColor: c.card,
+        backgroundColor: c.ground2,
+        surfaceTintColor: Colors.transparent,
+        elevation: 12,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: c.line),
+        ),
         title: Text(t.exitAppTitle, style: TextStyle(color: c.ink, fontWeight: FontWeight.w800)),
         content: Text(t.exitAppBody, style: TextStyle(color: c.muted)),
         actions: [

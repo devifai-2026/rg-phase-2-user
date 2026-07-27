@@ -5,11 +5,14 @@ import 'package:provider/provider.dart';
 
 import '../../api/ai_api.dart';
 import '../../api/api_client.dart';
+import '../../api/socket_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/settings_provider.dart';
 import '../../providers/wallet_provider.dart';
 import '../../theme/rg_colors.dart';
 import '../../widgets/shared_product_card.dart';
+import '../../widgets/slide_route.dart';
+import '../wallet/wallet_screen.dart';
 
 /// One turn in the AI conversation.
 class _Turn {
@@ -67,6 +70,10 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
   /// able to see the minute.
   DateTime? _startedAt;
   Timer? _tick;
+  /// Why the session closed, when the server told us. Drives the ended bar.
+  String? _endReason;
+  /// The app-level ai-chat-ended handler, restored on dispose.
+  void Function(Map<String, dynamic>)? _prevAiChatEnded;
   Duration _elapsed = Duration.zero;
 
   AiApi get _api => context.read<AiApi>();
@@ -82,6 +89,37 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
     } else {
       _open();
     }
+
+    // The server can end this chat without us asking: funds exhausted, the
+    // max-minutes cap, or a crisis turn. Previously nothing listened, so the
+    // clock kept counting and the composer stayed live against a closed
+    // session. Chain to whatever was already registered so the app-level
+    // handler still runs.
+    final socket = context.read<SocketService>();
+    _prevAiChatEnded = socket.onAiChatEnded;
+    socket.onAiChatEnded = (d) {
+      _prevAiChatEnded?.call(d);
+      if (!mounted) return;
+      // Ignore an event for some other session.
+      final id = d['aiSessionId']?.toString();
+      if (id != null && _session != null && id != _session!.aiSessionId) return;
+      _markEnded(endReason: d['endReason']?.toString());
+    };
+  }
+
+  /// Close the session down in the UI: stop the clock and freeze the composer.
+  /// Safe to call more than once — the server end event and a reply that
+  /// carries ended:true can both arrive for the same session.
+  void _markEnded({String? endReason}) {
+    if (_ended) return;
+    _tick?.cancel();
+    _tick = null;
+    setState(() {
+      _ended = true;
+      _sending = false;
+      if (endReason != null && endReason.isNotEmpty) _endReason = endReason;
+    });
+    context.read<WalletProvider>().refresh();
   }
 
   /// Reopen a session that is already ongoing: rebuild the transcript, adopt the
@@ -124,6 +162,8 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
   @override
   void dispose() {
     _tick?.cancel();
+    // Hand the socket callback back so a later screen isn't left without one.
+    context.read<SocketService>().onAiChatEnded = _prevAiChatEnded;
     WidgetsBinding.instance.removeObserver(this);
     // Leaving the screen MINIMIZES the consultation; it does not end it. The
     // Resume bar brings it back, and only End or an exhausted balance closes it.
@@ -184,10 +224,11 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
         _turns.add(_Turn(mine: false, text: r.reply, mantras: r.mantras, products: r.products));
         _minutesLeft = r.minutesLeft;
         _billedMinutes = r.billedMinutes;
-        _ended = r.ended;
-        if (r.ended) _tick?.cancel();
         _sending = false;
       });
+      // This reply closed the session (funds, cap or crisis) — same shutdown
+      // path as the socket event, so the clock and composer can't disagree.
+      if (r.ended) _markEnded();
       // The wallet moved: refresh the home balance pill.
       context.read<WalletProvider>().refresh();
     } on ApiException catch (e) {
@@ -210,8 +251,17 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
     final t = L10n.of(context);
     final ok = await showDialog<bool>(
       context: context,
+      // c.card is the translucent glass token; as a dialog surface it renders
+      // see-through. Opaque surface + a real scrim, matching the exit dialog.
+      barrierColor: Colors.black.withValues(alpha: 0.66),
       builder: (ctx) => AlertDialog(
-        backgroundColor: c.card,
+        backgroundColor: c.ground2,
+        surfaceTintColor: Colors.transparent,
+        elevation: 12,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: c.line),
+        ),
         title: Text(t.endConsultation, style: TextStyle(color: c.ink, fontWeight: FontWeight.w800)),
         content: Text(t.thisWillEndTheChatAnd, style: TextStyle(color: c.muted)),
         actions: [
@@ -263,10 +313,15 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
                   // meter runs so are the minutes billed and left.
                   Text(
                     // Once the meter runs, show the same mm:ss clock the human
-                    // consultation screen shows, plus what is left.
-                    _billedMinutes > 0
-                        ? '$_clock · ₹$rate/min · ${t.minLeftMinutes('$_minutesLeft')}'
-                        : (rate > 0 ? '₹$rate/min' : t.free),
+                    // consultation screen shows, plus what is left. After the
+                    // session closes the clock is frozen and "minutes left" is
+                    // meaningless — showing either implied it was still running
+                    // and still costing money.
+                    _ended
+                        ? (_billedMinutes > 0 ? '$_clock · ${t.aiEndedBilled('$_billedMinutes')}' : t.aiEnded)
+                        : _billedMinutes > 0
+                            ? '$_clock · ₹$rate/min · ${t.minLeftMinutes('$_minutesLeft')}'
+                            : (rate > 0 ? '₹$rate/min' : t.free),
                     style: TextStyle(color: c.muted, fontSize: 11),
                   ),
                 ]),
@@ -526,25 +581,44 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
     );
   }
 
-  Widget _endedBar(RgColors c, L10n t) => Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(color: c.ground2, border: Border(top: BorderSide(color: c.line))),
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Text(
-            _billedMinutes > 0 ? t.aiEndedBilled('$_billedMinutes') : t.aiEnded,
-            style: TextStyle(color: c.muted, fontSize: 12.5),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 10),
-          SizedBox(
-            width: double.infinity,
+  /// Replaces the composer once the session is closed, so the chat is read-only:
+  /// there is no text field and no send button to tap against a dead session.
+  Widget _endedBar(RgColors c, L10n t) {
+    // When the balance is what stopped it, say so and offer the way back —
+    // "ended" alone leaves the seeker guessing why they were cut off.
+    final outOfFunds = _endReason == 'low_balance';
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(color: c.ground2, border: Border(top: BorderSide(color: c.line))),
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        Text(
+          outOfFunds
+              ? '${_billedMinutes > 0 ? t.aiEndedBilled('$_billedMinutes') : t.aiEnded} ${t.addMoneyToContinue}'
+              : (_billedMinutes > 0 ? t.aiEndedBilled('$_billedMinutes') : t.aiEnded),
+          style: TextStyle(color: c.muted, fontSize: 12.5),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 10),
+        Row(children: [
+          if (outOfFunds) ...[
+            Expanded(
+              child: OutlinedButton(
+                onPressed: () => Navigator.of(context).push(slideRoute(const WalletScreen())),
+                child: Text(t.recharge),
+              ),
+            ),
+            const SizedBox(width: 10),
+          ],
+          Expanded(
             child: ElevatedButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(t.done),
             ),
           ),
         ]),
-      );
+      ]),
+    );
+  }
 
   Widget _inputBar(RgColors c, L10n t) => Container(
         padding: const EdgeInsets.fromLTRB(12, 8, 8, 12),

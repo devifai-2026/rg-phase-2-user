@@ -121,13 +121,31 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> with WidgetsBindingObse
     final socket = context.read<SocketService>();
     if (s.sessionId == null) return;
     _input.clear();
+    // Optimistic local echo, tagged so the ack can find it again.
+    final localId = 'local-${DateTime.now().microsecondsSinceEpoch}';
+    final messenger = ScaffoldMessenger.of(context);
     socket.sendMessage(s.sessionId!, message: text, ack: (resp) {
       // Server echoes the persisted (moderated) message; the receive-message
-      // event already adds the receiver's copy. Add our own optimistic copy.
+      // event already adds the receiver's copy.
+      //
+      // A message can also be REFUSED — abusive language is rejected outright
+      // rather than masked. The optimistic bubble was previously left on screen
+      // either way, so a blocked message looked delivered. Pull it back and say
+      // what happened.
+      // socket_io_client delivers the ack as a List [data, ackId] on Android,
+      // so testing `resp is Map` directly would never fire there.
+      final r = resp is List && resp.isNotEmpty ? resp.first : resp;
+      if (r is Map && r['success'] == false) {
+        if (!mounted) return;
+        s.messages.removeWhere((m) => m.id == localId);
+        setState(() {});
+        messenger.showSnackBar(SnackBar(
+          content: Text(r['message']?.toString() ?? L10n.of(context).somethingWentWrong),
+        ));
+      }
     });
-    // Optimistic local echo.
     s.messages.add(ChatMsg(
-      id: 'local-${DateTime.now().microsecondsSinceEpoch}',
+      id: localId,
       sessionId: s.sessionId!,
       sender: context.read<AuthProvider>().user?.id,
       message: text,
