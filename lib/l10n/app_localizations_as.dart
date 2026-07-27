@@ -3097,4 +3097,10 @@ class L10nAs extends L10n {
   @override
   String get tobSharpensReading =>
       'ইয়াৰ অবিহনেও আগবাঢ়িব পাৰে, কিন্তু সঠিক সময়ে ফলাদেশ অধিক নিখুঁত কৰে।';
+
+  @override
+  String get kundliLife => 'জীৱন';
+
+  @override
+  String get kundliFears => 'ভয় আৰু চিন্তা';
 }

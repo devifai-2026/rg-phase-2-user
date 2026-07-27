@@ -3103,4 +3103,10 @@ class L10nTe extends L10n {
   @override
   String get tobSharpensReading =>
       'అది లేకుండా కూడా కొనసాగవచ్చు, కానీ కచ్చితమైన సమయంతో ఫలితం మరింత స్పష్టంగా ఉంటుంది.';
+
+  @override
+  String get kundliLife => 'జీవితం';
+
+  @override
+  String get kundliFears => 'భయాలు మరియు ఆందోళనలు';
 }

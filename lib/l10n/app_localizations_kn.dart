@@ -3108,4 +3108,10 @@ class L10nKn extends L10n {
   @override
   String get tobSharpensReading =>
       'ಅದಿಲ್ಲದೆಯೂ ಮುಂದುವರಿಯಬಹುದು, ಆದರೆ ನಿಖರ ಸಮಯದಿಂದ ಫಲ ಹೆಚ್ಚು ನಿಖರವಾಗುತ್ತದೆ.';
+
+  @override
+  String get kundliLife => 'ಜೀವನ';
+
+  @override
+  String get kundliFears => 'ಭಯ ಮತ್ತು ಚಿಂತೆಗಳು';
 }

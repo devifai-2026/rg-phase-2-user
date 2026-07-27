@@ -3088,4 +3088,10 @@ class L10nEn extends L10n {
   @override
   String get tobSharpensReading =>
       'You can continue without it, but an exact time makes the reading sharper.';
+
+  @override
+  String get kundliLife => 'Life';
+
+  @override
+  String get kundliFears => 'Fears and worries';
 }

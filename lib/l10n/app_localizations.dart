@@ -5513,6 +5513,18 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'You can continue without it, but an exact time makes the reading sharper.'**
   String get tobSharpensReading;
+
+  /// Section heading for the life/character part of a Brihat Kundli.
+  ///
+  /// In en, this message translates to:
+  /// **'Life'**
+  String get kundliLife;
+
+  /// Section heading for the fears/worries part of a Brihat Kundli.
+  ///
+  /// In en, this message translates to:
+  /// **'Fears and worries'**
+  String get kundliFears;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

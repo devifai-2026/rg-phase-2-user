@@ -3096,4 +3096,10 @@ class L10nBn extends L10n {
   @override
   String get tobSharpensReading =>
       'এটি ছাড়াও এগোতে পারেন, তবে সঠিক সময়ে ফলাদেশ আরও নিখুঁত হয়।';
+
+  @override
+  String get kundliLife => 'জীবন';
+
+  @override
+  String get kundliFears => 'ভয় ও দুশ্চিন্তা';
 }

@@ -3096,4 +3096,10 @@ class L10nPa extends L10n {
   @override
   String get tobSharpensReading =>
       'ਇਸ ਤੋਂ ਬਿਨਾਂ ਵੀ ਅੱਗੇ ਵਧ ਸਕਦੇ ਹੋ, ਪਰ ਸਹੀ ਸਮੇਂ ਨਾਲ ਭਵਿੱਖਬਾਣੀ ਵਧੇਰੇ ਸਟੀਕ ਹੁੰਦੀ ਹੈ।';
+
+  @override
+  String get kundliLife => 'ਜੀਵਨ';
+
+  @override
+  String get kundliFears => 'ਡਰ ਅਤੇ ਚਿੰਤਾਵਾਂ';
 }

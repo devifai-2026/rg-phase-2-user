@@ -253,6 +253,67 @@ class AiActiveChat {
   }
 }
 
+/// A full birth-chart reading: four fixed sections plus the chart image.
+class AiKundli {
+  /// True when there is not enough birth data yet, so the caller must ask.
+  final bool needsBirthDetails;
+  final String headline;
+  final String life;
+  final String career;
+  final String health;
+  final String fears;
+  final List<AiMantra> remedies;
+  final List<SharedProduct> products;
+  final List<String> keyTopics;
+
+  /// The rendered D1 chart.
+  final String? svg;
+  final bool degraded;
+
+  const AiKundli({
+    this.needsBirthDetails = false,
+    this.headline = '',
+    this.life = '',
+    this.career = '',
+    this.health = '',
+    this.fears = '',
+    this.remedies = const [],
+    this.products = const [],
+    this.keyTopics = const [],
+    this.svg,
+    this.degraded = false,
+  });
+
+  factory AiKundli.fromJson(Map<String, dynamic> j) => AiKundli(
+        needsBirthDetails: j['needsBirthDetails'] == true,
+        headline: (j['headline'] ?? '').toString(),
+        life: (j['life'] ?? '').toString(),
+        career: (j['career'] ?? '').toString(),
+        health: (j['health'] ?? '').toString(),
+        fears: (j['fears'] ?? '').toString(),
+        remedies: ((j['remedies'] as List?) ?? const [])
+            .whereType<Map>()
+            .map((e) => AiMantra.fromJson(Map<String, dynamic>.from(e)))
+            .where((m) => m.text.isNotEmpty)
+            .toList(),
+        products: ((j['products'] as List?) ?? const [])
+            .whereType<Map>()
+            .map((e) => SharedProduct.fromJson(Map<String, dynamic>.from(e)))
+            .toList(),
+        keyTopics: ((j['keyTopics'] as List?) ?? const []).map((e) => e.toString()).toList(),
+        svg: (j['svg'] as String?)?.isNotEmpty == true ? j['svg'] as String : null,
+        degraded: j['degraded'] == true,
+      );
+
+  /// The four sections in reading order, skipping any the model left empty.
+  List<({String key, String body})> get sections => [
+        (key: 'life', body: life),
+        (key: 'career', body: career),
+        (key: 'health', body: health),
+        (key: 'fears', body: fears),
+      ].where((s) => s.body.trim().isNotEmpty).toList();
+}
+
 /// AI astrologer endpoints: personas, the billed chat, and topic readings.
 class AiApi {
   final ApiClient _api;
@@ -306,6 +367,31 @@ class AiApi {
     try {
       await _api.post('/ai/chat/sessions/$aiSessionId/end', body: const {});
     } catch (_) {/* the idle sweep will close it */}
+  }
+
+  /// The full Brihat Kundli. Not billed.
+  ///
+  /// [tob] is REQUIRED by the server: the ascendant and every house cusp depend on
+  /// it, so it refuses to guess rather than give a confidently wrong reading.
+  Future<AiKundli> kundli({
+    required String dob,
+    required String tob,
+    double? lat,
+    double? lng,
+    String? place,
+    String? lang,
+    String? question,
+  }) async {
+    final data = await _api.post('/ai/kundli-reading', body: {
+      'dob': dob,
+      'tob': tob,
+      if (lat != null) 'lat': lat,
+      if (lng != null) 'lng': lng,
+      if (place != null && place.isNotEmpty) 'place': place,
+      if (lang != null && lang.isNotEmpty) 'lang': lang,
+      if (question != null && question.isNotEmpty) 'question': question,
+    });
+    return AiKundli.fromJson(Map<String, dynamic>.from(data as Map));
   }
 
   /// A one-shot reading for a life area. Not billed.

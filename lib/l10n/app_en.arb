@@ -1944,5 +1944,13 @@
   "tobSharpensReading": "You can continue without it, but an exact time makes the reading sharper.",
   "@tobSharpensReading": {
     "description": "Nudge that an exact birth time improves the reading."
+  },
+  "kundliLife": "Life",
+  "@kundliLife": {
+    "description": "Section heading for the life/character part of a Brihat Kundli."
+  },
+  "kundliFears": "Fears and worries",
+  "@kundliFears": {
+    "description": "Section heading for the fears/worries part of a Brihat Kundli."
   }
 }

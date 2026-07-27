@@ -15,6 +15,7 @@ import '../../providers/notifications_provider.dart';
 import '../../providers/wallet_provider.dart';
 import '../../services/deep_link.dart';
 import '../../theme/rg_colors.dart';
+import '../ai/brihat_kundli_screen.dart';
 import '../ai/topic_reading_screen.dart';
 import '../common/coming_soon_screen.dart';
 import '../horoscope/horoscope_screen.dart';
@@ -54,6 +55,12 @@ class HomeTab extends StatelessWidget {
     Navigator.of(context).push(slideRoute(ComingSoonScreen(title: title, icon: icon)));
   }
 
+  /// The full birth-chart reading. Its own screen rather than a topic reading:
+  /// it needs an exact birth time and returns fixed sections.
+  void _kundli(BuildContext context) {
+    Navigator.of(context).push(slideRoute(const BrihatKundliScreen()));
+  }
+
   /// Open a chart-based reading for a life area (Career, Marriage, ...).
   void _reading(BuildContext context, String topic, String title, IconData icon) {
     Navigator.of(context).push(slideRoute(TopicReadingScreen(topic: topic, title: title, icon: icon)));
@@ -89,7 +96,7 @@ class HomeTab extends StatelessWidget {
               child: Row(
                 children: [
                   _FeatureTile(icon: Icons.favorite, label: t.kMatching, onTap: () => Navigator.of(context).push(slideRoute(const MatchingScreen()))),
-                  _FeatureTile(icon: Icons.menu_book_outlined, label: t.kBrihat, onTap: () => _soon(context, t.kBrihat, Icons.menu_book_outlined)),
+                  _FeatureTile(icon: Icons.menu_book_outlined, label: t.kBrihat, onTap: () => _kundli(context)),
                   _FeatureTile(icon: Icons.pin_outlined, label: t.numerology, onTap: () => Navigator.of(context).push(slideRoute(const NumerologyScreen()))),
                   _FeatureTile(icon: Icons.nightlight_outlined, label: t.horoscope, onTap: () => Navigator.of(context).push(slideRoute(const HoroscopeScreen()))),
                 ],
@@ -186,7 +193,7 @@ class HomeTab extends StatelessWidget {
                 childAspectRatio: 0.82,
                 children: [
                   OthersIcon(icon: Icons.calendar_month_outlined, label: t.dailyPanchang, onTap: () => Navigator.of(context).push(slideRoute(const PanchangScreen()))),
-                  OthersIcon(icon: Icons.menu_book_outlined, label: t.brihatKundli, onTap: () => _soon(context, t.brihatKundli, Icons.menu_book_outlined)),
+                  OthersIcon(icon: Icons.menu_book_outlined, label: t.brihatKundli, onTap: () => _kundli(context)),
                   // Numerology — instant, VedicAstro-backed (no cron).
                   OthersIcon(icon: Icons.pin_outlined, label: t.numerology, onTap: () => Navigator.of(context).push(slideRoute(const NumerologyScreen()))),
                   // Compatibility (aggregate match) — Love Match + Matrimony both open it.

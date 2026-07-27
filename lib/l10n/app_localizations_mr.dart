@@ -3093,4 +3093,10 @@ class L10nMr extends L10n {
   @override
   String get tobSharpensReading =>
       'याशिवायही पुढे जाऊ शकता, पण अचूक वेळेने भविष्य अधिक नेमके होते.';
+
+  @override
+  String get kundliLife => 'जीवन';
+
+  @override
+  String get kundliFears => 'भीती आणि काळजी';
 }

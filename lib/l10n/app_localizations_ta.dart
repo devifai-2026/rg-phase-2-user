@@ -3116,4 +3116,10 @@ class L10nTa extends L10n {
   @override
   String get tobSharpensReading =>
       'அது இல்லாமலும் தொடரலாம், ஆனால் சரியான நேரத்தில் பலன் இன்னும் துல்லியமாக இருக்கும்.';
+
+  @override
+  String get kundliLife => 'வாழ்க்கை';
+
+  @override
+  String get kundliFears => 'அச்சங்களும் கவலைகளும்';
 }
