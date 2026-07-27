@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +37,12 @@ class AiChatScreen extends StatefulWidget {
 
   /// Optional life area, when opened from a topic entry point.
   final String? topic;
-  const AiChatScreen({super.key, this.persona, this.topic});
+
+  /// Reopening a consultation that is already running and being billed. When set,
+  /// no new session is created: the transcript, clock and meter continue.
+  final AiActiveChat? resume;
+
+  const AiChatScreen({super.key, this.persona, this.topic, this.resume});
 
   @override
   State<AiChatScreen> createState() => _AiChatScreenState();
@@ -55,6 +62,13 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
   int _minutesLeft = 0;
   int _billedMinutes = 0;
 
+  /// Server-stamped start of billing, and a 1s ticker driving the header clock.
+  /// Mirrors the human consultation screen: a seeker paying by the minute must be
+  /// able to see the minute.
+  DateTime? _startedAt;
+  Timer? _tick;
+  Duration _elapsed = Duration.zero;
+
   AiApi get _api => context.read<AiApi>();
 
   @override
@@ -63,16 +77,56 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
     WidgetsBinding.instance.addObserver(this);
     // Default to the app language, but let the seeker override with a chip.
     _lang = context.read<SettingsProvider>().effectiveLangCode;
-    _open();
+    if (widget.resume != null) {
+      _restore(widget.resume!);
+    } else {
+      _open();
+    }
+  }
+
+  /// Reopen a session that is already ongoing: rebuild the transcript, adopt the
+  /// server's startedAt so the clock is continuous, and keep the meter running.
+  void _restore(AiActiveChat a) {
+    _session = AiChatStart(
+      aiSessionId: a.aiSessionId,
+      ratePerMin: a.ratePerMin,
+      maxMinutes: 0,
+      minutesAffordable: a.minutesLeft,
+      personaName: a.personaName,
+      personaAvatar: a.personaAvatar,
+    );
+    _lang = a.lang;
+    _minutesLeft = a.minutesLeft;
+    _billedMinutes = a.billedMinutes;
+    for (final m in a.messages) {
+      _turns.add(_Turn(mine: m.mine, text: m.text));
+    }
+    _startedAt = a.startedAt;
+    _starting = false;
+    if (a.billedMinutes > 0) _startClock();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _jumpToEnd());
+  }
+
+  void _startClock() {
+    if (_tick != null) return;
+    _startedAt ??= DateTime.now();
+    _tick = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted || _startedAt == null) return;
+      setState(() => _elapsed = DateTime.now().difference(_startedAt!));
+    });
+  }
+
+  String get _clock {
+    final s = _elapsed.inSeconds;
+    return '${(s ~/ 60).toString().padLeft(2, '0')}:${(s % 60).toString().padLeft(2, '0')}';
   }
 
   @override
   void dispose() {
+    _tick?.cancel();
     WidgetsBinding.instance.removeObserver(this);
-    // Best-effort: release any unspent reservation. The server's idle timer is the
-    // real guarantee, so a failure here is harmless.
-    final id = _session?.aiSessionId;
-    if (id != null && !_ended) _api.endChat(id);
+    // Leaving the screen MINIMIZES the consultation; it does not end it. The
+    // Resume bar brings it back, and only End or an exhausted balance closes it.
     _input.dispose();
     _scroll.dispose();
     super.dispose();
@@ -80,12 +134,10 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // Backgrounding the app is not "still consulting". End the meter early rather
-    // than relying on the idle sweep, so the seeker is not billed while away.
-    if (state == AppLifecycleState.paused && _session != null && !_ended) {
-      _api.endChat(_session!.aiSessionId);
-      if (mounted) setState(() => _ended = true);
-    }
+    // Deliberately does NOT end the session. A consultation ends only when the
+    // seeker taps End or the balance runs out, and it is resumable from the home
+    // Resume bar, exactly like a human chat. Ending on background would drop
+    // someone who briefly checked a notification.
   }
 
   Future<void> _open() async {
@@ -125,12 +177,15 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
     try {
       final r = await _api.sendMessage(_session!.aiSessionId, text);
       if (!mounted) return;
+      // Billing begins on the first message, so the clock does too.
+      _startClock();
       setState(() {
         _turns.removeLast(); // the pending placeholder
         _turns.add(_Turn(mine: false, text: r.reply, mantras: r.mantras, products: r.products));
         _minutesLeft = r.minutesLeft;
         _billedMinutes = r.billedMinutes;
         _ended = r.ended;
+        if (r.ended) _tick?.cancel();
         _sending = false;
       });
       // The wallet moved: refresh the home balance pill.
@@ -207,11 +262,11 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
                   // Cost transparency: the rate is always visible, and once the
                   // meter runs so are the minutes billed and left.
                   Text(
-                    rate > 0
-                        ? (_billedMinutes > 0
-                            ? '₹$rate/min · ${t.minLeftMinutes('$_minutesLeft')}'
-                            : '₹$rate/min')
-                        : t.free,
+                    // Once the meter runs, show the same mm:ss clock the human
+                    // consultation screen shows, plus what is left.
+                    _billedMinutes > 0
+                        ? '$_clock · ₹$rate/min · ${t.minLeftMinutes('$_minutesLeft')}'
+                        : (rate > 0 ? '₹$rate/min' : t.free),
                     style: TextStyle(color: c.muted, fontSize: 11),
                   ),
                 ]),
@@ -353,6 +408,9 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
 
   Widget _bubble(RgColors c, _Turn turn) {
     if (turn.pending) {
+      // A spinner reads as "the app is loading". Three drifting dots read as
+      // "the astrologer is thinking", which is what is actually happening and
+      // makes a 3-5 second wait feel like a person composing a reply.
       return Align(
         alignment: Alignment.centerLeft,
         child: Container(
@@ -363,10 +421,7 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
             borderRadius: BorderRadius.circular(14),
             border: Border.all(color: c.line),
           ),
-          child: SizedBox(
-            height: 14, width: 14,
-            child: CircularProgressIndicator(strokeWidth: 1.8, color: c.violet),
-          ),
+          child: _ThinkingDots(color: c.violet),
         ),
       );
     }
@@ -403,33 +458,70 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
     );
   }
 
+  /// The remedy card.
+  ///
+  /// Deliberately the loudest thing in the transcript: a mantra is the one part
+  /// of a reading a seeker is meant to take away and act on, and as a muted panel
+  /// it read as a footnote. Gold gradient, gold border and a glow lift it clear of
+  /// the grey message bubbles, and the mantra text itself is the largest type in
+  /// the thread and selectable so it can be copied.
   Widget _mantraCard(RgColors c, AiMantra m) {
     final t = L10n.of(context);
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.82),
-      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: 10),
+      constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.86),
       decoration: BoxDecoration(
-        color: c.aiSurface,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: c.violet.withValues(alpha: 0.35)),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [c.gold.withValues(alpha: 0.20), c.gold.withValues(alpha: 0.06)],
+        ),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: c.gold.withValues(alpha: 0.55), width: 1.2),
+        boxShadow: [
+          BoxShadow(color: c.gold.withValues(alpha: 0.14), blurRadius: 14, offset: const Offset(0, 4)),
+        ],
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(children: [
-          Icon(Icons.self_improvement, size: 14, color: c.violet),
-          const SizedBox(width: 6),
-          Text(t.aiRemedy, style: TextStyle(color: c.violet, fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 0.3)),
-        ]),
-        const SizedBox(height: 8),
-        SelectableText(m.text, style: TextStyle(color: c.ink, fontSize: 14, fontWeight: FontWeight.w600, height: 1.4)),
-        if (m.detail.isNotEmpty) ...[
-          const SizedBox(height: 4),
-          Text(m.detail, style: TextStyle(color: c.gold, fontSize: 11.5, fontWeight: FontWeight.w600)),
-        ],
-        if (m.reason != null && m.reason!.isNotEmpty) ...[
-          const SizedBox(height: 4),
-          Text(m.reason!, style: TextStyle(color: c.muted, fontSize: 11.5, height: 1.3)),
-        ],
+        // Gold header strip, so the card is identifiable at a glance while scrolling.
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+          decoration: BoxDecoration(
+            color: c.gold.withValues(alpha: 0.22),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(13)),
+          ),
+          child: Row(children: [
+            Icon(Icons.self_improvement, size: 15, color: c.gold),
+            const SizedBox(width: 6),
+            Text(t.aiRemedy,
+                style: TextStyle(color: c.gold, fontSize: 10.5, fontWeight: FontWeight.w900, letterSpacing: 1.1)),
+          ]),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 11, 12, 12),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            SelectableText(
+              m.text,
+              style: TextStyle(color: c.ink, fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45),
+            ),
+            if (m.detail.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Row(children: [
+                Icon(Icons.repeat_rounded, size: 13, color: c.gold),
+                const SizedBox(width: 5),
+                Expanded(
+                  child: Text(m.detail,
+                      style: TextStyle(color: c.gold, fontSize: 12, fontWeight: FontWeight.w700)),
+                ),
+              ]),
+            ],
+            if (m.reason != null && m.reason!.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Text(m.reason!, style: TextStyle(color: c.muted, fontSize: 11.5, height: 1.35)),
+            ],
+          ]),
+        ),
       ]),
     );
   }
@@ -491,4 +583,56 @@ class _AiChatScreenState extends State<AiChatScreen> with WidgetsBindingObserver
           ),
         ]),
       );
+}
+
+
+/// Three dots that rise and fade in sequence: the "typing" idiom every messaging
+/// app uses, so the wait reads as someone composing rather than a page loading.
+class _ThinkingDots extends StatefulWidget {
+  final Color color;
+  const _ThinkingDots({required this.color});
+
+  @override
+  State<_ThinkingDots> createState() => _ThinkingDotsState();
+}
+
+class _ThinkingDotsState extends State<_ThinkingDots> with SingleTickerProviderStateMixin {
+  late final AnimationController _ctrl =
+      AnimationController(vsync: this, duration: const Duration(milliseconds: 1100))..repeat();
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _ctrl,
+      builder: (_, __) => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: List.generate(3, (i) {
+          // Stagger each dot by a third of the cycle so the motion travels.
+          final t = ((_ctrl.value + i * 0.22) % 1.0);
+          // Ease up and back down over the first 60% of the cycle, then rest.
+          final wave = t < 0.6 ? Curves.easeInOut.transform(1 - (t / 0.3 - 1).abs().clamp(0.0, 1.0)) : 0.0;
+          return Padding(
+            padding: EdgeInsets.only(right: i == 2 ? 0 : 5),
+            child: Transform.translate(
+              offset: Offset(0, -3.0 * wave),
+              child: Container(
+                width: 7,
+                height: 7,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: widget.color.withValues(alpha: 0.45 + 0.55 * wave),
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
 }

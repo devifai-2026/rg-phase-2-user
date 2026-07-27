@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import '../../api/app_config_service.dart';
+import '../../api/ai_api.dart';
 import '../../api/socket_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/auth_provider.dart';
@@ -15,6 +16,7 @@ import '../consult/chat_room_screen.dart';
 import '../consult/call_screen.dart';
 import '../consult/requesting_screen.dart';
 import '../consult/consultation_history_screen.dart';
+import '../ai/ai_chat_screen.dart';
 import '../live/live_tab.dart';
 import 'app_drawer.dart';
 import 'home_tab.dart';
@@ -33,6 +35,11 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
   int _index = 0;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  /// An AI consultation left running. Polled on mount and on resume, so a seeker
+  /// who backgrounds the app mid-consultation gets it back instead of losing a
+  /// session they are still paying for.
+  AiActiveChat? _activeAi;
+
   static const _tabRoutes = ['home', 'ai-astro', 'live', 'ask', 'history'];
 
   @override
@@ -44,6 +51,7 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
     // the old language. Bridging onto homeRefreshTick reuses the refetch path the
     // rails already listen to, so no screen needs its own language listener.
     languageRefreshTick.addListener(_onLanguageChanged);
+    _refreshActiveAi();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       context.read<SocketService>().trackPage(_tabRoutes[_index]);
@@ -84,7 +92,22 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
     if (state == AppLifecycleState.resumed) {
       context.read<SocketService>().connect();
       homeRefreshTick.value++;
+      _refreshActiveAi();
     }
+  }
+
+  Future<void> _refreshActiveAi() async {
+    final a = await context.read<AiApi>().activeChat();
+    if (mounted) setState(() => _activeAi = a);
+  }
+
+  /// Reopen the minimized AI consultation, then re-poll: it may have ended while
+  /// the seeker was inside (balance exhausted, or they tapped End).
+  Future<void> _resumeAi() async {
+    final a = _activeAi;
+    if (a == null) return;
+    await Navigator.of(context).push(MaterialPageRoute(builder: (_) => AiChatScreen(resume: a)));
+    if (mounted) _refreshActiveAi();
   }
 
   void _onTab(int i) {
@@ -182,7 +205,15 @@ class _MainShellState extends State<MainShell> with WidgetsBindingObserver {
               label: session.started ? L10n.of(context).resumeSessionClock(session.clock) : L10n.of(context).resumeSession,
               onTap: () => _resumeSession(session),
             ),
-          if (_index == 0 && !session.isActive)
+          // AI consultation left running. Only when no human session is live, so
+          // the two resume bars can never stack.
+          if (!session.isActive && _activeAi != null)
+            _ResumeBar(
+              type: 'chat',
+              label: L10n.of(context).resumeSession,
+              onTap: _resumeAi,
+            ),
+          if (_index == 0 && !session.isActive && _activeAi == null)
             _CallChatBar(
               onCall: () => _openAstrologers(L10n.of(context).call),
               onChat: () => _openAstrologers(L10n.of(context).chat),

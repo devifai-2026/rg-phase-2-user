@@ -196,6 +196,63 @@ class AiReading {
       );
 }
 
+/// An in-progress AI consultation the seeker can return to.
+class AiActiveChat {
+  final String aiSessionId;
+  final String topic;
+  final String lang;
+  final int ratePerMin;
+  final int billedMinutes;
+  final int minutesLeft;
+
+  /// Server-stamped billing start, so the resumed clock continues from the right
+  /// second rather than restarting at zero.
+  final DateTime? startedAt;
+  final String? personaId;
+  final String? personaName;
+  final String? personaAvatar;
+
+  /// The transcript so far, oldest first.
+  final List<({bool mine, String text})> messages;
+
+  const AiActiveChat({
+    required this.aiSessionId,
+    this.topic = '',
+    this.lang = 'en',
+    this.ratePerMin = 0,
+    this.billedMinutes = 0,
+    this.minutesLeft = 0,
+    this.startedAt,
+    this.personaId,
+    this.personaName,
+    this.personaAvatar,
+    this.messages = const [],
+  });
+
+  factory AiActiveChat.fromJson(Map<String, dynamic> j) {
+    final p = j['persona'] as Map?;
+    return AiActiveChat(
+      aiSessionId: (j['aiSessionId'] ?? '').toString(),
+      topic: (j['topic'] ?? '').toString(),
+      lang: (j['lang'] ?? 'en').toString(),
+      ratePerMin: (j['ratePerMin'] as num?)?.toInt() ?? 0,
+      billedMinutes: (j['billedMinutes'] as num?)?.toInt() ?? 0,
+      minutesLeft: (j['minutesLeft'] as num?)?.toInt() ?? 0,
+      startedAt: j['startedAt'] == null ? null : DateTime.tryParse(j['startedAt'].toString())?.toLocal(),
+      personaId: p?['id']?.toString(),
+      personaName: p?['name']?.toString(),
+      personaAvatar: p?['avatar']?.toString(),
+      messages: ((j['messages'] as List?) ?? const [])
+          .whereType<Map>()
+          .map((m) => (
+                mine: (m['role'] ?? '') == 'user',
+                text: (m['content'] ?? '').toString(),
+              ))
+          .toList(),
+    );
+  }
+}
+
 /// AI astrologer endpoints: personas, the billed chat, and topic readings.
 class AiApi {
   final ApiClient _api;
@@ -222,6 +279,19 @@ class AiApi {
       if (lang != null && lang.isNotEmpty) 'lang': lang,
     });
     return AiChatStart.fromJson(Map<String, dynamic>.from(data as Map));
+  }
+
+  /// My in-progress AI consultation, or null. Drives the Resume bar: without it,
+  /// backgrounding the app mid-consultation strands a session the seeker is still
+  /// paying for, with no way back into it.
+  Future<AiActiveChat?> activeChat() async {
+    try {
+      final data = await _api.get('/ai/chat/sessions/me/active');
+      if (data == null) return null;
+      return AiActiveChat.fromJson(Map<String, dynamic>.from(data as Map));
+    } catch (_) {
+      return null; // never block the home screen on this
+    }
   }
 
   /// Send a message. The FIRST call starts billing and locks funds.
