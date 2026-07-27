@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../api/ai_api.dart';
@@ -7,6 +6,7 @@ import '../../api/api_client.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/settings_provider.dart';
 import '../../theme/rg_colors.dart';
+import '../../widgets/chart_card.dart';
 import '../../widgets/shared_product_card.dart';
 import 'birth_gate.dart';
 
@@ -29,7 +29,10 @@ class BrihatKundliScreen extends StatefulWidget {
 
 class _BrihatKundliScreenState extends State<BrihatKundliScreen> {
   AiKundli? _result;
-  bool _loading = true;
+  /// False until a request is actually in flight. Starting true painted
+  /// "Reading your chart" behind the birth-details sheet, before the seeker
+  /// had given us anything to read.
+  bool _loading = false;
   String? _error;
   BirthGateResult? _birth;
 
@@ -175,17 +178,7 @@ class _BrihatKundliScreenState extends State<BrihatKundliScreen> {
   Widget _reading(RgColors c, L10n t, AiKundli r) => ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
         children: [
-          if (r.svg != null)
-            Container(
-              margin: const EdgeInsets.only(bottom: 16),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: c.ground2,
-                borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: c.line),
-              ),
-              child: SvgPicture.string(r.svg!, height: 280, fit: BoxFit.contain),
-            ),
+          if (r.svg != null) chartCard(c, r.svg!, 280),
 
           if (r.headline.isNotEmpty) ...[
             Text(r.headline,

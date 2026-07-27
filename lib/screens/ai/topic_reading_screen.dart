@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../api/ai_api.dart';
@@ -8,6 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../../providers/settings_provider.dart';
 import '../../theme/rg_colors.dart';
 import 'birth_gate.dart';
+import '../../widgets/chart_card.dart';
 import '../../widgets/shared_product_card.dart';
 
 /// A reading for one life area, behind the home icons (Career, Marriage, …).
@@ -32,7 +32,10 @@ class TopicReadingScreen extends StatefulWidget {
 
 class _TopicReadingScreenState extends State<TopicReadingScreen> {
   AiReading? _result;
-  bool _loading = true;
+  /// False until a request is actually in flight. Starting true painted
+  /// "Reading your chart" behind the birth-details sheet, before the seeker
+  /// had given us anything to read.
+  bool _loading = false;
   bool _needsBirth = false;
   String? _error;
 
@@ -156,16 +159,7 @@ class _TopicReadingScreenState extends State<TopicReadingScreen> {
         // The chart itself, when the provider returned one — it grounds the
         // reading visually and makes it feel like a real consultation.
         if (r.svg != null)
-          Container(
-            margin: const EdgeInsets.only(bottom: 16),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: c.ground2,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: c.line),
-            ),
-            child: SvgPicture.string(r.svg!, height: 260, fit: BoxFit.contain),
-          ),
+          chartCard(c, r.svg!, 260),
 
         // An unknown birth time materially limits what can be read, so say so
         // rather than quietly giving a weaker reading.
