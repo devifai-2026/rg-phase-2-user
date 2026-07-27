@@ -7,7 +7,6 @@ import '../../providers/auth_provider.dart';
 import '../../theme/rg_colors.dart';
 import '../../widgets/language_button.dart';
 import '../auth/phone_login_screen.dart';
-import '../common/coming_soon_screen.dart';
 import '../profile/my_profile_screen.dart';
 import '../shop/orders_screen.dart';
 import '../settings/preferences_screen.dart';
@@ -30,10 +29,6 @@ class AppDrawer extends StatelessWidget {
     final user = auth.user;
     final name = (user?.name?.trim().isNotEmpty ?? false) ? user!.name! : (user?.phone ?? L10n.of(context).guest);
 
-    void soon(String title, [IconData icon = Icons.auto_awesome]) {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(MaterialPageRoute(builder: (_) => ComingSoonScreen(title: title, icon: icon)));
-    }
     void push(Widget screen) {
       Navigator.of(context).pop();
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
@@ -98,7 +93,6 @@ class AppDrawer extends StatelessWidget {
                   }),
                   _item(c, Icons.groups_outlined, 'About Us', () => push(const AboutUsScreen())),
                   _item(c, Icons.app_registration, 'Astrologer Registration', () => push(const AstrologerRegisterScreen())),
-                  _item(c, Icons.grid_view_rounded, L10n.of(context).chooseYourKundli, () => soon(L10n.of(context).chooseYourKundli, Icons.grid_view_rounded)),
                   _item(c, Icons.card_giftcard_outlined, 'Refer & Earn', () => push(const ReferEarnScreen())),
                   _item(c, Icons.person_outline, 'My Profile', () {
                     Navigator.of(context).pop();

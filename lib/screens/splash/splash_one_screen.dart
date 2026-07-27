@@ -71,7 +71,19 @@ class _SplashOneScreenState extends State<SplashOneScreen> with SingleTickerProv
         if (mounted) setState(() => _phase = _Phase.failed); // image couldn't load
       }
     } else {
-      // No image configured → show the branded logo (ready, not a failure).
+      // No splash image → we fall back to RgLogo, which draws cfg.logoUrl. That
+      // was never precached, so the very first frames showed RgLogo's painted
+      // monogram (the brand's initial, e.g. "R") while the real logo was still
+      // downloading — the tenant uploads a logo and sees a letter instead.
+      // Warm it here so the logo is in the image cache before the widget builds.
+      final logo = cfg.logoUrl;
+      if (logo != null && logo.isNotEmpty && mounted) {
+        try {
+          await precacheImage(NetworkImage(logo), context).timeout(const Duration(seconds: 5));
+        } catch (_) {
+          // Logo unreachable: RgLogo's monogram is the correct fallback.
+        }
+      }
       if (mounted) setState(() => _phase = _Phase.ready);
     }
     _scheduleNext(cfg);
