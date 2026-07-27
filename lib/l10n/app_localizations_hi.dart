@@ -3063,4 +3063,37 @@ class L10nHi extends L10n {
 
   @override
   String get noAiAstrologersYet => 'अभी कोई AI ज्योतिषी उपलब्ध नहीं है।';
+
+  @override
+  String get placeOfBirth => 'जन्म स्थान';
+
+  @override
+  String get selectDate => 'चुनें';
+
+  @override
+  String get selectTime => 'चुनें';
+
+  @override
+  String get optional => 'वैकल्पिक';
+
+  @override
+  String get edit => 'बदलें';
+
+  @override
+  String get notKnown => 'पता नहीं';
+
+  @override
+  String get confirmBirthDetails => 'अपना जन्म विवरण जाँचें';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'इन्हीं से आपकी कुंडली पढ़ी जाएगी। कुछ गलत हो तो बदल लें।';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'इस भविष्यवाणी के लिए जन्म का सही समय आवश्यक है, क्योंकि इसी से लग्न और भाव तय होते हैं।';
+
+  @override
+  String get tobSharpensReading =>
+      'इसके बिना भी आगे बढ़ सकते हैं, पर सही समय से भविष्यवाणी अधिक सटीक होगी।';
 }

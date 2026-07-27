@@ -3070,4 +3070,37 @@ class L10nTe extends L10n {
 
   @override
   String get noAiAstrologersYet => 'ఇంకా ఏ AI జ్యోతిష్కుడు అందుబాటులో లేరు.';
+
+  @override
+  String get placeOfBirth => 'జన్మ స్థలం';
+
+  @override
+  String get selectDate => 'ఎంచుకోండి';
+
+  @override
+  String get selectTime => 'ఎంచుకోండి';
+
+  @override
+  String get optional => 'ఐచ్ఛికం';
+
+  @override
+  String get edit => 'మార్చండి';
+
+  @override
+  String get notKnown => 'తెలియదు';
+
+  @override
+  String get confirmBirthDetails => 'మీ జన్మ వివరాలను నిర్ధారించండి';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'వీటి ఆధారంగానే మీ కుండలి చదవబడుతుంది. తప్పుంటే మార్చండి.';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'ఈ ఫలితానికి కచ్చితమైన జన్మ సమయం అవసరం, ఎందుకంటే దానితోనే లగ్నం మరియు భావాలు నిర్ణయమవుతాయి.';
+
+  @override
+  String get tobSharpensReading =>
+      'అది లేకుండా కూడా కొనసాగవచ్చు, కానీ కచ్చితమైన సమయంతో ఫలితం మరింత స్పష్టంగా ఉంటుంది.';
 }

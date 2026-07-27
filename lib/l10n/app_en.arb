@@ -1904,5 +1904,45 @@
   "noAiAstrologersYet": "No AI astrologers are available yet.",
   "@noAiAstrologersYet": {
     "description": "Empty state on the AI Astro tab."
+  },
+  "placeOfBirth": "Place of birth",
+  "@placeOfBirth": {
+    "description": "Label for the birth place field."
+  },
+  "selectDate": "Select",
+  "@selectDate": {
+    "description": "Placeholder on the date picker row."
+  },
+  "selectTime": "Select",
+  "@selectTime": {
+    "description": "Placeholder on the time picker row."
+  },
+  "optional": "optional",
+  "@optional": {
+    "description": "Suffix marking a field as optional."
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Button to edit saved details."
+  },
+  "notKnown": "Not known",
+  "@notKnown": {
+    "description": "Shown when the birth time is unknown."
+  },
+  "confirmBirthDetails": "Confirm your birth details",
+  "@confirmBirthDetails": {
+    "description": "Heading when confirming previously saved birth details."
+  },
+  "confirmBirthDetailsBody": "We will read your chart from these. Change them if anything is wrong.",
+  "@confirmBirthDetailsBody": {
+    "description": "Body under the confirm-birth-details heading."
+  },
+  "birthDetailsNeedTimeBody": "An exact birth time is required for this reading, as it decides your ascendant and house positions.",
+  "@birthDetailsNeedTimeBody": {
+    "description": "Shown when a reading requires an exact birth time."
+  },
+  "tobSharpensReading": "You can continue without it, but an exact time makes the reading sharper.",
+  "@tobSharpensReading": {
+    "description": "Nudge that an exact birth time improves the reading."
   }
 }

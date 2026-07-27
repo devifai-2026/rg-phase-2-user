@@ -3063,4 +3063,37 @@ class L10nPa extends L10n {
 
   @override
   String get noAiAstrologersYet => 'ਹਾਲੇ ਕੋਈ AI ਜੋਤਸ਼ੀ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।';
+
+  @override
+  String get placeOfBirth => 'ਜਨਮ ਸਥਾਨ';
+
+  @override
+  String get selectDate => 'ਚੁਣੋ';
+
+  @override
+  String get selectTime => 'ਚੁਣੋ';
+
+  @override
+  String get optional => 'ਵਿਕਲਪਿਕ';
+
+  @override
+  String get edit => 'ਬਦਲੋ';
+
+  @override
+  String get notKnown => 'ਪਤਾ ਨਹੀਂ';
+
+  @override
+  String get confirmBirthDetails => 'ਆਪਣੇ ਜਨਮ ਵੇਰਵੇ ਪੱਕੇ ਕਰੋ';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'ਇਨ੍ਹਾਂ ਤੋਂ ਹੀ ਤੁਹਾਡੀ ਕੁੰਡਲੀ ਪੜ੍ਹੀ ਜਾਵੇਗੀ। ਕੁਝ ਗਲਤ ਹੋਵੇ ਤਾਂ ਬਦਲ ਲਵੋ।';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'ਇਸ ਭਵਿੱਖਬਾਣੀ ਲਈ ਜਨਮ ਦਾ ਸਹੀ ਸਮਾਂ ਜ਼ਰੂਰੀ ਹੈ, ਕਿਉਂਕਿ ਇਸੇ ਤੋਂ ਲਗਨ ਤੇ ਭਾਵ ਤੈਅ ਹੁੰਦੇ ਹਨ।';
+
+  @override
+  String get tobSharpensReading =>
+      'ਇਸ ਤੋਂ ਬਿਨਾਂ ਵੀ ਅੱਗੇ ਵਧ ਸਕਦੇ ਹੋ, ਪਰ ਸਹੀ ਸਮੇਂ ਨਾਲ ਭਵਿੱਖਬਾਣੀ ਵਧੇਰੇ ਸਟੀਕ ਹੁੰਦੀ ਹੈ।';
 }

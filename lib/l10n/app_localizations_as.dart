@@ -3064,4 +3064,37 @@ class L10nAs extends L10n {
 
   @override
   String get noAiAstrologersYet => 'এতিয়ালৈকে কোনো AI জ্যোতিষী উপলব্ধ নহয়।';
+
+  @override
+  String get placeOfBirth => 'জন্মস্থান';
+
+  @override
+  String get selectDate => 'বাছনি কৰক';
+
+  @override
+  String get selectTime => 'বাছনি কৰক';
+
+  @override
+  String get optional => 'ঐচ্ছিক';
+
+  @override
+  String get edit => 'সলনি কৰক';
+
+  @override
+  String get notKnown => 'জনা নাই';
+
+  @override
+  String get confirmBirthDetails => 'আপোনাৰ জন্মৰ বিৱৰণ নিশ্চিত কৰক';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'ইয়াৰ পৰাই আপোনাৰ কুণ্ডলী পঢ়া হ\'ব। ভুল থাকিলে সলনি কৰক।';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'এই ফলাদেশৰ বাবে জন্মৰ সঠিক সময় প্ৰয়োজন, কিয়নো ইয়াৰ পৰাই লগ্ন আৰু ভাৱ নিৰ্ধাৰিত হয়।';
+
+  @override
+  String get tobSharpensReading =>
+      'ইয়াৰ অবিহনেও আগবাঢ়িব পাৰে, কিন্তু সঠিক সময়ে ফলাদেশ অধিক নিখুঁত কৰে।';
 }

@@ -888,5 +888,15 @@
   "birthDetailsNeededBody": "जन्मतपशीलामुळे कुंडली अचूक वाचता येते. आम्ही एकदाच विचारू.",
   "birthDetailsNeededFor": "{topic} साठी जन्मतपशील",
   "addBirthTimeForSharper": "जन्माची अचूक वेळ दिल्यास हे भविष्य अधिक नेमके होईल.",
-  "noAiAstrologersYet": "अजून कोणताही AI ज्योतिषी उपलब्ध नाही."
+  "noAiAstrologersYet": "अजून कोणताही AI ज्योतिषी उपलब्ध नाही.",
+  "placeOfBirth": "जन्मस्थान",
+  "selectDate": "निवडा",
+  "selectTime": "निवडा",
+  "optional": "ऐच्छिक",
+  "edit": "बदला",
+  "notKnown": "माहीत नाही",
+  "confirmBirthDetails": "तुमचा जन्मतपशील तपासा",
+  "confirmBirthDetailsBody": "यावरूनच तुमची कुंडली वाचली जाईल. चुकीचे असल्यास बदला.",
+  "birthDetailsNeedTimeBody": "या भविष्यासाठी जन्माची अचूक वेळ आवश्यक आहे, कारण त्यावरून लग्न व भाव ठरतात.",
+  "tobSharpensReading": "याशिवायही पुढे जाऊ शकता, पण अचूक वेळेने भविष्य अधिक नेमके होते."
 }

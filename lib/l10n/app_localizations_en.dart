@@ -3055,4 +3055,37 @@ class L10nEn extends L10n {
 
   @override
   String get noAiAstrologersYet => 'No AI astrologers are available yet.';
+
+  @override
+  String get placeOfBirth => 'Place of birth';
+
+  @override
+  String get selectDate => 'Select';
+
+  @override
+  String get selectTime => 'Select';
+
+  @override
+  String get optional => 'optional';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get notKnown => 'Not known';
+
+  @override
+  String get confirmBirthDetails => 'Confirm your birth details';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'We will read your chart from these. Change them if anything is wrong.';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'An exact birth time is required for this reading, as it decides your ascendant and house positions.';
+
+  @override
+  String get tobSharpensReading =>
+      'You can continue without it, but an exact time makes the reading sharper.';
 }

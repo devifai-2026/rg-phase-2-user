@@ -888,5 +888,15 @@
   "birthDetailsNeededBody": "ਜਨਮ ਵੇਰਵੇ ਨਾਲ ਕੁੰਡਲੀ ਸਹੀ ਪੜ੍ਹੀ ਜਾ ਸਕਦੀ ਹੈ। ਅਸੀਂ ਇੱਕ ਵਾਰ ਹੀ ਪੁੱਛਾਂਗੇ।",
   "birthDetailsNeededFor": "{topic} ਲਈ ਜਨਮ ਵੇਰਵੇ",
   "addBirthTimeForSharper": "ਜਨਮ ਦਾ ਸਹੀ ਸਮਾਂ ਦੇਣ ਨਾਲ ਇਹ ਭਵਿੱਖ ਹੋਰ ਸਟੀਕ ਹੋਵੇਗਾ।",
-  "noAiAstrologersYet": "ਹਾਲੇ ਕੋਈ AI ਜੋਤਸ਼ੀ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
+  "noAiAstrologersYet": "ਹਾਲੇ ਕੋਈ AI ਜੋਤਸ਼ੀ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।",
+  "placeOfBirth": "ਜਨਮ ਸਥਾਨ",
+  "selectDate": "ਚੁਣੋ",
+  "selectTime": "ਚੁਣੋ",
+  "optional": "ਵਿਕਲਪਿਕ",
+  "edit": "ਬਦਲੋ",
+  "notKnown": "ਪਤਾ ਨਹੀਂ",
+  "confirmBirthDetails": "ਆਪਣੇ ਜਨਮ ਵੇਰਵੇ ਪੱਕੇ ਕਰੋ",
+  "confirmBirthDetailsBody": "ਇਨ੍ਹਾਂ ਤੋਂ ਹੀ ਤੁਹਾਡੀ ਕੁੰਡਲੀ ਪੜ੍ਹੀ ਜਾਵੇਗੀ। ਕੁਝ ਗਲਤ ਹੋਵੇ ਤਾਂ ਬਦਲ ਲਵੋ।",
+  "birthDetailsNeedTimeBody": "ਇਸ ਭਵਿੱਖਬਾਣੀ ਲਈ ਜਨਮ ਦਾ ਸਹੀ ਸਮਾਂ ਜ਼ਰੂਰੀ ਹੈ, ਕਿਉਂਕਿ ਇਸੇ ਤੋਂ ਲਗਨ ਤੇ ਭਾਵ ਤੈਅ ਹੁੰਦੇ ਹਨ।",
+  "tobSharpensReading": "ਇਸ ਤੋਂ ਬਿਨਾਂ ਵੀ ਅੱਗੇ ਵਧ ਸਕਦੇ ਹੋ, ਪਰ ਸਹੀ ਸਮੇਂ ਨਾਲ ਭਵਿੱਖਬਾਣੀ ਵਧੇਰੇ ਸਟੀਕ ਹੁੰਦੀ ਹੈ।"
 }

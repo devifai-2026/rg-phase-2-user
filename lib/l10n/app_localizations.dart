@@ -5453,6 +5453,66 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'No AI astrologers are available yet.'**
   String get noAiAstrologersYet;
+
+  /// Label for the birth place field.
+  ///
+  /// In en, this message translates to:
+  /// **'Place of birth'**
+  String get placeOfBirth;
+
+  /// Placeholder on the date picker row.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get selectDate;
+
+  /// Placeholder on the time picker row.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get selectTime;
+
+  /// Suffix marking a field as optional.
+  ///
+  /// In en, this message translates to:
+  /// **'optional'**
+  String get optional;
+
+  /// Button to edit saved details.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// Shown when the birth time is unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not known'**
+  String get notKnown;
+
+  /// Heading when confirming previously saved birth details.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your birth details'**
+  String get confirmBirthDetails;
+
+  /// Body under the confirm-birth-details heading.
+  ///
+  /// In en, this message translates to:
+  /// **'We will read your chart from these. Change them if anything is wrong.'**
+  String get confirmBirthDetailsBody;
+
+  /// Shown when a reading requires an exact birth time.
+  ///
+  /// In en, this message translates to:
+  /// **'An exact birth time is required for this reading, as it decides your ascendant and house positions.'**
+  String get birthDetailsNeedTimeBody;
+
+  /// Nudge that an exact birth time improves the reading.
+  ///
+  /// In en, this message translates to:
+  /// **'You can continue without it, but an exact time makes the reading sharper.'**
+  String get tobSharpensReading;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

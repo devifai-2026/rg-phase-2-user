@@ -3083,4 +3083,37 @@ class L10nTa extends L10n {
 
   @override
   String get noAiAstrologersYet => 'இன்னும் எந்த AI ஜோதிடரும் இல்லை.';
+
+  @override
+  String get placeOfBirth => 'பிறந்த இடம்';
+
+  @override
+  String get selectDate => 'தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get selectTime => 'தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get optional => 'விருப்பம்';
+
+  @override
+  String get edit => 'மாற்று';
+
+  @override
+  String get notKnown => 'தெரியாது';
+
+  @override
+  String get confirmBirthDetails => 'உங்கள் பிறப்பு விவரங்களை உறுதிசெய்க';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'இவற்றிலிருந்தே உங்கள் ஜாதகம் படிக்கப்படும். தவறு இருந்தால் மாற்றவும்.';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'இந்தப் பலனுக்குச் சரியான பிறப்பு நேரம் தேவை, ஏனெனில் அதுவே லக்னத்தையும் பாவங்களையும் தீர்மானிக்கிறது.';
+
+  @override
+  String get tobSharpensReading =>
+      'அது இல்லாமலும் தொடரலாம், ஆனால் சரியான நேரத்தில் பலன் இன்னும் துல்லியமாக இருக்கும்.';
 }

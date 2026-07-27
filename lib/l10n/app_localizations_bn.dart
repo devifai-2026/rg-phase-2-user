@@ -3063,4 +3063,37 @@ class L10nBn extends L10n {
 
   @override
   String get noAiAstrologersYet => 'এখনও কোনো AI জ্যোতিষী উপলব্ধ নেই।';
+
+  @override
+  String get placeOfBirth => 'জন্মস্থান';
+
+  @override
+  String get selectDate => 'বেছে নিন';
+
+  @override
+  String get selectTime => 'বেছে নিন';
+
+  @override
+  String get optional => 'ঐচ্ছিক';
+
+  @override
+  String get edit => 'বদলান';
+
+  @override
+  String get notKnown => 'জানা নেই';
+
+  @override
+  String get confirmBirthDetails => 'আপনার জন্মবিবরণ যাচাই করুন';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'এগুলি থেকেই আপনার কুণ্ডলী পড়া হবে। ভুল থাকলে বদলে নিন।';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'এই ফলাদেশের জন্য সঠিক জন্মসময় দরকার, কারণ এতেই লগ্ন ও ভাব নির্ধারিত হয়।';
+
+  @override
+  String get tobSharpensReading =>
+      'এটি ছাড়াও এগোতে পারেন, তবে সঠিক সময়ে ফলাদেশ আরও নিখুঁত হয়।';
 }

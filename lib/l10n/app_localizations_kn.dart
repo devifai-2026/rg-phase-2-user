@@ -3075,4 +3075,37 @@ class L10nKn extends L10n {
 
   @override
   String get noAiAstrologersYet => 'ಇನ್ನೂ ಯಾವುದೇ AI ಜ್ಯೋತಿಷಿ ಲಭ್ಯವಿಲ್ಲ.';
+
+  @override
+  String get placeOfBirth => 'ಜನ್ಮ ಸ್ಥಳ';
+
+  @override
+  String get selectDate => 'ಆಯ್ಕೆ ಮಾಡಿ';
+
+  @override
+  String get selectTime => 'ಆಯ್ಕೆ ಮಾಡಿ';
+
+  @override
+  String get optional => 'ಐಚ್ಛಿಕ';
+
+  @override
+  String get edit => 'ಬದಲಾಯಿಸಿ';
+
+  @override
+  String get notKnown => 'ಗೊತ್ತಿಲ್ಲ';
+
+  @override
+  String get confirmBirthDetails => 'ನಿಮ್ಮ ಜನ್ಮ ವಿವರ ಖಚಿತಪಡಿಸಿ';
+
+  @override
+  String get confirmBirthDetailsBody =>
+      'ಇವುಗಳಿಂದಲೇ ನಿಮ್ಮ ಕುಂಡಲಿ ಓದಲಾಗುತ್ತದೆ. ತಪ್ಪಿದ್ದರೆ ಬದಲಾಯಿಸಿ.';
+
+  @override
+  String get birthDetailsNeedTimeBody =>
+      'ಈ ಫಲಕ್ಕೆ ನಿಖರವಾದ ಜನ್ಮ ಸಮಯ ಅಗತ್ಯ, ಏಕೆಂದರೆ ಅದರಿಂದಲೇ ಲಗ್ನ ಮತ್ತು ಭಾವಗಳು ನಿರ್ಧಾರವಾಗುತ್ತವೆ.';
+
+  @override
+  String get tobSharpensReading =>
+      'ಅದಿಲ್ಲದೆಯೂ ಮುಂದುವರಿಯಬಹುದು, ಆದರೆ ನಿಖರ ಸಮಯದಿಂದ ಫಲ ಹೆಚ್ಚು ನಿಖರವಾಗುತ್ತದೆ.';
 }

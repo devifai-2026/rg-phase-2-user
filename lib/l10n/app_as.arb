@@ -888,5 +888,15 @@
   "birthDetailsNeededBody": "জন্মৰ বিৱৰণে কুণ্ডলী শুদ্ধভাৱে পঢ়িব দিয়ে। আমি এবাৰেই সুধিম।",
   "birthDetailsNeededFor": "{topic}ৰ বাবে জন্মৰ বিৱৰণ",
   "addBirthTimeForSharper": "জন্মৰ সঠিক সময় দিলে এই ফলাদেশ অধিক নিখুঁত হ'ব।",
-  "noAiAstrologersYet": "এতিয়ালৈকে কোনো AI জ্যোতিষী উপলব্ধ নহয়।"
+  "noAiAstrologersYet": "এতিয়ালৈকে কোনো AI জ্যোতিষী উপলব্ধ নহয়।",
+  "placeOfBirth": "জন্মস্থান",
+  "selectDate": "বাছনি কৰক",
+  "selectTime": "বাছনি কৰক",
+  "optional": "ঐচ্ছিক",
+  "edit": "সলনি কৰক",
+  "notKnown": "জনা নাই",
+  "confirmBirthDetails": "আপোনাৰ জন্মৰ বিৱৰণ নিশ্চিত কৰক",
+  "confirmBirthDetailsBody": "ইয়াৰ পৰাই আপোনাৰ কুণ্ডলী পঢ়া হ'ব। ভুল থাকিলে সলনি কৰক।",
+  "birthDetailsNeedTimeBody": "এই ফলাদেশৰ বাবে জন্মৰ সঠিক সময় প্ৰয়োজন, কিয়নো ইয়াৰ পৰাই লগ্ন আৰু ভাৱ নিৰ্ধাৰিত হয়।",
+  "tobSharpensReading": "ইয়াৰ অবিহনেও আগবাঢ়িব পাৰে, কিন্তু সঠিক সময়ে ফলাদেশ অধিক নিখুঁত কৰে।"
 }
